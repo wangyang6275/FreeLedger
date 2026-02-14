@@ -33,6 +33,7 @@ struct RecordView: View {
         VStack(spacing: 0) {
             headerSection
             categorySection
+                .frame(maxHeight: .infinity)
             keypadAndSaveSection
         }
         .background(AppColors.background)
@@ -195,8 +196,7 @@ struct RecordView: View {
                 selectedCategory = category
             }
         }
-        .frame(maxHeight: 180)
-        .padding(.vertical, AppSpacing.sm)
+        .padding(.vertical, AppSpacing.xs)
     }
 
     // MARK: - Keypad + Save
@@ -222,7 +222,7 @@ struct RecordView: View {
                 }
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
-                .frame(height: 52)
+                .frame(height: 46)
                 .background(
                     canSave
                         ? AnyShapeStyle(typeColor.gradient)
@@ -232,8 +232,8 @@ struct RecordView: View {
                 .shadow(color: canSave ? typeColor.opacity(0.3) : .clear, radius: 8, y: 4)
             }
             .disabled(!canSave)
-            .padding(.horizontal, AppSpacing.lg)
-            .padding(.bottom, AppSpacing.lg)
+            .padding(.horizontal, AppSpacing.md)
+            .padding(.bottom, AppSpacing.md)
             .animation(.easeInOut(duration: 0.2), value: canSave)
             .accessibilityLabel(String(localized: "a11y_save_transaction"))
         }

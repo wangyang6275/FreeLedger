@@ -12,9 +12,9 @@ struct AmountKeypad: View {
     ]
 
     var body: some View {
-        VStack(spacing: AppSpacing.sm) {
+        VStack(spacing: 6) {
             ForEach(keys, id: \.self) { row in
-                HStack(spacing: AppSpacing.sm) {
+                HStack(spacing: 6) {
                     ForEach(row, id: \.self) { key in
                         KeypadButton(key: key) {
                             handleKeyPress(key)
@@ -23,8 +23,8 @@ struct AmountKeypad: View {
                 }
             }
         }
-        .padding(.horizontal, AppSpacing.lg)
-        .padding(.bottom, AppSpacing.lg)
+        .padding(.horizontal, AppSpacing.md)
+        .padding(.bottom, AppSpacing.sm)
     }
 
     private func handleKeyPress(_ key: KeypadKey) {
@@ -98,7 +98,7 @@ struct KeypadButton: View {
                     }
                 case .backspace:
                     Image(systemName: "delete.backward")
-                        .font(.system(size: 22))
+                        .font(.system(size: 20))
                         .foregroundColor(AppColors.textPrimary)
                 case .tag:
                     Image(systemName: "tag")
@@ -107,7 +107,7 @@ struct KeypadButton: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 56)
+            .frame(height: 44)
             .background(AppColors.surface)
             .clipShape(RoundedRectangle(cornerRadius: AppRadius.sm))
         }
