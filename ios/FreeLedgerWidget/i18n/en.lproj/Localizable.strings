@@ -1,0 +1,8 @@
+/* Widget */
+"widget_description" = "View monthly summary and quick record";
+"widget_expense" = "Expense";
+"widget_income" = "Income";
+"widget_balance" = "Balance";
+"widget_quick_record" = "Record";
+"widget_recent" = "Recent";
+"widget_no_records" = "No records";

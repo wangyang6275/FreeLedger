@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTab = 0
     @State private var showRecord = false
+    @State private var deepLinkRecord = false
     @State private var showBackupReminder = false
     @State private var backupReminderMessage = ""
     @State private var isLocked = false
@@ -139,6 +140,13 @@ struct ContentView: View {
             OnboardingView(settingsRepository: settingsRepository) {
                 showOnboarding = false
                 homeViewModel.loadData()
+            }
+        }
+        .onOpenURL { url in
+            if url.scheme == "freeledger" && url.host == "record" {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    showRecord = true
+                }
             }
         }
         .onChange(of: scenePhase) { _, newPhase in

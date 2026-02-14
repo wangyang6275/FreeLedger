@@ -1,0 +1,8 @@
+/* Widget */
+"widget_description" = "查看本月收支概览，快捷记账";
+"widget_expense" = "支出";
+"widget_income" = "收入";
+"widget_balance" = "结余";
+"widget_quick_record" = "记一笔";
+"widget_recent" = "最近记录";
+"widget_no_records" = "暂无记录";

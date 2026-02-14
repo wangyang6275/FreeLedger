@@ -17,6 +17,8 @@ targets:
     platform: iOS
     sources:
       - FreeLedger
+    entitlements:
+      path: FreeLedger/FreeLedger.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.freeledger.app
@@ -34,15 +36,51 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
         SWIFT_VERSION: "6.0"
+    info:
+      path: FreeLedger/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleURLSchemes:
+              - freeledger
     dependencies:
       - package: GRDB
         product: GRDB
+      - target: FreeLedgerWidget
+        embed: true
     resources:
       - path: FreeLedger/i18n
         buildPhase: resources
       - path: FreeLedger/data/categories-expense.json
         buildPhase: resources
       - path: FreeLedger/data/categories-income.json
+        buildPhase: resources
+
+  FreeLedgerWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - FreeLedgerWidget
+      - path: FreeLedger/data/service/WidgetDataBridge.swift
+        buildPhase: sources
+    entitlements:
+      path: FreeLedgerWidget/FreeLedgerWidget.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.freeledger.app.widget
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: "YES"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        DEVELOPMENT_LANGUAGE: zh-Hans
+        SWIFT_VERSION: "6.0"
+    info:
+      path: FreeLedgerWidget/Info.plist
+      properties:
+        CFBundleDisplayName: FreeLedger Widget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    resources:
+      - path: FreeLedgerWidget/i18n
         buildPhase: resources
 
   FreeLedgerTests:
