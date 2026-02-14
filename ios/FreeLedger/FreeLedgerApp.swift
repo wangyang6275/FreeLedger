@@ -2,7 +2,7 @@ import SwiftUI
 @preconcurrency import UserNotifications
 
 final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    nonisolated(unsafe) static let reminderNotification = Notification.Name("ReminderRecordNotification")
+    nonisolated(unsafe) static let pendingReminderKey = "pending_reminder_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
@@ -18,12 +18,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
             completionHandler()
             return
         }
-
-        NotificationCenter.default.post(
-            name: AppDelegate.reminderNotification,
-            object: nil,
-            userInfo: ["reminder_id": reminderId]
-        )
+        UserDefaults.standard.set(reminderId, forKey: AppDelegate.pendingReminderKey)
         completionHandler()
     }
 

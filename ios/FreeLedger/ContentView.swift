@@ -135,19 +135,6 @@ struct ContentView: View {
                 reminderPrefill = nil
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: AppDelegate.reminderNotification)) { notification in
-            guard let reminderId = notification.userInfo?["reminder_id"] as? String,
-                  let reminder = try? reminderRepository.getById(reminderId) else { return }
-            reminderPrefill = ReminderPrefill(
-                amount: reminder.amount,
-                type: reminder.type,
-                categoryId: reminder.categoryId,
-                note: reminder.note
-            )
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                showRecord = true
-            }
-        }
         .onAppear {
             if passwordService.isPasswordSet() {
                 isLocked = true
@@ -157,6 +144,7 @@ struct ContentView: View {
                 showOnboarding = true
             }
             checkBackupReminder()
+            checkPendingReminder()
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView(settingsRepository: settingsRepository) {
@@ -174,6 +162,9 @@ struct ContentView: View {
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .background && passwordService.isPasswordSet() {
                 isLocked = true
+            }
+            if newPhase == .active {
+                checkPendingReminder()
             }
         }
         .overlay {
@@ -207,6 +198,22 @@ struct ContentView: View {
             }
         }
     }
+    private func checkPendingReminder() {
+        guard !isLocked, !showOnboarding else { return }
+        guard let reminderId = UserDefaults.standard.string(forKey: AppDelegate.pendingReminderKey) else { return }
+        UserDefaults.standard.removeObject(forKey: AppDelegate.pendingReminderKey)
+        guard let reminder = try? reminderRepository.getById(reminderId) else { return }
+        reminderPrefill = ReminderPrefill(
+            amount: reminder.amount,
+            type: reminder.type,
+            categoryId: reminder.categoryId,
+            note: reminder.note
+        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            showRecord = true
+        }
+    }
+
     private func checkBackupReminder() {
         switch backupReminderService.checkReminder() {
         case .firstBackup(let count):
