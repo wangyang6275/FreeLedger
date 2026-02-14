@@ -1,0 +1,10 @@
+{
+  "animation": {
+    "pageTransition": { "duration": 250, "curve": "easeInOut" },
+    "panelSlide": { "duration": 300, "curve": "easeOut" },
+    "saveConfirm": { "duration": 300, "curve": "spring(0.6)" },
+    "cardInsert": { "duration": 200, "curve": "easeOut" },
+    "buttonPress": { "duration": 100, "curve": "easeOut" },
+    "chartExpand": { "duration": 200, "curve": "easeOut" }
+  }
+}

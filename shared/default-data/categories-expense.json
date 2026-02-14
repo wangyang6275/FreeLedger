@@ -1,0 +1,79 @@
+[
+  {
+    "name_key": "category_food",
+    "icon_name": "CoffeeOutlined",
+    "color_hex": "#FFE8E8",
+    "type": "expense",
+    "sort_order": 1
+  },
+  {
+    "name_key": "category_shopping",
+    "icon_name": "ShoppingCartOutlined",
+    "color_hex": "#F3E8FF",
+    "type": "expense",
+    "sort_order": 2
+  },
+  {
+    "name_key": "category_transport",
+    "icon_name": "CarOutlined",
+    "color_hex": "#FFF3E0",
+    "type": "expense",
+    "sort_order": 3
+  },
+  {
+    "name_key": "category_housing",
+    "icon_name": "HomeOutlined",
+    "color_hex": "#E8F4FD",
+    "type": "expense",
+    "sort_order": 4
+  },
+  {
+    "name_key": "category_communication",
+    "icon_name": "MobileOutlined",
+    "color_hex": "#E8FAF8",
+    "type": "expense",
+    "sort_order": 5
+  },
+  {
+    "name_key": "category_entertainment",
+    "icon_name": "PlayCircleOutlined",
+    "color_hex": "#FFF8E1",
+    "type": "expense",
+    "sort_order": 6
+  },
+  {
+    "name_key": "category_clothing",
+    "icon_name": "SkinOutlined",
+    "color_hex": "#FCE4EC",
+    "type": "expense",
+    "sort_order": 7
+  },
+  {
+    "name_key": "category_medical",
+    "icon_name": "MedicineBoxOutlined",
+    "color_hex": "#E8F5E9",
+    "type": "expense",
+    "sort_order": 8
+  },
+  {
+    "name_key": "category_education",
+    "icon_name": "ReadOutlined",
+    "color_hex": "#E3F2FD",
+    "type": "expense",
+    "sort_order": 9
+  },
+  {
+    "name_key": "category_travel",
+    "icon_name": "GlobalOutlined",
+    "color_hex": "#FFF3E0",
+    "type": "expense",
+    "sort_order": 10
+  },
+  {
+    "name_key": "category_children",
+    "icon_name": "SmileOutlined",
+    "color_hex": "#F3E8FF",
+    "type": "expense",
+    "sort_order": 11
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name_key": "category_salary",
+    "icon_name": "WalletOutlined",
+    "color_hex": "#E8FAF8",
+    "type": "income",
+    "sort_order": 1
+  },
+  {
+    "name_key": "category_freelance",
+    "icon_name": "LaptopOutlined",
+    "color_hex": "#E3F2FD",
+    "type": "income",
+    "sort_order": 2
+  },
+  {
+    "name_key": "category_investment",
+    "icon_name": "RiseOutlined",
+    "color_hex": "#FFF8E1",
+    "type": "income",
+    "sort_order": 3
+  },
+  {
+    "name_key": "category_gift",
+    "icon_name": "GiftOutlined",
+    "color_hex": "#FCE4EC",
+    "type": "income",
+    "sort_order": 4
+  },
+  {
+    "name_key": "category_other_income",
+    "icon_name": "EllipsisOutlined",
+    "color_hex": "#F0F0F0",
+    "type": "income",
+    "sort_order": 5
+  }
+]

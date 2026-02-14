@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FreeLedger</string>
+
+    <!-- Tabs -->
+    <string name="tab_transactions">Transactions</string>
+    <string name="tab_reports">Reports</string>
+    <string name="tab_tags">Tags</string>
+    <string name="tab_settings">Settings</string>
+
+    <!-- Home -->
+    <string name="home_empty_state">No records yet. Tap + to start tracking</string>
+
+    <!-- Report -->
+    <string name="report_empty_state">Record a few transactions to see your spending reports</string>
+
+    <!-- Tags -->
+    <string name="tags_empty_state">No tags yet. You can add tags when recording</string>
+
+    <!-- Settings -->
+    <string name="settings_general">General</string>
+    <string name="settings_currency">Currency</string>
+    <string name="settings_language">Language</string>
+
+    <!-- Accessibility -->
+    <string name="a11y_add_transaction">Add transaction</string>
+</resources>

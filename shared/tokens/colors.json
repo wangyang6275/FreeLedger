@@ -1,0 +1,34 @@
+{
+  "color": {
+    "primary": "#FF6B6B",
+    "primaryDark": "#E55A5A",
+    "primaryLight": "#FFE8E8",
+    "secondary": "#4ECDC4",
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "textPrimary": "#2D3436",
+    "textSecondary": "#636E72",
+    "textTertiary": "#B2BEC3",
+    "divider": "#F0F0F0",
+    "success": "#00B894",
+    "warning": "#FDCB6E",
+    "error": "#E17055"
+  },
+  "semantic": {
+    "expense": "#FF6B6B",
+    "income": "#4ECDC4"
+  },
+  "category": {
+    "food": "#FFE8E8",
+    "shopping": "#F3E8FF",
+    "transport": "#FFF3E0",
+    "housing": "#E8F4FD",
+    "communication": "#E8FAF8",
+    "entertainment": "#FFF8E1",
+    "clothing": "#FCE4EC",
+    "medical": "#E8F5E9",
+    "education": "#E3F2FD",
+    "travel": "#FFF3E0",
+    "children": "#F3E8FF"
+  }
+}

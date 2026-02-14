@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FreeLedger</string>
+
+    <!-- Tabs -->
+    <string name="tab_transactions">明细</string>
+    <string name="tab_reports">报表</string>
+    <string name="tab_tags">标签</string>
+    <string name="tab_settings">设置</string>
+
+    <!-- Home -->
+    <string name="home_empty_state">还没有记录，点击 + 开始记账</string>
+
+    <!-- Report -->
+    <string name="report_empty_state">记几笔账后，这里会显示你的消费报表</string>
+
+    <!-- Tags -->
+    <string name="tags_empty_state">还没有标签，记账时可以添加标签</string>
+
+    <!-- Settings -->
+    <string name="settings_general">通用</string>
+    <string name="settings_currency">货币</string>
+    <string name="settings_language">语言</string>
+
+    <!-- Accessibility -->
+    <string name="a11y_add_transaction">记一笔</string>
+</resources>

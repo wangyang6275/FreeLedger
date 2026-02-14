@@ -1,0 +1,209 @@
+/* Tabs */
+"tab_transactions" = "明细";
+"tab_reports" = "报表";
+"tab_tags" = "标签";
+"tab_settings" = "设置";
+
+/* Home */
+"home_empty_state" = "还没有记录，点击 + 开始记账";
+
+/* Summary Card */
+"summary_expense_label" = "本月支出";
+"summary_income_label" = "收入";
+"summary_balance_label" = "结余";
+
+/* Date Groups */
+"date_today" = "今天";
+"date_yesterday" = "昨天";
+
+/* Report */
+"report_empty_state" = "记几笔账后，这里会显示你的消费报表";
+"report_expense_label" = "支出";
+"report_income_label" = "收入";
+"report_balance_label" = "结余";
+"report_total_expense" = "总支出";
+"report_trend_title" = "近 6 月趋势";
+"report_tag_chart_title" = "标签支出";
+
+/* Tags */
+"tags_empty_state" = "还没有标签，记账时可以添加标签";
+
+/* Settings */
+"settings_general" = "通用";
+"settings_currency" = "货币";
+"settings_language" = "语言";
+"settings_category_management" = "分类管理";
+"settings_backup_section" = "备份与恢复";
+"settings_export_backup" = "导出备份";
+"backup_success_title" = "备份完成！";
+"backup_success_message %lld" = "共 %lld 条记录，文件已保存到你选择的位置";
+"settings_import_restore" = "导入恢复";
+"restore_warning_title" = "导入备份";
+"restore_warning_message" = "导入备份会覆盖现有数据哦，确定继续吗？";
+"restore_warning_confirm" = "确定导入";
+"restore_success_title" = "恢复成功！";
+"restore_success_message %lld" = "共找回 %lld 条记录，一条不少 ✓";
+"backup_reminder_title" = "记得备份哦";
+"backup_reminder_first %lld" = "你已经记了 %lld 笔账啦！建议备份一下，以防万一";
+"backup_reminder_periodic" = "距离上次备份已经超过 30 天了，建议再备份一次";
+"backup_reminder_go" = "去备份";
+"backup_reminder_later" = "下次再说";
+"settings_export_csv" = "导出 CSV";
+"csv_export_title" = "导出 CSV";
+"csv_select_fields" = "选择导出字段";
+"csv_export_button" = "导出";
+"csv_field_date" = "日期";
+"csv_field_amount" = "金额";
+"csv_field_type" = "类型";
+"csv_field_category" = "分类";
+"csv_field_note" = "备注";
+"csv_field_tags" = "标签";
+"settings_password_section" = "安全";
+"settings_password_lock" = "密码锁";
+"password_set_title" = "设置密码";
+"password_verify_title" = "验证密码";
+"password_enter_prompt" = "请输入 4 位数字密码";
+"password_confirm_prompt" = "请再次输入确认";
+"password_mismatch" = "两次输入不一致，请重试";
+"password_wrong" = "密码错误，请重试";
+"password_enter_to_disable" = "请输入当前密码以关闭";
+"password_set_success_title" = "密码锁已开启";
+"password_set_success_message" = "你的财务数据现在受密码保护了";
+"lock_enter_password" = "请输入密码解锁";
+"settings_change_password" = "修改密码";
+"password_enter_current" = "请输入当前密码";
+"onboarding_step1_title" = "3 秒记一笔";
+"onboarding_step1_desc" = "快速记录每一笔收支\n简单、直觉、零门槛";
+"onboarding_step2_title" = "选择你的货币";
+"onboarding_step3_title" = "点击 + 开始记账";
+"onboarding_step3_desc" = "随时点击底部的 + 按钮\n开始你的第一笔记录";
+"onboarding_next" = "下一步";
+"onboarding_start" = "开始使用";
+"onboarding_skip" = "跳过引导";
+"settings_data_section" = "数据";
+"settings_about_section" = "关于";
+"settings_replay_onboarding" = "重新引导";
+"settings_version" = "版本";
+
+/* Record */
+"record_title" = "记一笔";
+"record_expense" = "支出";
+"record_income" = "收入";
+"record_save" = "保存";
+"record_add_note" = "点击添加备注...";
+"record_note_placeholder" = "添加备注";
+
+/* Detail */
+"detail_title" = "记录详情";
+"detail_note" = "备注";
+"detail_date" = "日期";
+"detail_type" = "类型";
+"detail_category" = "分类";
+"detail_no_note" = "无备注";
+
+/* Edit */
+"edit_amount_placeholder" = "输入金额";
+"edit_select_category" = "选择分类";
+"edit_category_title" = "编辑分类";
+"add_category_title" = "添加分类";
+"edit_category_name" = "名称";
+"edit_category_name_placeholder" = "输入分类名称";
+"edit_category_icon" = "图标";
+"edit_category_color" = "颜色";
+"category_custom_label" = "自定义";
+"category_builtin_label" = "内置";
+
+/* Tags */
+"tag_selector_title" = "标签";
+"tag_selector_done" = "完成";
+"tag_name_placeholder" = "输入标签名称";
+"tag_create_button" = "创建";
+"tag_add_hint" = "添加标签";
+"detail_tags" = "标签";
+"tag_count %lld" = "%lld 条";
+"tag_total_expense" = "支出";
+"tag_total_income" = "收入";
+
+/* Actions */
+"action_edit" = "编辑";
+"action_cancel" = "取消";
+"action_delete" = "删除";
+"action_delete_record" = "删除记录";
+
+/* Delete Dialog */
+"delete_confirm_title" = "确定删除这条记录吗？";
+"delete_confirm_message" = "删除后无法恢复哦";
+"delete_category_title" = "确定删除这个分类吗？";
+"delete_category_message" = "删除后该分类不会再出现在记账页，但已有记录不受影响";
+
+/* Categories - Expense */
+"category_food" = "餐饮";
+"category_shopping" = "购物";
+"category_transport" = "交通";
+"category_housing" = "住房";
+"category_communication" = "通讯";
+"category_entertainment" = "娱乐";
+"category_clothing" = "服饰";
+"category_medical" = "医疗";
+"category_education" = "教育";
+"category_travel" = "旅行";
+"category_children" = "育儿";
+
+/* Categories - Income */
+"category_salary" = "工资";
+"category_freelance" = "自由职业";
+"category_investment" = "投资";
+"category_gift" = "礼金";
+"category_other_income" = "其他";
+
+/* Errors */
+"error_title" = "提示";
+"error_ok" = "好的";
+"error_save_failed" = "保存失败了，请稍后再试";
+"error_load_failed" = "加载数据失败，请稍后再试";
+"error_delete_failed" = "删除失败了，请稍后再试";
+"error_invalid_amount" = "请输入有效的金额";
+"error_checksum_mismatch" = "这个文件好像不是 FreeLedger 的备份文件，请重新选择";
+"error_storage_insufficient" = "存储空间不太够了，建议清理后再试";
+
+/* Search */
+"search_title" = "搜索";
+"search_placeholder" = "搜索备注或分类...";
+"search_hint" = "输入关键词或选择筛选条件";
+"search_no_results" = "没有找到匹配的记录";
+"search_date_label" = "日期";
+"search_date_selected" = "已选日期";
+"search_date_today" = "今天";
+"search_date_this_week" = "本周";
+"search_date_this_month" = "本月";
+"search_date_clear" = "清除日期";
+"search_category_label" = "分类";
+"search_category_all" = "全部分类";
+"search_clear_all" = "清除筛选";
+
+/* Accessibility */
+"a11y_add_transaction" = "记一笔";
+"a11y_close" = "关闭";
+"a11y_expense_tab" = "支出";
+"a11y_income_tab" = "收入";
+"a11y_add_note" = "添加备注";
+"a11y_note_input" = "备注输入";
+"a11y_save_transaction" = "保存交易";
+"a11y_edit_amount" = "编辑金额";
+"a11y_delete_record" = "删除记录";
+"a11y_decimal_point" = "小数点";
+"a11y_backspace" = "退格";
+"a11y_tag_button" = "标签";
+"a11y_digit_0" = "0";
+"a11y_digit_1" = "1";
+"a11y_digit_2" = "2";
+"a11y_digit_3" = "3";
+"a11y_digit_4" = "4";
+"a11y_digit_5" = "5";
+"a11y_digit_6" = "6";
+"a11y_digit_7" = "7";
+"a11y_digit_8" = "8";
+"a11y_digit_9" = "9";
+"a11y_category %@" = "%@分类，按钮";
+"a11y_category_selected %@" = "已选中，%@分类";
+"a11y_summary %@ %@ %@" = "本月支出%@，收入%@，结余%@";

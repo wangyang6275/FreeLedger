@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Xcode
+ios/FreeLedger.xcodeproj/xcuserdata/
+ios/FreeLedger.xcodeproj/project.xcworkspace/xcuserdata/
+ios/*.xcworkspace/xcuserdata/
+ios/DerivedData/
+ios/build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+ios/.build/
+ios/.swiftpm/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/*.iml
+android/.idea/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+
+# IDE
+.vscode/
+*.code-workspace
+
+# BMAD output (keep planning, ignore implementation build artifacts)

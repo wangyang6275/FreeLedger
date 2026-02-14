@@ -1,0 +1,16 @@
+{
+  "typography": {
+    "display": { "size": 32, "weight": "bold" },
+    "title1": { "size": 24, "weight": "semibold" },
+    "title2": { "size": 20, "weight": "semibold" },
+    "bodyLarge": { "size": 17, "weight": "regular" },
+    "body": { "size": 15, "weight": "regular" },
+    "caption": { "size": 13, "weight": "regular" },
+    "small": { "size": 11, "weight": "regular" },
+    "keypadNumber": { "size": 28, "weight": "bold" }
+  },
+  "fontFamily": {
+    "ios": "SF Pro",
+    "android": "Roboto"
+  }
+}

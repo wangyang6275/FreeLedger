@@ -1,0 +1,209 @@
+/* Tabs */
+"tab_transactions" = "Transactions";
+"tab_reports" = "Reports";
+"tab_tags" = "Tags";
+"tab_settings" = "Settings";
+
+/* Home */
+"home_empty_state" = "No records yet. Tap + to start tracking";
+
+/* Summary Card */
+"summary_expense_label" = "This Month";
+"summary_income_label" = "Income";
+"summary_balance_label" = "Balance";
+
+/* Date Groups */
+"date_today" = "Today";
+"date_yesterday" = "Yesterday";
+
+/* Report */
+"report_empty_state" = "Record a few transactions to see your spending reports";
+"report_expense_label" = "Expense";
+"report_income_label" = "Income";
+"report_balance_label" = "Balance";
+"report_total_expense" = "Total Expense";
+"report_trend_title" = "6-Month Trend";
+"report_tag_chart_title" = "Tag Expenses";
+
+/* Tags */
+"tags_empty_state" = "No tags yet. You can add tags when recording";
+
+/* Settings */
+"settings_general" = "General";
+"settings_currency" = "Currency";
+"settings_language" = "Language";
+"settings_category_management" = "Category Management";
+"settings_backup_section" = "Backup & Restore";
+"settings_export_backup" = "Export Backup";
+"backup_success_title" = "Backup Complete!";
+"backup_success_message %lld" = "%lld records saved to your chosen location";
+"settings_import_restore" = "Import Restore";
+"restore_warning_title" = "Import Backup";
+"restore_warning_message" = "Importing a backup will overwrite all existing data. Are you sure?";
+"restore_warning_confirm" = "Confirm Import";
+"restore_success_title" = "Restore Complete!";
+"restore_success_message %lld" = "Recovered %lld records, all accounted for ✓";
+"backup_reminder_title" = "Time to Backup";
+"backup_reminder_first %lld" = "You've recorded %lld transactions! Consider backing up your data, just in case";
+"backup_reminder_periodic" = "It's been over 30 days since your last backup. Consider backing up again";
+"backup_reminder_go" = "Backup Now";
+"backup_reminder_later" = "Later";
+"settings_export_csv" = "Export CSV";
+"csv_export_title" = "Export CSV";
+"csv_select_fields" = "Select Export Fields";
+"csv_export_button" = "Export";
+"csv_field_date" = "Date";
+"csv_field_amount" = "Amount";
+"csv_field_type" = "Type";
+"csv_field_category" = "Category";
+"csv_field_note" = "Note";
+"csv_field_tags" = "Tags";
+"settings_password_section" = "Security";
+"settings_password_lock" = "Password Lock";
+"password_set_title" = "Set Password";
+"password_verify_title" = "Verify Password";
+"password_enter_prompt" = "Enter a 4-digit password";
+"password_confirm_prompt" = "Enter again to confirm";
+"password_mismatch" = "Passwords don't match, please try again";
+"password_wrong" = "Wrong password, please try again";
+"password_enter_to_disable" = "Enter current password to disable";
+"password_set_success_title" = "Password Lock Enabled";
+"password_set_success_message" = "Your financial data is now protected by password";
+"lock_enter_password" = "Enter password to unlock";
+"settings_change_password" = "Change Password";
+"password_enter_current" = "Enter current password";
+"onboarding_step1_title" = "Record in 3 Seconds";
+"onboarding_step1_desc" = "Quickly record every transaction\nSimple, intuitive, zero learning curve";
+"onboarding_step2_title" = "Choose Your Currency";
+"onboarding_step3_title" = "Tap + to Start";
+"onboarding_step3_desc" = "Tap the + button at the bottom anytime\nto make your first record";
+"onboarding_next" = "Next";
+"onboarding_start" = "Get Started";
+"onboarding_skip" = "Skip";
+"settings_data_section" = "Data";
+"settings_about_section" = "About";
+"settings_replay_onboarding" = "Replay Onboarding";
+"settings_version" = "Version";
+
+/* Record */
+"record_title" = "New Record";
+"record_expense" = "Expense";
+"record_income" = "Income";
+"record_save" = "Save";
+"record_add_note" = "Tap to add a note...";
+"record_note_placeholder" = "Add a note";
+
+/* Detail */
+"detail_title" = "Details";
+"detail_note" = "Note";
+"detail_date" = "Date";
+"detail_type" = "Type";
+"detail_category" = "Category";
+"detail_no_note" = "No note";
+
+/* Edit */
+"edit_amount_placeholder" = "Enter amount";
+"edit_select_category" = "Select Category";
+"edit_category_title" = "Edit Category";
+"add_category_title" = "Add Category";
+"edit_category_name" = "Name";
+"edit_category_name_placeholder" = "Enter category name";
+"edit_category_icon" = "Icon";
+"edit_category_color" = "Color";
+"category_custom_label" = "Custom";
+"category_builtin_label" = "Built-in";
+
+/* Tags */
+"tag_selector_title" = "Tags";
+"tag_selector_done" = "Done";
+"tag_name_placeholder" = "Enter tag name";
+"tag_create_button" = "Create";
+"tag_add_hint" = "Add tags";
+"detail_tags" = "Tags";
+"tag_count %lld" = "%lld records";
+"tag_total_expense" = "Expense";
+"tag_total_income" = "Income";
+
+/* Actions */
+"action_edit" = "Edit";
+"action_cancel" = "Cancel";
+"action_delete" = "Delete";
+"action_delete_record" = "Delete Record";
+
+/* Delete Dialog */
+"delete_confirm_title" = "Delete this record?";
+"delete_confirm_message" = "This can't be undone";
+"delete_category_title" = "Delete this category?";
+"delete_category_message" = "It won't appear in recording page anymore, but existing records are not affected";
+
+/* Categories - Expense */
+"category_food" = "Food";
+"category_shopping" = "Shopping";
+"category_transport" = "Transport";
+"category_housing" = "Housing";
+"category_communication" = "Phone";
+"category_entertainment" = "Fun";
+"category_clothing" = "Clothing";
+"category_medical" = "Medical";
+"category_education" = "Education";
+"category_travel" = "Travel";
+"category_children" = "Kids";
+
+/* Categories - Income */
+"category_salary" = "Salary";
+"category_freelance" = "Freelance";
+"category_investment" = "Investment";
+"category_gift" = "Gift";
+"category_other_income" = "Other";
+
+/* Errors */
+"error_title" = "Oops";
+"error_ok" = "OK";
+"error_save_failed" = "Save failed. Please try again later";
+"error_load_failed" = "Failed to load data. Please try again later";
+"error_delete_failed" = "Delete failed. Please try again later";
+"error_invalid_amount" = "Please enter a valid amount";
+"error_checksum_mismatch" = "This file doesn't seem to be a FreeLedger backup. Please try another file";
+"error_storage_insufficient" = "Not enough storage space. Please free up some space and try again";
+
+/* Search */
+"search_title" = "Search";
+"search_placeholder" = "Search notes or categories...";
+"search_hint" = "Enter keywords or select filters";
+"search_no_results" = "No matching records found";
+"search_date_label" = "Date";
+"search_date_selected" = "Date selected";
+"search_date_today" = "Today";
+"search_date_this_week" = "This Week";
+"search_date_this_month" = "This Month";
+"search_date_clear" = "Clear Date";
+"search_category_label" = "Category";
+"search_category_all" = "All Categories";
+"search_clear_all" = "Clear Filters";
+
+/* Accessibility */
+"a11y_add_transaction" = "Add transaction";
+"a11y_close" = "Close";
+"a11y_expense_tab" = "Expense";
+"a11y_income_tab" = "Income";
+"a11y_add_note" = "Add note";
+"a11y_note_input" = "Note input";
+"a11y_save_transaction" = "Save transaction";
+"a11y_edit_amount" = "Edit amount";
+"a11y_delete_record" = "Delete record";
+"a11y_decimal_point" = "Decimal point";
+"a11y_backspace" = "Backspace";
+"a11y_tag_button" = "Tag";
+"a11y_digit_0" = "0";
+"a11y_digit_1" = "1";
+"a11y_digit_2" = "2";
+"a11y_digit_3" = "3";
+"a11y_digit_4" = "4";
+"a11y_digit_5" = "5";
+"a11y_digit_6" = "6";
+"a11y_digit_7" = "7";
+"a11y_digit_8" = "8";
+"a11y_digit_9" = "9";
+"a11y_category %@" = "%@ category, button";
+"a11y_category_selected %@" = "Selected, %@ category";
+"a11y_summary %@ %@ %@" = "This month expense %@, income %@, balance %@";

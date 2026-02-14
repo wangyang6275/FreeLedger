@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreeLedger - UX Design Directions</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Helvetica Neue', sans-serif; background: #f5f5f5; color: #2D3436; }
+  
+  /* Header */
+  .header { background: #fff; padding: 24px 32px; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 24px; font-weight: 700; }
+  .header p { color: #636E72; margin-top: 4px; font-size: 14px; }
+  
+  /* Navigation */
+  .nav { display: flex; gap: 8px; padding: 16px 32px; background: #fff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 72px; z-index: 99; flex-wrap: wrap; }
+  .nav-btn { padding: 8px 16px; border-radius: 20px; border: 1.5px solid #e0e0e0; background: #fff; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s; }
+  .nav-btn:hover { border-color: #FF6B6B; color: #FF6B6B; }
+  .nav-btn.active { background: #FF6B6B; color: #fff; border-color: #FF6B6B; }
+  
+  /* Section */
+  .section { padding: 32px; }
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .section-desc { color: #636E72; font-size: 14px; margin-bottom: 24px; }
+  
+  /* Phone Frame */
+  .phone-row { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; }
+  .phone-wrap { text-align: center; }
+  .phone-label { font-size: 13px; font-weight: 600; color: #636E72; margin-bottom: 12px; }
+  .phone { width: 320px; height: 640px; border-radius: 36px; background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.12); overflow: hidden; border: 6px solid #1a1a1a; position: relative; }
+  .phone .status-bar { height: 44px; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #2D3436; }
+  .phone .notch { width: 120px; height: 28px; background: #1a1a1a; border-radius: 0 0 16px 16px; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); z-index: 10; }
+  
+  /* Direction A: 温暖清爽 */
+  .dir-a .screen { background: #FAFAFA; height: calc(100% - 44px); display: flex; flex-direction: column; }
+  .dir-a .summary-card { margin: 16px 16px 0; padding: 20px; background: linear-gradient(135deg, #FF6B6B, #FF8E8E); border-radius: 16px; color: #fff; }
+  .dir-a .summary-card .month { font-size: 13px; opacity: 0.9; }
+  .dir-a .summary-card .amount { font-size: 32px; font-weight: 700; margin: 8px 0 12px; }
+  .dir-a .summary-card .row { display: flex; justify-content: space-between; font-size: 13px; }
+  .dir-a .list { flex: 1; padding: 16px; overflow: hidden; }
+  .dir-a .list-title { font-size: 14px; font-weight: 600; color: #636E72; margin-bottom: 12px; }
+  .dir-a .list-item { display: flex; align-items: center; padding: 14px 16px; background: #fff; border-radius: 12px; margin-bottom: 10px; }
+  .dir-a .list-item .icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-right: 12px; }
+  .dir-a .list-item .info { flex: 1; }
+  .dir-a .list-item .name { font-size: 15px; font-weight: 500; }
+  .dir-a .list-item .time { font-size: 12px; color: #B2BEC3; margin-top: 2px; }
+  .dir-a .list-item .price { font-size: 17px; font-weight: 600; }
+  .dir-a .list-item .price.expense { color: #FF6B6B; }
+  .dir-a .list-item .price.income { color: #4ECDC4; }
+  .dir-a .tab-bar { height: 56px; background: #fff; display: flex; align-items: center; justify-content: space-around; border-top: 1px solid #f0f0f0; padding: 0 8px; }
+  .dir-a .tab-bar .tab { font-size: 11px; color: #B2BEC3; text-align: center; }
+  .dir-a .tab-bar .tab.active { color: #FF6B6B; }
+  .dir-a .tab-bar .tab .tab-icon { font-size: 20px; margin-bottom: 2px; }
+  .dir-a .tab-bar .add-btn { width: 48px; height: 48px; background: #FF6B6B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 300; box-shadow: 0 4px 12px rgba(255,107,107,0.4); margin-top: -16px; }
+
+  /* Direction B: 极简纯净 */
+  .dir-b .screen { background: #FFFFFF; height: calc(100% - 44px); display: flex; flex-direction: column; }
+  .dir-b .header-area { padding: 20px 20px 16px; }
+  .dir-b .header-area .greeting { font-size: 14px; color: #B2BEC3; }
+  .dir-b .header-area .amount-row { display: flex; align-items: baseline; margin-top: 8px; }
+  .dir-b .header-area .currency { font-size: 20px; color: #636E72; margin-right: 4px; }
+  .dir-b .header-area .total { font-size: 36px; font-weight: 700; }
+  .dir-b .header-area .sub-row { display: flex; gap: 24px; margin-top: 12px; }
+  .dir-b .header-area .sub-item { font-size: 13px; color: #636E72; }
+  .dir-b .header-area .sub-item span { font-weight: 600; }
+  .dir-b .list { flex: 1; padding: 0 20px; overflow: hidden; }
+  .dir-b .date-label { font-size: 13px; color: #B2BEC3; font-weight: 500; margin: 16px 0 10px; }
+  .dir-b .list-item { display: flex; align-items: center; padding: 16px 0; border-bottom: 1px solid #f8f8f8; }
+  .dir-b .list-item .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 14px; }
+  .dir-b .list-item .dot.expense { background: #FF6B6B; }
+  .dir-b .list-item .dot.income { background: #4ECDC4; }
+  .dir-b .list-item .info { flex: 1; }
+  .dir-b .list-item .name { font-size: 15px; font-weight: 500; }
+  .dir-b .list-item .time { font-size: 12px; color: #B2BEC3; margin-top: 2px; }
+  .dir-b .list-item .price { font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .dir-b .tab-bar { height: 56px; background: #fff; display: flex; align-items: center; justify-content: space-around; border-top: 1px solid #f0f0f0; }
+  .dir-b .tab-bar .tab { font-size: 11px; color: #B2BEC3; text-align: center; }
+  .dir-b .tab-bar .tab.active { color: #2D3436; }
+  .dir-b .tab-bar .tab .tab-icon { font-size: 20px; margin-bottom: 2px; }
+  .dir-b .tab-bar .add-btn { width: 52px; height: 52px; background: #2D3436; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 300; margin-top: -12px; }
+
+  /* Direction C: 记账界面 */
+  .dir-c .screen { background: #FAFAFA; height: calc(100% - 44px); display: flex; flex-direction: column; }
+  .dir-c .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+  .dir-c .top-bar .back { font-size: 18px; color: #636E72; }
+  .dir-c .top-bar .tabs { display: flex; background: #f0f0f0; border-radius: 8px; padding: 2px; }
+  .dir-c .top-bar .tab { padding: 6px 20px; font-size: 14px; font-weight: 500; border-radius: 6px; color: #636E72; }
+  .dir-c .top-bar .tab.active { background: #fff; color: #FF6B6B; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .dir-c .amount-display { text-align: center; padding: 16px 20px 8px; }
+  .dir-c .amount-display .label { font-size: 13px; color: #B2BEC3; }
+  .dir-c .amount-display .value { font-size: 40px; font-weight: 700; margin-top: 4px; color: #2D3436; }
+  .dir-c .note-area { text-align: center; padding: 4px 20px 12px; }
+  .dir-c .note-area .note { font-size: 13px; color: #B2BEC3; padding: 6px 16px; background: #f0f0f0; border-radius: 16px; display: inline-block; }
+  .dir-c .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 20px; }
+  .dir-c .cat-item { text-align: center; padding: 10px 4px; border-radius: 12px; cursor: pointer; transition: all 0.2s; }
+  .dir-c .cat-item:hover { background: #FFE8E8; }
+  .dir-c .cat-item.selected { background: #FFE8E8; }
+  .dir-c .cat-item .cat-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 4px; background: #f5f5f5; }
+  .dir-c .cat-item.selected .cat-icon { background: #FF6B6B; }
+  .dir-c .cat-item .cat-name { font-size: 11px; color: #636E72; }
+  .dir-c .keypad { padding: 8px 16px; }
+  .dir-c .keypad-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .dir-c .key { flex: 1; height: 48px; background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 500; cursor: pointer; transition: background 0.15s; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .dir-c .key:hover { background: #f8f8f8; }
+  .dir-c .key.action { background: #FF6B6B; color: #fff; font-size: 15px; font-weight: 600; }
+  .dir-c .key.action:hover { background: #E55A5A; }
+  .dir-c .key.secondary { color: #636E72; font-size: 14px; }
+
+  /* Direction D: 报表页 */
+  .dir-d .screen { background: #FAFAFA; height: calc(100% - 44px); display: flex; flex-direction: column; }
+  .dir-d .top-area { padding: 16px 20px; background: #fff; }
+  .dir-d .top-area .title { font-size: 20px; font-weight: 700; }
+  .dir-d .month-selector { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+  .dir-d .month-selector .arrow { font-size: 16px; color: #B2BEC3; cursor: pointer; }
+  .dir-d .month-selector .month { font-size: 15px; font-weight: 600; }
+  .dir-d .chart-card { margin: 16px; padding: 20px; background: #fff; border-radius: 16px; }
+  .dir-d .chart-card .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 16px; }
+  .dir-d .pie-chart { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; position: relative; background: conic-gradient(#FF6B6B 0deg 130deg, #4ECDC4 130deg 200deg, #FDCB6E 200deg 260deg, #a29bfe 260deg 310deg, #dfe6e9 310deg 360deg); }
+  .dir-d .pie-chart .inner { width: 80px; height: 80px; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .dir-d .pie-chart .inner .total-label { font-size: 10px; color: #B2BEC3; }
+  .dir-d .pie-chart .inner .total-value { font-size: 16px; font-weight: 700; }
+  .dir-d .legend { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .dir-d .legend-item { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #636E72; }
+  .dir-d .legend-item .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dir-d .trend-card { margin: 0 16px 16px; padding: 20px; background: #fff; border-radius: 16px; }
+  .dir-d .trend-card .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+  .dir-d .trend-bars { display: flex; align-items: flex-end; gap: 8px; height: 80px; padding-top: 8px; }
+  .dir-d .trend-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .dir-d .trend-bar .bar { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.3s; }
+  .dir-d .trend-bar .bar.expense { background: #FFE8E8; }
+  .dir-d .trend-bar .bar.income { background: #E8FAF8; }
+  .dir-d .trend-bar .label { font-size: 10px; color: #B2BEC3; }
+  .dir-d .tab-bar { height: 56px; background: #fff; display: flex; align-items: center; justify-content: space-around; border-top: 1px solid #f0f0f0; margin-top: auto; }
+  .dir-d .tab-bar .tab { font-size: 11px; color: #B2BEC3; text-align: center; }
+  .dir-d .tab-bar .tab.active { color: #FF6B6B; }
+  .dir-d .tab-bar .tab .tab-icon { font-size: 20px; margin-bottom: 2px; }
+  .dir-d .tab-bar .add-btn { width: 48px; height: 48px; background: #FF6B6B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 300; box-shadow: 0 4px 12px rgba(255,107,107,0.4); margin-top: -16px; }
+
+  /* Direction E: 新手引导 */
+  .dir-e .screen { background: #fff; height: calc(100% - 44px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; text-align: center; }
+  .dir-e .onboard-icon { font-size: 80px; margin-bottom: 24px; }
+  .dir-e .onboard-title { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+  .dir-e .onboard-desc { font-size: 15px; color: #636E72; line-height: 1.6; margin-bottom: 32px; }
+  .dir-e .dots { display: flex; gap: 8px; margin-bottom: 32px; }
+  .dir-e .dots .dot { width: 8px; height: 8px; border-radius: 50%; background: #e0e0e0; }
+  .dir-e .dots .dot.active { background: #FF6B6B; width: 24px; }
+  .dir-e .onboard-btn { width: 100%; padding: 16px; background: #FF6B6B; color: #fff; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; }
+  .dir-e .skip-btn { margin-top: 16px; font-size: 14px; color: #B2BEC3; cursor: pointer; }
+
+  /* Direction F: 设置页 */
+  .dir-f .screen { background: #FAFAFA; height: calc(100% - 44px); display: flex; flex-direction: column; }
+  .dir-f .top-area { padding: 16px 20px; background: #fff; }
+  .dir-f .top-area .title { font-size: 20px; font-weight: 700; }
+  .dir-f .settings-group { margin: 16px; }
+  .dir-f .group-label { font-size: 13px; color: #B2BEC3; font-weight: 500; margin-bottom: 8px; padding-left: 4px; }
+  .dir-f .settings-card { background: #fff; border-radius: 12px; overflow: hidden; }
+  .dir-f .setting-item { display: flex; align-items: center; padding: 16px; border-bottom: 1px solid #f8f8f8; }
+  .dir-f .setting-item:last-child { border-bottom: none; }
+  .dir-f .setting-item .s-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-right: 12px; }
+  .dir-f .setting-item .s-info { flex: 1; }
+  .dir-f .setting-item .s-name { font-size: 15px; }
+  .dir-f .setting-item .s-desc { font-size: 12px; color: #B2BEC3; margin-top: 2px; }
+  .dir-f .setting-item .s-arrow { color: #B2BEC3; font-size: 14px; }
+  .dir-f .setting-item .toggle { width: 44px; height: 26px; border-radius: 13px; background: #e0e0e0; position: relative; cursor: pointer; }
+  .dir-f .setting-item .toggle.on { background: #FF6B6B; }
+  .dir-f .setting-item .toggle .knob { width: 22px; height: 22px; border-radius: 50%; background: #fff; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+  .dir-f .setting-item .toggle.on .knob { left: 20px; }
+  .dir-f .tab-bar { height: 56px; background: #fff; display: flex; align-items: center; justify-content: space-around; border-top: 1px solid #f0f0f0; margin-top: auto; }
+  .dir-f .tab-bar .tab { font-size: 11px; color: #B2BEC3; text-align: center; }
+  .dir-f .tab-bar .tab.active { color: #FF6B6B; }
+  .dir-f .tab-bar .tab .tab-icon { font-size: 20px; margin-bottom: 2px; }
+  .dir-f .tab-bar .add-btn { width: 48px; height: 48px; background: #FF6B6B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; font-weight: 300; box-shadow: 0 4px 12px rgba(255,107,107,0.4); margin-top: -16px; }
+
+  /* Comparison */
+  .compare-section { padding: 32px; background: #fff; margin: 16px 0; }
+  .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .compare-item { padding: 16px; border-radius: 12px; border: 2px solid #f0f0f0; text-align: center; cursor: pointer; transition: all 0.2s; }
+  .compare-item:hover { border-color: #FF6B6B; }
+  .compare-item .swatch { width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 8px; }
+  .compare-item .label { font-size: 14px; font-weight: 600; }
+  .compare-item .desc { font-size: 12px; color: #636E72; margin-top: 4px; }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎨 FreeLedger — UX 设计方向展示</h1>
+  <p>珊瑚橙主色 · 小红书式清爽 · 舒展留白 · iOS 主导</p>
+</div>
+
+<div class="nav">
+  <button class="nav-btn active" onclick="showSection('all')">全部预览</button>
+  <button class="nav-btn" onclick="showSection('home')">A. 首页（温暖清爽）</button>
+  <button class="nav-btn" onclick="showSection('minimal')">B. 首页（极简纯净）</button>
+  <button class="nav-btn" onclick="showSection('entry')">C. 记账界面</button>
+  <button class="nav-btn" onclick="showSection('report')">D. 报表页</button>
+  <button class="nav-btn" onclick="showSection('onboard')">E. 新手引导</button>
+  <button class="nav-btn" onclick="showSection('settings')">F. 设置页</button>
+</div>
+
+<!-- A: 温暖清爽首页 -->
+<div class="section" id="sec-home">
+  <div class="section-title">方向 A：温暖清爽首页</div>
+  <div class="section-desc">渐变汇总卡片 + 圆角流水列表 + 底部 Tab 居中"+"按钮。小红书式的温暖活力感。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">首页 · 流水列表</div>
+      <div class="phone dir-a">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="summary-card">
+            <div class="month">2026年2月</div>
+            <div class="amount">¥ 3,256.00</div>
+            <div class="row">
+              <span>支出 ¥3,256</span>
+              <span>收入 ¥8,000</span>
+            </div>
+          </div>
+          <div class="list">
+            <div class="list-title">今天</div>
+            <div class="list-item">
+              <div class="icon" style="background:#FFE8E8">🍜</div>
+              <div class="info"><div class="name">午餐</div><div class="time">12:30</div></div>
+              <div class="price expense">-¥25.00</div>
+            </div>
+            <div class="list-item">
+              <div class="icon" style="background:#E8FAF8">💰</div>
+              <div class="info"><div class="name">工资</div><div class="time">09:00</div></div>
+              <div class="price income">+¥8,000</div>
+            </div>
+            <div class="list-item">
+              <div class="icon" style="background:#FFF3E0">🚗</div>
+              <div class="info"><div class="name">打车</div><div class="time">08:15</div></div>
+              <div class="price expense">-¥18.50</div>
+            </div>
+            <div class="list-item">
+              <div class="icon" style="background:#F3E8FF">🛒</div>
+              <div class="info"><div class="name">超市</div><div class="time">昨天</div></div>
+              <div class="price expense">-¥156.00</div>
+            </div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab active"><div class="tab-icon">📋</div>明细</div>
+            <div class="tab"><div class="tab-icon">📊</div>报表</div>
+            <div class="add-btn">+</div>
+            <div class="tab"><div class="tab-icon">🏷️</div>标签</div>
+            <div class="tab"><div class="tab-icon">⚙️</div>设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B: 极简纯净首页 -->
+<div class="section" id="sec-minimal" style="background:#fff">
+  <div class="section-title">方向 B：极简纯净首页</div>
+  <div class="section-desc">无渐变卡片，纯白背景，用排版和留白传递高级感。更克制的设计语言。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">首页 · 极简风格</div>
+      <div class="phone dir-b">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="header-area">
+            <div class="greeting">2月总支出</div>
+            <div class="amount-row">
+              <span class="currency">¥</span>
+              <span class="total">3,256</span>
+            </div>
+            <div class="sub-row">
+              <div class="sub-item">收入 <span style="color:#4ECDC4">¥8,000</span></div>
+              <div class="sub-item">结余 <span>¥4,744</span></div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="date-label">今天</div>
+            <div class="list-item">
+              <div class="dot expense"></div>
+              <div class="info"><div class="name">午餐</div><div class="time">12:30</div></div>
+              <div class="price" style="color:#FF6B6B">-25.00</div>
+            </div>
+            <div class="list-item">
+              <div class="dot income"></div>
+              <div class="info"><div class="name">工资</div><div class="time">09:00</div></div>
+              <div class="price" style="color:#4ECDC4">+8,000</div>
+            </div>
+            <div class="list-item">
+              <div class="dot expense"></div>
+              <div class="info"><div class="name">打车</div><div class="time">08:15</div></div>
+              <div class="price" style="color:#FF6B6B">-18.50</div>
+            </div>
+            <div class="date-label">昨天</div>
+            <div class="list-item">
+              <div class="dot expense"></div>
+              <div class="info"><div class="name">超市</div><div class="time">15:20</div></div>
+              <div class="price" style="color:#FF6B6B">-156.00</div>
+            </div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab active"><div class="tab-icon">📋</div>明细</div>
+            <div class="tab"><div class="tab-icon">📊</div>报表</div>
+            <div class="add-btn">+</div>
+            <div class="tab"><div class="tab-icon">🏷️</div>标签</div>
+            <div class="tab"><div class="tab-icon">⚙️</div>设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- C: 记账界面 -->
+<div class="section" id="sec-entry">
+  <div class="section-title">方向 C：记账界面</div>
+  <div class="section-desc">核心交互 — 上方分类图标网格 + 下方自定义数字键盘，选分类即保存。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">记账 · 输入金额 + 选分类</div>
+      <div class="phone dir-c">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="top-bar">
+            <div class="back">← 返回</div>
+            <div class="tabs">
+              <div class="tab active">支出</div>
+              <div class="tab">收入</div>
+            </div>
+            <div style="width:40px"></div>
+          </div>
+          <div class="amount-display">
+            <div class="label">金额</div>
+            <div class="value">¥ 25.00</div>
+          </div>
+          <div class="note-area">
+            <span class="note">+ 添加备注</span>
+          </div>
+          <div class="category-grid">
+            <div class="cat-item selected"><div class="cat-icon">🍜</div><div class="cat-name">餐饮</div></div>
+            <div class="cat-item"><div class="cat-icon">🛒</div><div class="cat-name">购物</div></div>
+            <div class="cat-item"><div class="cat-icon">🚗</div><div class="cat-name">交通</div></div>
+            <div class="cat-item"><div class="cat-icon">🏠</div><div class="cat-name">住房</div></div>
+            <div class="cat-item"><div class="cat-icon">📱</div><div class="cat-name">通讯</div></div>
+            <div class="cat-item"><div class="cat-icon">🎮</div><div class="cat-name">娱乐</div></div>
+            <div class="cat-item"><div class="cat-icon">👔</div><div class="cat-name">服饰</div></div>
+            <div class="cat-item"><div class="cat-icon">🏥</div><div class="cat-name">医疗</div></div>
+          </div>
+          <div class="keypad">
+            <div class="keypad-row">
+              <div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key secondary">⌫</div>
+            </div>
+            <div class="keypad-row">
+              <div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key secondary">+/−</div>
+            </div>
+            <div class="keypad-row">
+              <div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key action">完成</div>
+            </div>
+            <div class="keypad-row">
+              <div class="key secondary">🏷️</div><div class="key">0</div><div class="key">.</div><div class="key" style="visibility:hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- D: 报表页 -->
+<div class="section" id="sec-report" style="background:#fff">
+  <div class="section-title">方向 D：报表页</div>
+  <div class="section-desc">饼图 + 趋势柱状图，配色柔和，数据一目了然，传递从容自信的掌控感。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">报表 · 月度概览</div>
+      <div class="phone dir-d">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="top-area">
+            <div class="title">月度报表</div>
+            <div class="month-selector">
+              <span class="arrow">‹</span>
+              <span class="month">2026年2月</span>
+              <span class="arrow">›</span>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">支出分类</div>
+            <div class="pie-chart">
+              <div class="inner">
+                <div class="total-label">总支出</div>
+                <div class="total-value">¥3,256</div>
+              </div>
+            </div>
+            <div class="legend">
+              <div class="legend-item"><div class="dot" style="background:#FF6B6B"></div>餐饮 36%</div>
+              <div class="legend-item"><div class="dot" style="background:#4ECDC4"></div>交通 19%</div>
+              <div class="legend-item"><div class="dot" style="background:#FDCB6E"></div>购物 17%</div>
+              <div class="legend-item"><div class="dot" style="background:#a29bfe"></div>娱乐 14%</div>
+              <div class="legend-item"><div class="dot" style="background:#dfe6e9"></div>其他 14%</div>
+            </div>
+          </div>
+          <div class="trend-card">
+            <div class="chart-title">近6月趋势</div>
+            <div class="trend-bars">
+              <div class="trend-bar"><div class="bar expense" style="height:50px"></div><div class="label">9月</div></div>
+              <div class="trend-bar"><div class="bar expense" style="height:60px"></div><div class="label">10月</div></div>
+              <div class="trend-bar"><div class="bar expense" style="height:45px"></div><div class="label">11月</div></div>
+              <div class="trend-bar"><div class="bar expense" style="height:55px"></div><div class="label">12月</div></div>
+              <div class="trend-bar"><div class="bar expense" style="height:40px"></div><div class="label">1月</div></div>
+              <div class="trend-bar"><div class="bar expense" style="height:35px"></div><div class="label">2月</div></div>
+            </div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab"><div class="tab-icon">📋</div>明细</div>
+            <div class="tab active"><div class="tab-icon">📊</div>报表</div>
+            <div class="add-btn">+</div>
+            <div class="tab"><div class="tab-icon">🏷️</div>标签</div>
+            <div class="tab"><div class="tab-icon">⚙️</div>设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- E: 新手引导 -->
+<div class="section" id="sec-onboard">
+  <div class="section-title">方向 E：新手引导</div>
+  <div class="section-desc">简洁温暖的引导流程，3 步完成。可跳过，不施压。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">引导 · 第1步</div>
+      <div class="phone dir-e">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="onboard-icon">💰</div>
+          <div class="onboard-title">3 秒记一笔</div>
+          <div class="onboard-desc">输入金额，点个图标，搞定。<br>记账从未如此简单。</div>
+          <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <button class="onboard-btn">下一步</button>
+          <div class="skip-btn">跳过引导</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- F: 设置页 -->
+<div class="section" id="sec-settings" style="background:#fff">
+  <div class="section-title">方向 F：设置页</div>
+  <div class="section-desc">iOS 风格分组列表，简洁明了。所有设置一目了然。</div>
+  <div class="phone-row">
+    <div class="phone-wrap">
+      <div class="phone-label">设置 · 管理</div>
+      <div class="phone dir-f">
+        <div class="notch"></div>
+        <div class="status-bar">9:41</div>
+        <div class="screen">
+          <div class="top-area">
+            <div class="title">设置</div>
+          </div>
+          <div class="settings-group">
+            <div class="group-label">通用</div>
+            <div class="settings-card">
+              <div class="setting-item">
+                <div class="s-icon" style="background:#FFE8E8">💰</div>
+                <div class="s-info"><div class="s-name">主货币</div><div class="s-desc">CNY ¥</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+              <div class="setting-item">
+                <div class="s-icon" style="background:#E8F4FD">🌐</div>
+                <div class="s-info"><div class="s-name">语言</div><div class="s-desc">中文</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+              <div class="setting-item">
+                <div class="s-icon" style="background:#F3E8FF">🎨</div>
+                <div class="s-info"><div class="s-name">主题</div><div class="s-desc">默认</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+            </div>
+          </div>
+          <div class="settings-group">
+            <div class="group-label">安全</div>
+            <div class="settings-card">
+              <div class="setting-item">
+                <div class="s-icon" style="background:#E8FAF8">🔒</div>
+                <div class="s-info"><div class="s-name">App 密码锁</div></div>
+                <div class="toggle on"><div class="knob"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="settings-group">
+            <div class="group-label">数据</div>
+            <div class="settings-card">
+              <div class="setting-item">
+                <div class="s-icon" style="background:#FFF3E0">💾</div>
+                <div class="s-info"><div class="s-name">备份与恢复</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+              <div class="setting-item">
+                <div class="s-icon" style="background:#E8F4FD">📤</div>
+                <div class="s-info"><div class="s-name">导出 CSV</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+              <div class="setting-item">
+                <div class="s-icon" style="background:#FFE8E8">🔔</div>
+                <div class="s-info"><div class="s-name">备份提醒</div><div class="s-desc">每月一次</div></div>
+                <div class="s-arrow">›</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab"><div class="tab-icon">📋</div>明细</div>
+            <div class="tab"><div class="tab-icon">📊</div>报表</div>
+            <div class="add-btn">+</div>
+            <div class="tab"><div class="tab-icon">🏷️</div>标签</div>
+            <div class="tab active"><div class="tab-icon">⚙️</div>设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(id) {
+  const sections = ['home','minimal','entry','report','onboard','settings'];
+  const btns = document.querySelectorAll('.nav-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  if (id === 'all') {
+    sections.forEach(s => document.getElementById('sec-' + s).style.display = '');
+  } else {
+    sections.forEach(s => {
+      document.getElementById('sec-' + s).style.display = s === id ? '' : 'none';
+    });
+  }
+}
+</script>
+
+</body>
+</html>
