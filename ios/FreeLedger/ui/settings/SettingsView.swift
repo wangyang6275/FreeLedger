@@ -44,18 +44,14 @@ struct SettingsView: View {
                         }
                     }
 
-                    Button {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.open(url)
-                        }
+                    NavigationLink {
+                        LanguagePickerView()
                     } label: {
                         HStack {
                             Label(String(localized: "settings_language"), systemImage: "globe")
-                                .foregroundColor(AppColors.textPrimary)
                             Spacer()
-                            Image(systemName: "arrow.up.right.square")
-                                .font(AppTypography.caption)
-                                .foregroundColor(AppColors.textTertiary)
+                            Text(LanguageManager.shared.currentLanguageDisplay)
+                                .foregroundColor(AppColors.textSecondary)
                         }
                     }
                 }

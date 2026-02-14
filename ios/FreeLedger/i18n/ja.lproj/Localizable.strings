@@ -1,0 +1,257 @@
+/* Tabs */
+"tab_transactions" = "明細";
+"tab_reports" = "レポート";
+"tab_tags" = "タグ";
+"tab_settings" = "設定";
+
+/* Home */
+"home_empty_state" = "まだ記録がありません。+ をタップして記帳しましょう";
+
+/* Summary Card */
+"summary_expense_label" = "今月の支出";
+"summary_income_label" = "収入";
+"summary_balance_label" = "残高";
+
+/* Date Groups */
+"date_today" = "今日";
+"date_yesterday" = "昨日";
+
+/* Report */
+"report_empty_state" = "いくつか記帳すると、ここに消費レポートが表示されます";
+"report_expense_label" = "支出";
+"report_income_label" = "収入";
+"report_balance_label" = "残高";
+"report_total_expense" = "総支出";
+"report_trend_title" = "過去6ヶ月の推移";
+"report_tag_chart_title" = "タグ別支出";
+
+/* Tags */
+"tags_empty_state" = "まだタグがありません。記帳時にタグを追加できます";
+
+/* Settings */
+"settings_general" = "一般";
+"settings_currency" = "通貨";
+"settings_language" = "言語";
+"settings_category_management" = "カテゴリ管理";
+"settings_backup_section" = "バックアップと復元";
+"settings_export_backup" = "バックアップをエクスポート";
+"backup_success_title" = "バックアップ完了！";
+"backup_success_message %lld" = "%lld 件の記録を保存しました";
+"settings_import_restore" = "バックアップをインポート";
+"restore_warning_title" = "バックアップをインポート";
+"restore_warning_message" = "インポートすると既存のデータが上書きされます。続けますか？";
+"restore_warning_confirm" = "インポートする";
+"restore_success_title" = "復元成功！";
+"restore_success_message %lld" = "%lld 件の記録を復元しました ✓";
+"backup_reminder_title" = "バックアップをお忘れなく";
+"backup_reminder_first %lld" = "%lld 件記録しました！万が一に備えてバックアップしましょう";
+"backup_reminder_periodic" = "前回のバックアップから30日以上経ちました。もう一度バックアップしましょう";
+"backup_reminder_go" = "バックアップする";
+"backup_reminder_later" = "あとで";
+"settings_export_csv" = "CSV エクスポート";
+"csv_export_title" = "CSV エクスポート";
+"csv_select_fields" = "エクスポートする項目を選択";
+"csv_export_button" = "エクスポート";
+"csv_field_date" = "日付";
+"csv_field_amount" = "金額";
+"csv_field_type" = "種類";
+"csv_field_category" = "カテゴリ";
+"csv_field_note" = "メモ";
+"csv_field_tags" = "タグ";
+"settings_password_section" = "セキュリティ";
+"settings_password_lock" = "パスワードロック";
+"password_set_title" = "パスワードを設定";
+"password_verify_title" = "パスワードを確認";
+"password_enter_prompt" = "4桁の数字パスワードを入力";
+"password_confirm_prompt" = "もう一度入力してください";
+"password_mismatch" = "パスワードが一致しません。もう一度お試しください";
+"password_wrong" = "パスワードが間違っています";
+"password_enter_to_disable" = "現在のパスワードを入力して解除";
+"password_set_success_title" = "パスワードロックが有効になりました";
+"password_set_success_message" = "あなたの財務データはパスワードで保護されています";
+"lock_enter_password" = "パスワードを入力してロック解除";
+"settings_change_password" = "パスワードを変更";
+"password_enter_current" = "現在のパスワードを入力";
+"onboarding_step1_title" = "3秒で記帳";
+"onboarding_step1_desc" = "すべての収支をすばやく記録\nシンプル・直感的・簡単";
+"onboarding_step2_title" = "通貨を選択";
+"onboarding_step3_title" = "+ をタップして記帳開始";
+"onboarding_step3_desc" = "下部の + ボタンをいつでもタップして\n最初の記録を始めましょう";
+"onboarding_next" = "次へ";
+"onboarding_start" = "始める";
+"onboarding_skip" = "スキップ";
+"settings_data_section" = "データ";
+"settings_about_section" = "その他";
+"settings_replay_onboarding" = "ガイドを再表示";
+"settings_version" = "バージョン";
+
+/* Record */
+"record_title" = "記帳";
+"record_expense" = "支出";
+"record_income" = "収入";
+"record_save" = "保存";
+"record_add_note" = "メモを追加...";
+"record_note_placeholder" = "メモを追加";
+
+/* Detail */
+"detail_title" = "記録の詳細";
+"detail_note" = "メモ";
+"detail_date" = "日付";
+"detail_type" = "種類";
+"detail_category" = "カテゴリ";
+"detail_no_note" = "メモなし";
+
+/* Edit */
+"edit_amount_placeholder" = "金額を入力";
+"edit_select_category" = "カテゴリを選択";
+"edit_category_title" = "カテゴリを編集";
+"add_category_title" = "カテゴリを追加";
+"edit_category_name" = "名前";
+"edit_category_name_placeholder" = "カテゴリ名を入力";
+"edit_category_icon" = "アイコン";
+"edit_category_color" = "色";
+"category_custom_label" = "カスタム";
+"category_builtin_label" = "内蔵";
+
+/* Tags */
+"tag_selector_title" = "タグ";
+"tag_selector_done" = "完了";
+"tag_name_placeholder" = "タグ名を入力";
+"tag_create_button" = "作成";
+"tag_add_hint" = "タグを追加";
+"detail_tags" = "タグ";
+"tag_count %lld" = "%lld 件";
+"tag_total_expense" = "支出";
+"tag_total_income" = "収入";
+"tags_empty_title" = "まだタグがありません";
+"tags_empty_desc" = "タグで取引をグループ化して、統計や振り返りに活用しましょう";
+"tags_create_first" = "最初のタグを作成";
+"tags_create_title" = "新しいタグ";
+"tags_edit_title" = "タグを編集";
+"tags_save" = "保存";
+"tags_name_label" = "名前";
+"tags_color_label" = "色";
+"tags_preview" = "プレビュー";
+"tags_delete_title" = "タグを削除";
+"tags_delete_message %@" = "「%@」を削除しますか？関連する取引記録は削除されません";
+"tags_guide_title" = "タグで帳簿を整理";
+"tags_guide_subtitle" = "タグで様々な角度から支出を追跡";
+"tags_guide_what_title" = "タグ vs カテゴリ";
+"tags_guide_what_desc" = "カテゴリは固定（例：食費、交通費）で1件に1つ。タグは柔軟で、1件に複数付けられます";
+"tags_guide_example_title" = "使い方の例";
+"tags_guide_example_desc" = "旅行、経費精算、割り勘、プロジェクトA…自由に組み合わせ";
+"tags_guide_how_title" = "使い方";
+"tags_guide_how_desc" = "記帳時に右上のタグボタンをタップ。ここで事前に作成も可能です";
+"tag_tip_message" = "ここをタップしてタグを追加 🏷️";
+
+/* Reminders */
+"reminders_title" = "リマインダー";
+"reminders_empty_title" = "まだリマインダーがありません";
+"reminders_empty_desc" = "定期的なリマインダーを設定して、家賃やローンの支払いを忘れずに";
+"reminders_create_first" = "最初のリマインダーを作成";
+"reminders_new_title" = "新しいリマインダー";
+"reminders_edit_title" = "リマインダーを編集";
+"reminders_create" = "リマインダーを作成";
+"reminders_delete_title" = "リマインダーを削除";
+"reminders_delete_message %@" = "「%@」を削除しますか？";
+"reminders_field_title" = "リマインダー名";
+"reminders_title_placeholder" = "例：家賃、ローン";
+"reminders_field_amount" = "金額";
+"reminders_field_category" = "カテゴリ（任意）";
+"reminders_field_frequency" = "繰り返し";
+"reminders_field_time" = "通知時刻";
+"reminders_field_note" = "メモ（任意）";
+"reminders_freq_daily" = "毎日";
+"reminders_freq_weekly" = "毎週";
+"reminders_freq_monthly" = "毎月";
+"reminders_freq_weekly_day %@" = "毎週%@";
+"reminders_freq_monthly_day %lld" = "毎月%lld日";
+"reminders_example_rent" = "家賃";
+"reminders_example_mortgage" = "ローン";
+"reminders_example_phone" = "携帯料金";
+"reminder_action_record" = "記帳する";
+"reminder_notification_body %@" = "記帳の時間です：%@\n長押しで素早く記帳";
+
+/* Actions */
+"action_edit" = "編集";
+"action_cancel" = "キャンセル";
+"action_delete" = "削除";
+"action_delete_record" = "記録を削除";
+
+/* Delete Dialog */
+"delete_confirm_title" = "この記録を削除しますか？";
+"delete_confirm_message" = "削除後は元に戻せません";
+"delete_category_title" = "このカテゴリを削除しますか？";
+"delete_category_message" = "削除後、このカテゴリは記帳画面に表示されなくなりますが、既存の記録には影響しません";
+
+/* Categories - Expense */
+"category_food" = "食費";
+"category_shopping" = "買い物";
+"category_transport" = "交通費";
+"category_housing" = "住居費";
+"category_communication" = "通信費";
+"category_entertainment" = "娯楽";
+"category_clothing" = "衣類";
+"category_medical" = "医療費";
+"category_education" = "教育費";
+"category_travel" = "旅行";
+"category_children" = "育児";
+
+/* Categories - Income */
+"category_salary" = "給料";
+"category_freelance" = "フリーランス";
+"category_investment" = "投資";
+"category_gift" = "贈り物";
+"category_other_income" = "その他";
+
+/* Errors */
+"error_title" = "お知らせ";
+"error_ok" = "OK";
+"error_save_failed" = "保存に失敗しました。しばらくしてからお試しください";
+"error_load_failed" = "データの読み込みに失敗しました";
+"error_delete_failed" = "削除に失敗しました。しばらくしてからお試しください";
+"error_invalid_amount" = "有効な金額を入力してください";
+"error_checksum_mismatch" = "このファイルはFreeLedgerのバックアップファイルではないようです";
+"error_storage_insufficient" = "ストレージの空き容量が不足しています";
+
+/* Search */
+"search_title" = "検索";
+"search_placeholder" = "メモやカテゴリを検索...";
+"search_hint" = "キーワードを入力またはフィルターを選択";
+"search_no_results" = "一致する記録が見つかりません";
+"search_date_label" = "日付";
+"search_date_selected" = "日付選択済み";
+"search_date_today" = "今日";
+"search_date_this_week" = "今週";
+"search_date_this_month" = "今月";
+"search_date_clear" = "日付をクリア";
+"search_category_label" = "カテゴリ";
+"search_category_all" = "すべてのカテゴリ";
+"search_clear_all" = "フィルターをクリア";
+
+/* Accessibility */
+"a11y_add_transaction" = "記帳する";
+"a11y_close" = "閉じる";
+"a11y_expense_tab" = "支出";
+"a11y_income_tab" = "収入";
+"a11y_add_note" = "メモを追加";
+"a11y_note_input" = "メモ入力";
+"a11y_save_transaction" = "取引を保存";
+"a11y_edit_amount" = "金額を編集";
+"a11y_delete_record" = "記録を削除";
+"a11y_decimal_point" = "小数点";
+"a11y_backspace" = "バックスペース";
+"a11y_tag_button" = "タグ";
+"a11y_digit_0" = "0";
+"a11y_digit_1" = "1";
+"a11y_digit_2" = "2";
+"a11y_digit_3" = "3";
+"a11y_digit_4" = "4";
+"a11y_digit_5" = "5";
+"a11y_digit_6" = "6";
+"a11y_digit_7" = "7";
+"a11y_digit_8" = "8";
+"a11y_digit_9" = "9";
+"a11y_category %@" = "%@カテゴリ、ボタン";
+"a11y_category_selected %@" = "選択中、%@カテゴリ";
+"a11y_summary %@ %@ %@" = "今月の支出%@、収入%@、残高%@";

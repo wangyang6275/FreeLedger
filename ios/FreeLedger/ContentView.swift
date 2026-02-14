@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var showRecord = false
     @State private var deepLinkRecord = false
     @State private var reminderPrefill: ReminderPrefill?
+    @State private var languageManager = LanguageManager.shared
     @State private var showBackupReminder = false
     @State private var backupReminderMessage = ""
     @State private var isLocked = false
@@ -118,6 +119,7 @@ struct ContentView: View {
             }
             .offset(y: -20)
         }
+        .id(languageManager.refreshId)
         .sheet(isPresented: $showRecord) {
             RecordView(
                 transactionRepository: transactionRepository,
