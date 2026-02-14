@@ -13,7 +13,7 @@ struct FloatingAddButton: View {
                 .clipShape(Circle())
                 .shadow(color: AppColors.primary.opacity(0.3), radius: 8, x: 0, y: 4)
         }
-        .accessibilityLabel(String(localized: "a11y_add_transaction"))
+        .accessibilityLabel(L("a11y_add_transaction"))
     }
 }
 

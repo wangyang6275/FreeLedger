@@ -67,9 +67,9 @@ final class TransactionDetailViewModel {
         let calendar = Calendar.current
         let dateStr: String
         if calendar.isDateInToday(date) {
-            dateStr = String(localized: "date_today")
+            dateStr = L("date_today")
         } else if calendar.isDateInYesterday(date) {
-            dateStr = String(localized: "date_yesterday")
+            dateStr = L("date_yesterday")
         } else {
             dateStr = Self.dateDisplayFormatter.string(from: date)
         }
@@ -79,7 +79,7 @@ final class TransactionDetailViewModel {
 
     var categoryName: String {
         guard let cat = category else { return "—" }
-        return String(localized: String.LocalizationValue(cat.nameKey))
+        return L(cat.nameKey)
     }
 
     var isExpense: Bool {
@@ -118,7 +118,7 @@ final class TransactionDetailViewModel {
     func saveEdit() {
         let cents = AmountFormatter.toCents(editAmountString)
         guard cents > 0 else {
-            errorMessage = String(localized: "error_invalid_amount")
+            errorMessage = L("error_invalid_amount")
             return
         }
 
@@ -148,7 +148,7 @@ final class TransactionDetailViewModel {
 
             isEditing = false
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -176,7 +176,7 @@ final class TransactionDetailViewModel {
             try transactionRepository.delete(id: transaction.id)
             didDelete = true
         } catch {
-            errorMessage = String(localized: "error_delete_failed")
+            errorMessage = L("error_delete_failed")
         }
     }
 }

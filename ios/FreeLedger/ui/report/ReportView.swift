@@ -35,13 +35,13 @@ struct ReportView: View {
                 .padding(.bottom, 100)
             }
             .background(AppColors.background)
-            .navigationTitle(String(localized: "tab_reports"))
+            .navigationTitle(L("tab_reports"))
             .onAppear { viewModel.loadData() }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { viewModel.errorMessage != nil },
                 set: { if !$0 { viewModel.errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(viewModel.errorMessage ?? "")
             }
@@ -58,7 +58,7 @@ struct ReportView: View {
                     .foregroundColor(AppColors.textPrimary)
                     .frame(width: 44, height: 44)
             }
-            .accessibilityLabel(String(localized: "a11y_previous_month"))
+            .accessibilityLabel(L("a11y_previous_month"))
 
             Spacer()
 
@@ -74,7 +74,7 @@ struct ReportView: View {
                     .foregroundColor(AppColors.textPrimary)
                     .frame(width: 44, height: 44)
             }
-            .accessibilityLabel(String(localized: "a11y_next_month"))
+            .accessibilityLabel(L("a11y_next_month"))
         }
     }
 
@@ -83,17 +83,17 @@ struct ReportView: View {
     private var summarySection: some View {
         HStack(spacing: 0) {
             summaryItem(
-                title: String(localized: "report_expense_label"),
+                title: L("report_expense_label"),
                 amount: viewModel.summary.totalExpense,
                 color: AppColors.expense
             )
             summaryItem(
-                title: String(localized: "report_income_label"),
+                title: L("report_income_label"),
                 amount: viewModel.summary.totalIncome,
                 color: AppColors.income
             )
             summaryItem(
-                title: String(localized: "report_balance_label"),
+                title: L("report_balance_label"),
                 amount: viewModel.summary.totalIncome - viewModel.summary.totalExpense,
                 color: AppColors.textPrimary
             )
@@ -156,7 +156,7 @@ struct ReportView: View {
                 .font(.system(size: 48))
                 .foregroundColor(AppColors.textTertiary)
 
-            Text(String(localized: "report_empty_state"))
+            Text(L("report_empty_state"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)

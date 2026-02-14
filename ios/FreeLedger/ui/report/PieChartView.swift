@@ -67,7 +67,7 @@ struct PieChartView: View {
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textTertiary)
             } else {
-                Text(String(localized: "report_total_expense"))
+                Text(L("report_total_expense"))
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textSecondary)
                 Text(AmountFormatter.format(totalExpense, currencyCode: currencyCode))

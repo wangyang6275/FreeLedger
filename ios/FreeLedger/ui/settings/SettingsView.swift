@@ -32,12 +32,12 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(String(localized: "settings_general")) {
+                Section(L("settings_general")) {
                     NavigationLink {
                         CurrencyPickerView(selectedCurrency: $selectedCurrency, settingsRepository: settingsRepository)
                     } label: {
                         HStack {
-                            Label(String(localized: "settings_currency"), systemImage: "dollarsign.circle")
+                            Label(L("settings_currency"), systemImage: "dollarsign.circle")
                             Spacer()
                             Text(selectedCurrency)
                                 .foregroundColor(AppColors.textSecondary)
@@ -48,7 +48,7 @@ struct SettingsView: View {
                         LanguagePickerView()
                     } label: {
                         HStack {
-                            Label(String(localized: "settings_language"), systemImage: "globe")
+                            Label(L("settings_language"), systemImage: "globe")
                             Spacer()
                             Text(LanguageManager.shared.currentLanguageDisplay)
                                 .foregroundColor(AppColors.textSecondary)
@@ -56,8 +56,8 @@ struct SettingsView: View {
                     }
                 }
 
-                Section(String(localized: "settings_password_section")) {
-                    Toggle(String(localized: "settings_password_lock"), isOn: Binding(
+                Section(L("settings_password_section")) {
+                    Toggle(L("settings_password_lock"), isOn: Binding(
                         get: { isPasswordEnabled },
                         set: { newValue in
                             if newValue {
@@ -72,22 +72,22 @@ struct SettingsView: View {
                         Button {
                             showChangePasswordVerify = true
                         } label: {
-                            Label(String(localized: "settings_change_password"), systemImage: "key.horizontal")
+                            Label(L("settings_change_password"), systemImage: "key.horizontal")
                         }
                     }
                 }
 
-                Section(String(localized: "settings_data_section")) {
+                Section(L("settings_data_section")) {
                     NavigationLink {
                         CategoryManagementView(categoryRepository: categoryRepository)
                     } label: {
-                        Label(String(localized: "settings_category_management"), systemImage: "square.grid.2x2")
+                        Label(L("settings_category_management"), systemImage: "square.grid.2x2")
                     }
 
                     Button {
                         exportBackup()
                     } label: {
-                        Label(String(localized: "settings_export_backup"), systemImage: "square.and.arrow.up")
+                        Label(L("settings_export_backup"), systemImage: "square.and.arrow.up")
                     }
 
                     Button {
@@ -95,33 +95,33 @@ struct SettingsView: View {
                             showImportWarning = true
                         }
                     } label: {
-                        Label(String(localized: "settings_import_restore"), systemImage: "square.and.arrow.down")
+                        Label(L("settings_import_restore"), systemImage: "square.and.arrow.down")
                     }
 
                     Button {
                         showCSVExport = true
                     } label: {
-                        Label(String(localized: "settings_export_csv"), systemImage: "doc.text")
+                        Label(L("settings_export_csv"), systemImage: "doc.text")
                     }
                 }
 
-                Section(String(localized: "settings_about_section")) {
+                Section(L("settings_about_section")) {
                     Button {
                         onShowOnboarding?()
                     } label: {
-                        Label(String(localized: "settings_replay_onboarding"), systemImage: "arrow.counterclockwise")
+                        Label(L("settings_replay_onboarding"), systemImage: "arrow.counterclockwise")
                             .foregroundColor(AppColors.textPrimary)
                     }
 
                     HStack {
-                        Label(String(localized: "settings_version"), systemImage: "info.circle")
+                        Label(L("settings_version"), systemImage: "info.circle")
                         Spacer()
                         Text(appVersion)
                             .foregroundColor(AppColors.textSecondary)
                     }
                 }
             }
-            .navigationTitle(String(localized: "tab_settings"))
+            .navigationTitle(L("tab_settings"))
             .fileExporter(
                 isPresented: $showExporter,
                 document: backupDocument,
@@ -135,15 +135,15 @@ struct SettingsView: View {
                         showBackupSuccess = true
                     }
                 case .failure:
-                    errorMessage = String(localized: "error_save_failed")
+                    errorMessage = L("error_save_failed")
                 }
                 backupDocument = nil
             }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { errorMessage != nil },
                 set: { if !$0 { errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(errorMessage ?? "")
             }
@@ -168,7 +168,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showVerifyToDisable) {
                 VerifyPasswordView(
                     passwordService: passwordService,
-                    title: String(localized: "password_enter_to_disable")
+                    title: L("password_enter_to_disable")
                 ) {
                     _ = passwordService.removePassword()
                     isPasswordEnabled = false
@@ -183,7 +183,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showChangePasswordVerify) {
                 VerifyPasswordView(
                     passwordService: passwordService,
-                    title: String(localized: "password_enter_current")
+                    title: L("password_enter_current")
                 ) {
                     showChangePasswordSet = true
                 }
@@ -199,10 +199,10 @@ struct SettingsView: View {
         .overlay {
             if showBackupSuccess {
                 FriendlyDialog(
-                    title: String(localized: "backup_success_title"),
-                    message: String(localized: "backup_success_message \(backupRecordCount)"),
+                    title: L("backup_success_title"),
+                    message: L("backup_success_message %lld", backupRecordCount),
                     style: .info,
-                    confirmTitle: String(localized: "error_ok"),
+                    confirmTitle: L("error_ok"),
                     cancelTitle: nil,
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
@@ -218,11 +218,11 @@ struct SettingsView: View {
             }
             if showImportWarning {
                 FriendlyDialog(
-                    title: String(localized: "restore_warning_title"),
-                    message: String(localized: "restore_warning_message"),
+                    title: L("restore_warning_title"),
+                    message: L("restore_warning_message"),
                     style: .destructive,
-                    confirmTitle: String(localized: "restore_warning_confirm"),
-                    cancelTitle: String(localized: "action_cancel"),
+                    confirmTitle: L("restore_warning_confirm"),
+                    cancelTitle: L("action_cancel"),
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             showImportWarning = false
@@ -238,10 +238,10 @@ struct SettingsView: View {
             }
             if showPasswordSetSuccess {
                 FriendlyDialog(
-                    title: String(localized: "password_set_success_title"),
-                    message: String(localized: "password_set_success_message"),
+                    title: L("password_set_success_title"),
+                    message: L("password_set_success_message"),
                     style: .info,
-                    confirmTitle: String(localized: "error_ok"),
+                    confirmTitle: L("error_ok"),
                     cancelTitle: nil,
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
@@ -257,10 +257,10 @@ struct SettingsView: View {
             }
             if showRestoreSuccess {
                 FriendlyDialog(
-                    title: String(localized: "restore_success_title"),
-                    message: String(localized: "restore_success_message \(restoreRecordCount)"),
+                    title: L("restore_success_title"),
+                    message: L("restore_success_message %lld", restoreRecordCount),
                     style: .info,
-                    confirmTitle: String(localized: "error_ok"),
+                    confirmTitle: L("error_ok"),
                     cancelTitle: nil,
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
@@ -298,7 +298,7 @@ struct SettingsView: View {
             backupDocument = BackupDocument(data: data)
             showExporter = true
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -307,7 +307,7 @@ struct SettingsView: View {
         case .success(let urls):
             guard let url = urls.first else { return }
             guard url.startAccessingSecurityScopedResource() else {
-                errorMessage = String(localized: "error_load_failed")
+                errorMessage = L("error_load_failed")
                 return
             }
             defer { url.stopAccessingSecurityScopedResource() }
@@ -319,14 +319,14 @@ struct SettingsView: View {
                     showRestoreSuccess = true
                 }
             } catch BackupError.checksumMismatch {
-                errorMessage = String(localized: "error_checksum_mismatch")
+                errorMessage = L("error_checksum_mismatch")
             } catch BackupError.invalidFile {
-                errorMessage = String(localized: "error_checksum_mismatch")
+                errorMessage = L("error_checksum_mismatch")
             } catch {
-                errorMessage = String(localized: "error_load_failed")
+                errorMessage = L("error_load_failed")
             }
         case .failure:
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 }

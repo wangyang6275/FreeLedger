@@ -66,7 +66,7 @@ final class ReportViewModel {
                 year: currentYear, month: currentMonth
             )
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 

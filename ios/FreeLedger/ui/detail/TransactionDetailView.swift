@@ -42,11 +42,11 @@ struct TransactionDetailView: View {
 
             if viewModel.showDeleteDialog {
                 FriendlyDialog(
-                    title: String(localized: "delete_confirm_title"),
-                    message: String(localized: "delete_confirm_message"),
+                    title: L("delete_confirm_title"),
+                    message: L("delete_confirm_message"),
                     style: .destructive,
-                    confirmTitle: String(localized: "action_delete"),
-                    cancelTitle: String(localized: "action_cancel"),
+                    confirmTitle: L("action_delete"),
+                    cancelTitle: L("action_cancel"),
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             viewModel.showDeleteDialog = false
@@ -61,25 +61,25 @@ struct TransactionDetailView: View {
                 )
             }
         }
-        .navigationTitle(String(localized: "detail_title"))
+        .navigationTitle(L("detail_title"))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(viewModel.isEditing)
         .toolbar {
             if viewModel.isEditing {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         viewModel.cancelEditing()
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "record_save")) {
+                    Button(L("record_save")) {
                         viewModel.saveEdit()
                     }
                     .fontWeight(.semibold)
                 }
             } else {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "action_edit")) {
+                    Button(L("action_edit")) {
                         viewModel.startEditing()
                     }
                 }
@@ -91,11 +91,11 @@ struct TransactionDetailView: View {
         .onChange(of: viewModel.didDelete) { _, deleted in
             if deleted { dismiss() }
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -154,7 +154,7 @@ struct TransactionDetailView: View {
                 Button(action: {
                     if !viewModel.editIsExpense { viewModel.toggleEditType() }
                 }) {
-                    Text(String(localized: "record_expense"))
+                    Text(L("record_expense"))
                         .font(AppTypography.bodyLarge)
                         .foregroundColor(viewModel.editIsExpense ? AppColors.primary : AppColors.textTertiary)
                         .fontWeight(viewModel.editIsExpense ? .semibold : .regular)
@@ -162,19 +162,19 @@ struct TransactionDetailView: View {
                 Button(action: {
                     if viewModel.editIsExpense { viewModel.toggleEditType() }
                 }) {
-                    Text(String(localized: "record_income"))
+                    Text(L("record_income"))
                         .font(AppTypography.bodyLarge)
                         .foregroundColor(!viewModel.editIsExpense ? AppColors.secondary : AppColors.textTertiary)
                         .fontWeight(!viewModel.editIsExpense ? .semibold : .regular)
                 }
             }
 
-            TextField(String(localized: "edit_amount_placeholder"), text: $viewModel.editAmountString)
+            TextField(L("edit_amount_placeholder"), text: $viewModel.editAmountString)
                 .font(AppTypography.display)
                 .foregroundColor(AppColors.textPrimary)
                 .multilineTextAlignment(.center)
                 .keyboardType(.decimalPad)
-                .accessibilityLabel(String(localized: "a11y_edit_amount"))
+                .accessibilityLabel(L("a11y_edit_amount"))
         }
     }
 
@@ -195,20 +195,20 @@ struct TransactionDetailView: View {
     private var viewInfoRows: some View {
         VStack(spacing: 0) {
             infoRow(
-                label: String(localized: "detail_note"),
-                value: viewModel.transaction.note ?? String(localized: "detail_no_note")
+                label: L("detail_note"),
+                value: viewModel.transaction.note ?? L("detail_no_note")
             )
             Divider().padding(.leading, AppSpacing.lg)
             infoRow(
-                label: String(localized: "detail_date"),
+                label: L("detail_date"),
                 value: viewModel.formattedDate
             )
             Divider().padding(.leading, AppSpacing.lg)
             infoRow(
-                label: String(localized: "detail_type"),
+                label: L("detail_type"),
                 value: viewModel.isExpense
-                    ? String(localized: "record_expense")
-                    : String(localized: "record_income")
+                    ? L("record_expense")
+                    : L("record_income")
             )
         }
     }
@@ -218,7 +218,7 @@ struct TransactionDetailView: View {
             // Category (tappable)
             Button(action: { showCategorySheet = true }) {
                 HStack {
-                    Text(String(localized: "detail_category"))
+                    Text(L("detail_category"))
                         .font(AppTypography.body)
                         .foregroundColor(AppColors.textSecondary)
                     Spacer()
@@ -237,11 +237,11 @@ struct TransactionDetailView: View {
 
             // Note (editable)
             HStack {
-                Text(String(localized: "detail_note"))
+                Text(L("detail_note"))
                     .font(AppTypography.body)
                     .foregroundColor(AppColors.textSecondary)
                 Spacer()
-                TextField(String(localized: "record_note_placeholder"), text: $viewModel.editNote)
+                TextField(L("record_note_placeholder"), text: $viewModel.editNote)
                     .font(AppTypography.body)
                     .foregroundColor(AppColors.textPrimary)
                     .multilineTextAlignment(.trailing)
@@ -252,7 +252,7 @@ struct TransactionDetailView: View {
             Divider().padding(.leading, AppSpacing.lg)
 
             infoRow(
-                label: String(localized: "detail_date"),
+                label: L("detail_date"),
                 value: viewModel.formattedDate
             )
         }
@@ -262,7 +262,7 @@ struct TransactionDetailView: View {
         guard let cat = viewModel.allCategories.first(where: { $0.id == viewModel.editCategoryId }) else {
             return viewModel.categoryName
         }
-        return String(localized: String.LocalizationValue(cat.nameKey))
+        return L(cat.nameKey)
     }
 
     private func infoRow(label: String, value: String) -> some View {
@@ -293,7 +293,7 @@ struct TransactionDetailView: View {
 
     private var viewTagSection: some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text(String(localized: "detail_tags"))
+            Text(L("detail_tags"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.textSecondary)
 
@@ -319,12 +319,12 @@ struct TransactionDetailView: View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
             Button(action: { showTagSheet = true }) {
                 HStack {
-                    Text(String(localized: "detail_tags"))
+                    Text(L("detail_tags"))
                         .font(AppTypography.body)
                         .foregroundColor(AppColors.textSecondary)
                     Spacer()
                     if viewModel.editTagIds.isEmpty {
-                        Text(String(localized: "tag_add_hint"))
+                        Text(L("tag_add_hint"))
                             .font(AppTypography.body)
                             .foregroundColor(AppColors.textTertiary)
                     } else {
@@ -352,12 +352,12 @@ struct TransactionDetailView: View {
                 viewModel.showDeleteDialog = true
             }
         }) {
-            Text(String(localized: "action_delete_record"))
+            Text(L("action_delete_record"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.expense)
         }
         .padding(.top, AppSpacing.xl)
-        .accessibilityLabel(String(localized: "a11y_delete_record"))
+        .accessibilityLabel(L("a11y_delete_record"))
     }
 
     // MARK: - Category Picker Sheet
@@ -372,11 +372,11 @@ struct TransactionDetailView: View {
                 showCategorySheet = false
             }
             .padding(.top, AppSpacing.lg)
-            .navigationTitle(String(localized: "edit_select_category"))
+            .navigationTitle(L("edit_select_category"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         showCategorySheet = false
                     }
                 }

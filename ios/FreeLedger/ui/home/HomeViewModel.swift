@@ -39,7 +39,7 @@ final class HomeViewModel {
             isEmpty = transactions.isEmpty
             syncWidgetData(transactions: transactions)
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
             isEmpty = true
         }
     }
@@ -48,7 +48,7 @@ final class HomeViewModel {
         let recent = Array(transactions.prefix(5)).map { tx in
             let cat = categoryDict[tx.categoryId]
             return WidgetTransactionItem(
-                categoryName: cat.map { String(localized: String.LocalizationValue($0.nameKey)) } ?? "—",
+                categoryName: cat.map { L($0.nameKey) } ?? "—",
                 categoryIcon: cat?.iconName ?? "questionmark",
                 categoryColor: cat?.colorHex ?? "#E0E0E0",
                 amount: tx.amount,

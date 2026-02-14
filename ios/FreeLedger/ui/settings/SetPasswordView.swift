@@ -38,11 +38,11 @@ struct SetPasswordView: View {
             }
             .padding(.horizontal, AppSpacing.lg)
             .padding(.bottom, AppSpacing.xl)
-            .navigationTitle(String(localized: "password_set_title"))
+            .navigationTitle(L("password_set_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         dismiss()
                     }
                 }
@@ -54,8 +54,8 @@ struct SetPasswordView: View {
 
     private var titleSection: some View {
         Text(step == .enter
-             ? String(localized: "password_enter_prompt")
-             : String(localized: "password_confirm_prompt"))
+             ? L("password_enter_prompt")
+             : L("password_confirm_prompt"))
             .font(AppTypography.title2)
             .foregroundColor(AppColors.textPrimary)
     }
@@ -144,10 +144,10 @@ struct SetPasswordView: View {
                     onSuccess()
                     dismiss()
                 } else {
-                    showError(String(localized: "error_save_failed"))
+                    showError(L("error_save_failed"))
                 }
             } else {
-                showError(String(localized: "password_mismatch"))
+                showError(L("password_mismatch"))
                 currentInput = ""
                 withAnimation {
                     step = .enter

@@ -13,9 +13,9 @@ enum AppError: Error, LocalizedError {
         case .databaseError(let msg): return msg
         case .backupExportFailed(let msg): return msg
         case .backupImportFailed(let msg): return msg
-        case .backupChecksumMismatch: return String(localized: "error_checksum_mismatch")
+        case .backupChecksumMismatch: return L("error_checksum_mismatch")
         case .invalidInput(let msg): return msg
-        case .storageInsufficient: return String(localized: "error_storage_insufficient")
+        case .storageInsufficient: return L("error_storage_insufficient")
         }
     }
 }

@@ -45,12 +45,12 @@ struct CategoryEditView: View {
         }
         .background(AppColors.background)
         .navigationTitle(isEditing
-            ? String(localized: "edit_category_title")
-            : String(localized: "add_category_title"))
+            ? L("edit_category_title")
+            : L("add_category_title"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(String(localized: "record_save")) {
+                Button(L("record_save")) {
                     save()
                 }
                 .fontWeight(.semibold)
@@ -64,11 +64,11 @@ struct CategoryEditView: View {
                 selectedColorHex = cat.colorHex
             }
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { errorMessage != nil },
             set: { if !$0 { errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(errorMessage ?? "")
         }
@@ -99,11 +99,11 @@ struct CategoryEditView: View {
 
     private var nameSection: some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text(String(localized: "edit_category_name"))
+            Text(L("edit_category_name"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.textSecondary)
 
-            TextField(String(localized: "edit_category_name_placeholder"), text: $name)
+            TextField(L("edit_category_name_placeholder"), text: $name)
                 .font(AppTypography.body)
                 .padding(AppSpacing.md)
                 .background(AppColors.surface)
@@ -115,7 +115,7 @@ struct CategoryEditView: View {
 
     private var iconSection: some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text(String(localized: "edit_category_icon"))
+            Text(L("edit_category_icon"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.textSecondary)
 
@@ -146,7 +146,7 @@ struct CategoryEditView: View {
 
     private var colorSection: some View {
         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-            Text(String(localized: "edit_category_color"))
+            Text(L("edit_category_color"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.textSecondary)
 
@@ -205,7 +205,7 @@ struct CategoryEditView: View {
             onSave()
             dismiss()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 }

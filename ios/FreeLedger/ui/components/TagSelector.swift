@@ -30,22 +30,22 @@ struct TagSelector: View {
             .padding(.horizontal, AppSpacing.lg)
             .padding(.top, AppSpacing.md)
             .background(AppColors.background)
-            .navigationTitle(String(localized: "tag_selector_title"))
+            .navigationTitle(L("tag_selector_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "tag_selector_done")) {
+                    Button(L("tag_selector_done")) {
                         onDismiss()
                     }
                     .fontWeight(.semibold)
                 }
             }
             .onAppear { loadTags() }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { errorMessage != nil },
                 set: { if !$0 { errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(errorMessage ?? "")
             }
@@ -107,7 +107,7 @@ struct TagSelector: View {
 
     private var createFormSection: some View {
         VStack(alignment: .leading, spacing: AppSpacing.md) {
-            TextField(String(localized: "tag_name_placeholder"), text: $newTagName)
+            TextField(L("tag_name_placeholder"), text: $newTagName)
                 .font(AppTypography.body)
                 .padding(AppSpacing.md)
                 .background(AppColors.surface)
@@ -131,7 +131,7 @@ struct TagSelector: View {
             }
 
             Button(action: createTag) {
-                Text(String(localized: "tag_create_button"))
+                Text(L("tag_create_button"))
                     .font(AppTypography.body)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -157,7 +157,7 @@ struct TagSelector: View {
         do {
             allTags = try tagRepository.getAll()
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 
@@ -175,7 +175,7 @@ struct TagSelector: View {
             }
             loadTags()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 }

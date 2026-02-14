@@ -29,7 +29,7 @@ struct RemindersView: View {
             }
         }
         .background(AppColors.background)
-        .navigationTitle(String(localized: "reminders_title"))
+        .navigationTitle(L("reminders_title"))
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -44,11 +44,11 @@ struct RemindersView: View {
             viewModel.loadData()
             NotificationService.requestPermission { _ in }
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -78,11 +78,11 @@ struct RemindersView: View {
         .overlay {
             if showDeleteConfirm, let reminder = deletingReminder {
                 FriendlyDialog(
-                    title: String(localized: "reminders_delete_title"),
-                    message: String(localized: "reminders_delete_message \(reminder.title)"),
+                    title: L("reminders_delete_title"),
+                    message: L("reminders_delete_message %@", reminder.title),
                     style: .destructive,
-                    confirmTitle: String(localized: "action_delete"),
-                    cancelTitle: String(localized: "action_cancel"),
+                    confirmTitle: L("action_delete"),
+                    cancelTitle: L("action_cancel"),
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             showDeleteConfirm = false
@@ -113,11 +113,11 @@ struct RemindersView: View {
                     .foregroundStyle(AppColors.primary.gradient)
 
                 VStack(spacing: AppSpacing.sm) {
-                    Text(String(localized: "reminders_empty_title"))
+                    Text(L("reminders_empty_title"))
                         .font(AppTypography.title2)
                         .foregroundColor(AppColors.textPrimary)
 
-                    Text(String(localized: "reminders_empty_desc"))
+                    Text(L("reminders_empty_desc"))
                         .font(AppTypography.body)
                         .foregroundColor(AppColors.textSecondary)
                         .multilineTextAlignment(.center)
@@ -126,9 +126,9 @@ struct RemindersView: View {
 
                 // Example cards
                 VStack(spacing: AppSpacing.md) {
-                    exampleCard(icon: "house", title: String(localized: "reminders_example_rent"), freq: String(localized: "reminders_freq_monthly"))
-                    exampleCard(icon: "creditcard", title: String(localized: "reminders_example_mortgage"), freq: String(localized: "reminders_freq_monthly"))
-                    exampleCard(icon: "phone", title: String(localized: "reminders_example_phone"), freq: String(localized: "reminders_freq_monthly"))
+                    exampleCard(icon: "house", title: L("reminders_example_rent"), freq: L("reminders_freq_monthly"))
+                    exampleCard(icon: "creditcard", title: L("reminders_example_mortgage"), freq: L("reminders_freq_monthly"))
+                    exampleCard(icon: "phone", title: L("reminders_example_phone"), freq: L("reminders_freq_monthly"))
                 }
                 .padding(.horizontal, AppSpacing.lg)
 
@@ -138,7 +138,7 @@ struct RemindersView: View {
                     HStack(spacing: AppSpacing.sm) {
                         Image(systemName: "plus")
                             .font(.system(size: 14, weight: .bold))
-                        Text(String(localized: "reminders_create_first"))
+                        Text(L("reminders_create_first"))
                             .font(AppTypography.bodyLarge)
                             .fontWeight(.semibold)
                     }
@@ -191,13 +191,13 @@ struct RemindersView: View {
                                 showDeleteConfirm = true
                             }
                         } label: {
-                            Label(String(localized: "action_delete"), systemImage: "trash")
+                            Label(L("action_delete"), systemImage: "trash")
                         }
 
                         Button {
                             editingReminder = reminder
                         } label: {
-                            Label(String(localized: "action_edit"), systemImage: "pencil")
+                            Label(L("action_edit"), systemImage: "pencil")
                         }
                         .tint(.orange)
                     }
@@ -267,13 +267,13 @@ struct RemindersView: View {
     private func frequencyText(_ reminder: Reminder) -> String {
         switch reminder.frequencyEnum {
         case .daily:
-            return String(localized: "reminders_freq_daily")
+            return L("reminders_freq_daily")
         case .weekly:
             let weekday = reminder.triggerDay ?? 1
-            return String(localized: "reminders_freq_weekly_day \(weekdayName(weekday))")
+            return L("reminders_freq_weekly_day %@", weekdayName(weekday))
         case .monthly:
             let day = reminder.triggerDay ?? 1
-            return String(localized: "reminders_freq_monthly_day \(day)")
+            return L("reminders_freq_monthly_day %lld", Int64(day))
         }
     }
 
@@ -335,8 +335,8 @@ struct ReminderEditSheet: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: AppSpacing.xl) {
                     // Title
-                    fieldSection(label: String(localized: "reminders_field_title")) {
-                        TextField(String(localized: "reminders_title_placeholder"), text: $title)
+                    fieldSection(label: L("reminders_field_title")) {
+                        TextField(L("reminders_title_placeholder"), text: $title)
                             .font(AppTypography.body)
                             .padding(AppSpacing.md)
                             .background(AppColors.surface)
@@ -344,7 +344,7 @@ struct ReminderEditSheet: View {
                     }
 
                     // Type toggle + Amount
-                    fieldSection(label: String(localized: "reminders_field_amount")) {
+                    fieldSection(label: L("reminders_field_amount")) {
                         VStack(spacing: AppSpacing.md) {
                             typeToggle
 
@@ -364,17 +364,17 @@ struct ReminderEditSheet: View {
                     }
 
                     // Category
-                    fieldSection(label: String(localized: "reminders_field_category")) {
+                    fieldSection(label: L("reminders_field_category")) {
                         categoryPicker
                     }
 
                     // Frequency
-                    fieldSection(label: String(localized: "reminders_field_frequency")) {
+                    fieldSection(label: L("reminders_field_frequency")) {
                         VStack(spacing: AppSpacing.md) {
                             Picker("", selection: $frequency) {
-                                Text(String(localized: "reminders_freq_daily")).tag(ReminderFrequency.daily)
-                                Text(String(localized: "reminders_freq_weekly")).tag(ReminderFrequency.weekly)
-                                Text(String(localized: "reminders_freq_monthly")).tag(ReminderFrequency.monthly)
+                                Text(L("reminders_freq_daily")).tag(ReminderFrequency.daily)
+                                Text(L("reminders_freq_weekly")).tag(ReminderFrequency.weekly)
+                                Text(L("reminders_freq_monthly")).tag(ReminderFrequency.monthly)
                             }
                             .pickerStyle(.segmented)
 
@@ -388,7 +388,7 @@ struct ReminderEditSheet: View {
                     }
 
                     // Time
-                    fieldSection(label: String(localized: "reminders_field_time")) {
+                    fieldSection(label: L("reminders_field_time")) {
                         DatePicker("", selection: Binding(
                             get: {
                                 Calendar.current.date(from: DateComponents(hour: triggerHour, minute: triggerMinute)) ?? Date()
@@ -405,8 +405,8 @@ struct ReminderEditSheet: View {
                     }
 
                     // Note
-                    fieldSection(label: String(localized: "reminders_field_note")) {
-                        TextField(String(localized: "record_note_placeholder"), text: $note)
+                    fieldSection(label: L("reminders_field_note")) {
+                        TextField(L("record_note_placeholder"), text: $note)
                             .font(AppTypography.body)
                             .padding(AppSpacing.md)
                             .background(AppColors.surface)
@@ -417,7 +417,7 @@ struct ReminderEditSheet: View {
                     Button {
                         save()
                     } label: {
-                        Text(isEditing ? String(localized: "tags_save") : String(localized: "reminders_create"))
+                        Text(isEditing ? L("tags_save") : L("reminders_create"))
                             .font(AppTypography.bodyLarge)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
@@ -438,11 +438,11 @@ struct ReminderEditSheet: View {
             }
             .scrollIndicators(.hidden)
             .background(AppColors.background)
-            .navigationTitle(isEditing ? String(localized: "reminders_edit_title") : String(localized: "reminders_new_title"))
+            .navigationTitle(isEditing ? L("reminders_edit_title") : L("reminders_new_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(String(localized: "action_cancel")) { dismiss() }
+                    Button(L("action_cancel")) { dismiss() }
                 }
             }
             .onAppear { loadReminder() }
@@ -468,7 +468,7 @@ struct ReminderEditSheet: View {
                     selectedCategoryId = nil
                 }
             } label: {
-                Text(String(localized: "record_expense"))
+                Text(L("record_expense"))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(isExpense ? .white : AppColors.textSecondary)
                     .padding(.horizontal, 16)
@@ -482,7 +482,7 @@ struct ReminderEditSheet: View {
                     selectedCategoryId = nil
                 }
             } label: {
-                Text(String(localized: "record_income"))
+                Text(L("record_income"))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(!isExpense ? .white : AppColors.textSecondary)
                     .padding(.horizontal, 16)
@@ -516,7 +516,7 @@ struct ReminderEditSheet: View {
                                 .frame(width: 44, height: 44)
                         )
 
-                        Text(String(localized: String.LocalizationValue(cat.nameKey)))
+                        Text(L(cat.nameKey))
                             .font(AppTypography.small)
                             .foregroundColor(isSelected ? Color(hex: cat.colorHex) : AppColors.textSecondary)
                             .lineLimit(1)

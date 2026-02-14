@@ -46,9 +46,9 @@ final class TagDetailViewModel {
             guard let date = AppDateFormatter.parseISO(tx.createdAt) else { return "" }
             let calendar = Calendar.current
             if calendar.isDateInToday(date) {
-                return String(localized: "date_today")
+                return L("date_today")
             } else if calendar.isDateInYesterday(date) {
-                return String(localized: "date_yesterday")
+                return L("date_yesterday")
             } else {
                 return Self.dateDisplayFormatter.string(from: date)
             }
@@ -70,7 +70,7 @@ final class TagDetailViewModel {
             transactions = try tagRepository.getTransactionsForTag(tagId: tag.id)
             categoryDict = try categoryRepository.getAllAsDict()
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 }

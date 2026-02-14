@@ -1,20 +1,10 @@
 import Foundation
 import Observation
 
-nonisolated(unsafe) private var bundleKey: UInt8 = 0
-
-final class LanguageBundle: Bundle, @unchecked Sendable {
-    override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
-        if let bundle = objc_getAssociatedObject(self, &bundleKey) as? Bundle {
-            return bundle.localizedString(forKey: key, value: value, table: tableName)
-        }
-        return super.localizedString(forKey: key, value: value, table: tableName)
-    }
-}
-
 @MainActor @Observable
 final class LanguageManager {
     static let shared = LanguageManager()
+    nonisolated(unsafe) static var bundle: Bundle = .main
 
     struct Language: Identifiable, Hashable, Sendable {
         let code: String
@@ -35,7 +25,7 @@ final class LanguageManager {
 
     var currentLanguage: String {
         didSet {
-            applyLanguage(currentLanguage)
+            Self.bundle = Self.loadBundle(currentLanguage)
             UserDefaults.standard.set(currentLanguage, forKey: Self.languageKey)
             refreshId += 1
         }
@@ -45,22 +35,29 @@ final class LanguageManager {
 
     private init() {
         let saved = UserDefaults.standard.string(forKey: Self.languageKey)
-        self.currentLanguage = saved ?? "zh-Hans"
-        applyLanguage(currentLanguage)
+        let code = saved ?? "zh-Hans"
+        self.currentLanguage = code
+        Self.bundle = Self.loadBundle(code)
     }
 
-    private func applyLanguage(_ code: String) {
-        object_setClass(Bundle.main, LanguageBundle.self)
-
+    private static func loadBundle(_ code: String) -> Bundle {
         if let path = Bundle.main.path(forResource: code, ofType: "lproj"),
            let bundle = Bundle(path: path) {
-            objc_setAssociatedObject(Bundle.main, &bundleKey, bundle, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        } else {
-            objc_setAssociatedObject(Bundle.main, &bundleKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return bundle
         }
+        return .main
     }
 
     var currentLanguageDisplay: String {
         Self.supportedLanguages.first { $0.code == currentLanguage }?.localName ?? currentLanguage
     }
+}
+
+func L(_ key: String) -> String {
+    NSLocalizedString(key, bundle: LanguageManager.bundle, comment: "")
+}
+
+func L(_ key: String, _ args: CVarArg...) -> String {
+    let format = NSLocalizedString(key, bundle: LanguageManager.bundle, comment: "")
+    return String(format: format, arguments: args)
 }

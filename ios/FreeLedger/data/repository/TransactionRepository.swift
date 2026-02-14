@@ -143,7 +143,7 @@ final class TransactionRepository: TransactionRepositoryProtocol {
                 if c.isCustom {
                     name = c.nameKey
                 } else {
-                    name = String(localized: String.LocalizationValue(c.nameKey))
+                    name = L(c.nameKey)
                 }
             } else {
                 name = "—"

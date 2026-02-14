@@ -51,7 +51,7 @@ struct CategoryGridItem: View {
                 }
                 .scaleEffect(isSelected ? 1.1 : 1.0)
 
-                Text(String(localized: String.LocalizationValue(category.nameKey)))
+                Text(L(category.nameKey))
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textSecondary)
                     .lineLimit(1)
@@ -59,8 +59,8 @@ struct CategoryGridItem: View {
         }
         .accessibilityLabel(
             isSelected
-                ? String(localized: "a11y_category_selected \(String(localized: String.LocalizationValue(category.nameKey)))")
-                : String(localized: "a11y_category \(String(localized: String.LocalizationValue(category.nameKey)))")
+                ? L("a11y_category_selected %@", L(category.nameKey))
+                : L("a11y_category %@", L(category.nameKey))
         )
     }
 }

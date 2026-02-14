@@ -16,7 +16,7 @@ struct CategoryManagementView: View {
             mainContent
             deleteDialogOverlay
         }
-        .navigationTitle(String(localized: "settings_category_management"))
+        .navigationTitle(L("settings_category_management"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { addButton }
         .navigationDestination(for: Category.self) { category in
@@ -38,11 +38,11 @@ struct CategoryManagementView: View {
         .onAppear {
             viewModel.loadData()
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -60,8 +60,8 @@ struct CategoryManagementView: View {
 
     private var tabPicker: some View {
         Picker("", selection: $viewModel.isExpenseTab) {
-            Text(String(localized: "record_expense")).tag(true)
-            Text(String(localized: "record_income")).tag(false)
+            Text(L("record_expense")).tag(true)
+            Text(L("record_income")).tag(false)
         }
         .pickerStyle(.segmented)
         .padding(.horizontal, AppSpacing.lg)
@@ -99,7 +99,7 @@ struct CategoryManagementView: View {
                         viewModel.showDeleteDialog = true
                     }
                 } label: {
-                    Label(String(localized: "action_delete"), systemImage: "trash")
+                    Label(L("action_delete"), systemImage: "trash")
                 }
             }
         }
@@ -119,8 +119,8 @@ struct CategoryManagementView: View {
             Spacer()
 
             Text(category.isCustom
-                 ? String(localized: "category_custom_label")
-                 : String(localized: "category_builtin_label"))
+                 ? L("category_custom_label")
+                 : L("category_builtin_label"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.textTertiary)
         }
@@ -131,11 +131,11 @@ struct CategoryManagementView: View {
     private var deleteDialogOverlay: some View {
         if viewModel.showDeleteDialog {
             FriendlyDialog(
-                title: String(localized: "delete_category_title"),
-                message: String(localized: "delete_category_message"),
+                title: L("delete_category_title"),
+                message: L("delete_category_message"),
                 style: .destructive,
-                confirmTitle: String(localized: "action_delete"),
-                cancelTitle: String(localized: "action_cancel"),
+                confirmTitle: L("action_delete"),
+                cancelTitle: L("action_cancel"),
                 onConfirm: {
                     withAnimation(.easeInOut(duration: 0.2)) {
                         viewModel.showDeleteDialog = false

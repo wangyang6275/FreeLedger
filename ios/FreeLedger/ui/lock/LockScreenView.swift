@@ -23,7 +23,7 @@ struct LockScreenView: View {
                     .font(AppTypography.title1)
                     .foregroundColor(AppColors.textPrimary)
 
-                Text(String(localized: "lock_enter_password"))
+                Text(L("lock_enter_password"))
                     .font(AppTypography.body)
                     .foregroundColor(AppColors.textSecondary)
 
@@ -111,7 +111,7 @@ struct LockScreenView: View {
                     }
                 } else {
                     withAnimation(.default) {
-                        errorMessage = String(localized: "password_wrong")
+                        errorMessage = L("password_wrong")
                     }
                     withAnimation(.spring(response: 0.2, dampingFraction: 0.2)) {
                         shake = true

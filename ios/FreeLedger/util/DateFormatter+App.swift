@@ -33,9 +33,9 @@ enum AppDateFormatter {
     static func formatGroupTitle(_ date: Date) -> String {
         let calendar = Calendar.current
         if calendar.isDateInToday(date) {
-            return String(localized: "date_today")
+            return L("date_today")
         } else if calendar.isDateInYesterday(date) {
-            return String(localized: "date_yesterday")
+            return L("date_yesterday")
         } else {
             return monthDayFormatter.string(from: date)
         }

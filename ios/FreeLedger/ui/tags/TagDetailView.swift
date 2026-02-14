@@ -74,11 +74,11 @@ struct TagDetailView: View {
         .onAppear {
             viewModel.loadData()
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -87,7 +87,7 @@ struct TagDetailView: View {
     private var summaryCard: some View {
         HStack(spacing: AppSpacing.xl) {
             VStack(spacing: AppSpacing.xs) {
-                Text(String(localized: "tag_total_expense"))
+                Text(L("tag_total_expense"))
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textSecondary)
                 Text(AmountFormatter.format(viewModel.totalExpense, currencyCode: viewModel.currencyCode))
@@ -99,7 +99,7 @@ struct TagDetailView: View {
             Spacer()
 
             VStack(spacing: AppSpacing.xs) {
-                Text(String(localized: "tag_total_income"))
+                Text(L("tag_total_income"))
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textSecondary)
                 Text(AmountFormatter.format(viewModel.totalIncome, currencyCode: viewModel.currencyCode))

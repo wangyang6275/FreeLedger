@@ -62,7 +62,7 @@ final class SearchViewModel {
             )
             hasSearched = true
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 
@@ -80,6 +80,6 @@ final class SearchViewModel {
         if cat.isCustom {
             return cat.nameKey
         }
-        return String(localized: String.LocalizationValue(cat.nameKey))
+        return L(cat.nameKey)
     }
 }

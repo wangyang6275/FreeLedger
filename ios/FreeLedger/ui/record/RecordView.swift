@@ -70,11 +70,11 @@ struct RecordView: View {
                 dismiss()
             }
         }
-        .alert(String(localized: "error_title"), isPresented: Binding(
+        .alert(L("error_title"), isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
-            Button(String(localized: "error_ok"), role: .cancel) {}
+            Button(L("error_ok"), role: .cancel) {}
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -101,7 +101,7 @@ struct RecordView: View {
                         .symbolRenderingMode(.hierarchical)
                         .foregroundColor(AppColors.textTertiary)
                 }
-                .accessibilityLabel(String(localized: "a11y_close"))
+                .accessibilityLabel(L("a11y_close"))
 
                 Spacer()
 
@@ -122,9 +122,9 @@ struct RecordView: View {
                                 .fill(selectedTagIds.isEmpty ? AppColors.surface : AppColors.primaryLight)
                         )
                 }
-                .accessibilityLabel(String(localized: "a11y_tag_button"))
+                .accessibilityLabel(L("a11y_tag_button"))
                 .popover(isPresented: $showTagTip, arrowEdge: .top) {
-                    Text(String(localized: "tag_tip_message"))
+                    Text(L("tag_tip_message"))
                         .font(AppTypography.caption)
                         .foregroundColor(AppColors.textPrimary)
                         .padding(AppSpacing.md)
@@ -164,7 +164,7 @@ struct RecordView: View {
                     if !viewModel.isExpense { viewModel.toggleType(); selectedCategory = nil }
                 }
             } label: {
-                Text(String(localized: "record_expense"))
+                Text(L("record_expense"))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(viewModel.isExpense ? .white : AppColors.textSecondary)
                     .padding(.horizontal, 16)
@@ -174,14 +174,14 @@ struct RecordView: View {
                             .fill(viewModel.isExpense ? AppColors.expense : Color.clear)
                     )
             }
-            .accessibilityLabel(String(localized: "a11y_expense_tab"))
+            .accessibilityLabel(L("a11y_expense_tab"))
 
             Button {
                 withAnimation(.easeInOut(duration: 0.2)) {
                     if viewModel.isExpense { viewModel.toggleType(); selectedCategory = nil }
                 }
             } label: {
-                Text(String(localized: "record_income"))
+                Text(L("record_income"))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(!viewModel.isExpense ? .white : AppColors.textSecondary)
                     .padding(.horizontal, 16)
@@ -191,7 +191,7 @@ struct RecordView: View {
                             .fill(!viewModel.isExpense ? AppColors.income : Color.clear)
                     )
             }
-            .accessibilityLabel(String(localized: "a11y_income_tab"))
+            .accessibilityLabel(L("a11y_income_tab"))
         }
         .padding(3)
         .background(
@@ -207,10 +207,10 @@ struct RecordView: View {
                 .font(.system(size: 14))
                 .foregroundColor(AppColors.textTertiary)
 
-            TextField(String(localized: "record_note_placeholder"), text: $viewModel.note)
+            TextField(L("record_note_placeholder"), text: $viewModel.note)
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textPrimary)
-                .accessibilityLabel(String(localized: "a11y_note_input"))
+                .accessibilityLabel(L("a11y_note_input"))
         }
         .padding(.horizontal, AppSpacing.lg)
         .padding(.vertical, 10)
@@ -250,7 +250,7 @@ struct RecordView: View {
                 HStack(spacing: AppSpacing.sm) {
                     Image(systemName: "checkmark")
                         .font(.system(size: 16, weight: .bold))
-                    Text(String(localized: "record_save"))
+                    Text(L("record_save"))
                         .font(AppTypography.bodyLarge)
                         .fontWeight(.semibold)
                 }
@@ -269,7 +269,7 @@ struct RecordView: View {
             .padding(.horizontal, AppSpacing.md)
             .padding(.bottom, AppSpacing.md)
             .animation(.easeInOut(duration: 0.2), value: canSave)
-            .accessibilityLabel(String(localized: "a11y_save_transaction"))
+            .accessibilityLabel(L("a11y_save_transaction"))
         }
     }
 }

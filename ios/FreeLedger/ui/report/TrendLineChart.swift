@@ -13,8 +13,8 @@ struct TrendLineChart: View {
     let currencyCode: String
 
     private var chartEntries: [TrendChartEntry] {
-        let expenseLabel = String(localized: "report_expense_label")
-        let incomeLabel = String(localized: "report_income_label")
+        let expenseLabel = L("report_expense_label")
+        let incomeLabel = L("report_income_label")
         var entries: [TrendChartEntry] = []
         for item in trendData {
             entries.append(TrendChartEntry(month: item.monthLabel, amount: Double(item.expense) / 100.0, type: expenseLabel))
@@ -34,7 +34,7 @@ struct TrendLineChart: View {
     }
 
     private var chartTitle: some View {
-        Text(String(localized: "report_trend_title"))
+        Text(L("report_trend_title"))
             .font(AppTypography.title2)
             .foregroundColor(AppColors.textPrimary)
     }
@@ -55,8 +55,8 @@ struct TrendLineChart: View {
             .foregroundStyle(by: .value("Type", entry.type))
         }
         .chartForegroundStyleScale([
-            String(localized: "report_expense_label"): AppColors.expense,
-            String(localized: "report_income_label"): AppColors.income
+            L("report_expense_label"): AppColors.expense,
+            L("report_income_label"): AppColors.income
         ])
         .chartLegend(position: .bottom, spacing: AppSpacing.sm)
         .frame(height: 200)

@@ -13,9 +13,9 @@ struct CSVExportView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(String(localized: "csv_select_fields")) {
+                Section(L("csv_select_fields")) {
                     ForEach($fields) { $field in
-                        Toggle(String(localized: String.LocalizationValue(field.labelKey)), isOn: $field.isSelected)
+                        Toggle(L(field.labelKey), isOn: $field.isSelected)
                     }
                 }
 
@@ -25,7 +25,7 @@ struct CSVExportView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Label(String(localized: "csv_export_button"), systemImage: "doc.text")
+                            Label(L("csv_export_button"), systemImage: "doc.text")
                                 .font(AppTypography.bodyLarge)
                                 .fontWeight(.semibold)
                             Spacer()
@@ -34,11 +34,11 @@ struct CSVExportView: View {
                     .disabled(!fields.contains(where: \.isSelected))
                 }
             }
-            .navigationTitle(String(localized: "csv_export_title"))
+            .navigationTitle(L("csv_export_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         dismiss()
                     }
                 }
@@ -53,15 +53,15 @@ struct CSVExportView: View {
                 case .success:
                     dismiss()
                 case .failure:
-                    errorMessage = String(localized: "error_save_failed")
+                    errorMessage = L("error_save_failed")
                 }
                 csvDocument = nil
             }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { errorMessage != nil },
                 set: { if !$0 { errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(errorMessage ?? "")
             }
@@ -80,7 +80,7 @@ struct CSVExportView: View {
             csvDocument = CSVDocument(data: data)
             showExporter = true
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 }

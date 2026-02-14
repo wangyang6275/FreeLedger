@@ -95,7 +95,7 @@ struct CSVExportService {
                 if cat.isCustom {
                     name = cat.nameKey
                 } else {
-                    name = String(localized: String.LocalizationValue(cat.nameKey))
+                    name = L(cat.nameKey)
                 }
             } else {
                 name = "—"

@@ -50,7 +50,7 @@ struct OnboardingView: View {
                 .opacity(iconAnimated ? 1.0 : 0.0)
                 .animation(.spring(response: 0.6, dampingFraction: 0.6), value: iconAnimated)
 
-            Text(String(localized: "onboarding_step1_title"))
+            Text(L("onboarding_step1_title"))
                 .font(AppTypography.title1)
                 .foregroundColor(AppColors.textPrimary)
                 .multilineTextAlignment(.center)
@@ -58,7 +58,7 @@ struct OnboardingView: View {
                 .offset(y: iconAnimated ? 0 : 20)
                 .animation(.easeOut(duration: 0.5).delay(0.2), value: iconAnimated)
 
-            Text(String(localized: "onboarding_step1_desc"))
+            Text(L("onboarding_step1_desc"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
@@ -83,7 +83,7 @@ struct OnboardingView: View {
                 .foregroundColor(AppColors.secondary)
                 .padding(.top, AppSpacing.xxxl)
 
-            Text(String(localized: "onboarding_step2_title"))
+            Text(L("onboarding_step2_title"))
                 .font(AppTypography.title1)
                 .foregroundColor(AppColors.textPrimary)
 
@@ -133,12 +133,12 @@ struct OnboardingView: View {
                 .font(.system(size: 72))
                 .foregroundColor(AppColors.primary)
 
-            Text(String(localized: "onboarding_step3_title"))
+            Text(L("onboarding_step3_title"))
                 .font(AppTypography.title1)
                 .foregroundColor(AppColors.textPrimary)
                 .multilineTextAlignment(.center)
 
-            Text(String(localized: "onboarding_step3_desc"))
+            Text(L("onboarding_step3_desc"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
@@ -157,7 +157,7 @@ struct OnboardingView: View {
                 Button {
                     completeOnboarding()
                 } label: {
-                    Text(String(localized: "onboarding_start"))
+                    Text(L("onboarding_start"))
                         .font(AppTypography.bodyLarge)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -172,7 +172,7 @@ struct OnboardingView: View {
                         currentPage += 1
                     }
                 } label: {
-                    Text(String(localized: "onboarding_next"))
+                    Text(L("onboarding_next"))
                         .font(AppTypography.bodyLarge)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -186,7 +186,7 @@ struct OnboardingView: View {
             Button {
                 completeOnboarding()
             } label: {
-                Text(String(localized: "onboarding_skip"))
+                Text(L("onboarding_skip"))
                     .font(AppTypography.body)
                     .foregroundColor(AppColors.textTertiary)
             }

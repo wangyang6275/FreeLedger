@@ -33,7 +33,7 @@ struct CurrencyPickerView: View {
                 }
             }
         }
-        .navigationTitle(String(localized: "settings_currency"))
+        .navigationTitle(L("settings_currency"))
         .navigationBarTitleDisplayMode(.inline)
     }
 

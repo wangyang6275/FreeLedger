@@ -117,11 +117,11 @@ struct KeypadButton: View {
     private var accessibilityText: String {
         switch key {
         case .digit(let d):
-            return d == "." ? String(localized: "a11y_decimal_point") : String(localized: "a11y_digit_\(d)")
+            return d == "." ? L("a11y_decimal_point") : L("a11y_digit_\(d)")
         case .backspace:
-            return String(localized: "a11y_backspace")
+            return L("a11y_backspace")
         case .tag:
-            return String(localized: "a11y_tag_button")
+            return L("a11y_tag_button")
         }
     }
 }

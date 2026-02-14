@@ -33,7 +33,7 @@ struct TagsView: View {
                 }
             }
             .background(AppColors.background)
-            .navigationTitle(String(localized: "tab_tags"))
+            .navigationTitle(L("tab_tags"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -56,11 +56,11 @@ struct TagsView: View {
             .onAppear {
                 viewModel.loadData()
             }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { viewModel.errorMessage != nil },
                 set: { if !$0 { viewModel.errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(viewModel.errorMessage ?? "")
             }
@@ -81,11 +81,11 @@ struct TagsView: View {
             .overlay {
                 if showDeleteConfirm, let tag = deletingTag {
                     FriendlyDialog(
-                        title: String(localized: "tags_delete_title"),
-                        message: String(localized: "tags_delete_message \(tag.name)"),
+                        title: L("tags_delete_title"),
+                        message: L("tags_delete_message %@", tag.name),
                         style: .destructive,
-                        confirmTitle: String(localized: "action_delete"),
-                        cancelTitle: String(localized: "action_cancel"),
+                        confirmTitle: L("action_delete"),
+                        cancelTitle: L("action_cancel"),
                         onConfirm: {
                             withAnimation(.easeInOut(duration: 0.2)) {
                                 showDeleteConfirm = false
@@ -116,11 +116,11 @@ struct TagsView: View {
                         .font(.system(size: 44))
                         .foregroundStyle(AppColors.primary.gradient)
 
-                    Text(String(localized: "tags_guide_title"))
+                    Text(L("tags_guide_title"))
                         .font(AppTypography.title2)
                         .foregroundColor(AppColors.textPrimary)
 
-                    Text(String(localized: "tags_guide_subtitle"))
+                    Text(L("tags_guide_subtitle"))
                         .font(AppTypography.body)
                         .foregroundColor(AppColors.textSecondary)
                         .multilineTextAlignment(.center)
@@ -132,22 +132,22 @@ struct TagsView: View {
                     guideCard(
                         icon: "arrow.triangle.branch",
                         color: "#FF8E53",
-                        title: String(localized: "tags_guide_what_title"),
-                        desc: String(localized: "tags_guide_what_desc")
+                        title: L("tags_guide_what_title"),
+                        desc: L("tags_guide_what_desc")
                     )
 
                     guideCard(
                         icon: "sparkles",
                         color: "#4CAF50",
-                        title: String(localized: "tags_guide_example_title"),
-                        desc: String(localized: "tags_guide_example_desc")
+                        title: L("tags_guide_example_title"),
+                        desc: L("tags_guide_example_desc")
                     )
 
                     guideCard(
                         icon: "hand.tap",
                         color: "#2196F3",
-                        title: String(localized: "tags_guide_how_title"),
-                        desc: String(localized: "tags_guide_how_desc")
+                        title: L("tags_guide_how_title"),
+                        desc: L("tags_guide_how_desc")
                     )
                 }
                 .padding(.horizontal, AppSpacing.lg)
@@ -159,7 +159,7 @@ struct TagsView: View {
                     HStack(spacing: AppSpacing.sm) {
                         Image(systemName: "plus")
                             .font(.system(size: 14, weight: .bold))
-                        Text(String(localized: "tags_create_first"))
+                        Text(L("tags_create_first"))
                             .font(AppTypography.bodyLarge)
                             .fontWeight(.semibold)
                     }
@@ -219,13 +219,13 @@ struct TagsView: View {
                             showDeleteConfirm = true
                         }
                     } label: {
-                        Label(String(localized: "action_delete"), systemImage: "trash")
+                        Label(L("action_delete"), systemImage: "trash")
                     }
 
                     Button {
                         editingTag = tag
                     } label: {
-                        Label(String(localized: "action_edit"), systemImage: "pencil")
+                        Label(L("action_edit"), systemImage: "pencil")
                     }
                     .tint(.orange)
                 }
@@ -252,7 +252,7 @@ struct TagsView: View {
 
             let count = viewModel.transactionCount(for: tag)
             if count > 0 {
-                Text(String(localized: "tag_count \(count)"))
+                Text(L("tag_count %lld", count))
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textTertiary)
                     .padding(.horizontal, 8)
@@ -294,7 +294,7 @@ struct TagEditSheet: View {
                 // Preview
                 HStack {
                     Spacer()
-                    Text(tagName.isEmpty ? String(localized: "tags_preview") : tagName)
+                    Text(tagName.isEmpty ? L("tags_preview") : tagName)
                         .font(AppTypography.bodyLarge)
                         .foregroundColor(tagName.isEmpty ? AppColors.textTertiary : .white)
                         .padding(.horizontal, AppSpacing.xl)
@@ -309,11 +309,11 @@ struct TagEditSheet: View {
 
                 // Name field
                 VStack(alignment: .leading, spacing: AppSpacing.sm) {
-                    Text(String(localized: "tags_name_label"))
+                    Text(L("tags_name_label"))
                         .font(AppTypography.caption)
                         .foregroundColor(AppColors.textSecondary)
 
-                    TextField(String(localized: "tag_name_placeholder"), text: $tagName)
+                    TextField(L("tag_name_placeholder"), text: $tagName)
                         .font(AppTypography.body)
                         .padding(AppSpacing.md)
                         .background(AppColors.surface)
@@ -322,7 +322,7 @@ struct TagEditSheet: View {
 
                 // Color picker
                 VStack(alignment: .leading, spacing: AppSpacing.sm) {
-                    Text(String(localized: "tags_color_label"))
+                    Text(L("tags_color_label"))
                         .font(AppTypography.caption)
                         .foregroundColor(AppColors.textSecondary)
 
@@ -355,7 +355,7 @@ struct TagEditSheet: View {
                     onSave(tagName, tagColor)
                     dismiss()
                 } label: {
-                    Text(isEditing ? String(localized: "tags_save") : String(localized: "tag_create_button"))
+                    Text(isEditing ? L("tags_save") : L("tag_create_button"))
                         .font(AppTypography.bodyLarge)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -373,11 +373,11 @@ struct TagEditSheet: View {
             .padding(.horizontal, AppSpacing.xl)
             .padding(.bottom, AppSpacing.lg)
             .background(AppColors.background)
-            .navigationTitle(isEditing ? String(localized: "tags_edit_title") : String(localized: "tags_create_title"))
+            .navigationTitle(isEditing ? L("tags_edit_title") : L("tags_create_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         dismiss()
                     }
                 }

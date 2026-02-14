@@ -82,7 +82,7 @@ final class RecordViewModel {
             didSave = true
         } catch {
             isSaving = false
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 }

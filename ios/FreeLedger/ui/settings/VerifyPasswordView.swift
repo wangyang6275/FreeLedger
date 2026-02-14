@@ -41,11 +41,11 @@ struct VerifyPasswordView: View {
             }
             .padding(.horizontal, AppSpacing.lg)
             .padding(.bottom, AppSpacing.xl)
-            .navigationTitle(String(localized: "password_verify_title"))
+            .navigationTitle(L("password_verify_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(String(localized: "action_cancel")) {
+                    Button(L("action_cancel")) {
                         dismiss()
                     }
                 }
@@ -109,7 +109,7 @@ struct VerifyPasswordView: View {
                     dismiss()
                 } else {
                     withAnimation(.default) {
-                        errorMessage = String(localized: "password_wrong")
+                        errorMessage = L("password_wrong")
                     }
                     withAnimation(.spring(response: 0.2, dampingFraction: 0.2)) {
                         shake = true

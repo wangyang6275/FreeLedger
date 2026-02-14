@@ -70,7 +70,7 @@ struct ContentView: View {
                     )
                     .tabItem {
                         Image(systemName: "list.bullet")
-                        Text(String(localized: "tab_transactions"))
+                        Text(L("tab_transactions"))
                     }
                     .tag(0)
 
@@ -81,7 +81,7 @@ struct ContentView: View {
                     )
                     .tabItem {
                         Image(systemName: "chart.pie")
-                        Text(String(localized: "tab_reports"))
+                        Text(L("tab_reports"))
                     }
                     .tag(1)
 
@@ -97,7 +97,7 @@ struct ContentView: View {
                     )
                     .tabItem {
                         Image(systemName: "tag")
-                        Text(String(localized: "tab_tags"))
+                        Text(L("tab_tags"))
                     }
                     .tag(3)
 
@@ -108,7 +108,7 @@ struct ContentView: View {
                     })
                     .tabItem {
                         Image(systemName: "gearshape")
-                        Text(String(localized: "tab_settings"))
+                        Text(L("tab_settings"))
                     }
                     .tag(4)
             }
@@ -172,11 +172,11 @@ struct ContentView: View {
         .overlay {
             if showBackupReminder {
                 FriendlyDialog(
-                    title: String(localized: "backup_reminder_title"),
+                    title: L("backup_reminder_title"),
                     message: backupReminderMessage,
                     style: .info,
-                    confirmTitle: String(localized: "backup_reminder_go"),
-                    cancelTitle: String(localized: "backup_reminder_later"),
+                    confirmTitle: L("backup_reminder_go"),
+                    cancelTitle: L("backup_reminder_later"),
                     onConfirm: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             showBackupReminder = false
@@ -219,12 +219,12 @@ struct ContentView: View {
     private func checkBackupReminder() {
         switch backupReminderService.checkReminder() {
         case .firstBackup(let count):
-            backupReminderMessage = String(localized: "backup_reminder_first \(count)")
+            backupReminderMessage = L("backup_reminder_first %lld", count)
             withAnimation(.easeInOut(duration: 0.25)) {
                 showBackupReminder = true
             }
         case .periodicBackup:
-            backupReminderMessage = String(localized: "backup_reminder_periodic")
+            backupReminderMessage = L("backup_reminder_periodic")
             withAnimation(.easeInOut(duration: 0.25)) {
                 showBackupReminder = true
             }

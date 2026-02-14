@@ -70,7 +70,7 @@ struct HomeView: View {
                                                 showDeleteDialog = true
                                             }
                                         } label: {
-                                            Label(String(localized: "action_delete"), systemImage: "trash")
+                                            Label(L("action_delete"), systemImage: "trash")
                                         }
                                     }
                                 }
@@ -100,18 +100,18 @@ struct HomeView: View {
 
                 if showDeleteDialog {
                     FriendlyDialog(
-                        title: String(localized: "delete_confirm_title"),
-                        message: String(localized: "delete_confirm_message"),
+                        title: L("delete_confirm_title"),
+                        message: L("delete_confirm_message"),
                         style: .destructive,
-                        confirmTitle: String(localized: "action_delete"),
-                        cancelTitle: String(localized: "action_cancel"),
+                        confirmTitle: L("action_delete"),
+                        cancelTitle: L("action_cancel"),
                         onConfirm: {
                             if let tx = deleteTarget {
                                 do {
                                     try transactionRepository.delete(id: tx.id)
                                     viewModel.loadData()
                                 } catch {
-                                    errorMessage = String(localized: "error_delete_failed")
+                                    errorMessage = L("error_delete_failed")
                                 }
                             }
                             withAnimation(.easeInOut(duration: 0.2)) {
@@ -128,7 +128,7 @@ struct HomeView: View {
                     )
                 }
             }
-            .navigationTitle(String(localized: "tab_transactions"))
+            .navigationTitle(L("tab_transactions"))
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
@@ -137,7 +137,7 @@ struct HomeView: View {
                         Image(systemName: "bell")
                             .foregroundColor(AppColors.textPrimary)
                     }
-                    .accessibilityLabel(String(localized: "reminders_title"))
+                    .accessibilityLabel(L("reminders_title"))
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -146,7 +146,7 @@ struct HomeView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(AppColors.textPrimary)
                     }
-                    .accessibilityLabel(String(localized: "search_title"))
+                    .accessibilityLabel(L("search_title"))
                 }
             }
             .sheet(isPresented: $showSearch) {
@@ -167,11 +167,11 @@ struct HomeView: View {
             .onAppear {
                 viewModel.loadData()
             }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { errorMessage != nil },
                 set: { if !$0 { errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(errorMessage ?? "")
             }
@@ -184,7 +184,7 @@ struct HomeView: View {
                 .font(.system(size: 48))
                 .foregroundColor(AppColors.textTertiary)
 
-            Text(String(localized: "home_empty_state"))
+            Text(L("home_empty_state"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)

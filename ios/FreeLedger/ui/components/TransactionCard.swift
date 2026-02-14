@@ -60,7 +60,7 @@ struct TransactionCard: View {
 
     private var categoryName: String {
         guard let cat = category else { return "—" }
-        return String(localized: String.LocalizationValue(cat.nameKey))
+        return L(cat.nameKey)
     }
 
     private var amountText: String {

@@ -30,7 +30,7 @@ final class RemindersViewModel {
             categories = expense + income
             currencyCode = try settingsRepository.getCurrency()
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 
@@ -45,7 +45,7 @@ final class RemindersViewModel {
             NotificationService.scheduleReminder(reminder, currencyCode: currencyCode)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -55,7 +55,7 @@ final class RemindersViewModel {
             NotificationService.scheduleReminder(reminder, currencyCode: currencyCode)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -65,7 +65,7 @@ final class RemindersViewModel {
             NotificationService.cancelReminder(id: id)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 

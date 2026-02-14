@@ -20,7 +20,7 @@ final class TagsViewModel {
             tags = try tagRepository.getAll()
             transactionCounts = try tagRepository.getTransactionCountPerTag()
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 
@@ -36,7 +36,7 @@ final class TagsViewModel {
             try tagRepository.create(tag)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -50,7 +50,7 @@ final class TagsViewModel {
             try tagRepository.update(updated)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 
@@ -59,7 +59,7 @@ final class TagsViewModel {
             try tagRepository.delete(id: id)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_save_failed")
+            errorMessage = L("error_save_failed")
         }
     }
 }

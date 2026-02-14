@@ -17,7 +17,7 @@ enum NotificationService {
     static func registerCategory() {
         let recordAction = UNNotificationAction(
             identifier: recordActionId,
-            title: String(localized: "reminder_action_record"),
+            title: L("reminder_action_record"),
             options: [.foreground]
         )
         let category = UNNotificationCategory(
@@ -36,7 +36,7 @@ enum NotificationService {
         let content = UNMutableNotificationContent()
         content.title = reminder.title
         let amountText = AmountFormatter.format(reminder.amount, currencyCode: currencyCode)
-        content.body = String(localized: "reminder_notification_body \(amountText)")
+        content.body = L("reminder_notification_body %@", amountText)
         content.sound = .default
         content.categoryIdentifier = categoryId
         content.userInfo = [reminderIdKey: reminder.id]

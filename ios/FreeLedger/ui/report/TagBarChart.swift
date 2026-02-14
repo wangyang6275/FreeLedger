@@ -16,7 +16,7 @@ struct TagBarChart: View {
     }
 
     private var chartTitle: some View {
-        Text(String(localized: "report_tag_chart_title"))
+        Text(L("report_tag_chart_title"))
             .font(AppTypography.title2)
             .foregroundColor(AppColors.textPrimary)
     }

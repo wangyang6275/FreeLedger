@@ -33,7 +33,7 @@ struct SearchView: View {
                 resultsList
             }
             .background(AppColors.background)
-            .navigationTitle(String(localized: "search_title"))
+            .navigationTitle(L("search_title"))
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Transaction.self) { transaction in
                 TransactionDetailView(
@@ -49,11 +49,11 @@ struct SearchView: View {
                 viewModel.loadInitialData()
                 isSearchFocused = true
             }
-            .alert(String(localized: "error_title"), isPresented: Binding(
+            .alert(L("error_title"), isPresented: Binding(
                 get: { viewModel.errorMessage != nil },
                 set: { if !$0 { viewModel.errorMessage = nil } }
             )) {
-                Button(String(localized: "error_ok"), role: .cancel) {}
+                Button(L("error_ok"), role: .cancel) {}
             } message: {
                 Text(viewModel.errorMessage ?? "")
             }
@@ -67,7 +67,7 @@ struct SearchView: View {
             HStack(spacing: AppSpacing.sm) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(AppColors.textTertiary)
-                TextField(String(localized: "search_placeholder"), text: $viewModel.searchText)
+                TextField(L("search_placeholder"), text: $viewModel.searchText)
                     .focused($isSearchFocused)
                     .submitLabel(.search)
                     .onSubmit { viewModel.performSearch() }
@@ -116,13 +116,13 @@ struct SearchView: View {
 
     @ViewBuilder
     private var dateMenuContent: some View {
-        Button(String(localized: "search_date_today")) {
+        Button(L("search_date_today")) {
             let today = Calendar.current.startOfDay(for: Date())
             viewModel.startDate = today
             viewModel.endDate = today
             viewModel.performSearch()
         }
-        Button(String(localized: "search_date_this_week")) {
+        Button(L("search_date_this_week")) {
             let now = Date()
             let cal = Calendar.current
             let weekday = cal.component(.weekday, from: now)
@@ -131,7 +131,7 @@ struct SearchView: View {
             viewModel.endDate = now
             viewModel.performSearch()
         }
-        Button(String(localized: "search_date_this_month")) {
+        Button(L("search_date_this_month")) {
             let now = Date()
             let cal = Calendar.current
             let comps = cal.dateComponents([.year, .month], from: now)
@@ -139,7 +139,7 @@ struct SearchView: View {
             viewModel.endDate = now
             viewModel.performSearch()
         }
-        Button(String(localized: "search_date_clear")) {
+        Button(L("search_date_clear")) {
             viewModel.startDate = nil
             viewModel.endDate = nil
             viewModel.performSearch()
@@ -148,9 +148,9 @@ struct SearchView: View {
 
     private var dateFilterText: String {
         if viewModel.startDate != nil {
-            return String(localized: "search_date_selected")
+            return L("search_date_selected")
         }
-        return String(localized: "search_date_label")
+        return L("search_date_label")
     }
 
     private var categoryFilterChip: some View {
@@ -176,7 +176,7 @@ struct SearchView: View {
             }
         }
         Divider()
-        Button(String(localized: "search_category_all")) {
+        Button(L("search_category_all")) {
             viewModel.selectedCategoryId = nil
             viewModel.performSearch()
         }
@@ -186,14 +186,14 @@ struct SearchView: View {
         if let catId = viewModel.selectedCategoryId {
             return viewModel.categoryName(for: catId)
         }
-        return String(localized: "search_category_label")
+        return L("search_category_label")
     }
 
     private var clearButton: some View {
         Button {
             viewModel.clearFilters()
         } label: {
-            Text(String(localized: "search_clear_all"))
+            Text(L("search_clear_all"))
                 .font(AppTypography.caption)
                 .foregroundColor(AppColors.expense)
         }
@@ -249,7 +249,7 @@ struct SearchView: View {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 48))
                 .foregroundColor(AppColors.textTertiary)
-            Text(String(localized: "search_no_results"))
+            Text(L("search_no_results"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
@@ -263,7 +263,7 @@ struct SearchView: View {
             Image(systemName: "text.magnifyingglass")
                 .font(.system(size: 48))
                 .foregroundColor(AppColors.textTertiary)
-            Text(String(localized: "search_hint"))
+            Text(L("search_hint"))
                 .font(AppTypography.body)
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)

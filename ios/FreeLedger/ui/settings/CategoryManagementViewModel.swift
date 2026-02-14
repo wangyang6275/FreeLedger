@@ -25,7 +25,7 @@ final class CategoryManagementViewModel {
             expenseCategories = try categoryRepository.getExpenseCategories(sortedByUsage: false)
             incomeCategories = try categoryRepository.getIncomeCategories(sortedByUsage: false)
         } catch {
-            errorMessage = String(localized: "error_load_failed")
+            errorMessage = L("error_load_failed")
         }
     }
 
@@ -35,7 +35,7 @@ final class CategoryManagementViewModel {
             try categoryRepository.deactivate(id: cat.id)
             loadData()
         } catch {
-            errorMessage = String(localized: "error_delete_failed")
+            errorMessage = L("error_delete_failed")
         }
         deleteTarget = nil
     }
@@ -44,6 +44,6 @@ final class CategoryManagementViewModel {
         if category.isCustom {
             return category.nameKey
         }
-        return String(localized: String.LocalizationValue(category.nameKey))
+        return L(category.nameKey)
     }
 }
