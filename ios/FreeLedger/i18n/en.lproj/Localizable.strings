@@ -170,7 +170,7 @@
 "reminders_example_mortgage" = "Mortgage";
 "reminders_example_phone" = "Phone Bill";
 "reminder_action_record" = "Record";
-"reminder_notification_body %@" = "Time to record: %@";
+"reminder_notification_body %@" = "Time to record: %@\nLong press to quickly record";
 
 /* Actions */
 "action_edit" = "Edit";

@@ -211,22 +211,23 @@ struct RemindersView: View {
         HStack(spacing: AppSpacing.md) {
             // Category icon or bell
             let cat = viewModel.category(for: reminder.categoryId)
-            Group {
-                if let cat {
-                    Image(systemName: cat.iconName)
-                        .font(.system(size: 16))
-                        .foregroundColor(Color(hex: cat.colorHex))
-                } else {
+            if let cat {
+                CategoryIconView(
+                    iconName: cat.iconName,
+                    colorHex: cat.colorHex,
+                    size: 36,
+                    iconSize: 18
+                )
+            } else {
+                ZStack {
+                    Circle()
+                        .fill(AppColors.primaryLight)
+                        .frame(width: 36, height: 36)
                     Image(systemName: "bell.fill")
                         .font(.system(size: 16))
                         .foregroundColor(AppColors.primary)
                 }
             }
-            .frame(width: 36, height: 36)
-            .background(
-                (cat != nil ? Color(hex: cat!.colorHex) : AppColors.primary).opacity(0.12)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: AppRadius.sm))
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(reminder.title)
@@ -503,12 +504,17 @@ struct ReminderEditSheet: View {
                     selectedCategoryId = cat.id
                 } label: {
                     VStack(spacing: 4) {
-                        Image(systemName: cat.iconName)
-                            .font(.system(size: 18))
-                            .foregroundColor(isSelected ? .white : Color(hex: cat.colorHex))
-                            .frame(width: 40, height: 40)
-                            .background(isSelected ? Color(hex: cat.colorHex) : Color(hex: cat.colorHex).opacity(0.12))
-                            .clipShape(RoundedRectangle(cornerRadius: AppRadius.sm))
+                        CategoryIconView(
+                            iconName: cat.iconName,
+                            colorHex: isSelected ? cat.colorHex : "#F0F0F0",
+                            size: 40,
+                            iconSize: 20
+                        )
+                        .overlay(
+                            Circle()
+                                .stroke(isSelected ? Color(hex: cat.colorHex) : Color.clear, lineWidth: 2)
+                                .frame(width: 44, height: 44)
+                        )
 
                         Text(String(localized: String.LocalizationValue(cat.nameKey)))
                             .font(AppTypography.small)

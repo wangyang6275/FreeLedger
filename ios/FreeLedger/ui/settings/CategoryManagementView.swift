@@ -1,11 +1,8 @@
 import SwiftUI
 
-private enum NewCategoryDestination: Hashable {
-    case create
-}
-
 struct CategoryManagementView: View {
     @State private var viewModel: CategoryManagementViewModel
+    @State private var showAddCategory = false
 
     let categoryRepository: CategoryRepositoryProtocol
 
@@ -30,7 +27,7 @@ struct CategoryManagementView: View {
                 onSave: { viewModel.loadData() }
             )
         }
-        .navigationDestination(for: NewCategoryDestination.self) { _ in
+        .navigationDestination(isPresented: $showAddCategory) {
             CategoryEditView(
                 category: nil,
                 isExpense: viewModel.isExpenseTab,
@@ -157,7 +154,9 @@ struct CategoryManagementView: View {
 
     private var addButton: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
-            NavigationLink(value: NewCategoryDestination.create) {
+            Button {
+                showAddCategory = true
+            } label: {
                 Image(systemName: "plus")
             }
         }

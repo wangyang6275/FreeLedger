@@ -170,7 +170,7 @@
 "reminders_example_mortgage" = "还房贷";
 "reminders_example_phone" = "交话费";
 "reminder_action_record" = "记一笔";
-"reminder_notification_body %@" = "该记账啦：%@";
+"reminder_notification_body %@" = "该记账啦：%@\n长按通知可快速记一笔";
 
 /* Actions */
 "action_edit" = "编辑";
