@@ -105,49 +105,103 @@ struct TagsView: View {
         }
     }
 
-    // MARK: - Empty State
+    // MARK: - Empty State (Guide)
 
     private var emptyStateView: some View {
-        VStack(spacing: AppSpacing.xl) {
-            Spacer()
+        ScrollView {
+            VStack(spacing: AppSpacing.xl) {
+                // Hero
+                VStack(spacing: AppSpacing.md) {
+                    Image(systemName: "tag.fill")
+                        .font(.system(size: 44))
+                        .foregroundStyle(AppColors.primary.gradient)
 
-            Image(systemName: "tag")
-                .font(.system(size: 56))
-                .foregroundColor(AppColors.textTertiary.opacity(0.5))
+                    Text(String(localized: "tags_guide_title"))
+                        .font(AppTypography.title2)
+                        .foregroundColor(AppColors.textPrimary)
 
-            VStack(spacing: AppSpacing.sm) {
-                Text(String(localized: "tags_empty_title"))
-                    .font(AppTypography.title2)
+                    Text(String(localized: "tags_guide_subtitle"))
+                        .font(AppTypography.body)
+                        .foregroundColor(AppColors.textSecondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.top, AppSpacing.xxl)
+
+                // Guide cards
+                VStack(spacing: AppSpacing.md) {
+                    guideCard(
+                        icon: "arrow.triangle.branch",
+                        color: "#FF8E53",
+                        title: String(localized: "tags_guide_what_title"),
+                        desc: String(localized: "tags_guide_what_desc")
+                    )
+
+                    guideCard(
+                        icon: "sparkles",
+                        color: "#4CAF50",
+                        title: String(localized: "tags_guide_example_title"),
+                        desc: String(localized: "tags_guide_example_desc")
+                    )
+
+                    guideCard(
+                        icon: "hand.tap",
+                        color: "#2196F3",
+                        title: String(localized: "tags_guide_how_title"),
+                        desc: String(localized: "tags_guide_how_desc")
+                    )
+                }
+                .padding(.horizontal, AppSpacing.lg)
+
+                // CTA
+                Button {
+                    showCreateSheet = true
+                } label: {
+                    HStack(spacing: AppSpacing.sm) {
+                        Image(systemName: "plus")
+                            .font(.system(size: 14, weight: .bold))
+                        Text(String(localized: "tags_create_first"))
+                            .font(AppTypography.bodyLarge)
+                            .fontWeight(.semibold)
+                    }
+                    .foregroundColor(.white)
+                    .padding(.horizontal, AppSpacing.xxl)
+                    .padding(.vertical, 14)
+                    .background(AppColors.primary.gradient)
+                    .clipShape(Capsule())
+                }
+                .padding(.top, AppSpacing.sm)
+                .padding(.bottom, AppSpacing.xxl)
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+
+    private func guideCard(icon: String, color: String, title: String, desc: String) -> some View {
+        HStack(spacing: AppSpacing.lg) {
+            Image(systemName: icon)
+                .font(.system(size: 20))
+                .foregroundColor(Color(hex: color))
+                .frame(width: 40, height: 40)
+                .background(Color(hex: color).opacity(0.12))
+                .clipShape(RoundedRectangle(cornerRadius: AppRadius.sm))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(AppTypography.body)
+                    .fontWeight(.semibold)
                     .foregroundColor(AppColors.textPrimary)
 
-                Text(String(localized: "tags_empty_desc"))
-                    .font(AppTypography.body)
+                Text(desc)
+                    .font(AppTypography.caption)
                     .foregroundColor(AppColors.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, AppSpacing.xxl)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
-            Button {
-                showCreateSheet = true
-            } label: {
-                HStack(spacing: AppSpacing.sm) {
-                    Image(systemName: "plus")
-                        .font(.system(size: 14, weight: .bold))
-                    Text(String(localized: "tags_create_first"))
-                        .font(AppTypography.bodyLarge)
-                        .fontWeight(.semibold)
-                }
-                .foregroundColor(.white)
-                .padding(.horizontal, AppSpacing.xxl)
-                .padding(.vertical, 14)
-                .background(AppColors.primary.gradient)
-                .clipShape(Capsule())
-            }
-            .padding(.top, AppSpacing.md)
-
-            Spacer()
-            Spacer()
+            Spacer(minLength: 0)
         }
+        .padding(AppSpacing.lg)
+        .background(AppColors.surface)
+        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
     }
 
     // MARK: - Tag List

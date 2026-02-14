@@ -6,6 +6,7 @@ struct RecordView: View {
     @State private var selectedCategory: Category?
     @State private var selectedTagIds: Set<String> = []
     @State private var showTagSelector: Bool = false
+    @State private var showTagTip: Bool = false
 
     let tagRepository: TagRepositoryProtocol
 
@@ -40,6 +41,13 @@ struct RecordView: View {
         .onAppear {
             viewModel.loadCurrency()
             viewModel.loadCategories()
+            let key = "has_seen_tag_tip"
+            if !UserDefaults.standard.bool(forKey: key) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    showTagTip = true
+                }
+                UserDefaults.standard.set(true, forKey: key)
+            }
         }
         .onChange(of: viewModel.didSave) { _, didSave in
             if didSave {
@@ -85,7 +93,10 @@ struct RecordView: View {
 
                 Spacer()
 
-                Button(action: { showTagSelector = true }) {
+                Button(action: {
+                    showTagTip = false
+                    showTagSelector = true
+                }) {
                     Image(systemName: "tag")
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(selectedTagIds.isEmpty ? AppColors.textTertiary : AppColors.primary)
@@ -96,6 +107,13 @@ struct RecordView: View {
                         )
                 }
                 .accessibilityLabel(String(localized: "a11y_tag_button"))
+                .popover(isPresented: $showTagTip, arrowEdge: .top) {
+                    Text(String(localized: "tag_tip_message"))
+                        .font(AppTypography.caption)
+                        .foregroundColor(AppColors.textPrimary)
+                        .padding(AppSpacing.md)
+                        .presentationCompactAdaptation(.popover)
+                }
             }
             .padding(.horizontal, AppSpacing.xl)
             .padding(.top, AppSpacing.md)

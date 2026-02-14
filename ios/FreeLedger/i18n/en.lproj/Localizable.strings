@@ -134,6 +134,15 @@
 "tags_preview" = "Preview";
 "tags_delete_title" = "Delete Tag";
 "tags_delete_message %@" = "Delete \"%@\"? Associated transactions won't be affected.";
+"tags_guide_title" = "Organize with Tags";
+"tags_guide_subtitle" = "Tags help you track spending from multiple angles";
+"tags_guide_what_title" = "Tags vs Categories";
+"tags_guide_what_desc" = "Categories are fixed (e.g. Food, Transport), one per transaction. Tags are flexible — add multiple to any transaction";
+"tags_guide_example_title" = "Use Cases";
+"tags_guide_example_desc" = "Travel, Reimbursement, Shared expenses, Project A… combine freely as you need";
+"tags_guide_how_title" = "How to Use?";
+"tags_guide_how_desc" = "Tap the tag button (top-right) when recording a transaction, or create tags here first";
+"tag_tip_message" = "Tap here to add tags 🏷️";
 
 /* Actions */
 "action_edit" = "Edit";

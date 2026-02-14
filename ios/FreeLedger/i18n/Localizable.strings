@@ -134,6 +134,15 @@
 "tags_preview" = "预览";
 "tags_delete_title" = "删除标签";
 "tags_delete_message %@" = "确定删除「%@」吗？关联的交易记录不会被删除";
+"tags_guide_title" = "用标签整理你的账目";
+"tags_guide_subtitle" = "标签帮你从多个角度追踪消费";
+"tags_guide_what_title" = "标签 vs 分类";
+"tags_guide_what_desc" = "分类是固定的（如餐饮、交通），每笔只选一个。标签更灵活，一笔消费可以打多个标签";
+"tags_guide_example_title" = "使用场景";
+"tags_guide_example_desc" = "旅行、报销、AA制、项目A……按你的需要自由组合";
+"tags_guide_how_title" = "怎么用？";
+"tags_guide_how_desc" = "记账时点击右上角标签按钮即可选择，也可以在这里提前创建";
+"tag_tip_message" = "点这里给交易添加标签 🏷️";
 
 /* Actions */
 "action_edit" = "编辑";
