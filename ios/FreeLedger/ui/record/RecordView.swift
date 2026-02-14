@@ -25,12 +25,14 @@ struct RecordView: View {
         viewModel.canSave && selectedCategory != nil
     }
 
+    private var typeColor: Color {
+        viewModel.isExpense ? AppColors.expense : AppColors.income
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             headerSection
-            Divider().background(AppColors.divider)
             categorySection
-            Divider().background(AppColors.divider)
             keypadAndSaveSection
         }
         .background(AppColors.background)
@@ -62,124 +64,177 @@ struct RecordView: View {
         }
     }
 
+    // MARK: - Header
+
     private var headerSection: some View {
-        VStack(spacing: AppSpacing.md) {
+        VStack(spacing: AppSpacing.lg) {
+            // Top bar
             HStack {
                 Button(action: { dismiss() }) {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(AppColors.textSecondary)
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 28))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(AppColors.textTertiary)
                 }
                 .accessibilityLabel(String(localized: "a11y_close"))
 
                 Spacer()
 
-                Text(String(localized: "record_title"))
-                    .font(AppTypography.title2)
-                    .foregroundColor(AppColors.textPrimary)
+                typeToggle
 
                 Spacer()
 
-                Color.clear.frame(width: 18, height: 18)
+                Button(action: { showTagSelector = true }) {
+                    Image(systemName: "tag")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(selectedTagIds.isEmpty ? AppColors.textTertiary : AppColors.primary)
+                        .padding(8)
+                        .background(
+                            Circle()
+                                .fill(selectedTagIds.isEmpty ? AppColors.surface : AppColors.primaryLight)
+                        )
+                }
+                .accessibilityLabel(String(localized: "a11y_tag_button"))
             }
             .padding(.horizontal, AppSpacing.xl)
-            .padding(.top, AppSpacing.lg)
+            .padding(.top, AppSpacing.md)
 
-            Text(viewModel.displayAmount)
-                .font(AppTypography.display)
-                .foregroundColor(AppColors.textPrimary)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, AppSpacing.sm)
+            // Amount display
+            HStack(alignment: .firstTextBaseline, spacing: 4) {
+                Text(viewModel.currencySymbol)
+                    .font(.system(size: 24, weight: .medium, design: .rounded))
+                    .foregroundColor(typeColor.opacity(0.6))
 
-            typeToggle
+                Text(viewModel.amountString.isEmpty ? "0" : viewModel.amountString)
+                    .font(.system(size: 48, weight: .bold, design: .rounded))
+                    .foregroundColor(viewModel.amountString.isEmpty ? AppColors.textTertiary : typeColor)
+                    .contentTransition(.numericText())
+                    .animation(.snappy(duration: 0.15), value: viewModel.amountString)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, AppSpacing.xs)
 
-            noteSection
+            // Note field
+            noteField
         }
         .padding(.bottom, AppSpacing.md)
     }
 
+    // MARK: - Type Toggle
+
     private var typeToggle: some View {
-        HStack(spacing: AppSpacing.xl) {
-            Button(action: {
-                if !viewModel.isExpense { viewModel.toggleType() }
-            }) {
+        HStack(spacing: 0) {
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    if !viewModel.isExpense { viewModel.toggleType(); selectedCategory = nil }
+                }
+            } label: {
                 Text(String(localized: "record_expense"))
-                    .font(AppTypography.bodyLarge)
-                    .foregroundColor(viewModel.isExpense ? AppColors.primary : AppColors.textTertiary)
-                    .fontWeight(viewModel.isExpense ? .semibold : .regular)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(viewModel.isExpense ? .white : AppColors.textSecondary)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 7)
+                    .background(
+                        Capsule()
+                            .fill(viewModel.isExpense ? AppColors.expense : Color.clear)
+                    )
             }
             .accessibilityLabel(String(localized: "a11y_expense_tab"))
 
-            Button(action: {
-                if viewModel.isExpense { viewModel.toggleType() }
-            }) {
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    if viewModel.isExpense { viewModel.toggleType(); selectedCategory = nil }
+                }
+            } label: {
                 Text(String(localized: "record_income"))
-                    .font(AppTypography.bodyLarge)
-                    .foregroundColor(!viewModel.isExpense ? AppColors.secondary : AppColors.textTertiary)
-                    .fontWeight(!viewModel.isExpense ? .semibold : .regular)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(!viewModel.isExpense ? .white : AppColors.textSecondary)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 7)
+                    .background(
+                        Capsule()
+                            .fill(!viewModel.isExpense ? AppColors.income : Color.clear)
+                    )
             }
             .accessibilityLabel(String(localized: "a11y_income_tab"))
         }
+        .padding(3)
+        .background(
+            Capsule().fill(AppColors.surface)
+        )
     }
 
-    private var noteSection: some View {
-        Group {
-            if viewModel.isNoteExpanded {
-                TextField(String(localized: "record_note_placeholder"), text: $viewModel.note)
-                    .font(AppTypography.body)
-                    .foregroundColor(AppColors.textPrimary)
-                    .padding(.horizontal, AppSpacing.xl)
-                    .padding(.vertical, AppSpacing.sm)
-                    .accessibilityLabel(String(localized: "a11y_note_input"))
-            } else {
-                Button(action: {
-                    withAnimation(.easeOut(duration: 0.2)) {
-                        viewModel.isNoteExpanded = true
-                    }
-                }) {
-                    Text(String(localized: "record_add_note"))
-                        .font(AppTypography.body)
-                        .foregroundColor(AppColors.textTertiary)
-                }
-                .padding(.horizontal, AppSpacing.xl)
-                .accessibilityLabel(String(localized: "a11y_add_note"))
-            }
+    // MARK: - Note
+
+    private var noteField: some View {
+        HStack(spacing: AppSpacing.sm) {
+            Image(systemName: "pencil.line")
+                .font(.system(size: 14))
+                .foregroundColor(AppColors.textTertiary)
+
+            TextField(String(localized: "record_note_placeholder"), text: $viewModel.note)
+                .font(AppTypography.body)
+                .foregroundColor(AppColors.textPrimary)
+                .accessibilityLabel(String(localized: "a11y_note_input"))
         }
+        .padding(.horizontal, AppSpacing.lg)
+        .padding(.vertical, 10)
+        .background(AppColors.surface)
+        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .padding(.horizontal, AppSpacing.xl)
     }
+
+    // MARK: - Category
 
     private var categorySection: some View {
         CategoryGrid(
             categories: viewModel.categories,
             selectedId: selectedCategory?.id
         ) { category in
-            selectedCategory = category
+            withAnimation(.easeInOut(duration: 0.15)) {
+                selectedCategory = category
+            }
         }
-        .frame(height: 200)
-        .padding(.vertical, AppSpacing.md)
+        .frame(maxHeight: 180)
+        .padding(.vertical, AppSpacing.sm)
     }
 
+    // MARK: - Keypad + Save
+
     private var keypadAndSaveSection: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: AppSpacing.sm) {
             AmountKeypad(amountString: $viewModel.amountString, onTagTap: {
                 showTagSelector = true
             })
 
             Button(action: {
+                let impact = UIImpactFeedbackGenerator(style: .medium)
+                impact.impactOccurred()
                 guard let cat = selectedCategory else { return }
                 viewModel.saveTransaction(categoryId: cat.id, tagIds: Array(selectedTagIds))
             }) {
-                Text(String(localized: "record_save"))
-                    .font(AppTypography.bodyLarge)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .background(canSave ? AppColors.primary : AppColors.textTertiary)
-                    .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+                HStack(spacing: AppSpacing.sm) {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 16, weight: .bold))
+                    Text(String(localized: "record_save"))
+                        .font(AppTypography.bodyLarge)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 52)
+                .background(
+                    canSave
+                        ? AnyShapeStyle(typeColor.gradient)
+                        : AnyShapeStyle(AppColors.divider)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: AppRadius.lg))
+                .shadow(color: canSave ? typeColor.opacity(0.3) : .clear, radius: 8, y: 4)
             }
             .disabled(!canSave)
             .padding(.horizontal, AppSpacing.lg)
             .padding(.bottom, AppSpacing.lg)
+            .animation(.easeInOut(duration: 0.2), value: canSave)
             .accessibilityLabel(String(localized: "a11y_save_transaction"))
         }
     }
