@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -152,7 +152,7 @@
 		453198779592A85DBBAB29A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4901C21B25B6C3AA590D83CE /* categories-expense.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-expense.json"; sourceTree = "<group>"; };
 		4907630A657591DFE3D6B9C1 /* BackupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupData.swift; sourceTree = "<group>"; };
-		4C6F4E2E4ECF95E44FB42B56 /* FreeLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6F4E2E4ECF95E44FB42B56 /* FreeLedger.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FreeLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53164E561A096D03534BF7B0 /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
 		555B58B43F2029274AB6545A /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		56068F9D58270669EAFACA78 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		873635307303E9DCA4578CE4 /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
 		8A318E54C2F73348ED88296C /* DateFormatter+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+App.swift"; sourceTree = "<group>"; };
 		8A3BC78E73004B53014B5869 /* TagDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailViewModel.swift; sourceTree = "<group>"; };
-		8DD721304CC422C3926D789B /* FreeLedgerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FreeLedgerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD721304CC422C3926D789B /* FreeLedgerWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = FreeLedgerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE37C2FDEFFE618DE5008CE /* CSVExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportView.swift; sourceTree = "<group>"; };
 		93D49FD28A46947123A15E87 /* categories-income.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-income.json"; sourceTree = "<group>"; };
 		94A2E717420E0C011EF7848F /* TrendLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendLineChart.swift; sourceTree = "<group>"; };
@@ -601,6 +601,21 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					416D82252F5F6A08C86BB3D2 = {
+						DevelopmentTeam = QLJ5YWNC2W;
+						ProvisioningStyle = Automatic;
+					};
+					EC154722F9E47B3274E025DE = {
+						DevelopmentTeam = QLJ5YWNC2W;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C753D3167AD60CEDC571F13D /* Build configuration list for PBXProject "FreeLedger" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -613,8 +628,9 @@
 			mainGroup = 6512158EAFAA422FAFEF6942;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */,
+				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -789,6 +805,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
@@ -817,6 +834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FreeLedgerWidget/FreeLedgerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
@@ -843,6 +861,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
@@ -1024,6 +1043,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FreeLedgerWidget/FreeLedgerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
@@ -1085,7 +1105,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */ = {
+		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift";
 			requirement = {
@@ -1098,7 +1118,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9E7546593AC81B62D25B56EC /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */;
+			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */

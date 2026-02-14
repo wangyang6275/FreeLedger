@@ -1,4 +1,5 @@
 import Foundation
+import WidgetKit
 
 struct WidgetTransactionItem: Codable {
     let categoryName: String
@@ -22,21 +23,40 @@ struct WidgetData: Codable {
 
 enum WidgetDataBridge {
     static let appGroupId = "group.com.freeledger.app"
-    static let widgetDataKey = "widget_data"
+    private static let fileName = "widget_data.json"
+
+    private static var sharedFileURL: URL? {
+        if let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupId) {
+            return containerURL.appendingPathComponent(fileName)
+        }
+        #if targetEnvironment(simulator)
+        return URL(fileURLWithPath: "/private/tmp/\(fileName)")
+        #else
+        return nil
+        #endif
+    }
 
     static func write(_ data: WidgetData) {
-        guard let defaults = UserDefaults(suiteName: appGroupId) else { return }
-        if let encoded = try? JSONEncoder().encode(data) {
-            defaults.set(encoded, forKey: widgetDataKey)
+        guard let url = sharedFileURL else { return }
+        do {
+            let encoded = try JSONEncoder().encode(data)
+            try encoded.write(to: url, options: .atomic)
+            WidgetCenter.shared.reloadAllTimelines()
+        } catch {
+            // Silent fail
         }
     }
 
     static func read() -> WidgetData? {
-        guard let defaults = UserDefaults(suiteName: appGroupId),
-              let data = defaults.data(forKey: widgetDataKey),
-              let decoded = try? JSONDecoder().decode(WidgetData.self, from: data) else {
+        guard let url = sharedFileURL,
+              FileManager.default.fileExists(atPath: url.path) else {
             return nil
         }
-        return decoded
+        do {
+            let data = try Data(contentsOf: url)
+            return try JSONDecoder().decode(WidgetData.self, from: data)
+        } catch {
+            return nil
+        }
     }
 }
