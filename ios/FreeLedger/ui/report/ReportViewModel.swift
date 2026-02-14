@@ -17,11 +17,12 @@ final class ReportViewModel {
     private let settingsRepository: SettingsRepositoryProtocol
     private let tagRepository: TagRepositoryProtocol
 
-    private static let monthFormatter: DateFormatter = {
+    private static func makeMonthFormatter() -> DateFormatter {
         let f = DateFormatter()
-        f.dateFormat = "yyyy年M月"
+        f.locale = LanguageManager.locale
+        f.setLocalizedDateFormatFromTemplate("yyyyMMMM")
         return f
-    }()
+    }
 
     var isEmpty: Bool {
         summary.totalExpense == 0 && summary.totalIncome == 0
@@ -33,7 +34,7 @@ final class ReportViewModel {
         comps.month = currentMonth
         comps.day = 1
         guard let date = Calendar.current.date(from: comps) else { return "" }
-        return Self.monthFormatter.string(from: date)
+        return Self.makeMonthFormatter().string(from: date)
     }
 
     init(transactionRepository: TransactionRepositoryProtocol,

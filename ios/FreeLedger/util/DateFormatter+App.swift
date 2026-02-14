@@ -9,17 +9,19 @@ enum AppDateFormatter {
         return f
     }()
 
-    private static let monthDayFormatter: DateFormatter = {
+    private static func makeMonthDayFormatter() -> DateFormatter {
         let f = DateFormatter()
-        f.dateFormat = "M月d日"
+        f.locale = LanguageManager.locale
+        f.setLocalizedDateFormatFromTemplate("MMMMd")
         return f
-    }()
+    }
 
-    private static let monthTitleFormatter: DateFormatter = {
+    private static func makeMonthTitleFormatter() -> DateFormatter {
         let f = DateFormatter()
-        f.dateFormat = "M月"
+        f.locale = LanguageManager.locale
+        f.setLocalizedDateFormatFromTemplate("MMMM")
         return f
-    }()
+    }
 
     static func parseISO(_ isoString: String) -> Date? {
         isoParser.date(from: isoString)
@@ -37,12 +39,12 @@ enum AppDateFormatter {
         } else if calendar.isDateInYesterday(date) {
             return L("date_yesterday")
         } else {
-            return monthDayFormatter.string(from: date)
+            return makeMonthDayFormatter().string(from: date)
         }
     }
 
     static func formatMonthTitle(_ date: Date = Date()) -> String {
-        monthTitleFormatter.string(from: date)
+        makeMonthTitleFormatter().string(from: date)
     }
 
     static func groupTransactionsByDate(_ transactions: [Transaction]) -> [(String, [Transaction])] {

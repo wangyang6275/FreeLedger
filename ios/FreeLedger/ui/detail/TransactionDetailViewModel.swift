@@ -20,11 +20,12 @@ final class TransactionDetailViewModel {
     var editIsExpense: Bool = true
     var editTagIds: Set<String> = []
 
-    private static let dateDisplayFormatter: DateFormatter = {
+    private static func makeDateDisplayFormatter() -> DateFormatter {
         let f = DateFormatter()
-        f.dateFormat = "M月d日"
+        f.locale = LanguageManager.locale
+        f.setLocalizedDateFormatFromTemplate("MMMMd")
         return f
-    }()
+    }
 
     private let transactionRepository: TransactionRepositoryProtocol
     private let categoryRepository: CategoryRepositoryProtocol
@@ -71,7 +72,7 @@ final class TransactionDetailViewModel {
         } else if calendar.isDateInYesterday(date) {
             dateStr = L("date_yesterday")
         } else {
-            dateStr = Self.dateDisplayFormatter.string(from: date)
+            dateStr = Self.makeDateDisplayFormatter().string(from: date)
         }
         let timeStr = AppDateFormatter.formatTime(transaction.createdAt)
         return "\(dateStr) \(timeStr)"

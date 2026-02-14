@@ -99,7 +99,8 @@ final class TransactionRepository: TransactionRepositoryProtocol {
     func getLast6MonthsSummary(fromYear: Int, fromMonth: Int) throws -> [MonthlyTrend] {
         let monthFormatter: DateFormatter = {
             let f = DateFormatter()
-            f.dateFormat = "M月"
+            f.locale = LanguageManager.locale
+            f.setLocalizedDateFormatFromTemplate("MMMM")
             return f
         }()
 
@@ -119,7 +120,7 @@ final class TransactionRepository: TransactionRepositoryProtocol {
             comps.year = y
             comps.month = m
             comps.day = 1
-            let label = Calendar.current.date(from: comps).map { monthFormatter.string(from: $0) } ?? "\(m)月"
+            let label = Calendar.current.date(from: comps).map { monthFormatter.string(from: $0) } ?? "\(m)"
             results.append(MonthlyTrend(
                 year: y, month: m, monthLabel: label,
                 expense: summary.totalExpense, income: summary.totalIncome

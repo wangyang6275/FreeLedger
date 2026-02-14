@@ -26,6 +26,7 @@ final class LanguageManager {
     var currentLanguage: String {
         didSet {
             Self.bundle = Self.loadBundle(currentLanguage)
+            Self.updateLocale(currentLanguage)
             UserDefaults.standard.set(currentLanguage, forKey: Self.languageKey)
             refreshId += 1
         }
@@ -38,6 +39,7 @@ final class LanguageManager {
         let code = saved ?? "zh-Hans"
         self.currentLanguage = code
         Self.bundle = Self.loadBundle(code)
+        Self.updateLocale(code)
     }
 
     private static func loadBundle(_ code: String) -> Bundle {
@@ -50,6 +52,16 @@ final class LanguageManager {
 
     var currentLanguageDisplay: String {
         Self.supportedLanguages.first { $0.code == currentLanguage }?.localName ?? currentLanguage
+    }
+
+    nonisolated(unsafe) static var locale: Locale = Locale(identifier: "zh-Hans")
+
+    private static func updateLocale(_ code: String) {
+        let map: [String: String] = [
+            "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
+            "en": "en_US", "ja": "ja_JP", "ko": "ko_KR"
+        ]
+        locale = Locale(identifier: map[code] ?? code)
     }
 }
 

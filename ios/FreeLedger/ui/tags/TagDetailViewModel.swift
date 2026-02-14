@@ -13,11 +13,12 @@ final class TagDetailViewModel {
     private let categoryRepository: CategoryRepositoryProtocol
     private let settingsRepository: SettingsRepositoryProtocol
 
-    private static let dateDisplayFormatter: DateFormatter = {
+    private static func makeDateDisplayFormatter() -> DateFormatter {
         let f = DateFormatter()
-        f.dateFormat = "M月d日"
+        f.locale = LanguageManager.locale
+        f.setLocalizedDateFormatFromTemplate("MMMMd")
         return f
-    }()
+    }
 
     init(tag: Tag,
          tagRepository: TagRepositoryProtocol,
@@ -50,7 +51,7 @@ final class TagDetailViewModel {
             } else if calendar.isDateInYesterday(date) {
                 return L("date_yesterday")
             } else {
-                return Self.dateDisplayFormatter.string(from: date)
+                return Self.makeDateDisplayFormatter().string(from: date)
             }
         }
         return grouped.sorted { lhs, rhs in
