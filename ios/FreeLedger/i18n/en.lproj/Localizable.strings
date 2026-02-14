@@ -123,6 +123,17 @@
 "tag_count %lld" = "%lld records";
 "tag_total_expense" = "Expense";
 "tag_total_income" = "Income";
+"tags_empty_title" = "No Tags Yet";
+"tags_empty_desc" = "Group transactions with tags for easy tracking and review";
+"tags_create_first" = "Create First Tag";
+"tags_create_title" = "New Tag";
+"tags_edit_title" = "Edit Tag";
+"tags_save" = "Save";
+"tags_name_label" = "Name";
+"tags_color_label" = "Color";
+"tags_preview" = "Preview";
+"tags_delete_title" = "Delete Tag";
+"tags_delete_message %@" = "Delete \"%@\"? Associated transactions won't be affected.";
 
 /* Actions */
 "action_edit" = "Edit";

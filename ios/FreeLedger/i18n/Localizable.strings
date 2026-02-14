@@ -123,6 +123,17 @@
 "tag_count %lld" = "%lld 条";
 "tag_total_expense" = "支出";
 "tag_total_income" = "收入";
+"tags_empty_title" = "还没有标签";
+"tags_empty_desc" = "用标签为交易分组，方便统计和回顾";
+"tags_create_first" = "创建第一个标签";
+"tags_create_title" = "新建标签";
+"tags_edit_title" = "编辑标签";
+"tags_save" = "保存";
+"tags_name_label" = "名称";
+"tags_color_label" = "颜色";
+"tags_preview" = "预览";
+"tags_delete_title" = "删除标签";
+"tags_delete_message %@" = "确定删除「%@」吗？关联的交易记录不会被删除";
 
 /* Actions */
 "action_edit" = "编辑";

@@ -11,6 +11,18 @@ packages:
     url: https://github.com/groue/GRDB.swift
     from: "7.0.0"
 
+schemes:
+  FreeLedger:
+    build:
+      targets:
+        FreeLedger: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - FreeLedgerTests
+
 targets:
   FreeLedger:
     type: application
