@@ -121,6 +121,24 @@ final class AppDatabase: Sendable {
             )
         }
 
+        migrator.registerMigration("v3") { db in
+            try db.create(table: "reminders") { t in
+                t.column("id", .text).primaryKey()
+                t.column("title", .text).notNull()
+                t.column("amount", .integer).notNull()
+                t.column("type", .text).notNull().defaults(to: "expense")
+                t.column("category_id", .text)
+                    .references("categories", onDelete: .setNull)
+                t.column("note", .text)
+                t.column("frequency", .text).notNull().defaults(to: "monthly")
+                t.column("trigger_day", .integer)
+                t.column("trigger_hour", .integer).notNull().defaults(to: 9)
+                t.column("trigger_minute", .integer).notNull().defaults(to: 0)
+                t.column("is_enabled", .boolean).notNull().defaults(to: true)
+                t.column("created_at", .text).notNull()
+            }
+        }
+
         try migrator.migrate(dbQueue)
     }
 

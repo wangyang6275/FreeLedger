@@ -5,23 +5,27 @@ struct HomeView: View {
     @State private var deleteTarget: Transaction?
     @State private var showDeleteDialog: Bool = false
     @State private var showSearch: Bool = false
+    @State private var showReminders: Bool = false
     @State private var errorMessage: String?
 
     let transactionRepository: TransactionRepositoryProtocol
     let categoryRepository: CategoryRepositoryProtocol
     let settingsRepository: SettingsRepositoryProtocol
     let tagRepository: TagRepositoryProtocol
+    let reminderRepository: ReminderRepositoryProtocol
 
     init(viewModel: HomeViewModel,
          transactionRepository: TransactionRepositoryProtocol,
          categoryRepository: CategoryRepositoryProtocol,
          settingsRepository: SettingsRepositoryProtocol,
-         tagRepository: TagRepositoryProtocol) {
+         tagRepository: TagRepositoryProtocol,
+         reminderRepository: ReminderRepositoryProtocol) {
         _viewModel = State(initialValue: viewModel)
         self.transactionRepository = transactionRepository
         self.categoryRepository = categoryRepository
         self.settingsRepository = settingsRepository
         self.tagRepository = tagRepository
+        self.reminderRepository = reminderRepository
     }
 
     var body: some View {
@@ -126,6 +130,15 @@ struct HomeView: View {
             }
             .navigationTitle(String(localized: "tab_transactions"))
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showReminders = true
+                    } label: {
+                        Image(systemName: "bell")
+                            .foregroundColor(AppColors.textPrimary)
+                    }
+                    .accessibilityLabel(String(localized: "reminders_title"))
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showSearch = true
@@ -142,6 +155,13 @@ struct HomeView: View {
                     categoryRepository: categoryRepository,
                     settingsRepository: settingsRepository,
                     tagRepository: tagRepository
+                )
+            }
+            .navigationDestination(isPresented: $showReminders) {
+                RemindersView(
+                    reminderRepository: reminderRepository,
+                    categoryRepository: categoryRepository,
+                    settingsRepository: settingsRepository
                 )
             }
             .onAppear {

@@ -4,6 +4,7 @@ struct ContentView: View {
     @State private var selectedTab = 0
     @State private var showRecord = false
     @State private var deepLinkRecord = false
+    @State private var reminderPrefill: ReminderPrefill?
     @State private var showBackupReminder = false
     @State private var backupReminderMessage = ""
     @State private var isLocked = false
@@ -22,6 +23,8 @@ struct ContentView: View {
     private let backupService: BackupService
     private let backupReminderService: BackupReminderService
     private let csvExportService: CSVExportService
+    private let reminderDAO: ReminderDAO
+    private let reminderRepository: ReminderRepository
     private let passwordService: PasswordService
     private let homeViewModel: HomeViewModel
 
@@ -35,10 +38,13 @@ struct ContentView: View {
         self.transactionDAO = txDAO
         self.settingsDAO = setDAO
         self.tagDAO = tagDAO
+        let remDAO = ReminderDAO(dbQueue: db.dbQueue)
+        self.reminderDAO = remDAO
         self.transactionRepository = TransactionRepository(dbQueue: db.dbQueue, transactionDAO: txDAO, categoryDAO: catDAO, tagDAO: tagDAO)
         self.categoryRepository = CategoryRepository(dao: catDAO)
         self.settingsRepository = SettingsRepository(dao: setDAO)
         self.tagRepository = TagRepository(dao: tagDAO)
+        self.reminderRepository = ReminderRepository(dao: remDAO)
         self.backupService = BackupService(dbQueue: db.dbQueue)
         self.backupReminderService = BackupReminderService(dbQueue: db.dbQueue, settingsDAO: setDAO)
         self.csvExportService = CSVExportService(dbQueue: db.dbQueue)
@@ -58,7 +64,8 @@ struct ContentView: View {
                         transactionRepository: transactionRepository,
                         categoryRepository: categoryRepository,
                         settingsRepository: settingsRepository,
-                        tagRepository: tagRepository
+                        tagRepository: tagRepository,
+                        reminderRepository: reminderRepository
                     )
                     .tabItem {
                         Image(systemName: "list.bullet")
@@ -116,7 +123,8 @@ struct ContentView: View {
                 transactionRepository: transactionRepository,
                 categoryRepository: categoryRepository,
                 settingsRepository: settingsRepository,
-                tagRepository: tagRepository
+                tagRepository: tagRepository,
+                prefill: reminderPrefill
             )
             .presentationDetents([.large])
             .presentationDragIndicator(.visible)
@@ -124,6 +132,20 @@ struct ContentView: View {
         .onChange(of: showRecord) { _, isShowing in
             if !isShowing {
                 homeViewModel.loadData()
+                reminderPrefill = nil
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: AppDelegate.reminderNotification)) { notification in
+            guard let reminderId = notification.userInfo?["reminder_id"] as? String,
+                  let reminder = try? reminderRepository.getById(reminderId) else { return }
+            reminderPrefill = ReminderPrefill(
+                amount: reminder.amount,
+                type: reminder.type,
+                categoryId: reminder.categoryId,
+                note: reminder.note
+            )
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                showRecord = true
             }
         }
         .onAppear {

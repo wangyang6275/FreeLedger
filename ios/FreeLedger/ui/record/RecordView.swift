@@ -9,12 +9,15 @@ struct RecordView: View {
     @State private var showTagTip: Bool = false
 
     let tagRepository: TagRepositoryProtocol
+    let prefill: ReminderPrefill?
 
     init(transactionRepository: TransactionRepositoryProtocol,
          categoryRepository: CategoryRepositoryProtocol,
          settingsRepository: SettingsRepositoryProtocol,
-         tagRepository: TagRepositoryProtocol) {
+         tagRepository: TagRepositoryProtocol,
+         prefill: ReminderPrefill? = nil) {
         self.tagRepository = tagRepository
+        self.prefill = prefill
         _viewModel = State(initialValue: RecordViewModel(
             transactionRepository: transactionRepository,
             categoryRepository: categoryRepository,
@@ -41,12 +44,25 @@ struct RecordView: View {
         .onAppear {
             viewModel.loadCurrency()
             viewModel.loadCategories()
-            let key = "has_seen_tag_tip"
-            if !UserDefaults.standard.bool(forKey: key) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                    showTagTip = true
+            if let prefill {
+                viewModel.amountString = String(format: "%.2f", Double(prefill.amount) / 100.0)
+                if prefill.type == TransactionType.income.rawValue && viewModel.isExpense {
+                    viewModel.toggleType()
                 }
-                UserDefaults.standard.set(true, forKey: key)
+                if let catId = prefill.categoryId {
+                    selectedCategory = viewModel.categories.first { $0.id == catId }
+                }
+                if let note = prefill.note {
+                    viewModel.note = note
+                }
+            } else {
+                let key = "has_seen_tag_tip"
+                if !UserDefaults.standard.bool(forKey: key) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                        showTagTip = true
+                    }
+                    UserDefaults.standard.set(true, forKey: key)
+                }
             }
         }
         .onChange(of: viewModel.didSave) { _, didSave in

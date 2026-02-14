@@ -144,6 +144,34 @@
 "tags_guide_how_desc" = "Tap the tag button (top-right) when recording a transaction, or create tags here first";
 "tag_tip_message" = "Tap here to add tags 🏷️";
 
+/* Reminders */
+"reminders_title" = "Reminders";
+"reminders_empty_title" = "No Reminders Yet";
+"reminders_empty_desc" = "Set up recurring reminders so you never forget rent, mortgage, or bills";
+"reminders_create_first" = "Create First Reminder";
+"reminders_new_title" = "New Reminder";
+"reminders_edit_title" = "Edit Reminder";
+"reminders_create" = "Create Reminder";
+"reminders_delete_title" = "Delete Reminder";
+"reminders_delete_message %@" = "Delete \"%@\"?";
+"reminders_field_title" = "Reminder Name";
+"reminders_title_placeholder" = "e.g. Pay rent, Mortgage";
+"reminders_field_amount" = "Amount";
+"reminders_field_category" = "Category (optional)";
+"reminders_field_frequency" = "Repeat";
+"reminders_field_time" = "Reminder Time";
+"reminders_field_note" = "Note (optional)";
+"reminders_freq_daily" = "Daily";
+"reminders_freq_weekly" = "Weekly";
+"reminders_freq_monthly" = "Monthly";
+"reminders_freq_weekly_day %@" = "Every %@";
+"reminders_freq_monthly_day %lld" = "Day %lld";
+"reminders_example_rent" = "Pay Rent";
+"reminders_example_mortgage" = "Mortgage";
+"reminders_example_phone" = "Phone Bill";
+"reminder_action_record" = "Record";
+"reminder_notification_body %@" = "Time to record: %@";
+
 /* Actions */
 "action_edit" = "Edit";
 "action_cancel" = "Cancel";

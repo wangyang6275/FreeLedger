@@ -144,6 +144,34 @@
 "tags_guide_how_desc" = "记账时点击右上角标签按钮即可选择，也可以在这里提前创建";
 "tag_tip_message" = "点这里给交易添加标签 🏷️";
 
+/* Reminders */
+"reminders_title" = "提醒";
+"reminders_empty_title" = "还没有提醒";
+"reminders_empty_desc" = "设置定期提醒，再也不会忘记交房租、还房贷";
+"reminders_create_first" = "创建第一个提醒";
+"reminders_new_title" = "新建提醒";
+"reminders_edit_title" = "编辑提醒";
+"reminders_create" = "创建提醒";
+"reminders_delete_title" = "删除提醒";
+"reminders_delete_message %@" = "确定删除「%@」吗？";
+"reminders_field_title" = "提醒名称";
+"reminders_title_placeholder" = "如：交房租、还房贷";
+"reminders_field_amount" = "金额";
+"reminders_field_category" = "分类（可选）";
+"reminders_field_frequency" = "重复频率";
+"reminders_field_time" = "提醒时间";
+"reminders_field_note" = "备注（可选）";
+"reminders_freq_daily" = "每天";
+"reminders_freq_weekly" = "每周";
+"reminders_freq_monthly" = "每月";
+"reminders_freq_weekly_day %@" = "每周%@";
+"reminders_freq_monthly_day %lld" = "每月%lld号";
+"reminders_example_rent" = "交房租";
+"reminders_example_mortgage" = "还房贷";
+"reminders_example_phone" = "交话费";
+"reminder_action_record" = "记一笔";
+"reminder_notification_body %@" = "该记账啦：%@";
+
 /* Actions */
 "action_edit" = "编辑";
 "action_cancel" = "取消";
