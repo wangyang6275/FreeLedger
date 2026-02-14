@@ -19,6 +19,24 @@ final class LanguageManager {
         Language(code: "en", name: "English", localName: "English"),
         Language(code: "ja", name: "Japanese", localName: "日本語"),
         Language(code: "ko", name: "Korean", localName: "한국어"),
+        Language(code: "fr", name: "French", localName: "Français"),
+        Language(code: "de", name: "German", localName: "Deutsch"),
+        Language(code: "es", name: "Spanish", localName: "Español"),
+        Language(code: "pt-BR", name: "Portuguese", localName: "Português"),
+        Language(code: "ru", name: "Russian", localName: "Русский"),
+        Language(code: "ar", name: "Arabic", localName: "العربية"),
+        Language(code: "it", name: "Italian", localName: "Italiano"),
+        Language(code: "nl", name: "Dutch", localName: "Nederlands"),
+        Language(code: "tr", name: "Turkish", localName: "Türkçe"),
+        Language(code: "th", name: "Thai", localName: "ไทย"),
+        Language(code: "vi", name: "Vietnamese", localName: "Tiếng Việt"),
+        Language(code: "id", name: "Indonesian", localName: "Bahasa Indonesia"),
+        Language(code: "hi", name: "Hindi", localName: "हिन्दी"),
+        Language(code: "ms", name: "Malay", localName: "Bahasa Melayu"),
+        Language(code: "pl", name: "Polish", localName: "Polski"),
+        Language(code: "sv", name: "Swedish", localName: "Svenska"),
+        Language(code: "uk", name: "Ukrainian", localName: "Українська"),
+        Language(code: "he", name: "Hebrew", localName: "עברית"),
     ]
 
     private static let languageKey = "app_language"
@@ -59,7 +77,13 @@ final class LanguageManager {
     private static func updateLocale(_ code: String) {
         let map: [String: String] = [
             "zh-Hans": "zh_CN", "zh-Hant": "zh_TW",
-            "en": "en_US", "ja": "ja_JP", "ko": "ko_KR"
+            "en": "en_US", "ja": "ja_JP", "ko": "ko_KR",
+            "fr": "fr_FR", "de": "de_DE", "es": "es_ES",
+            "pt-BR": "pt_BR", "ru": "ru_RU", "ar": "ar_SA",
+            "it": "it_IT", "nl": "nl_NL", "tr": "tr_TR",
+            "th": "th_TH", "vi": "vi_VN", "id": "id_ID",
+            "hi": "hi_IN", "ms": "ms_MY", "pl": "pl_PL",
+            "sv": "sv_SE", "uk": "uk_UA", "he": "he_IL"
         ]
         locale = Locale(identifier: map[code] ?? code)
     }
