@@ -218,3 +218,25 @@
 "a11y_category %@" = "קטגוריה %@";
 "a11y_category_selected %@" = "נבחרה, קטגוריה %@";
 "a11y_summary %@ %@ %@" = "הוצאות %@, הכנסות %@, יתרה %@";
+
+/* Theme */
+"settings_theme" = "ערכת נושא";
+"theme_coral" = "אלמוג";
+"theme_forest" = "יער";
+"theme_ocean" = "אוקיינוס";
+"theme_lavender" = "לבנדר";
+"theme_charcoal" = "פחם";
+"theme_kids" = "ארץ הילדים";
+"theme_student" = "כחול סטודנט";
+"theme_executive" = "אפור מנהלים";
+"theme_homemaker" = "בז׳ נעים";
+"theme_youngpro" = "כתום אנרגטי";
+"theme_sakura" = "ורוד סאקורה";
+"theme_zen" = "ירוק זן";
+"theme_moonlight" = "כסף ירח";
+"theme_autumn" = "סתיו";
+"theme_bold" = "אדום נועז";
+
+/* Contact */
+"settings_contact_section" = "יצירת קשר";
+"settings_contact_us" = "צור קשר";

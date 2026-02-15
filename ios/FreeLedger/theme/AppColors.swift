@@ -1,10 +1,16 @@
 import SwiftUI
 
 enum AppColors {
-    static let primary = Color(hex: "#FF6B6B")
-    static let primaryDark = Color(hex: "#E55A5A")
-    static let primaryLight = Color(hex: "#FFE8E8")
-    static let secondary = Color(hex: "#4ECDC4")
+    // MARK: - 动态主题颜色（通过 ThemeManager 获取）
+    @MainActor static var primary: Color { ThemeManager.shared.primary }
+    @MainActor static var primaryDark: Color { ThemeManager.shared.primaryDark }
+    @MainActor static var primaryLight: Color { ThemeManager.shared.primaryLight }
+    @MainActor static var secondary: Color { ThemeManager.shared.secondary }
+    @MainActor static var expense: Color { ThemeManager.shared.expense }
+    @MainActor static var income: Color { ThemeManager.shared.income }
+    @MainActor static var primaryGradient: LinearGradient { ThemeManager.shared.primaryGradient }
+    
+    // MARK: - 固定颜色（不随主题变化）
     static let background = Color(hex: "#FAFAFA")
     static let surface = Color(hex: "#FFFFFF")
     static let textPrimary = Color(hex: "#2D3436")
@@ -14,15 +20,6 @@ enum AppColors {
     static let success = Color(hex: "#00B894")
     static let warning = Color(hex: "#FDCB6E")
     static let error = Color(hex: "#E17055")
-
-    static let expense = primary
-    static let income = secondary
-
-    static let primaryGradient = LinearGradient(
-        colors: [Color(hex: "#FF6B6B"), Color(hex: "#FF8E8E")],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
 }
 
 extension Color {

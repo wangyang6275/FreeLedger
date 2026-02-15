@@ -218,3 +218,25 @@
 "a11y_category %@" = "فئة %@";
 "a11y_category_selected %@" = "محددة، فئة %@";
 "a11y_summary %@ %@ %@" = "المصروفات %@، الدخل %@، الرصيد %@";
+
+/* Theme */
+"settings_theme" = "المظهر";
+"theme_coral" = "مرجاني";
+"theme_forest" = "غابة";
+"theme_ocean" = "محيط";
+"theme_lavender" = "لافندر";
+"theme_charcoal" = "فحمي";
+"theme_kids" = "عالم الأطفال";
+"theme_student" = "أزرق الطالب";
+"theme_executive" = "رمادي تنفيذي";
+"theme_homemaker" = "بيج دافئ";
+"theme_youngpro" = "برتقالي حيوي";
+"theme_sakura" = "وردي ساكورا";
+"theme_zen" = "أخضر زِن";
+"theme_moonlight" = "فضي القمر";
+"theme_autumn" = "خريف";
+"theme_bold" = "أحمر جريء";
+
+/* Contact */
+"settings_contact_section" = "اتصال";
+"settings_contact_us" = "اتصل بنا";

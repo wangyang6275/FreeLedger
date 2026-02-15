@@ -54,6 +54,18 @@ struct SettingsView: View {
                                 .foregroundColor(AppColors.textSecondary)
                         }
                     }
+
+                    NavigationLink {
+                        ThemePickerView()
+                    } label: {
+                        HStack {
+                            Label(L("settings_theme"), systemImage: "paintpalette")
+                            Spacer()
+                            Circle()
+                                .fill(AppColors.primary)
+                                .frame(width: 20, height: 20)
+                        }
+                    }
                 }
 
                 Section(L("settings_password_section")) {
@@ -118,6 +130,19 @@ struct SettingsView: View {
                         Spacer()
                         Text(appVersion)
                             .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+
+                Section(L("settings_contact_section")) {
+                    Link(destination: URL(string: "mailto:tomaswell163@gmail.com?subject=FreeLedger%20Feedback")!) {
+                        HStack {
+                            Label(L("settings_contact_us"), systemImage: "envelope")
+                                .foregroundColor(AppColors.textPrimary)
+                            Spacer()
+                            Image(systemName: "arrow.up.forward")
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                        }
                     }
                 }
             }

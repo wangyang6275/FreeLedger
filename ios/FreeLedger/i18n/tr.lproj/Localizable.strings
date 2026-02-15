@@ -218,3 +218,25 @@
 "a11y_category %@" = "Kategori %@";
 "a11y_category_selected %@" = "Secili, kategori %@";
 "a11y_summary %@ %@ %@" = "Giderler %@, gelir %@, bakiye %@";
+
+/* Theme */
+"settings_theme" = "Tema";
+"theme_coral" = "Mercan";
+"theme_forest" = "Orman";
+"theme_ocean" = "Okyanus";
+"theme_lavender" = "Lavanta";
+"theme_charcoal" = "Komur";
+"theme_kids" = "Cocuk Dunyasi";
+"theme_student" = "Ogrenci Mavi";
+"theme_executive" = "Yonetici Gri";
+"theme_homemaker" = "Sicak Bej";
+"theme_youngpro" = "Enerjik Turuncu";
+"theme_sakura" = "Sakura Pembe";
+"theme_zen" = "Zen Yesil";
+"theme_moonlight" = "Ay Isigi Gumus";
+"theme_autumn" = "Sonbahar";
+"theme_bold" = "Cesur Kirmizi";
+
+/* Contact */
+"settings_contact_section" = "Iletisim";
+"settings_contact_us" = "Bize Ulasin";

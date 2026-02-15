@@ -218,3 +218,25 @@
 "a11y_category %@" = "Danh mục %@";
 "a11y_category_selected %@" = "Đã chọn, danh mục %@";
 "a11y_summary %@ %@ %@" = "Chi tiêu %@, thu nhập %@, số dư %@";
+
+/* Theme */
+"settings_theme" = "Giao dien";
+"theme_coral" = "San ho";
+"theme_forest" = "Rung xanh";
+"theme_ocean" = "Dai duong";
+"theme_lavender" = "Oai huong";
+"theme_charcoal" = "Than chi";
+"theme_kids" = "The gioi tre tho";
+"theme_student" = "Xanh hoc sinh";
+"theme_homemaker" = "Be am ap";
+"theme_executive" = "Xam doanh nhan";
+"theme_youngpro" = "Cam soi dong";
+"theme_sakura" = "Hong Sakura";
+"theme_zen" = "Xanh Zen";
+"theme_moonlight" = "Bac anh trang";
+"theme_autumn" = "Thu";
+"theme_bold" = "Do dam me";
+
+/* Contact */
+"settings_contact_section" = "Lien he";
+"settings_contact_us" = "Lien he chung toi";

@@ -218,3 +218,25 @@
 "a11y_category %@" = "หมวดหมู่ %@";
 "a11y_category_selected %@" = "เลือกแล้ว หมวดหมู่ %@";
 "a11y_summary %@ %@ %@" = "รายจ่าย %@ รายรับ %@ ยอดคงเหลือ %@";
+
+/* Theme */
+"settings_theme" = "ธีม";
+"theme_coral" = "คอรัล";
+"theme_forest" = "ป่าไม้";
+"theme_ocean" = "มหาสมุทร";
+"theme_lavender" = "ลาเวนเดอร์";
+"theme_charcoal" = "ชาร์โคล";
+"theme_kids" = "โลกเด็ก";
+"theme_student" = "น้ำเงินนักเรียน";
+"theme_executive" = "เทาผู้บริหาร";
+"theme_homemaker" = "เบจอบอุ่น";
+"theme_youngpro" = "ส้มกระปรี้กระเปร่า";
+"theme_sakura" = "ชมพูซากุระ";
+"theme_zen" = "เขียวเซน";
+"theme_moonlight" = "เงินแสงจันทร์";
+"theme_autumn" = "ฤดูใบไม้ร่วง";
+"theme_bold" = "แดงกล้าหาญ";
+
+/* Contact */
+"settings_contact_section" = "ติดต่อ";
+"settings_contact_us" = "ติดต่อเรา";

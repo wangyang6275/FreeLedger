@@ -218,3 +218,25 @@
 "a11y_category %@" = "Kategori %@";
 "a11y_category_selected %@" = "Vald, kategori %@";
 "a11y_summary %@ %@ %@" = "Utgifter %@, inkomst %@, saldo %@";
+
+/* Theme */
+"settings_theme" = "Tema";
+"theme_coral" = "Korall";
+"theme_forest" = "Skog";
+"theme_ocean" = "Hav";
+"theme_lavender" = "Lavendel";
+"theme_charcoal" = "Kol";
+"theme_kids" = "Barnens Land";
+"theme_student" = "Student Bla";
+"theme_executive" = "Exekutiv Gra";
+"theme_homemaker" = "Mysig Beige";
+"theme_youngpro" = "Energisk Orange";
+"theme_sakura" = "Sakura Rosa";
+"theme_zen" = "Zen Gron";
+"theme_moonlight" = "Mansken Silver";
+"theme_autumn" = "Host";
+"theme_bold" = "Djarvt Rod";
+
+/* Contact */
+"settings_contact_section" = "Kontakt";
+"settings_contact_us" = "Kontakta oss";

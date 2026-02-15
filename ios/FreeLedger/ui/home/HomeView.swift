@@ -53,7 +53,12 @@ struct HomeView: View {
                         ForEach(viewModel.groupedTransactions, id: \.0) { group in
                             Section {
                                 ForEach(group.1) { transaction in
-                                    NavigationLink(value: transaction) {
+                                    ZStack {
+                                        NavigationLink(value: transaction) {
+                                            EmptyView()
+                                        }
+                                        .opacity(0)
+                                        
                                         TransactionCard(
                                             transaction: transaction,
                                             category: viewModel.categoryDict[transaction.categoryId],

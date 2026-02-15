@@ -218,3 +218,25 @@
 "a11y_category %@" = "Категорія %@";
 "a11y_category_selected %@" = "Обрано категорію %@";
 "a11y_summary %@ %@ %@" = "Витрати %@, доходи %@, баланс %@";
+
+/* Theme */
+"settings_theme" = "Тема";
+"theme_coral" = "Кораловий";
+"theme_forest" = "Лісовий";
+"theme_ocean" = "Океан";
+"theme_lavender" = "Лавандовий";
+"theme_charcoal" = "Вугільний";
+"theme_kids" = "Дитяча країна";
+"theme_student" = "Студентський синій";
+"theme_executive" = "Діловий сірий";
+"theme_homemaker" = "Затишний бежевий";
+"theme_youngpro" = "Енергійний помаранчевий";
+"theme_sakura" = "Сакура рожевий";
+"theme_zen" = "Дзен зелений";
+"theme_moonlight" = "Місячне срібло";
+"theme_autumn" = "Осінь";
+"theme_bold" = "Сміливий червоний";
+
+/* Contact */
+"settings_contact_section" = "Контакт";
+"settings_contact_us" = "Зв'яжіться з нами";

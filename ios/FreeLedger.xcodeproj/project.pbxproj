@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,7 @@
 		8C0776CACD363AB30237301B /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE495D71E0DDF399877724CB /* AppColors.swift */; };
 		917F5C68BD0793CF1A6B72F4 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 9E7546593AC81B62D25B56EC /* GRDB */; };
 		92545846ADB70C8ECF17E329 /* TagDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BC78E73004B53014B5869 /* TagDetailViewModel.swift */; };
+		94EE9BDA10DC0E05A4C9790B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF431273A9F729163CEA596 /* ThemeManager.swift */; };
 		970E5103119F256D2B221BAE /* WidgetDataBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F114029E433352D15156F /* WidgetDataBridge.swift */; };
 		9722E9BCBC0F8131903B4FD8 /* WidgetAmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7FF62BDCFB57894CCC483F /* WidgetAmountFormatter.swift */; };
 		99C1307F9872CACC93E8344D /* TagDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE6D32C0236376620193CFA /* TagDAO.swift */; };
@@ -96,6 +97,7 @@
 		E63624EADB4084D613087E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF624D100968498D6856E2EC /* Assets.xcassets */; };
 		E8A9DF731FF587E99959BACC /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06911D8DCABD99CEFEB42815 /* AmountFormatter.swift */; };
 		E93827EBFF80ADB9DE7A3504 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C28ADB48012A3D39E06F7 /* AppError.swift */; };
+		E97E3EA9F9C269A6E275FC41 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183690A5D916B375FF1D2BB6 /* ThemePickerView.swift */; };
 		E9C70EC43BBBF4323814A2DA /* CategoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A295737469CED06E6C0197 /* CategoryDAO.swift */; };
 		EA08BBBDC4ECF9F8554E23AE /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8966621D6E283958F3C16EE /* RecordViewModel.swift */; };
 		ECFA2FB977844B88790B5CC2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592FAD6AAFEDCBDAE31B129 /* HomeViewModel.swift */; };
@@ -148,6 +150,7 @@
 		12FD89995E524F4470583023 /* FreeLedgerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeLedgerWidget.swift; sourceTree = "<group>"; };
 		1472D91D13FC2CB72E8178C5 /* MonthlyTrend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTrend.swift; sourceTree = "<group>"; };
 		15977EC2093F5D4EE15E833B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		183690A5D916B375FF1D2BB6 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		1CEDEFFEA9CC271823464C12 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F26892995E6262E5FBC7CCF /* TagBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBarChart.swift; sourceTree = "<group>"; };
 		200B8820593A06B91BFA3C93 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
@@ -170,7 +173,7 @@
 		45AD4C4562EF3CE6BA1C40D2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4901C21B25B6C3AA590D83CE /* categories-expense.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-expense.json"; sourceTree = "<group>"; };
 		4907630A657591DFE3D6B9C1 /* BackupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupData.swift; sourceTree = "<group>"; };
-		4C6F4E2E4ECF95E44FB42B56 /* FreeLedger.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FreeLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6F4E2E4ECF95E44FB42B56 /* FreeLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4C90D54EA4DFE594722F62 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5062D3E76FC98F71DBA438A9 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53164E561A096D03534BF7B0 /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 		985EAD43A3DD052209F58806 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		9EBEEB78D436BA90BE70C58C /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
 		9FF1BCA96B16BA84AA81352E /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		9FF431273A9F729163CEA596 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		A052EB6C9DCF1A58E0F189C4 /* CategoryBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBreakdown.swift; sourceTree = "<group>"; };
 		A13AFD9D6FE74C131B8C09A4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AABADFEABBF7F82A1515BF31 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				DF63D1CF3248FD59B00F5170 /* LanguagePickerView.swift */,
 				9EBEEB78D436BA90BE70C58C /* SetPasswordView.swift */,
 				77F5D3C7757BF33A03CA95C9 /* SettingsView.swift */,
+				183690A5D916B375FF1D2BB6 /* ThemePickerView.swift */,
 				BB503CED4B1D5C10E7E726E8 /* VerifyPasswordView.swift */,
 			);
 			path = settings;
@@ -450,6 +455,7 @@
 				59B6F3010E82B11D29EF9AAC /* AppRadius.swift */,
 				9FF1BCA96B16BA84AA81352E /* AppSpacing.swift */,
 				64211202EDAE28DD827582D0 /* AppTypography.swift */,
+				9FF431273A9F729163CEA596 /* ThemeManager.swift */,
 			);
 			path = theme;
 			sourceTree = "<group>";
@@ -707,9 +713,8 @@
 			mainGroup = 6512158EAFAA422FAFEF6942;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -829,6 +834,8 @@
 				18B142911BC188587574147D /* TagSelector.swift in Sources */,
 				2C50BD9C2214FA90B8833D36 /* TagsView.swift in Sources */,
 				77ECE4CB2C71126224669338 /* TagsViewModel.swift in Sources */,
+				94EE9BDA10DC0E05A4C9790B /* ThemeManager.swift in Sources */,
+				E97E3EA9F9C269A6E275FC41 /* ThemePickerView.swift in Sources */,
 				A81D73B8ACC257CF033550B4 /* Transaction.swift in Sources */,
 				A0C9AE5391E7753A18DA6F76 /* TransactionCard.swift in Sources */,
 				6AEC1872C319BB7CAF0C4B8E /* TransactionDAO.swift in Sources */,
@@ -916,7 +923,7 @@
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -934,9 +941,13 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -972,7 +983,7 @@
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -990,9 +1001,13 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1215,7 +1230,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift";
 			requirement = {
@@ -1228,7 +1243,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9E7546593AC81B62D25B56EC /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */;
 			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */

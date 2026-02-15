@@ -255,3 +255,25 @@
 "a11y_category %@" = "%@ category, button";
 "a11y_category_selected %@" = "Selected, %@ category";
 "a11y_summary %@ %@ %@" = "This month expense %@, income %@, balance %@";
+
+/* Theme */
+"settings_theme" = "Theme";
+"theme_coral" = "Coral";
+"theme_forest" = "Forest";
+"theme_ocean" = "Ocean";
+"theme_lavender" = "Lavender";
+"theme_charcoal" = "Charcoal";
+"theme_kids" = "Kids Wonderland";
+"theme_student" = "Student Blue";
+"theme_executive" = "Executive Gray";
+"theme_homemaker" = "Cozy Beige";
+"theme_youngpro" = "Energetic Orange";
+"theme_sakura" = "Sakura Pink";
+"theme_zen" = "Zen Green";
+"theme_moonlight" = "Moonlight Silver";
+"theme_autumn" = "Autumn";
+"theme_bold" = "Bold Red";
+
+/* Contact */
+"settings_contact_section" = "Contact";
+"settings_contact_us" = "Contact Us";

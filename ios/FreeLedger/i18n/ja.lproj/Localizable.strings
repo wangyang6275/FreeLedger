@@ -255,3 +255,25 @@
 "a11y_category %@" = "%@カテゴリ、ボタン";
 "a11y_category_selected %@" = "選択中、%@カテゴリ";
 "a11y_summary %@ %@ %@" = "今月の支出%@、収入%@、残高%@";
+
+/* Theme */
+"settings_theme" = "テーマ";
+"theme_coral" = "コーラル";
+"theme_forest" = "フォレスト";
+"theme_ocean" = "オーシャン";
+"theme_lavender" = "ラベンダー";
+"theme_charcoal" = "チャコール";
+"theme_kids" = "キッズワンダーランド";
+"theme_student" = "スチューデントブルー";
+"theme_executive" = "エグゼクティブグレー";
+"theme_homemaker" = "コージーベージュ";
+"theme_youngpro" = "エナジェティックオレンジ";
+"theme_sakura" = "桜ピンク";
+"theme_zen" = "禅グリーン";
+"theme_moonlight" = "月光シルバー";
+"theme_autumn" = "秋";
+"theme_bold" = "ボールドレッド";
+
+/* Contact */
+"settings_contact_section" = "お問い合わせ";
+"settings_contact_us" = "お問い合わせ";

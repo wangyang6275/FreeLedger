@@ -39,12 +39,18 @@ struct TransactionCard: View {
                     .font(AppTypography.caption)
                     .foregroundColor(AppColors.textTertiary)
             }
+            
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundColor(AppColors.textTertiary)
+                .padding(.leading, 4)
         }
         .padding(.horizontal, AppSpacing.lg)
         .padding(.vertical, AppSpacing.md)
         .frame(minHeight: 64)
         .background(AppColors.surface)
         .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .shadow(color: Color.black.opacity(0.04), radius: 2, x: 0, y: 1)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityText)
     }

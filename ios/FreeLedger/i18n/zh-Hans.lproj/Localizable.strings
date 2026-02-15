@@ -255,3 +255,25 @@
 "a11y_category %@" = "%@分类，按钮";
 "a11y_category_selected %@" = "已选中，%@分类";
 "a11y_summary %@ %@ %@" = "本月支出%@，收入%@，结余%@";
+
+/* Theme */
+"settings_theme" = "主题";
+"theme_coral" = "珊瑚红";
+"theme_forest" = "森林绿";
+"theme_ocean" = "海洋蓝";
+"theme_lavender" = "薰衣草";
+"theme_charcoal" = "商务灰";
+"theme_kids" = "童趣乐园";
+"theme_student" = "学霸蓝";
+"theme_executive" = "精英灰";
+"theme_homemaker" = "温馨米";
+"theme_youngpro" = "活力橙";
+"theme_sakura" = "樱花粉";
+"theme_zen" = "禅意绿";
+"theme_moonlight" = "月光银";
+"theme_autumn" = "秋意浓";
+"theme_bold" = "锐意红";
+
+/* Contact */
+"settings_contact_section" = "联系";
+"settings_contact_us" = "联系我们";

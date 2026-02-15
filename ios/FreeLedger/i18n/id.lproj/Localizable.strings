@@ -218,3 +218,25 @@
 "a11y_category %@" = "Kategori %@";
 "a11y_category_selected %@" = "Terpilih, kategori %@";
 "a11y_summary %@ %@ %@" = "Pengeluaran %@, pemasukan %@, saldo %@";
+
+/* Theme */
+"settings_theme" = "Tema";
+"theme_coral" = "Koral";
+"theme_forest" = "Hutan";
+"theme_ocean" = "Samudra";
+"theme_lavender" = "Lavender";
+"theme_charcoal" = "Arang";
+"theme_kids" = "Dunia Anak";
+"theme_student" = "Biru Pelajar";
+"theme_executive" = "Abu Eksekutif";
+"theme_homemaker" = "Krem Nyaman";
+"theme_youngpro" = "Oranye Energik";
+"theme_sakura" = "Merah Muda Sakura";
+"theme_zen" = "Hijau Zen";
+"theme_moonlight" = "Perak Cahaya Bulan";
+"theme_autumn" = "Musim Gugur";
+"theme_bold" = "Merah Berani";
+
+/* Contact */
+"settings_contact_section" = "Kontak";
+"settings_contact_us" = "Hubungi Kami";

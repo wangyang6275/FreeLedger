@@ -218,3 +218,25 @@
 "a11y_category %@" = "Categoria %@";
 "a11y_category_selected %@" = "Seleccionada, categoria %@";
 "a11y_summary %@ %@ %@" = "Gastos %@, ingresos %@, saldo %@";
+
+/* Theme */
+"settings_theme" = "Tema";
+"theme_coral" = "Coral";
+"theme_forest" = "Bosque";
+"theme_ocean" = "Oceano";
+"theme_lavender" = "Lavanda";
+"theme_charcoal" = "Carbon";
+"theme_kids" = "Pais de Ninos";
+"theme_student" = "Azul Estudiante";
+"theme_executive" = "Gris Ejecutivo";
+"theme_homemaker" = "Beige Acogedor";
+"theme_youngpro" = "Naranja Energetico";
+"theme_sakura" = "Rosa Sakura";
+"theme_zen" = "Verde Zen";
+"theme_moonlight" = "Plata Lunar";
+"theme_autumn" = "Otono";
+"theme_bold" = "Rojo Audaz";
+
+/* Contact */
+"settings_contact_section" = "Contacto";
+"settings_contact_us" = "Contactanos";

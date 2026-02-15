@@ -218,3 +218,25 @@
 "a11y_category %@" = "श्रेणी %@";
 "a11y_category_selected %@" = "चयनित, श्रेणी %@";
 "a11y_summary %@ %@ %@" = "खर्च %@, आय %@, शेष %@";
+
+/* Theme */
+"settings_theme" = "थीम";
+"theme_coral" = "कोरल";
+"theme_forest" = "फ़ॉरेस्ट";
+"theme_ocean" = "ओशन";
+"theme_lavender" = "लैवेंडर";
+"theme_charcoal" = "चारकोल";
+"theme_kids" = "बच्चों की दुनिया";
+"theme_student" = "छात्र नीला";
+"theme_executive" = "कार्यकारी ग्रे";
+"theme_homemaker" = "आरामदायक बेज";
+"theme_youngpro" = "ऊर्जावान नारंगी";
+"theme_sakura" = "साकुरा गुलाबी";
+"theme_zen" = "ज़ेन हरा";
+"theme_moonlight" = "चांदनी चांदी";
+"theme_autumn" = "शरद ऋतु";
+"theme_bold" = "साहसी लाल";
+
+/* Contact */
+"settings_contact_section" = "संपर्क";
+"settings_contact_us" = "हमसे संपर्क करें";

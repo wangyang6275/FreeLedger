@@ -218,3 +218,25 @@
 "a11y_category %@" = "Категория %@";
 "a11y_category_selected %@" = "Выбрана категория %@";
 "a11y_summary %@ %@ %@" = "Расходы %@, доходы %@, баланс %@";
+
+/* Theme */
+"settings_theme" = "Тема";
+"theme_coral" = "Коралловый";
+"theme_forest" = "Лесной";
+"theme_ocean" = "Океан";
+"theme_lavender" = "Лавандовый";
+"theme_charcoal" = "Угольный";
+"theme_kids" = "Детская страна";
+"theme_student" = "Студенческий синий";
+"theme_executive" = "Деловой серый";
+"theme_homemaker" = "Уютный бежевый";
+"theme_youngpro" = "Энергичный оранжевый";
+"theme_sakura" = "Сакура розовый";
+"theme_zen" = "Дзен зелёный";
+"theme_moonlight" = "Лунное серебро";
+"theme_autumn" = "Осень";
+"theme_bold" = "Смелый красный";
+
+/* Contact */
+"settings_contact_section" = "Контакт";
+"settings_contact_us" = "Связаться с нами";

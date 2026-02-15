@@ -218,3 +218,25 @@
 "a11y_category %@" = "Categorie %@";
 "a11y_category_selected %@" = "Geselecteerd, categorie %@";
 "a11y_summary %@ %@ %@" = "Uitgaven %@, inkomsten %@, saldo %@";
+
+/* Theme */
+"settings_theme" = "Thema";
+"theme_coral" = "Koraal";
+"theme_forest" = "Bos";
+"theme_ocean" = "Oceaan";
+"theme_lavender" = "Lavendel";
+"theme_charcoal" = "Houtskool";
+"theme_kids" = "Kinderwonderland";
+"theme_student" = "Studenten Blauw";
+"theme_executive" = "Executief Grijs";
+"theme_homemaker" = "Gezellig Beige";
+"theme_youngpro" = "Energiek Oranje";
+"theme_sakura" = "Sakura Roze";
+"theme_zen" = "Zen Groen";
+"theme_moonlight" = "Maanlicht Zilver";
+"theme_autumn" = "Herfst";
+"theme_bold" = "Stout Rood";
+
+/* Contact */
+"settings_contact_section" = "Contact";
+"settings_contact_us" = "Neem contact op";
