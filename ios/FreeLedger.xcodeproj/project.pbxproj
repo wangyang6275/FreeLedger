@@ -79,6 +79,7 @@
 		BFDE0BA87889E932729D0559 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E3B1A1053C78ADA0074515 /* Setting.swift */; };
 		BFFE4D02BD25C1649E3A64F4 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985EAD43A3DD052209F58806 /* AppDatabase.swift */; };
 		C2107D37AF185C4C13D200C2 /* WidgetDataBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F114029E433352D15156F /* WidgetDataBridge.swift */; };
+		C2530B83D17430937657CF13 /* GlassEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF16A21B685310CE6C31CA /* GlassEffect.swift */; };
 		C42B34E1DD229D4A4E18E898 /* CategoryManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5265DFE921BA3DADA04E4 /* CategoryManagementViewModel.swift */; };
 		C6692E6F73F6FE138278BD21 /* BackupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907630A657591DFE3D6B9C1 /* BackupData.swift */; };
 		C683AC2D610ECA595F35D588 /* TransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516AFBCA56F25E2339C5829 /* TransactionSummary.swift */; };
@@ -87,6 +88,7 @@
 		C885EEA3C023AE435D70EE59 /* SummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40E343AA15EB84B5964A41F /* SummaryCard.swift */; };
 		D0209F83A3C1E0BC70C9F7AD /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD866A9BC269B68BA2844696 /* SettingsRepository.swift */; };
 		D19E0D258E66F4CA64B30573 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1BCA96B16BA84AA81352E /* AppSpacing.swift */; };
+		D38CC2EE2F540C440064B011 /* AppReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CC2ED2F540C440064B011 /* AppReviewService.swift */; };
 		D3B77C1B99538AF94CBB18B2 /* CategoryBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A052EB6C9DCF1A58E0F189C4 /* CategoryBreakdown.swift */; };
 		D8E1FC690E91F4CFA4BC0D16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55604251D358E854123210B0 /* Localizable.strings */; };
 		D9A01383279FBC2CE0E79B19 /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AC5EB13F82E85E62458B5B /* CategoryEditView.swift */; };
@@ -208,6 +210,7 @@
 		8932CCA839A726F3E929FCBD /* ReminderPrefill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPrefill.swift; sourceTree = "<group>"; };
 		8A318E54C2F73348ED88296C /* DateFormatter+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+App.swift"; sourceTree = "<group>"; };
 		8A3BC78E73004B53014B5869 /* TagDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailViewModel.swift; sourceTree = "<group>"; };
+		8CEF16A21B685310CE6C31CA /* GlassEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassEffect.swift; sourceTree = "<group>"; };
 		8DD721304CC422C3926D789B /* FreeLedgerWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = FreeLedgerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE37C2FDEFFE618DE5008CE /* CSVExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportView.swift; sourceTree = "<group>"; };
 		93D49FD28A46947123A15E87 /* categories-income.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-income.json"; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 		CE495D71E0DDF399877724CB /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		CE5F114029E433352D15156F /* WidgetDataBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataBridge.swift; sourceTree = "<group>"; };
 		CEEEB0E440B884F2F4BBB85B /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D38CC2ED2F540C440064B011 /* AppReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewService.swift; sourceTree = "<group>"; };
 		D852804B0E37FF0DD28C8064 /* TransactionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDAO.swift; sourceTree = "<group>"; };
 		D8966621D6E283958F3C16EE /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		DA0C28ADB48012A3D39E06F7 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -455,6 +459,7 @@
 				59B6F3010E82B11D29EF9AAC /* AppRadius.swift */,
 				9FF1BCA96B16BA84AA81352E /* AppSpacing.swift */,
 				64211202EDAE28DD827582D0 /* AppTypography.swift */,
+				8CEF16A21B685310CE6C31CA /* GlassEffect.swift */,
 				9FF431273A9F729163CEA596 /* ThemeManager.swift */,
 			);
 			path = theme;
@@ -585,6 +590,7 @@
 		FE5B755108F66675BEA5A1AC /* service */ = {
 			isa = PBXGroup;
 			children = (
+				D38CC2ED2F540C440064B011 /* AppReviewService.swift */,
 				12FC4E173AAD00A39079A7A7 /* BackupReminderService.swift */,
 				873635307303E9DCA4578CE4 /* BackupService.swift */,
 				ECDA483E53A98FDC63C3B6A7 /* CSVExportService.swift */,
@@ -796,6 +802,7 @@
 				6ED43B790132BD0D2A59497C /* FloatingAddButton.swift in Sources */,
 				3EC1B3C0220E0D65110991B4 /* FreeLedgerApp.swift in Sources */,
 				F43E47B39D52F99AF3CCA4C9 /* FriendlyDialog.swift in Sources */,
+				C2530B83D17430937657CF13 /* GlassEffect.swift in Sources */,
 				B0E725764C1EC76E73D5DD8E /* HomeView.swift in Sources */,
 				ECFA2FB977844B88790B5CC2 /* HomeViewModel.swift in Sources */,
 				45802E432DA04FA4EA7AE568 /* LanguageManager.swift in Sources */,
@@ -843,6 +850,7 @@
 				9B7F5CD7789C46394E68E923 /* TransactionDetailViewModel.swift in Sources */,
 				72D3F4A40F009EC6603837F6 /* TransactionRepository.swift in Sources */,
 				C683AC2D610ECA595F35D588 /* TransactionSummary.swift in Sources */,
+				D38CC2EE2F540C440064B011 /* AppReviewService.swift in Sources */,
 				9D2BCE70C158B4120A7825D7 /* TransactionTag.swift in Sources */,
 				3EAB034FC7646E08806D6266 /* TrendLineChart.swift in Sources */,
 				C7E7B281D285279E1AF58C44 /* VerifyPasswordView.swift in Sources */,
@@ -923,7 +931,7 @@
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -983,7 +991,7 @@
 				CODE_SIGN_ENTITLEMENTS = FreeLedger/FreeLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;

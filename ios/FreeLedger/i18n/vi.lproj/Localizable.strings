@@ -236,7 +236,12 @@
 "theme_moonlight" = "Bac anh trang";
 "theme_autumn" = "Thu";
 "theme_bold" = "Do dam me";
+"theme_liquidglass" = "Kính Lỏng";
 
 /* Contact */
 "settings_contact_section" = "Lien he";
 "settings_contact_us" = "Lien he chung toi";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

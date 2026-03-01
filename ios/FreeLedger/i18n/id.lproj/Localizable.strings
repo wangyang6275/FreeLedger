@@ -236,7 +236,12 @@
 "theme_moonlight" = "Perak Cahaya Bulan";
 "theme_autumn" = "Musim Gugur";
 "theme_bold" = "Merah Berani";
+"theme_liquidglass" = "Kaca Cair";
 
 /* Contact */
 "settings_contact_section" = "Kontak";
 "settings_contact_us" = "Hubungi Kami";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

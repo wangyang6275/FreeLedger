@@ -80,6 +80,9 @@ final class RecordViewModel {
                 tagIds: tagIds
             )
             didSave = true
+
+            // 记录交易创建，触发评分检查
+            AppReviewService.shared.recordTransactionCreated()
         } catch {
             isSaving = false
             errorMessage = L("error_save_failed")

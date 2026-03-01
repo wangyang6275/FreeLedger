@@ -236,7 +236,12 @@
 "theme_moonlight" = "Maanlicht Zilver";
 "theme_autumn" = "Herfst";
 "theme_bold" = "Stout Rood";
+"theme_liquidglass" = "Vloeibaar Glas";
 
 /* Contact */
 "settings_contact_section" = "Contact";
 "settings_contact_us" = "Neem contact op";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

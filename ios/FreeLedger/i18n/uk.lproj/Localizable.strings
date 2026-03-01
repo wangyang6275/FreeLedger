@@ -236,7 +236,12 @@
 "theme_moonlight" = "Місячне срібло";
 "theme_autumn" = "Осінь";
 "theme_bold" = "Сміливий червоний";
+"theme_liquidglass" = "Рідке скло";
 
 /* Contact */
 "settings_contact_section" = "Контакт";
 "settings_contact_us" = "Зв'яжіться з нами";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

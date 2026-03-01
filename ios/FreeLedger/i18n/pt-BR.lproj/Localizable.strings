@@ -236,7 +236,12 @@
 "theme_moonlight" = "Prata Lunar";
 "theme_autumn" = "Outono";
 "theme_bold" = "Vermelho Ousado";
+"theme_liquidglass" = "Vidro Líquido";
 
 /* Contact */
 "settings_contact_section" = "Contato";
 "settings_contact_us" = "Entre em contato";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

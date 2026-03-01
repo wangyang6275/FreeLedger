@@ -236,7 +236,12 @@
 "theme_moonlight" = "כסף ירח";
 "theme_autumn" = "סתיו";
 "theme_bold" = "אדום נועז";
+"theme_liquidglass" = "זכוכית נוזלית";
 
 /* Contact */
 "settings_contact_section" = "יצירת קשר";
 "settings_contact_us" = "צור קשר";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

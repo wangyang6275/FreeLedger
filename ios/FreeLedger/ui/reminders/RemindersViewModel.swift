@@ -44,6 +44,9 @@ final class RemindersViewModel {
             try reminderRepository.create(reminder)
             NotificationService.scheduleReminder(reminder, currencyCode: currencyCode)
             loadData()
+
+            // 记录提醒创建，触发评分检查
+            AppReviewService.shared.recordReminderCreated()
         } catch {
             errorMessage = L("error_save_failed")
         }

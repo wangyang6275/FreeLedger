@@ -51,6 +51,8 @@ struct CSVExportView: View {
             ) { result in
                 switch result {
                 case .success:
+                    // 记录 CSV 导出成功，触发评分检查
+                    AppReviewService.shared.recordCSVExported()
                     dismiss()
                 case .failure:
                     errorMessage = L("error_save_failed")

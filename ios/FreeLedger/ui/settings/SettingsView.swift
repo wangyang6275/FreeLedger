@@ -145,6 +145,21 @@ struct SettingsView: View {
                         }
                     }
                 }
+
+                Section(L("settings_support_section")) {
+                    Button(action: {
+                        AppReviewService.shared.userRequestedReview()
+                    }) {
+                        HStack {
+                            Label(L("settings_rate_app"), systemImage: "star.fill")
+                                .foregroundColor(AppColors.textPrimary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                        }
+                    }
+                }
             }
             .navigationTitle(L("tab_settings"))
             .fileExporter(

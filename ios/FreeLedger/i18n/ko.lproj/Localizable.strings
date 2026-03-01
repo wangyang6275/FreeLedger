@@ -273,7 +273,12 @@
 "theme_moonlight" = "문라이트 실버";
 "theme_autumn" = "가을";
 "theme_bold" = "볼드 레드";
+"theme_liquidglass" = "리퀴드 글래스";
 
 /* Contact */
 "settings_contact_section" = "연락처";
 "settings_contact_us" = "문의하기";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate FreeLedger";

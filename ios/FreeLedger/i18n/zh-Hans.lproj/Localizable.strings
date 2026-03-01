@@ -273,7 +273,12 @@
 "theme_moonlight" = "月光银";
 "theme_autumn" = "秋意浓";
 "theme_bold" = "锐意红";
+"theme_liquidglass" = "液态玻璃";
 
 /* Contact */
 "settings_contact_section" = "联系";
 "settings_contact_us" = "联系我们";
+
+/* Support */
+"settings_support_section" = "支持我们";
+"settings_rate_app" = "给 FreeLedger 评分";
