@@ -18,8 +18,6 @@ final class SearchViewModel {
     private let categoryRepository: CategoryRepositoryProtocol
     private let settingsRepository: SettingsRepositoryProtocol
 
-    nonisolated(unsafe) private static let isoFormatter = ISO8601DateFormatter()
-
     var isEmpty: Bool {
         hasSearched && results.isEmpty
     }
@@ -44,13 +42,14 @@ final class SearchViewModel {
             let income = try categoryRepository.getIncomeCategories(sortedByUsage: false)
             categories = expense + income
         } catch {
+            AppLogger.ui.error("SearchViewModel loadInitialData failed: \(error.localizedDescription)")
             currencyCode = "CNY"
         }
     }
 
     func performSearch() {
-        let startISO = startDate.map { Self.isoFormatter.string(from: $0) }
-        let endISO = endDate.map { Self.isoFormatter.string(from: Calendar.current.date(byAdding: .day, value: 1, to: $0) ?? $0) }
+        let startISO = startDate.map { AppDateFormatter.formatISO($0) }
+        let endISO = endDate.map { AppDateFormatter.formatISO(Calendar.current.date(byAdding: .day, value: 1, to: $0) ?? $0) }
         let keyword = searchText.isEmpty ? nil : searchText
 
         do {
@@ -58,10 +57,12 @@ final class SearchViewModel {
                 keyword: keyword,
                 startDate: startISO,
                 endDate: endISO,
-                categoryId: selectedCategoryId
+                categoryId: selectedCategoryId,
+                limit: 200
             )
             hasSearched = true
         } catch {
+            AppLogger.ui.error("SearchViewModel performSearch failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }

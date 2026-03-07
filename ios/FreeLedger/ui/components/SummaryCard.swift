@@ -46,8 +46,7 @@ struct SummaryCard: View {
         }
         .padding(AppSpacing.xl)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(AppColors.primaryGradient)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.xl))
+        .glassSummaryCard()
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             L("a11y_summary %@ %@ %@", AmountFormatter.format(summary.totalExpense, currencyCode: currencyCode), AmountFormatter.format(summary.totalIncome, currencyCode: currencyCode), AmountFormatter.format(summary.balance, currencyCode: currencyCode))

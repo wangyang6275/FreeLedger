@@ -28,7 +28,7 @@ struct RemindersView: View {
                 reminderListView
             }
         }
-        .background(AppColors.background)
+        .background(GlassPageBackground())
         .navigationTitle(L("reminders_title"))
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

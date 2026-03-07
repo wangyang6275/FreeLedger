@@ -4,7 +4,8 @@ import UIKit
 
 /// 应用评分引导服务
 /// 在用户完成正向操作后，智能地引导用户评分
-final class AppReviewService: @unchecked Sendable {
+@MainActor
+final class AppReviewService {
     static let shared = AppReviewService()
 
     private let userDefaults = UserDefaults.standard
@@ -158,11 +159,9 @@ final class AppReviewService: @unchecked Sendable {
         // 记录请求时间
         userDefaults.set(Date(), forKey: Keys.lastReviewRequestDate)
 
-        // 使用 StoreKit 请求评分（必须在主线程）
-        DispatchQueue.main.async {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: windowScene)
-            }
+        // 使用 StoreKit 请求评分（已在 @MainActor 上，无需 DispatchQueue）
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
         }
     }
 

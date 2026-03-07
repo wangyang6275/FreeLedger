@@ -33,7 +33,7 @@ struct LanguagePickerView: View {
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
-        .background(AppColors.background)
+        .background(GlassPageBackground())
         .navigationTitle(L("settings_language"))
         .navigationBarTitleDisplayMode(.inline)
     }

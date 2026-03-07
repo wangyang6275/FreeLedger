@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Desbloqueo con Face ID";
+"settings_touch_id" = "Desbloqueo con Touch ID";
+"biometric_reason" = "Desbloquear FreeLedger";
+"biometric_enable_reason" = "Verifica tu identidad para habilitar el desbloqueo biométrico";
+
+/* Templates */
+"template_title" = "Plantillas de transacción";
+"template_empty" = "Sin plantillas";
+"template_empty_hint" = "Crea plantillas para transacciones frecuentes";
+"template_list_section" = "Mis plantillas";
+"template_add" = "Añadir plantilla";
+"template_name_section" = "Nombre de plantilla";
+"template_name_placeholder" = "Ej: Café matutino";
+"template_type_section" = "Tipo";
+"template_type" = "Tipo de transacción";
+"template_amount_section" = "Monto";
+"template_note_section" = "Nota (opcional)";
+"template_no_categories" = "No hay categorías disponibles";
+"template_delete_title" = "Eliminar plantilla";
+"template_delete_message" = "¿Estás seguro de que quieres eliminar esta plantilla?";
+
+// MARK: - Annual Report
+"annual_title" = "Informe anual";
+"annual_empty" = "Sin datos de transacciones para este año";
+"annual_total_expense" = "Gasto total";
+"annual_total_income" = "Ingreso total";
+"annual_net" = "Saldo neto";
+"annual_transactions" = "Transacciones";
+"annual_monthly_trend" = "Tendencia mensual";
+"annual_category_breakdown" = "Gasto por categoría";
+"annual_insights" = "Perspectivas";
+"annual_avg_expense" = "Gasto mensual prom.";
+"annual_avg_income" = "Ingreso mensual prom.";
+"annual_highest_month" = "Mayor gasto";
+"annual_lowest_month" = "Menor gasto";
+
+// MARK: - Achievements
+"achievement_title" = "Logros";
+"achievement_progress" = "Progreso";
+"achievement_congrats" = "¡Felicidades!";
+"achievement_cat_recording" = "Registro";
+"achievement_cat_streak" = "Racha";
+"achievement_cat_budget" = "Presupuesto";
+"achievement_cat_exploration" = "Exploración";
+"achievement_first_record" = "Primer paso";
+"achievement_first_record_desc" = "Registra tu primera transacción";
+"achievement_records_10" = "Inicio";
+"achievement_records_10_desc" = "Registra 10 transacciones";
+"achievement_records_50" = "Contable";
+"achievement_records_50_desc" = "Registra 50 transacciones";
+"achievement_records_100" = "Centurión";
+"achievement_records_100_desc" = "Registra 100 transacciones";
+"achievement_records_500" = "Experto";
+"achievement_records_500_desc" = "Registra 500 transacciones";
+"achievement_records_1000" = "Maestro";
+"achievement_records_1000_desc" = "Registra 1000 transacciones";
+"achievement_streak_3" = "3 días seguidos";
+"achievement_streak_3_desc" = "Registra 3 días seguidos";
+"achievement_streak_7" = "Guerrero semanal";
+"achievement_streak_7_desc" = "Registra 7 días seguidos";
+"achievement_streak_30" = "Campeón mensual";
+"achievement_streak_30_desc" = "Registra 30 días seguidos";
+"achievement_streak_100" = "Imparable";
+"achievement_streak_100_desc" = "Registra 100 días seguidos";
+"achievement_streak_365" = "Legendario";
+"achievement_streak_365_desc" = "Registra 365 días seguidos";
+"achievement_budget_set" = "Planificador";
+"achievement_budget_set_desc" = "Configura tu primer presupuesto";
+"achievement_budget_under_3" = "Guardián del presupuesto";
+"achievement_budget_under_3_desc" = "3 meses sin superar el presupuesto";
+"achievement_first_tag" = "Maestro de etiquetas";
+"achievement_first_tag_desc" = "Crea tu primera etiqueta";
+"achievement_first_export" = "Guardián de datos";
+"achievement_first_export_desc" = "Exporta datos por primera vez";
+"achievement_first_template" = "Pro de la eficiencia";
+"achievement_first_template_desc" = "Crea tu primera plantilla";

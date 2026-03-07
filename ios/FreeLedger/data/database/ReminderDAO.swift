@@ -1,12 +1,8 @@
 import Foundation
 import GRDB
 
-final class ReminderDAO {
-    private let dbQueue: DatabaseQueue
-
-    init(dbQueue: DatabaseQueue) {
-        self.dbQueue = dbQueue
-    }
+struct ReminderDAO {
+    let dbQueue: DatabaseQueue
 
     func getAll() throws -> [Reminder] {
         try dbQueue.read { db in

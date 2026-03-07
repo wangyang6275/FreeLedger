@@ -25,6 +25,7 @@ final class CategoryManagementViewModel {
             expenseCategories = try categoryRepository.getExpenseCategories(sortedByUsage: false)
             incomeCategories = try categoryRepository.getIncomeCategories(sortedByUsage: false)
         } catch {
+            AppLogger.ui.error("CategoryManagementVM loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }
@@ -35,6 +36,7 @@ final class CategoryManagementViewModel {
             try categoryRepository.deactivate(id: cat.id)
             loadData()
         } catch {
+            AppLogger.ui.error("CategoryManagementVM deactivate failed: \(error.localizedDescription)")
             errorMessage = L("error_delete_failed")
         }
         deleteTarget = nil

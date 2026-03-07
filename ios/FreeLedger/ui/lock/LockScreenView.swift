@@ -7,6 +7,15 @@ struct LockScreenView: View {
     @State private var currentInput = ""
     @State private var errorMessage: String?
     @State private var shake = false
+    @State private var hasAttemptedBiometric = false
+
+    private var showBiometricButton: Bool {
+        passwordService.isBiometricEnabled() && passwordService.canUseBiometrics()
+    }
+
+    private var biometricIconName: String {
+        passwordService.biometricType == .faceID ? "faceid" : "touchid"
+    }
 
     var body: some View {
         ZStack {
@@ -52,6 +61,12 @@ struct LockScreenView: View {
             .padding(.horizontal, AppSpacing.lg)
             .padding(.bottom, AppSpacing.xl)
         }
+        .onAppear {
+            if !hasAttemptedBiometric && showBiometricButton {
+                hasAttemptedBiometric = true
+                triggerBiometric()
+            }
+        }
     }
 
     private var numberPad: some View {
@@ -65,7 +80,18 @@ struct LockScreenView: View {
                 }
             }
             HStack(spacing: AppSpacing.xl) {
-                Color.clear.frame(width: 72, height: 56)
+                if showBiometricButton {
+                    Button {
+                        triggerBiometric()
+                    } label: {
+                        Image(systemName: biometricIconName)
+                            .font(.title2)
+                            .foregroundColor(AppColors.primary)
+                            .frame(width: 72, height: 56)
+                    }
+                } else {
+                    Color.clear.frame(width: 72, height: 56)
+                }
                 numberButton("0")
                 Button {
                     if !currentInput.isEmpty {
@@ -120,6 +146,16 @@ struct LockScreenView: View {
                         shake = false
                     }
                     currentInput = ""
+                }
+            }
+        }
+    }
+
+    private func triggerBiometric() {
+        passwordService.authenticateWithBiometrics(reason: L("biometric_reason")) { success in
+            if success {
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    onUnlocked()
                 }
             }
         }

@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "פתיחה עם Face ID";
+"settings_touch_id" = "פתיחה עם Touch ID";
+"biometric_reason" = "פתח את FreeLedger";
+"biometric_enable_reason" = "אמת זהות כדי להפעיל פתיחה ביומטרית";
+
+/* Templates */
+"template_title" = "תבניות עסקה";
+"template_empty" = "אין תבניות";
+"template_empty_hint" = "צור תבניות לעסקאות תכופות";
+"template_list_section" = "התבניות שלי";
+"template_add" = "הוסף תבנית";
+"template_name_section" = "שם תבנית";
+"template_name_placeholder" = "למשל: קפה בוקר";
+"template_type_section" = "סוג";
+"template_type" = "סוג עסקה";
+"template_amount_section" = "סכום";
+"template_note_section" = "הערה (אופציונלי)";
+"template_no_categories" = "אין קטגוריות זמינות";
+"template_delete_title" = "מחק תבנית";
+"template_delete_message" = "בטוח שברצונך למחוק תבנית זו?";
+
+// MARK: - Annual Report
+"annual_title" = "דוח שנתי";
+"annual_empty" = "אין נתוני עסקאות לשנה זו";
+"annual_total_expense" = "סך הוצאות";
+"annual_total_income" = "סך הכנסות";
+"annual_net" = "יתרה נקיה";
+"annual_transactions" = "עסקאות";
+"annual_monthly_trend" = "מגמה חודשית";
+"annual_category_breakdown" = "הוצאות לפי קטגוריה";
+"annual_insights" = "תובנות";
+"annual_avg_expense" = "ממוצע הוצאות חודשי";
+"annual_avg_income" = "ממוצע הכנסות חודשי";
+"annual_highest_month" = "הוצאות גבוהות";
+"annual_lowest_month" = "הוצאות נמוכות";
+
+// MARK: - Achievements
+"achievement_title" = "הישגים";
+"achievement_progress" = "התקדמות";
+"achievement_congrats" = "כל הכבוד!";
+"achievement_cat_recording" = "רישום";
+"achievement_cat_streak" = "רצף";
+"achievement_cat_budget" = "תקציב";
+"achievement_cat_exploration" = "חקירה";
+"achievement_first_record" = "צעד ראשון";
+"achievement_first_record_desc" = "רשום עסקה ראשונה";
+"achievement_records_10" = "התחלה";
+"achievement_records_10_desc" = "רשום 10 עסקאות";
+"achievement_records_50" = "מנהל חשבונות";
+"achievement_records_50_desc" = "רשום 50 עסקאות";
+"achievement_records_100" = "מאה";
+"achievement_records_100_desc" = "רשום 100 עסקאות";
+"achievement_records_500" = "מומחה";
+"achievement_records_500_desc" = "רשום 500 עסקאות";
+"achievement_records_1000" = "אמן";
+"achievement_records_1000_desc" = "רשום 1000 עסקאות";
+"achievement_streak_3" = "3 ימים רצופים";
+"achievement_streak_3_desc" = "רשום 3 ימים רצופים";
+"achievement_streak_7" = "לוחם שבועי";
+"achievement_streak_7_desc" = "רשום 7 ימים רצופים";
+"achievement_streak_30" = "אלוף חודשי";
+"achievement_streak_30_desc" = "רשום 30 ימים רצופים";
+"achievement_streak_100" = "בלתי ניתן לעצירה";
+"achievement_streak_100_desc" = "רשום 100 ימים רצופים";
+"achievement_streak_365" = "אגדי";
+"achievement_streak_365_desc" = "רשום 365 ימים רצופים";
+"achievement_budget_set" = "מתכנן תקציב";
+"achievement_budget_set_desc" = "הגדר תקציב ראשון";
+"achievement_budget_under_3" = "שומר תקציב";
+"achievement_budget_under_3_desc" = "3 חודשים במסגרת התקציב";
+"achievement_first_tag" = "מומחה לתגיות";
+"achievement_first_tag_desc" = "צור תג ראשון";
+"achievement_first_export" = "שומר נתונים";
+"achievement_first_export_desc" = "ייצא נתונים לראשונה";
+"achievement_first_template" = "מקצוען יעילות";
+"achievement_first_template_desc" = "צור תבנית ראשונה";

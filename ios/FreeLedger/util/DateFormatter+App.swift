@@ -3,6 +3,14 @@ import Foundation
 enum AppDateFormatter {
     nonisolated(unsafe) private static let isoParser = ISO8601DateFormatter()
 
+    static func formatISO(_ date: Date) -> String {
+        isoParser.string(from: date)
+    }
+
+    static func isoNow() -> String {
+        isoParser.string(from: Date())
+    }
+
     private static let timeFormatter: DateFormatter = {
         let f = DateFormatter()
         f.dateFormat = "HH:mm"

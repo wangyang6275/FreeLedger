@@ -30,6 +30,7 @@ final class RemindersViewModel {
             categories = expense + income
             currencyCode = try settingsRepository.getCurrency()
         } catch {
+            AppLogger.ui.error("RemindersViewModel loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }
@@ -46,8 +47,11 @@ final class RemindersViewModel {
             loadData()
 
             // 记录提醒创建，触发评分检查
-            AppReviewService.shared.recordReminderCreated()
+            Task { @MainActor in
+                AppReviewService.shared.recordReminderCreated()
+            }
         } catch {
+            AppLogger.ui.error("RemindersViewModel createReminder failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -58,6 +62,7 @@ final class RemindersViewModel {
             NotificationService.scheduleReminder(reminder, currencyCode: currencyCode)
             loadData()
         } catch {
+            AppLogger.ui.error("RemindersViewModel updateReminder failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -68,6 +73,7 @@ final class RemindersViewModel {
             NotificationService.cancelReminder(id: id)
             loadData()
         } catch {
+            AppLogger.ui.error("RemindersViewModel deleteReminder failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }

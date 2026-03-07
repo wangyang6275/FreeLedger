@@ -32,7 +32,7 @@ struct TagsView: View {
                     tagListView
                 }
             }
-            .background(AppColors.background)
+            .background(GlassPageBackground())
             .navigationTitle(L("tab_tags"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -200,8 +200,7 @@ struct TagsView: View {
             Spacer(minLength: 0)
         }
         .padding(AppSpacing.lg)
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .glassCard()
     }
 
     // MARK: - Tag List

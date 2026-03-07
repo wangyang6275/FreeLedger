@@ -245,3 +245,103 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Déverrouillage Face ID";
+"settings_touch_id" = "Déverrouillage Touch ID";
+"biometric_reason" = "Déverrouiller FreeLedger";
+"biometric_enable_reason" = "Vérifiez votre identité pour activer le déverrouillage biométrique";
+
+/* Budget */
+"budget_title" = "Budget";
+"budget_overall_section" = "Budget mensuel";
+"budget_category_section" = "Budgets par categorie";
+"budget_set_overall" = "Definir le budget mensuel";
+"budget_set_overall_message" = "Definissez votre limite de depenses mensuelle";
+"budget_monthly_limit" = "Limite mensuelle";
+"budget_amount_placeholder" = "ex : 5000";
+"budget_amount_section" = "Montant du budget";
+"budget_save" = "Enregistrer";
+"budget_add_category" = "Ajouter un budget categorie";
+"budget_select_category" = "Choisir une categorie";
+"budget_category_empty" = "Aucun budget de categorie. Vous pouvez definir une limite pour chaque categorie";
+"budget_all_categories_set" = "Toutes les categories ont un budget";
+"budget_delete_title" = "Supprimer le budget";
+"budget_delete_overall_message" = "Supprimer le budget mensuel ?";
+"budget_delete_category_message" = "Supprimer ce budget de categorie ?";
+"budget_spent" = "Depense";
+"budget_remaining %@" = "%@ restant";
+"budget_over %@" = "Depasse de %@";
+"budget_progress_title" = "Budget";
+"budget_spent_of %@ %@" = "%@ sur %@";
+
+/* Templates */
+"template_title" = "Modèles de transaction";
+"template_empty" = "Aucun modèle";
+"template_empty_hint" = "Créez des modèles pour les transactions fréquentes";
+"template_list_section" = "Mes modèles";
+"template_add" = "Ajouter un modèle";
+"template_name_section" = "Nom du modèle";
+"template_name_placeholder" = "Ex: Café du matin";
+"template_type_section" = "Type";
+"template_type" = "Type de transaction";
+"template_amount_section" = "Montant";
+"template_note_section" = "Note (facultatif)";
+"template_no_categories" = "Aucune catégorie disponible";
+"template_delete_title" = "Supprimer le modèle";
+"template_delete_message" = "Êtes-vous sûr de vouloir supprimer ce modèle ?";
+
+// MARK: - Annual Report
+"annual_title" = "Rapport annuel";
+"annual_empty" = "Aucune donnée de transaction pour cette année";
+"annual_total_expense" = "Dépenses totales";
+"annual_total_income" = "Revenus totaux";
+"annual_net" = "Solde net";
+"annual_transactions" = "Transactions";
+"annual_monthly_trend" = "Tendance mensuelle";
+"annual_category_breakdown" = "Dépenses par catégorie";
+"annual_insights" = "Aperçus";
+"annual_avg_expense" = "Dépense mensuelle moy.";
+"annual_avg_income" = "Revenu mensuel moy.";
+"annual_highest_month" = "Dépense la plus élevée";
+"annual_lowest_month" = "Dépense la plus basse";
+
+// MARK: - Achievements
+"achievement_title" = "Succès";
+"achievement_progress" = "Progression";
+"achievement_congrats" = "Félicitations !";
+"achievement_cat_recording" = "Enregistrement";
+"achievement_cat_streak" = "Série";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Exploration";
+"achievement_first_record" = "Premier pas";
+"achievement_first_record_desc" = "Enregistrez votre première transaction";
+"achievement_records_10" = "Début";
+"achievement_records_10_desc" = "Enregistrez 10 transactions";
+"achievement_records_50" = "Comptable";
+"achievement_records_50_desc" = "Enregistrez 50 transactions";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "Enregistrez 100 transactions";
+"achievement_records_500" = "Expert";
+"achievement_records_500_desc" = "Enregistrez 500 transactions";
+"achievement_records_1000" = "Maître";
+"achievement_records_1000_desc" = "Enregistrez 1000 transactions";
+"achievement_streak_3" = "3 jours consécutifs";
+"achievement_streak_3_desc" = "Enregistrez pendant 3 jours consécutifs";
+"achievement_streak_7" = "Guerrier hebdomadaire";
+"achievement_streak_7_desc" = "Enregistrez pendant 7 jours consécutifs";
+"achievement_streak_30" = "Champion mensuel";
+"achievement_streak_30_desc" = "Enregistrez pendant 30 jours consécutifs";
+"achievement_streak_100" = "Inarrêtable";
+"achievement_streak_100_desc" = "Enregistrez pendant 100 jours consécutifs";
+"achievement_streak_365" = "Légendaire";
+"achievement_streak_365_desc" = "Enregistrez pendant 365 jours consécutifs";
+"achievement_budget_set" = "Planificateur";
+"achievement_budget_set_desc" = "Définissez votre premier budget";
+"achievement_budget_under_3" = "Gardien du budget";
+"achievement_budget_under_3_desc" = "Restez sous le budget pendant 3 mois";
+"achievement_first_tag" = "Maître des tags";
+"achievement_first_tag_desc" = "Créez votre premier tag";
+"achievement_first_export" = "Gardien des données";
+"achievement_first_export_desc" = "Exportez les données pour la première fois";
+"achievement_first_template" = "Pro de l'efficacité";
+"achievement_first_template_desc" = "Créez votre premier modèle";

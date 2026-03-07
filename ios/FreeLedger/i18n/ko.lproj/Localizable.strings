@@ -228,6 +228,7 @@
 "search_category_label" = "카테고리";
 "search_category_all" = "전체 카테고리";
 "search_clear_all" = "필터 초기화";
+"search_result_count" = "%d개 결과";
 
 /* Accessibility */
 "a11y_add_transaction" = "기록하기";
@@ -282,3 +283,103 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID 잠금 해제";
+"settings_touch_id" = "Touch ID 잠금 해제";
+"biometric_reason" = "FreeLedger 잠금 해제";
+"biometric_enable_reason" = "생체 인증을 활성화하려면 본인 확인이 필요합니다";
+
+/* Budget */
+"budget_title" = "예산";
+"budget_overall_section" = "월간 예산";
+"budget_category_section" = "카테고리 예산";
+"budget_set_overall" = "월간 예산 설정";
+"budget_set_overall_message" = "월 지출 한도를 설정하세요";
+"budget_monthly_limit" = "월 한도";
+"budget_amount_placeholder" = "예: 5000";
+"budget_amount_section" = "예산 금액";
+"budget_save" = "저장";
+"budget_add_category" = "카테고리 예산 추가";
+"budget_select_category" = "카테고리 선택";
+"budget_category_empty" = "카테고리 예산이 없습니다. 각 카테고리에 지출 한도를 설정할 수 있습니다";
+"budget_all_categories_set" = "모든 카테고리에 예산이 설정됨";
+"budget_delete_title" = "예산 삭제";
+"budget_delete_overall_message" = "월간 예산을 삭제하시겠습니까?";
+"budget_delete_category_message" = "이 카테고리 예산을 삭제하시겠습니까?";
+"budget_spent" = "지출";
+"budget_remaining %@" = "%@ 남음";
+"budget_over %@" = "%@ 초과";
+"budget_progress_title" = "예산";
+"budget_spent_of %@ %@" = "%@ / %@";
+
+/* Templates */
+"template_title" = "거래 템플릿";
+"template_empty" = "템플릿 없음";
+"template_empty_hint" = "자주 사용하는 거래 템플릿을 만들어 빠르게 기록하세요";
+"template_list_section" = "내 템플릿";
+"template_add" = "템플릿 추가";
+"template_name_section" = "템플릿 이름";
+"template_name_placeholder" = "예: 아침 커피";
+"template_type_section" = "유형";
+"template_type" = "거래 유형";
+"template_amount_section" = "금액";
+"template_note_section" = "메모 (선택)";
+"template_no_categories" = "사용 가능한 카테고리 없음";
+"template_delete_title" = "템플릿 삭제";
+"template_delete_message" = "이 템플릿을 삭제하시겠습니까?";
+
+// MARK: - Annual Report
+"annual_title" = "연간 보고서";
+"annual_empty" = "이 연도의 거래 데이터가 없습니다";
+"annual_total_expense" = "총 지출";
+"annual_total_income" = "총 수입";
+"annual_net" = "순액";
+"annual_transactions" = "거래 건수";
+"annual_monthly_trend" = "월별 트렌드";
+"annual_category_breakdown" = "카테고리별 지출";
+"annual_insights" = "인사이트";
+"annual_avg_expense" = "월 평균 지출";
+"annual_avg_income" = "월 평균 수입";
+"annual_highest_month" = "최고 지출월";
+"annual_lowest_month" = "최저 지출월";
+
+// MARK: - Achievements
+"achievement_title" = "업적";
+"achievement_progress" = "업적 진행";
+"achievement_congrats" = "축하합니다!";
+"achievement_cat_recording" = "기록";
+"achievement_cat_streak" = "연속 기록";
+"achievement_cat_budget" = "예산";
+"achievement_cat_exploration" = "탐색";
+"achievement_first_record" = "첨 발걸음";
+"achievement_first_record_desc" = "첫 번째 거래 기록";
+"achievement_records_10" = "입문";
+"achievement_records_10_desc" = "10건 거래 기록";
+"achievement_records_50" = "경리사";
+"achievement_records_50_desc" = "50건 거래 기록";
+"achievement_records_100" = "백건 달성";
+"achievement_records_100_desc" = "100건 거래 기록";
+"achievement_records_500" = "전문가";
+"achievement_records_500_desc" = "500건 거래 기록";
+"achievement_records_1000" = "마스터";
+"achievement_records_1000_desc" = "1000건 거래 기록";
+"achievement_streak_3" = "3일 연속";
+"achievement_streak_3_desc" = "3일 연속 기록";
+"achievement_streak_7" = "주간 연속";
+"achievement_streak_7_desc" = "7일 연속 기록";
+"achievement_streak_30" = "월간 챔피언";
+"achievement_streak_30_desc" = "30일 연속 기록";
+"achievement_streak_100" = "멈출 수 없는";
+"achievement_streak_100_desc" = "100일 연속 기록";
+"achievement_streak_365" = "전설";
+"achievement_streak_365_desc" = "365일 연속 기록";
+"achievement_budget_set" = "예산 계획가";
+"achievement_budget_set_desc" = "첫 예산 설정";
+"achievement_budget_under_3" = "예산 달인";
+"achievement_budget_under_3_desc" = "3개월 연속 예산 준수";
+"achievement_first_tag" = "태그 마스터";
+"achievement_first_tag_desc" = "첫 태그 생성";
+"achievement_first_export" = "데이터 수호자";
+"achievement_first_export_desc" = "처음으로 데이터 내보내기";
+"achievement_first_template" = "효율 프로";
+"achievement_first_template_desc" = "첫 템플릿 생성";

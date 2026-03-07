@@ -55,7 +55,7 @@ struct CategoryManagementView: View {
             tabPicker
             categoryList
         }
-        .background(AppColors.background)
+        .background(GlassPageBackground())
     }
 
     private var tabPicker: some View {

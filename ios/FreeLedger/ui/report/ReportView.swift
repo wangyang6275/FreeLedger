@@ -3,9 +3,14 @@ import SwiftUI
 struct ReportView: View {
     @State private var viewModel: ReportViewModel
 
+    private let transactionRepository: TransactionRepositoryProtocol
+    private let settingsRepository: SettingsRepositoryProtocol
+
     init(transactionRepository: TransactionRepositoryProtocol,
          settingsRepository: SettingsRepositoryProtocol,
          tagRepository: TagRepositoryProtocol) {
+        self.transactionRepository = transactionRepository
+        self.settingsRepository = settingsRepository
         _viewModel = State(initialValue: ReportViewModel(
             transactionRepository: transactionRepository,
             settingsRepository: settingsRepository,
@@ -34,8 +39,21 @@ struct ReportView: View {
                 .padding(.top, AppSpacing.md)
                 .padding(.bottom, 100)
             }
-            .background(AppColors.background)
+            .background(GlassPageBackground())
             .navigationTitle(L("tab_reports"))
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        AnnualReportView(
+                            transactionRepository: transactionRepository,
+                            settingsRepository: settingsRepository
+                        )
+                    } label: {
+                        Image(systemName: "calendar")
+                    }
+                    .accessibilityLabel(L("annual_title"))
+                }
+            }
             .onAppear { viewModel.loadData() }
             .alert(L("error_title"), isPresented: Binding(
                 get: { viewModel.errorMessage != nil },
@@ -99,8 +117,7 @@ struct ReportView: View {
             )
         }
         .padding(AppSpacing.lg)
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .glassCard()
     }
 
     private func summaryItem(title: String, amount: Int64, color: Color) -> some View {

@@ -11,8 +11,7 @@ struct TagBarChart: View {
             chartView
         }
         .padding(AppSpacing.lg)
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .glassCard()
     }
 
     private var chartTitle: some View {

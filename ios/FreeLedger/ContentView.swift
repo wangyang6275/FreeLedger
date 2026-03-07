@@ -12,48 +12,17 @@ struct ContentView: View {
     @State private var showOnboarding = false
     @Environment(\.scenePhase) private var scenePhase
 
-    private let db = AppDatabase.shared
-    private let categoryDAO: CategoryDAO
-    private let transactionDAO: TransactionDAO
-    private let settingsDAO: SettingsDAO
-    private let tagDAO: TagDAO
-    private let transactionRepository: TransactionRepository
-    private let categoryRepository: CategoryRepository
-    private let settingsRepository: SettingsRepository
-    private let tagRepository: TagRepository
-    private let backupService: BackupService
-    private let backupReminderService: BackupReminderService
-    private let csvExportService: CSVExportService
-    private let reminderDAO: ReminderDAO
-    private let reminderRepository: ReminderRepository
-    private let passwordService: PasswordService
+    private let container: DependencyContainer
     private let homeViewModel: HomeViewModel
 
     init() {
-        let db = AppDatabase.shared
-        let catDAO = CategoryDAO(dbQueue: db.dbQueue)
-        let txDAO = TransactionDAO(dbQueue: db.dbQueue)
-        let setDAO = SettingsDAO(dbQueue: db.dbQueue)
-        let tagDAO = TagDAO(dbQueue: db.dbQueue)
-        self.categoryDAO = catDAO
-        self.transactionDAO = txDAO
-        self.settingsDAO = setDAO
-        self.tagDAO = tagDAO
-        let remDAO = ReminderDAO(dbQueue: db.dbQueue)
-        self.reminderDAO = remDAO
-        self.transactionRepository = TransactionRepository(dbQueue: db.dbQueue, transactionDAO: txDAO, categoryDAO: catDAO, tagDAO: tagDAO)
-        self.categoryRepository = CategoryRepository(dao: catDAO)
-        self.settingsRepository = SettingsRepository(dao: setDAO)
-        self.tagRepository = TagRepository(dao: tagDAO)
-        self.reminderRepository = ReminderRepository(dao: remDAO)
-        self.backupService = BackupService(dbQueue: db.dbQueue)
-        self.backupReminderService = BackupReminderService(dbQueue: db.dbQueue, settingsDAO: setDAO)
-        self.csvExportService = CSVExportService(dbQueue: db.dbQueue)
-        self.passwordService = PasswordService()
+        let container = DependencyContainer()
+        self.container = container
         self.homeViewModel = HomeViewModel(
-            transactionRepository: self.transactionRepository,
-            categoryRepository: self.categoryRepository,
-            settingsRepository: self.settingsRepository
+            transactionRepository: container.transactionRepository,
+            categoryRepository: container.categoryRepository,
+            settingsRepository: container.settingsRepository,
+            budgetRepository: container.budgetRepository
         )
     }
 
@@ -62,11 +31,11 @@ struct ContentView: View {
             TabView(selection: $selectedTab) {
                 HomeView(
                         viewModel: homeViewModel,
-                        transactionRepository: transactionRepository,
-                        categoryRepository: categoryRepository,
-                        settingsRepository: settingsRepository,
-                        tagRepository: tagRepository,
-                        reminderRepository: reminderRepository
+                        transactionRepository: container.transactionRepository,
+                        categoryRepository: container.categoryRepository,
+                        settingsRepository: container.settingsRepository,
+                        tagRepository: container.tagRepository,
+                        reminderRepository: container.reminderRepository
                     )
                     .tabItem {
                         Image(systemName: "list.bullet")
@@ -75,9 +44,9 @@ struct ContentView: View {
                     .tag(0)
 
                 ReportView(
-                        transactionRepository: transactionRepository,
-                        settingsRepository: settingsRepository,
-                        tagRepository: tagRepository
+                        transactionRepository: container.transactionRepository,
+                        settingsRepository: container.settingsRepository,
+                        tagRepository: container.tagRepository
                     )
                     .tabItem {
                         Image(systemName: "chart.pie")
@@ -90,10 +59,10 @@ struct ContentView: View {
                     .tag(2)
 
                 TagsView(
-                        tagRepository: tagRepository,
-                        transactionRepository: transactionRepository,
-                        categoryRepository: categoryRepository,
-                        settingsRepository: settingsRepository
+                        tagRepository: container.tagRepository,
+                        transactionRepository: container.transactionRepository,
+                        categoryRepository: container.categoryRepository,
+                        settingsRepository: container.settingsRepository
                     )
                     .tabItem {
                         Image(systemName: "tag")
@@ -101,7 +70,7 @@ struct ContentView: View {
                     }
                     .tag(3)
 
-                SettingsView(categoryRepository: categoryRepository, backupService: backupService, settingsRepository: settingsRepository, csvExportService: csvExportService, passwordService: passwordService, onDataRestored: {
+                SettingsView(categoryRepository: container.categoryRepository, backupService: container.backupService, settingsRepository: container.settingsRepository, csvExportService: container.csvExportService, passwordService: container.passwordService, budgetRepository: container.budgetRepository, transactionRepository: container.transactionRepository, templateRepository: container.templateRepository, tagRepository: container.tagRepository, dbQueue: container.db.dbQueue, achievementService: container.achievementService, onDataRestored: {
                         homeViewModel.loadData()
                     }, onShowOnboarding: {
                         showOnboarding = true
@@ -122,10 +91,10 @@ struct ContentView: View {
         .id(languageManager.refreshId)
         .sheet(isPresented: $showRecord) {
             RecordView(
-                transactionRepository: transactionRepository,
-                categoryRepository: categoryRepository,
-                settingsRepository: settingsRepository,
-                tagRepository: tagRepository,
+                transactionRepository: container.transactionRepository,
+                categoryRepository: container.categoryRepository,
+                settingsRepository: container.settingsRepository,
+                tagRepository: container.tagRepository,
                 prefill: reminderPrefill
             )
             .presentationDetents([.large])
@@ -138,10 +107,10 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            if passwordService.isPasswordSet() {
+            if container.passwordService.isPasswordSet() {
                 isLocked = true
             }
-            let completed = try? settingsRepository.get(key: "onboarding_completed")
+            let completed = try? container.settingsRepository.get(key: "onboarding_completed")
             if completed == nil {
                 showOnboarding = true
             }
@@ -149,7 +118,7 @@ struct ContentView: View {
             checkPendingReminder()
         }
         .fullScreenCover(isPresented: $showOnboarding) {
-            OnboardingView(settingsRepository: settingsRepository) {
+            OnboardingView(settingsRepository: container.settingsRepository) {
                 showOnboarding = false
                 homeViewModel.loadData()
             }
@@ -162,7 +131,7 @@ struct ContentView: View {
             }
         }
         .onChange(of: scenePhase) { _, newPhase in
-            if newPhase == .background && passwordService.isPasswordSet() {
+            if newPhase == .background && container.passwordService.isPasswordSet() {
                 isLocked = true
             }
             if newPhase == .active {
@@ -193,7 +162,7 @@ struct ContentView: View {
         }
         .overlay {
             if isLocked {
-                LockScreenView(passwordService: passwordService) {
+                LockScreenView(passwordService: container.passwordService) {
                     isLocked = false
                 }
                 .transition(.opacity)
@@ -204,7 +173,7 @@ struct ContentView: View {
         guard !isLocked, !showOnboarding else { return }
         guard let reminderId = UserDefaults.standard.string(forKey: AppDelegate.pendingReminderKey) else { return }
         UserDefaults.standard.removeObject(forKey: AppDelegate.pendingReminderKey)
-        guard let reminder = try? reminderRepository.getById(reminderId) else { return }
+        guard let reminder = try? container.reminderRepository.getById(reminderId) else { return }
         reminderPrefill = ReminderPrefill(
             amount: reminder.amount,
             type: reminder.type,
@@ -217,7 +186,7 @@ struct ContentView: View {
     }
 
     private func checkBackupReminder() {
-        switch backupReminderService.checkReminder() {
+        switch container.backupReminderService.checkReminder() {
         case .firstBackup(let count):
             backupReminderMessage = L("backup_reminder_first %lld", count)
             withAnimation(.easeInOut(duration: 0.25)) {

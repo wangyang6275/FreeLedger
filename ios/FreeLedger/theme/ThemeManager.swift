@@ -17,6 +17,7 @@ enum AppTheme: String, CaseIterable, Identifiable {
     case moonlight = "moonlight"   // 月光银
     case autumn = "autumn"         // 秋意浓
     case bold = "bold"             // 锐意红
+    case liquidGlass = "liquidGlass" // 液态玻璃
     
     var id: String { rawValue }
     
@@ -38,6 +39,7 @@ enum AppTheme: String, CaseIterable, Identifiable {
         case .moonlight: return "theme_moonlight"
         case .autumn: return "theme_autumn"
         case .bold: return "theme_bold"
+        case .liquidGlass: return "theme_liquidglass"
         }
     }
     
@@ -179,6 +181,15 @@ enum AppTheme: String, CaseIterable, Identifiable {
                 gradientStart: "#DC143C",
                 gradientEnd: "#E6345A"
             )
+        case .liquidGlass:
+            return ThemeColors(
+                primary: "#007AFF",
+                primaryDark: "#0056CC",
+                primaryLight: "#E8F0FE",
+                secondary: "#5AC8FA",
+                gradientStart: "#667EEA",
+                gradientEnd: "#764BA2"
+            )
         }
     }
 }
@@ -253,4 +264,9 @@ final class ThemeManager {
     
     var expense: Color { primary }
     var income: Color { secondary }
+    
+    /// 当前主题是否为液态玻璃主题
+    var isGlassTheme: Bool {
+        currentTheme == .liquidGlass
+    }
 }

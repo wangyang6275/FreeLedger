@@ -53,6 +53,7 @@ struct CSVExportView: View {
                 case .success:
                     // 记录 CSV 导出成功，触发评分检查
                     AppReviewService.shared.recordCSVExported()
+                    UserDefaults.standard.set(true, forKey: "has_exported_data")
                     dismiss()
                 case .failure:
                     errorMessage = L("error_save_failed")
@@ -82,6 +83,7 @@ struct CSVExportView: View {
             csvDocument = CSVDocument(data: data)
             showExporter = true
         } catch {
+            AppLogger.service.error("CSVExportView exportCSV failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }

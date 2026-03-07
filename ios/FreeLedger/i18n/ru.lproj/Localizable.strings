@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Разблокировка Face ID";
+"settings_touch_id" = "Разблокировка Touch ID";
+"biometric_reason" = "Разблокировать FreeLedger";
+"biometric_enable_reason" = "Подтвердите личность для включения биометрической разблокировки";
+
+/* Templates */
+"template_title" = "Шаблоны транзакций";
+"template_empty" = "Нет шаблонов";
+"template_empty_hint" = "Создайте шаблоны для частых транзакций";
+"template_list_section" = "Мои шаблоны";
+"template_add" = "Добавить шаблон";
+"template_name_section" = "Название шаблона";
+"template_name_placeholder" = "Напр.: Утренний кофе";
+"template_type_section" = "Тип";
+"template_type" = "Тип транзакции";
+"template_amount_section" = "Сумма";
+"template_note_section" = "Заметка (необяз.)";
+"template_no_categories" = "Нет доступных категорий";
+"template_delete_title" = "Удалить шаблон";
+"template_delete_message" = "Вы уверены, что хотите удалить этот шаблон?";
+
+// MARK: - Annual Report
+"annual_title" = "Годовой отчёт";
+"annual_empty" = "Нет данных о транзакциях за этот год";
+"annual_total_expense" = "Общие расходы";
+"annual_total_income" = "Общий доход";
+"annual_net" = "Чистый баланс";
+"annual_transactions" = "Транзакции";
+"annual_monthly_trend" = "Месячный тренд";
+"annual_category_breakdown" = "Расходы по категориям";
+"annual_insights" = "Аналитика";
+"annual_avg_expense" = "Ср. мес. расходы";
+"annual_avg_income" = "Ср. мес. доход";
+"annual_highest_month" = "Наиб. расходы";
+"annual_lowest_month" = "Наим. расходы";
+
+// MARK: - Achievements
+"achievement_title" = "Достижения";
+"achievement_progress" = "Прогресс";
+"achievement_congrats" = "Поздравляем!";
+"achievement_cat_recording" = "Записи";
+"achievement_cat_streak" = "Серия";
+"achievement_cat_budget" = "Бюджет";
+"achievement_cat_exploration" = "Исследование";
+"achievement_first_record" = "Первый шаг";
+"achievement_first_record_desc" = "Запишите первую транзакцию";
+"achievement_records_10" = "Начало";
+"achievement_records_10_desc" = "Запишите 10 транзакций";
+"achievement_records_50" = "Бухгалтер";
+"achievement_records_50_desc" = "Запишите 50 транзакций";
+"achievement_records_100" = "Сотник";
+"achievement_records_100_desc" = "Запишите 100 транзакций";
+"achievement_records_500" = "Эксперт";
+"achievement_records_500_desc" = "Запишите 500 транзакций";
+"achievement_records_1000" = "Мастер";
+"achievement_records_1000_desc" = "Запишите 1000 транзакций";
+"achievement_streak_3" = "3 дня подряд";
+"achievement_streak_3_desc" = "Записывайте 3 дня подряд";
+"achievement_streak_7" = "Недельный воин";
+"achievement_streak_7_desc" = "Записывайте 7 дней подряд";
+"achievement_streak_30" = "Месячный чемпион";
+"achievement_streak_30_desc" = "Записывайте 30 дней подряд";
+"achievement_streak_100" = "Неостановимый";
+"achievement_streak_100_desc" = "Записывайте 100 дней подряд";
+"achievement_streak_365" = "Легендарный";
+"achievement_streak_365_desc" = "Записывайте 365 дней подряд";
+"achievement_budget_set" = "Планировщик";
+"achievement_budget_set_desc" = "Установите первый бюджет";
+"achievement_budget_under_3" = "Хранитель бюджета";
+"achievement_budget_under_3_desc" = "3 месяца в рамках бюджета";
+"achievement_first_tag" = "Мастер тегов";
+"achievement_first_tag_desc" = "Создайте первый тег";
+"achievement_first_export" = "Хранитель данных";
+"achievement_first_export_desc" = "Экспортируйте данные впервые";
+"achievement_first_template" = "Про эффективности";
+"achievement_first_template_desc" = "Создайте первый шаблон";

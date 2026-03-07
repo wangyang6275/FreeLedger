@@ -1,5 +1,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import LocalAuthentication
+import GRDB
 
 struct SettingsView: View {
     let categoryRepository: CategoryRepositoryProtocol
@@ -7,6 +9,12 @@ struct SettingsView: View {
     let settingsRepository: SettingsRepositoryProtocol
     let csvExportService: CSVExportService
     let passwordService: PasswordService
+    let budgetRepository: BudgetRepositoryProtocol
+    let transactionRepository: TransactionRepositoryProtocol
+    let templateRepository: TransactionTemplateRepositoryProtocol
+    let tagRepository: TagRepositoryProtocol
+    let dbQueue: GRDB.DatabaseQueue
+    let achievementService: AchievementService?
 
     @State private var showExporter = false
     @State private var backupDocument: BackupDocument?
@@ -18,6 +26,7 @@ struct SettingsView: View {
     @State private var showRestoreSuccess = false
     @State private var restoreRecordCount = 0
     @State private var showCSVExport = false
+    @State private var showPDFExport = false
     @State private var isPasswordEnabled = false
     @State private var showSetPassword = false
     @State private var showVerifyToDisable = false
@@ -25,6 +34,8 @@ struct SettingsView: View {
     @State private var showChangePasswordVerify = false
     @State private var showChangePasswordSet = false
     @State private var selectedCurrency = "CNY"
+    @State private var templatePrefill: ReminderPrefill?
+    @State private var showTemplateRecord = false
 
     var onDataRestored: (() -> Void)?
     var onShowOnboarding: (() -> Void)?
@@ -86,6 +97,28 @@ struct SettingsView: View {
                         } label: {
                             Label(L("settings_change_password"), systemImage: "key.horizontal")
                         }
+
+                        if passwordService.canUseBiometrics() {
+                            Toggle(
+                                passwordService.biometricType == .faceID
+                                    ? L("settings_face_id")
+                                    : L("settings_touch_id"),
+                                isOn: Binding(
+                                    get: { passwordService.isBiometricEnabled() },
+                                    set: { newValue in
+                                        if newValue {
+                                            passwordService.authenticateWithBiometrics(reason: L("biometric_enable_reason")) { success in
+                                                if success {
+                                                    passwordService.setBiometricEnabled(true)
+                                                }
+                                            }
+                                        } else {
+                                            passwordService.setBiometricEnabled(false)
+                                        }
+                                    }
+                                )
+                            )
+                        }
                     }
                 }
 
@@ -94,6 +127,33 @@ struct SettingsView: View {
                         CategoryManagementView(categoryRepository: categoryRepository)
                     } label: {
                         Label(L("settings_category_management"), systemImage: "square.grid.2x2")
+                    }
+
+                    NavigationLink {
+                        BudgetView(
+                            budgetRepository: budgetRepository,
+                            transactionRepository: transactionRepository,
+                            categoryRepository: categoryRepository,
+                            settingsRepository: settingsRepository
+                        )
+                    } label: {
+                        Label(L("budget_title"), systemImage: "target")
+                    }
+
+                    NavigationLink {
+                        TemplateListView(
+                            templateRepository: templateRepository,
+                            transactionRepository: transactionRepository,
+                            categoryRepository: categoryRepository,
+                            settingsRepository: settingsRepository,
+                            tagRepository: tagRepository,
+                            onUseTemplate: { prefill in
+                                templatePrefill = prefill
+                                showTemplateRecord = true
+                            }
+                        )
+                    } label: {
+                        Label(L("template_title"), systemImage: "doc.on.doc")
                     }
 
                     Button {
@@ -115,9 +175,23 @@ struct SettingsView: View {
                     } label: {
                         Label(L("settings_export_csv"), systemImage: "doc.text")
                     }
+
+                    Button {
+                        showPDFExport = true
+                    } label: {
+                        Label(L("settings_export_pdf"), systemImage: "doc.richtext")
+                    }
                 }
 
                 Section(L("settings_about_section")) {
+                    if let achievementService {
+                        NavigationLink {
+                            AchievementView(achievementService: achievementService)
+                        } label: {
+                            Label(L("achievement_title"), systemImage: "trophy")
+                        }
+                    }
+
                     Button {
                         onShowOnboarding?()
                     } label: {
@@ -171,6 +245,7 @@ struct SettingsView: View {
                 switch result {
                 case .success:
                     try? settingsRepository.set(key: "last_backup_date", value: ISO8601DateFormatter().string(from: Date()))
+                    UserDefaults.standard.set(true, forKey: "has_exported_data")
                     withAnimation(.easeInOut(duration: 0.25)) {
                         showBackupSuccess = true
                     }
@@ -196,6 +271,20 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showCSVExport) {
                 CSVExportView(csvExportService: csvExportService)
+            }
+            .sheet(isPresented: $showPDFExport) {
+                PDFExportView(dbQueue: dbQueue, settingsRepository: settingsRepository)
+            }
+            .sheet(isPresented: $showTemplateRecord) {
+                RecordView(
+                    transactionRepository: transactionRepository,
+                    categoryRepository: categoryRepository,
+                    settingsRepository: settingsRepository,
+                    tagRepository: tagRepository,
+                    prefill: templatePrefill
+                )
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showSetPassword) {
                 SetPasswordView(passwordService: passwordService) {
@@ -338,6 +427,7 @@ struct SettingsView: View {
             backupDocument = BackupDocument(data: data)
             showExporter = true
         } catch {
+            AppLogger.service.error("SettingsView exportBackup failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -363,6 +453,7 @@ struct SettingsView: View {
             } catch BackupError.invalidFile {
                 errorMessage = L("error_checksum_mismatch")
             } catch {
+                AppLogger.service.error("SettingsView importBackup failed: \(error.localizedDescription)")
                 errorMessage = L("error_load_failed")
             }
         case .failure:

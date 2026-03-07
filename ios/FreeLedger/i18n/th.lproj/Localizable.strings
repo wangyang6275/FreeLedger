@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "ปลดล็อกด้วย Face ID";
+"settings_touch_id" = "ปลดล็อกด้วย Touch ID";
+"biometric_reason" = "ปลดล็อก FreeLedger";
+"biometric_enable_reason" = "ยืนยันตัวตนเพื่อเปิดใช้การปลดล็อกด้วยไบโอเมตริก";
+
+/* Templates */
+"template_title" = "แม่แบบรายการ";
+"template_empty" = "ยังไม่มีแม่แบบ";
+"template_empty_hint" = "สร้างแม่แบบสำหรับรายการที่ใช้บ่อย";
+"template_list_section" = "แม่แบบของฉัน";
+"template_add" = "เพิ่มแม่แบบ";
+"template_name_section" = "ชื่อแม่แบบ";
+"template_name_placeholder" = "เช่น: กาแฟเช้า";
+"template_type_section" = "ประเภท";
+"template_type" = "ประเภทรายการ";
+"template_amount_section" = "จำนวนเงิน";
+"template_note_section" = "หมายเหตุ (ไม่บังคับ)";
+"template_no_categories" = "ไม่มีหมวดหมู่ที่ใช้ได้";
+"template_delete_title" = "ลบแม่แบบ";
+"template_delete_message" = "คุณแน่ใจที่จะลบแม่แบบนี้หรือไม่?";
+
+// MARK: - Annual Report
+"annual_title" = "รายงานประจำปี";
+"annual_empty" = "ไม่มีข้อมูลธุรกรรมสำหรับปีนี้";
+"annual_total_expense" = "รายจ่ายรวม";
+"annual_total_income" = "รายรับรวม";
+"annual_net" = "ยอดคงเหลือสุทธิ";
+"annual_transactions" = "ธุรกรรม";
+"annual_monthly_trend" = "แนวโน้มรายเดือน";
+"annual_category_breakdown" = "รายจ่ายตามหมวดหมู่";
+"annual_insights" = "ข้อมูลเชิงลึก";
+"annual_avg_expense" = "รายจ่ายเฉลี่ยต่อเดือน";
+"annual_avg_income" = "รายรับเฉลี่ยต่อเดือน";
+"annual_highest_month" = "รายจ่ายสูงสุด";
+"annual_lowest_month" = "รายจ่ายต่ำสุด";
+
+// MARK: - Achievements
+"achievement_title" = "ความสำเร็จ";
+"achievement_progress" = "ความคืบหน้า";
+"achievement_congrats" = "ยินดี!";
+"achievement_cat_recording" = "บันทึก";
+"achievement_cat_streak" = "ต่อเนื่อง";
+"achievement_cat_budget" = "งบประมาณ";
+"achievement_cat_exploration" = "สำรวจ";
+"achievement_first_record" = "ก้าวแรก";
+"achievement_first_record_desc" = "บันทึกรายการแรก";
+"achievement_records_10" = "เริ่มต้น";
+"achievement_records_10_desc" = "บันทึก 10 รายการ";
+"achievement_records_50" = "นักบัญชี";
+"achievement_records_50_desc" = "บันทึก 50 รายการ";
+"achievement_records_100" = "ร้อยรายการ";
+"achievement_records_100_desc" = "บันทึก 100 รายการ";
+"achievement_records_500" = "ผู้เชี่ยวชาญ";
+"achievement_records_500_desc" = "บันทึก 500 รายการ";
+"achievement_records_1000" = "ปรมาจารย์";
+"achievement_records_1000_desc" = "บันทึก 1000 รายการ";
+"achievement_streak_3" = "3 วันต่อเนื่อง";
+"achievement_streak_3_desc" = "บันทึกต่อเนื่อง 3 วัน";
+"achievement_streak_7" = "นักรบประจำสัปดาห์";
+"achievement_streak_7_desc" = "บันทึกต่อเนื่อง 7 วัน";
+"achievement_streak_30" = "แชมป์ประจำเดือน";
+"achievement_streak_30_desc" = "บันทึกต่อเนื่อง 30 วัน";
+"achievement_streak_100" = "หยุดไม่ได้";
+"achievement_streak_100_desc" = "บันทึกต่อเนื่อง 100 วัน";
+"achievement_streak_365" = "ตำนาน";
+"achievement_streak_365_desc" = "บันทึกต่อเนื่อง 365 วัน";
+"achievement_budget_set" = "นักวางแผน";
+"achievement_budget_set_desc" = "ตั้งงบประมาณแรก";
+"achievement_budget_under_3" = "ผู้รักษางบประมาณ";
+"achievement_budget_under_3_desc" = "3 เดือนไม่เกินงบ";
+"achievement_first_tag" = "เซียนแท็ก";
+"achievement_first_tag_desc" = "สร้างแท็กแรก";
+"achievement_first_export" = "ผู้พิทักษ์ข้อมูล";
+"achievement_first_export_desc" = "ส่งออกข้อมูลครั้งแรก";
+"achievement_first_template" = "โปรประสิทธิภาพ";
+"achievement_first_template_desc" = "สร้างเทมเพลตแรก";

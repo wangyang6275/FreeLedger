@@ -139,6 +139,38 @@ final class AppDatabase: Sendable {
             }
         }
 
+        migrator.registerMigration("v4") { db in
+            try db.create(table: "budgets") { t in
+                t.column("id", .text).primaryKey()
+                t.column("amount", .integer).notNull()
+                t.column("category_id", .text)
+                    .references("categories", onDelete: .cascade)
+                t.column("created_at", .text).notNull()
+                t.column("updated_at", .text).notNull()
+            }
+
+            try db.create(
+                index: "idx_budgets_category_id",
+                on: "budgets",
+                columns: ["category_id"],
+                unique: true
+            )
+        }
+
+        migrator.registerMigration("v5") { db in
+            try db.create(table: "transaction_templates") { t in
+                t.column("id", .text).primaryKey()
+                t.column("title", .text).notNull()
+                t.column("amount", .integer).notNull()
+                t.column("type", .text).notNull().defaults(to: "expense")
+                t.column("category_id", .text).notNull()
+                    .references("categories", onDelete: .cascade)
+                t.column("note", .text)
+                t.column("sort_order", .integer).notNull().defaults(to: 0)
+                t.column("created_at", .text).notNull()
+            }
+        }
+
         try migrator.migrate(dbQueue)
     }
 
@@ -169,7 +201,7 @@ final class AppDatabase: Sendable {
     private static func loadCategoriesFromBundle(filename: String, type: String) -> [Category] {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
             assertionFailure("Missing bundle resource: \(filename).json")
-            print("[AppDatabase] ERROR: Missing bundle resource: \(filename).json")
+            AppLogger.data.error("Missing bundle resource: \(filename).json")
             return []
         }
 
@@ -178,7 +210,7 @@ final class AppDatabase: Sendable {
             data = try Data(contentsOf: url)
         } catch {
             assertionFailure("Failed to read \(filename).json: \(error)")
-            print("[AppDatabase] ERROR: Failed to read \(filename).json: \(error)")
+            AppLogger.data.error("Failed to read \(filename).json: \(error.localizedDescription)")
             return []
         }
 
@@ -203,7 +235,7 @@ final class AppDatabase: Sendable {
             }
         } catch {
             assertionFailure("Failed to decode \(filename).json: \(error)")
-            print("[AppDatabase] ERROR: Failed to decode \(filename).json: \(error)")
+            AppLogger.data.error("Failed to decode \(filename).json: \(error.localizedDescription)")
             return []
         }
     }

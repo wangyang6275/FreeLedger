@@ -64,6 +64,7 @@ final class TagDetailViewModel {
         do {
             currencyCode = try settingsRepository.getCurrency()
         } catch {
+            AppLogger.ui.error("TagDetailViewModel loadCurrency failed: \(error.localizedDescription)")
             currencyCode = "CNY"
         }
 
@@ -71,6 +72,7 @@ final class TagDetailViewModel {
             transactions = try tagRepository.getTransactionsForTag(tagId: tag.id)
             categoryDict = try categoryRepository.getAllAsDict()
         } catch {
+            AppLogger.ui.error("TagDetailViewModel loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }

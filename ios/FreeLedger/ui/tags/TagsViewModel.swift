@@ -20,6 +20,7 @@ final class TagsViewModel {
             tags = try tagRepository.getAll()
             transactionCounts = try tagRepository.getTransactionCountPerTag()
         } catch {
+            AppLogger.ui.error("TagsViewModel loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }
@@ -36,6 +37,7 @@ final class TagsViewModel {
             try tagRepository.create(tag)
             loadData()
         } catch {
+            AppLogger.ui.error("TagsViewModel createTag failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -50,6 +52,7 @@ final class TagsViewModel {
             try tagRepository.update(updated)
             loadData()
         } catch {
+            AppLogger.ui.error("TagsViewModel updateTag failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -59,6 +62,7 @@ final class TagsViewModel {
             try tagRepository.delete(id: id)
             loadData()
         } catch {
+            AppLogger.ui.error("TagsViewModel deleteTag failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }

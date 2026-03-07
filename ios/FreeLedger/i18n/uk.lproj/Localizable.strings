@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Розблокування Face ID";
+"settings_touch_id" = "Розблокування Touch ID";
+"biometric_reason" = "Розблокувати FreeLedger";
+"biometric_enable_reason" = "Підтвердіть особу для увімкнення біометричного розблокування";
+
+/* Templates */
+"template_title" = "Шаблони транзакцій";
+"template_empty" = "Шаблонів немає";
+"template_empty_hint" = "Створюйте шаблони для частих транзакцій";
+"template_list_section" = "Мої шаблони";
+"template_add" = "Додати шаблон";
+"template_name_section" = "Назва шаблону";
+"template_name_placeholder" = "Напр.: Ранкова кава";
+"template_type_section" = "Тип";
+"template_type" = "Тип транзакції";
+"template_amount_section" = "Сума";
+"template_note_section" = "Нотатка (необов.)";
+"template_no_categories" = "Немає доступних категорій";
+"template_delete_title" = "Видалити шаблон";
+"template_delete_message" = "Ви впевнені, що хочете видалити цей шаблон?";
+
+// MARK: - Annual Report
+"annual_title" = "Річний звіт";
+"annual_empty" = "Немає даних транзакцій за цей рік";
+"annual_total_expense" = "Загальні витрати";
+"annual_total_income" = "Загальний дохід";
+"annual_net" = "Чистий баланс";
+"annual_transactions" = "Транзакції";
+"annual_monthly_trend" = "Місячний тренд";
+"annual_category_breakdown" = "Витрати за категоріями";
+"annual_insights" = "Аналітика";
+"annual_avg_expense" = "Сер. міс. витрати";
+"annual_avg_income" = "Сер. міс. дохід";
+"annual_highest_month" = "Найб. витрати";
+"annual_lowest_month" = "Найм. витрати";
+
+// MARK: - Achievements
+"achievement_title" = "Досягнення";
+"achievement_progress" = "Прогрес";
+"achievement_congrats" = "Вітаємо!";
+"achievement_cat_recording" = "Записи";
+"achievement_cat_streak" = "Серія";
+"achievement_cat_budget" = "Бюджет";
+"achievement_cat_exploration" = "Дослідження";
+"achievement_first_record" = "Перший крок";
+"achievement_first_record_desc" = "Запишіть першу транзакцію";
+"achievement_records_10" = "Початок";
+"achievement_records_10_desc" = "Запишіть 10 транзакцій";
+"achievement_records_50" = "Бухгалтер";
+"achievement_records_50_desc" = "Запишіть 50 транзакцій";
+"achievement_records_100" = "Сотня";
+"achievement_records_100_desc" = "Запишіть 100 транзакцій";
+"achievement_records_500" = "Експерт";
+"achievement_records_500_desc" = "Запишіть 500 транзакцій";
+"achievement_records_1000" = "Майстер";
+"achievement_records_1000_desc" = "Запишіть 1000 транзакцій";
+"achievement_streak_3" = "3 дні поспіль";
+"achievement_streak_3_desc" = "Записуйте 3 дні поспіль";
+"achievement_streak_7" = "Тижневий воїн";
+"achievement_streak_7_desc" = "Записуйте 7 днів поспіль";
+"achievement_streak_30" = "Місячний чемпіон";
+"achievement_streak_30_desc" = "Записуйте 30 днів поспіль";
+"achievement_streak_100" = "Незупинний";
+"achievement_streak_100_desc" = "Записуйте 100 днів поспіль";
+"achievement_streak_365" = "Легендарний";
+"achievement_streak_365_desc" = "Записуйте 365 днів поспіль";
+"achievement_budget_set" = "Планувальник";
+"achievement_budget_set_desc" = "Встановіть перший бюджет";
+"achievement_budget_under_3" = "Хоронець бюджету";
+"achievement_budget_under_3_desc" = "3 місяці в межах бюджету";
+"achievement_first_tag" = "Майстер тегів";
+"achievement_first_tag_desc" = "Створіть перший тег";
+"achievement_first_export" = "Хоронець даних";
+"achievement_first_export_desc" = "Експортуйте дані вперше";
+"achievement_first_template" = "Про ефективності";
+"achievement_first_template_desc" = "Створіть перший шаблон";

@@ -50,11 +50,13 @@ final class TransactionDetailViewModel {
         do {
             currencyCode = try settingsRepository.getCurrency()
         } catch {
+            AppLogger.ui.error("TransactionDetailVM loadCurrency failed: \(error.localizedDescription)")
             currencyCode = "CNY"
         }
         do {
             tags = try transactionRepository.getTagsForTransaction(transactionId: transaction.id)
         } catch {
+            AppLogger.ui.error("TransactionDetailVM loadTags failed: \(error.localizedDescription)")
             tags = []
         }
     }
@@ -106,6 +108,7 @@ final class TransactionDetailViewModel {
                 allCategories = try categoryRepository.getIncomeCategories(sortedByUsage: true)
             }
         } catch {
+            AppLogger.ui.error("TransactionDetailVM startEditing loadCategories failed: \(error.localizedDescription)")
             allCategories = []
         }
 
@@ -149,6 +152,7 @@ final class TransactionDetailViewModel {
 
             isEditing = false
         } catch {
+            AppLogger.ui.error("TransactionDetailVM saveEdit failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }
@@ -166,6 +170,7 @@ final class TransactionDetailViewModel {
                 editCategoryId = allCategories.first?.id ?? ""
             }
         } catch {
+            AppLogger.ui.error("TransactionDetailVM toggleEditType failed: \(error.localizedDescription)")
             allCategories = []
         }
     }
@@ -177,6 +182,7 @@ final class TransactionDetailViewModel {
             try transactionRepository.delete(id: transaction.id)
             didDelete = true
         } catch {
+            AppLogger.ui.error("TransactionDetailVM deleteTransaction failed: \(error.localizedDescription)")
             errorMessage = L("error_delete_failed")
         }
     }

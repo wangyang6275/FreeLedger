@@ -16,7 +16,6 @@ struct Transaction: Codable, FetchableRecord, PersistableRecord, Identifiable, H
     var updatedAt: String
 
     static let databaseTableName = "transactions"
-    nonisolated(unsafe) private static let isoFormatter = ISO8601DateFormatter()
 
     enum Columns: String, ColumnExpression {
         case id, amount, type
@@ -35,7 +34,7 @@ struct Transaction: Codable, FetchableRecord, PersistableRecord, Identifiable, H
     }
 
     static func currentISO() -> String {
-        isoFormatter.string(from: Date())
+        AppDateFormatter.isoNow()
     }
 
     init(id: String = UUID().uuidString,
@@ -50,7 +49,7 @@ struct Transaction: Codable, FetchableRecord, PersistableRecord, Identifiable, H
         self.type = type
         self.categoryId = categoryId
         self.note = note
-        let now = Self.isoFormatter.string(from: Date())
+        let now = AppDateFormatter.isoNow()
         self.createdAt = createdAt ?? now
         self.updatedAt = updatedAt ?? now
     }

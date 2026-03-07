@@ -228,6 +228,7 @@
 "search_category_label" = "カテゴリ";
 "search_category_all" = "すべてのカテゴリ";
 "search_clear_all" = "フィルターをクリア";
+"search_result_count" = "%d 件の結果";
 
 /* Accessibility */
 "a11y_add_transaction" = "記帳する";
@@ -282,3 +283,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face IDで解除";
+"settings_touch_id" = "Touch IDで解除";
+"biometric_reason" = "FreeLedgerのロックを解除";
+"biometric_enable_reason" = "生体認証を有効にするために本人確認を行います";
+
+/* Templates */
+"template_title" = "取引テンプレート";
+"template_empty" = "テンプレートなし";
+"template_empty_hint" = "よく使う取引のテンプレートを作成して記録を効率化";
+"template_list_section" = "マイテンプレート";
+"template_add" = "テンプレート追加";
+"template_name_section" = "テンプレート名";
+"template_name_placeholder" = "例: 朝のコーヒー";
+"template_type_section" = "タイプ";
+"template_type" = "取引タイプ";
+"template_amount_section" = "金額";
+"template_note_section" = "メモ（任意）";
+"template_no_categories" = "利用可能なカテゴリなし";
+"template_delete_title" = "テンプレートを削除";
+"template_delete_message" = "このテンプレートを削除しますか？";
+
+// MARK: - Annual Report
+"annual_title" = "年間レポート";
+"annual_empty" = "この年の取引データはありません";
+"annual_total_expense" = "総支出";
+"annual_total_income" = "総収入";
+"annual_net" = "純額";
+"annual_transactions" = "取引件数";
+"annual_monthly_trend" = "月別トレンド";
+"annual_category_breakdown" = "支出カテゴリ別";
+"annual_insights" = "インサイト";
+"annual_avg_expense" = "月平均支出";
+"annual_avg_income" = "月平均収入";
+"annual_highest_month" = "最高支出月";
+"annual_lowest_month" = "最低支出月";
+
+// MARK: - Achievements
+"achievement_title" = "実績";
+"achievement_progress" = "実績達成率";
+"achievement_congrats" = "おめでとう！";
+"achievement_cat_recording" = "記録";
+"achievement_cat_streak" = "連続記録";
+"achievement_cat_budget" = "予算";
+"achievement_cat_exploration" = "探索";
+"achievement_first_record" = "最初の一歩";
+"achievement_first_record_desc" = "最初の取引を記録";
+"achievement_records_10" = "入門";
+"achievement_records_10_desc" = "10件の取引を記録";
+"achievement_records_50" = "簿記係";
+"achievement_records_50_desc" = "50件の取引を記録";
+"achievement_records_100" = "百件達成";
+"achievement_records_100_desc" = "100件の取引を記録";
+"achievement_records_500" = "エキスパート";
+"achievement_records_500_desc" = "500件の取引を記録";
+"achievement_records_1000" = "マスター";
+"achievement_records_1000_desc" = "1000件の取引を記録";
+"achievement_streak_3" = "3日連続";
+"achievement_streak_3_desc" = "3日連続で記録";
+"achievement_streak_7" = "週間連続";
+"achievement_streak_7_desc" = "7日連続で記録";
+"achievement_streak_30" = "月間チャンピオン";
+"achievement_streak_30_desc" = "30日連続で記録";
+"achievement_streak_100" = "止められない";
+"achievement_streak_100_desc" = "100日連続で記録";
+"achievement_streak_365" = "伝説";
+"achievement_streak_365_desc" = "365日連続で記録";
+"achievement_budget_set" = "予算計画者";
+"achievement_budget_set_desc" = "最初の予算を設定";
+"achievement_budget_under_3" = "予算管理者";
+"achievement_budget_under_3_desc" = "3ヶ月連続で予算内";
+"achievement_first_tag" = "タグマスター";
+"achievement_first_tag_desc" = "最初のタグを作成";
+"achievement_first_export" = "データガーディアン";
+"achievement_first_export_desc" = "初めてデータをエクスポート";
+"achievement_first_template" = "効率プロ";
+"achievement_first_template_desc" = "最初のテンプレートを作成";

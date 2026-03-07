@@ -58,6 +58,30 @@
 "csv_field_category" = "Category";
 "csv_field_note" = "Note";
 "csv_field_tags" = "Tags";
+"settings_export_pdf" = "Export PDF Report";
+"pdf_export_title" = "Export PDF";
+"pdf_select_range" = "Select Time Range";
+"pdf_range_current_month" = "Current Month";
+"pdf_range_month" = "Specific Month";
+"pdf_range_year" = "Specific Year";
+"pdf_range_all" = "All Records";
+"pdf_year" = "Year";
+"pdf_month" = "Month";
+"pdf_export_button" = "Export PDF";
+"pdf_report_title" = "Financial Report";
+"pdf_generated" = "Generated on";
+"pdf_summary" = "Summary";
+"pdf_total_income" = "Total Income";
+"pdf_total_expense" = "Total Expense";
+"pdf_balance" = "Balance";
+"pdf_transaction_count" = "Transactions";
+"pdf_expense_breakdown" = "Expense by Category";
+"pdf_income_breakdown" = "Income by Category";
+"pdf_transactions" = "Transaction Details";
+"pdf_col_date" = "Date";
+"pdf_col_category" = "Category";
+"pdf_col_note" = "Note";
+"pdf_col_amount" = "Amount";
 "settings_password_section" = "Security";
 "settings_password_lock" = "Password Lock";
 "password_set_title" = "Set Password";
@@ -228,6 +252,7 @@
 "search_category_label" = "Category";
 "search_category_all" = "All Categories";
 "search_clear_all" = "Clear Filters";
+"search_result_count" = "%d results";
 
 /* Accessibility */
 "a11y_add_transaction" = "Add transaction";
@@ -282,3 +307,103 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID Unlock";
+"settings_touch_id" = "Touch ID Unlock";
+"biometric_reason" = "Unlock FreeLedger";
+"biometric_enable_reason" = "Verify identity to enable biometric unlock";
+
+/* Budget */
+"budget_title" = "Budget";
+"budget_overall_section" = "Monthly Budget";
+"budget_category_section" = "Category Budgets";
+"budget_set_overall" = "Set Monthly Budget";
+"budget_set_overall_message" = "Set your monthly spending limit";
+"budget_monthly_limit" = "Monthly Limit";
+"budget_amount_placeholder" = "e.g. 5000";
+"budget_amount_section" = "Budget Amount";
+"budget_save" = "Save";
+"budget_add_category" = "Add Category Budget";
+"budget_select_category" = "Select Category";
+"budget_category_empty" = "No category budgets set. You can set a spending limit for each category";
+"budget_all_categories_set" = "All categories have budgets set";
+"budget_delete_title" = "Delete Budget";
+"budget_delete_overall_message" = "Delete the monthly budget?";
+"budget_delete_category_message" = "Delete this category budget?";
+"budget_spent" = "Spent";
+"budget_remaining %@" = "%@ left";
+"budget_over %@" = "Over by %@";
+"budget_progress_title" = "Budget";
+"budget_spent_of %@ %@" = "%@ of %@";
+
+/* Templates */
+"template_title" = "Transaction Templates";
+"template_empty" = "No templates yet";
+"template_empty_hint" = "Create templates for frequently used transactions to record faster";
+"template_list_section" = "My Templates";
+"template_add" = "Add Template";
+"template_name_section" = "Template Name";
+"template_name_placeholder" = "e.g. Morning Coffee";
+"template_type_section" = "Type";
+"template_type" = "Transaction Type";
+"template_amount_section" = "Amount";
+"template_note_section" = "Note (Optional)";
+"template_no_categories" = "No categories available";
+"template_delete_title" = "Delete Template";
+"template_delete_message" = "Are you sure you want to delete this template?";
+
+// MARK: - Annual Report
+"annual_title" = "Annual Report";
+"annual_empty" = "No transaction data for this year";
+"annual_total_expense" = "Total Expense";
+"annual_total_income" = "Total Income";
+"annual_net" = "Net Balance";
+"annual_transactions" = "Transactions";
+"annual_monthly_trend" = "Monthly Trend";
+"annual_category_breakdown" = "Expense by Category";
+"annual_insights" = "Insights";
+"annual_avg_expense" = "Avg Monthly Expense";
+"annual_avg_income" = "Avg Monthly Income";
+"annual_highest_month" = "Highest Expense";
+"annual_lowest_month" = "Lowest Expense";
+
+// MARK: - Achievements
+"achievement_title" = "Achievements";
+"achievement_progress" = "Achievement Progress";
+"achievement_congrats" = "Congratulations!";
+"achievement_cat_recording" = "Recording";
+"achievement_cat_streak" = "Streak";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Exploration";
+"achievement_first_record" = "First Step";
+"achievement_first_record_desc" = "Record your first transaction";
+"achievement_records_10" = "Getting Started";
+"achievement_records_10_desc" = "Record 10 transactions";
+"achievement_records_50" = "Bookkeeper";
+"achievement_records_50_desc" = "Record 50 transactions";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "Record 100 transactions";
+"achievement_records_500" = "Expert";
+"achievement_records_500_desc" = "Record 500 transactions";
+"achievement_records_1000" = "Master";
+"achievement_records_1000_desc" = "Record 1000 transactions";
+"achievement_streak_3" = "3-Day Streak";
+"achievement_streak_3_desc" = "Record transactions 3 days in a row";
+"achievement_streak_7" = "Weekly Warrior";
+"achievement_streak_7_desc" = "Record transactions 7 days in a row";
+"achievement_streak_30" = "Monthly Champion";
+"achievement_streak_30_desc" = "Record transactions 30 days in a row";
+"achievement_streak_100" = "Unstoppable";
+"achievement_streak_100_desc" = "Record transactions 100 days in a row";
+"achievement_streak_365" = "Legendary";
+"achievement_streak_365_desc" = "Record transactions 365 days in a row";
+"achievement_budget_set" = "Budget Planner";
+"achievement_budget_set_desc" = "Set your first budget";
+"achievement_budget_under_3" = "Budget Keeper";
+"achievement_budget_under_3_desc" = "Stay under budget for 3 months";
+"achievement_first_tag" = "Tag Master";
+"achievement_first_tag_desc" = "Create your first tag";
+"achievement_first_export" = "Data Guardian";
+"achievement_first_export_desc" = "Export data for the first time";
+"achievement_first_template" = "Efficiency Pro";
+"achievement_first_template_desc" = "Create your first template";

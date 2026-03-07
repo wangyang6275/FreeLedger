@@ -157,6 +157,7 @@ struct TagSelector: View {
         do {
             allTags = try tagRepository.getAll()
         } catch {
+            AppLogger.ui.error("TagSelector loadTags failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }
@@ -175,6 +176,7 @@ struct TagSelector: View {
             }
             loadTags()
         } catch {
+            AppLogger.ui.error("TagSelector createTag failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }

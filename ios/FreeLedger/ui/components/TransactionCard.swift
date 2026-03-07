@@ -48,9 +48,7 @@ struct TransactionCard: View {
         .padding(.horizontal, AppSpacing.lg)
         .padding(.vertical, AppSpacing.md)
         .frame(minHeight: 64)
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
-        .shadow(color: Color.black.opacity(0.04), radius: 2, x: 0, y: 1)
+        .glassCard()
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityText)
     }

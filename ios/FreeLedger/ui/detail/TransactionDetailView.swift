@@ -38,7 +38,7 @@ struct TransactionDetailView: View {
                 .padding(.top, AppSpacing.xl)
                 .padding(.bottom, 100)
             }
-            .background(AppColors.background)
+            .background(GlassPageBackground())
 
             if viewModel.showDeleteDialog {
                 FriendlyDialog(
@@ -188,8 +188,7 @@ struct TransactionDetailView: View {
                 viewInfoRows
             }
         }
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .glassCard()
     }
 
     private var viewInfoRows: some View {

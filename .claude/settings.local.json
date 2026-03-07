@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcrun simctl list devices available)",
+      "Bash(xcodebuild -project /Users/wangyang/FreeLedger/ios/FreeLedger.xcodeproj -list)",
+      "Bash(xcodebuild -project FreeLedger.xcodeproj -scheme FreeLedger -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 16 Pro' clean build)",
+      "Bash(xcodebuild -project FreeLedger.xcodeproj -scheme FreeLedger -configuration Debug -destination 'platform=iOS Simulator,id=3C2A18EC-017D-4CD4-89E7-AF95D8883BF7' clean build)",
+      "Bash(xcodebuild -project FreeLedger.xcodeproj -scheme FreeLedger -configuration Debug -destination 'platform=iOS Simulator,id=3C2A18EC-017D-4CD4-89E7-AF95D8883BF7' -derivedDataPath build install)",
+      "Bash(xcodebuild -project FreeLedger.xcodeproj -scheme FreeLedger -configuration Debug -destination 'platform=iOS Simulator,id=3C2A18EC-017D-4CD4-89E7-AF95D8883BF7' build)",
+      "Bash(xcrun simctl install 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 /Users/wangyang/Library/Developer/Xcode/DerivedData/FreeLedger-hgqllourgjtodkdtqxnhpixmmabv/Build/Products/Debug-iphonesimulator/FreeLedger.app)",
+      "Bash(xcrun simctl launch 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 com.freeledger.app)",
+      "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log stream --predicate 'processImagePath contains \"\"FreeLedger\"\"' --level debug --style compact)",
+      "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log show --predicate 'process == \"\"FreeLedger\"\"' --last 5m --style compact)",
+      "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log show --predicate 'process == \"\"FreeLedger\"\"' --last 2m --style compact)",
+      "Bash(/Users/wangyang/FreeLedger/ios/FreeLedger/i18n/zh-Hant.lproj/Localizable.strings:*)",
+      "Bash(xcodebuild -list -project FreeLedger.xcodeproj)",
+      "Bash(ruby:*)",
+      "Bash(open FreeLedger.xcodeproj)",
+      "Bash(xcrun simctl boot 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7)",
+      "Bash(open -a Simulator)",
+      "Bash(git add ios/FreeLedger/data/service/AppReviewService.swift ios/FreeLedger/data/service/AppReviewService_Usage.md ios/FreeLedger/ui/record/RecordViewModel.swift ios/FreeLedger/ui/settings/CSVExportView.swift ios/FreeLedger/ui/reminders/RemindersViewModel.swift ios/FreeLedger/ui/settings/SettingsView.swift ios/FreeLedger/FreeLedger.entitlements ios/FreeLedgerWidget/FreeLedgerWidget.entitlements ios/FreeLedger.xcodeproj/project.pbxproj)",
+      "Bash(git add ios/FreeLedger/i18n/*/Localizable.strings docs/AppReview_Integration_Guide.md)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

@@ -20,6 +20,6 @@ struct Tag: Codable, FetchableRecord, PersistableRecord, Identifiable, Hashable 
         self.id = id
         self.name = name
         self.colorHex = colorHex
-        self.createdAt = createdAt ?? ISO8601DateFormatter().string(from: Date())
+        self.createdAt = createdAt ?? AppDateFormatter.isoNow()
     }
 }

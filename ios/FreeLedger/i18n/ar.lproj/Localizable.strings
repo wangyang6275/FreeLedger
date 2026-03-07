@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "فتح بـ Face ID";
+"settings_touch_id" = "فتح بـ Touch ID";
+"biometric_reason" = "فتح FreeLedger";
+"biometric_enable_reason" = "تحقق من هويتك لتمكين فتح القفل بالبصمة";
+
+/* Templates */
+"template_title" = "قوالب المعاملات";
+"template_empty" = "لا توجد قوالب";
+"template_empty_hint" = "أنشئ قوالب للمعاملات المتكررة";
+"template_list_section" = "قوالبي";
+"template_add" = "إضافة قالب";
+"template_name_section" = "اسم القالب";
+"template_name_placeholder" = "مثال: قهوة الصباح";
+"template_type_section" = "النوع";
+"template_type" = "نوع المعاملة";
+"template_amount_section" = "المبلغ";
+"template_note_section" = "ملاحظة (اختياري)";
+"template_no_categories" = "لا توجد فئات متاحة";
+"template_delete_title" = "حذف القالب";
+"template_delete_message" = "هل أنت متأكد من حذف هذا القالب؟";
+
+// MARK: - Annual Report
+"annual_title" = "التقرير السنوي";
+"annual_empty" = "لا توجد بيانات معاملات لهذا العام";
+"annual_total_expense" = "إجمالي المصروفات";
+"annual_total_income" = "إجمالي الدخل";
+"annual_net" = "الرصيد الصافي";
+"annual_transactions" = "المعاملات";
+"annual_monthly_trend" = "الاتجاه الشهري";
+"annual_category_breakdown" = "المصروفات حسب الفئة";
+"annual_insights" = "رؤى";
+"annual_avg_expense" = "متوسط المصروفات الشهرية";
+"annual_avg_income" = "متوسط الدخل الشهري";
+"annual_highest_month" = "أعلى مصروفات";
+"annual_lowest_month" = "أدنى مصروفات";
+
+// MARK: - Achievements
+"achievement_title" = "الإنجازات";
+"achievement_progress" = "تقدم الإنجازات";
+"achievement_congrats" = "تهانينا!";
+"achievement_cat_recording" = "التسجيل";
+"achievement_cat_streak" = "السلسلة";
+"achievement_cat_budget" = "الميزانية";
+"achievement_cat_exploration" = "الاستкشاف";
+"achievement_first_record" = "الخطوة الأولى";
+"achievement_first_record_desc" = "سجل أول معاملة";
+"achievement_records_10" = "البداية";
+"achievement_records_10_desc" = "سجل 10 معاملات";
+"achievement_records_50" = "محاسب";
+"achievement_records_50_desc" = "سجل 50 معاملة";
+"achievement_records_100" = "مئة";
+"achievement_records_100_desc" = "سجل 100 معاملة";
+"achievement_records_500" = "خبير";
+"achievement_records_500_desc" = "سجل 500 معاملة";
+"achievement_records_1000" = "ماستر";
+"achievement_records_1000_desc" = "سجل 1000 معاملة";
+"achievement_streak_3" = "3 أيام متتالية";
+"achievement_streak_3_desc" = "سجل لمدة 3 أيام متتالية";
+"achievement_streak_7" = "محارب أسبوعي";
+"achievement_streak_7_desc" = "سجل لمدة 7 أيام متتالية";
+"achievement_streak_30" = "بطل شهري";
+"achievement_streak_30_desc" = "سجل لمدة 30 يومًا متتاليًا";
+"achievement_streak_100" = "لا يمكن إيقافه";
+"achievement_streak_100_desc" = "سجل لمدة 100 يوم متتالي";
+"achievement_streak_365" = "أسطوري";
+"achievement_streak_365_desc" = "سجل لمدة 365 يومًا متتاليًا";
+"achievement_budget_set" = "مخطط";
+"achievement_budget_set_desc" = "عيّن أول ميزانية";
+"achievement_budget_under_3" = "حارس الميزانية";
+"achievement_budget_under_3_desc" = "3 أشهر ضمن الميزانية";
+"achievement_first_tag" = "خبير الوسوم";
+"achievement_first_tag_desc" = "أنشئ أول وسم";
+"achievement_first_export" = "حارس البيانات";
+"achievement_first_export_desc" = "صدّر البيانات لأول مرة";
+"achievement_first_template" = "محترف الكفاءة";
+"achievement_first_template_desc" = "أنشئ أول قالب";

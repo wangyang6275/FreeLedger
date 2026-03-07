@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID ontgrendelen";
+"settings_touch_id" = "Touch ID ontgrendelen";
+"biometric_reason" = "FreeLedger ontgrendelen";
+"biometric_enable_reason" = "Verifieer je identiteit om biometrische ontgrendeling in te schakelen";
+
+/* Templates */
+"template_title" = "Transactiesjablonen";
+"template_empty" = "Geen sjablonen";
+"template_empty_hint" = "Maak sjablonen voor veelgebruikte transacties";
+"template_list_section" = "Mijn sjablonen";
+"template_add" = "Sjabloon toevoegen";
+"template_name_section" = "Sjabloonnaam";
+"template_name_placeholder" = "Bijv: Ochtendkoffie";
+"template_type_section" = "Type";
+"template_type" = "Transactietype";
+"template_amount_section" = "Bedrag";
+"template_note_section" = "Notitie (optioneel)";
+"template_no_categories" = "Geen categorieën beschikbaar";
+"template_delete_title" = "Sjabloon verwijderen";
+"template_delete_message" = "Weet je zeker dat je dit sjabloon wilt verwijderen?";
+
+// MARK: - Annual Report
+"annual_title" = "Jaarverslag";
+"annual_empty" = "Geen transactiegegevens voor dit jaar";
+"annual_total_expense" = "Totale uitgaven";
+"annual_total_income" = "Totaal inkomen";
+"annual_net" = "Netto saldo";
+"annual_transactions" = "Transacties";
+"annual_monthly_trend" = "Maandelijkse trend";
+"annual_category_breakdown" = "Uitgaven per categorie";
+"annual_insights" = "Inzichten";
+"annual_avg_expense" = "Gem. maandelijkse uitgaven";
+"annual_avg_income" = "Gem. maandelijks inkomen";
+"annual_highest_month" = "Hoogste uitgaven";
+"annual_lowest_month" = "Laagste uitgaven";
+
+// MARK: - Achievements
+"achievement_title" = "Prestaties";
+"achievement_progress" = "Voortgang";
+"achievement_congrats" = "Gefeliciteerd!";
+"achievement_cat_recording" = "Registratie";
+"achievement_cat_streak" = "Reeks";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Verkenning";
+"achievement_first_record" = "Eerste stap";
+"achievement_first_record_desc" = "Registreer je eerste transactie";
+"achievement_records_10" = "Begin";
+"achievement_records_10_desc" = "Registreer 10 transacties";
+"achievement_records_50" = "Boekhouder";
+"achievement_records_50_desc" = "Registreer 50 transacties";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "Registreer 100 transacties";
+"achievement_records_500" = "Expert";
+"achievement_records_500_desc" = "Registreer 500 transacties";
+"achievement_records_1000" = "Meester";
+"achievement_records_1000_desc" = "Registreer 1000 transacties";
+"achievement_streak_3" = "3 dagen op rij";
+"achievement_streak_3_desc" = "Registreer 3 dagen achter elkaar";
+"achievement_streak_7" = "Weekkrijger";
+"achievement_streak_7_desc" = "Registreer 7 dagen achter elkaar";
+"achievement_streak_30" = "Maandkampioen";
+"achievement_streak_30_desc" = "Registreer 30 dagen achter elkaar";
+"achievement_streak_100" = "Niet te stoppen";
+"achievement_streak_100_desc" = "Registreer 100 dagen achter elkaar";
+"achievement_streak_365" = "Legendarisch";
+"achievement_streak_365_desc" = "Registreer 365 dagen achter elkaar";
+"achievement_budget_set" = "Budgetplanner";
+"achievement_budget_set_desc" = "Stel je eerste budget in";
+"achievement_budget_under_3" = "Budgetbewaker";
+"achievement_budget_under_3_desc" = "3 maanden onder budget";
+"achievement_first_tag" = "Tagmeester";
+"achievement_first_tag_desc" = "Maak je eerste tag";
+"achievement_first_export" = "Databeschermer";
+"achievement_first_export_desc" = "Exporteer data voor het eerst";
+"achievement_first_template" = "Efficiëntie pro";
+"achievement_first_template_desc" = "Maak je eerste sjabloon";

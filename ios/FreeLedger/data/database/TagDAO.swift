@@ -1,12 +1,8 @@
 import Foundation
 import GRDB
 
-final class TagDAO {
-    private let dbQueue: DatabaseQueue
-
-    init(dbQueue: DatabaseQueue) {
-        self.dbQueue = dbQueue
-    }
+struct TagDAO {
+    let dbQueue: DatabaseQueue
 
     func getAll() throws -> [Tag] {
         try dbQueue.read { db in
@@ -81,9 +77,8 @@ final class TagDAO {
               let endDate = calendar.date(byAdding: .month, value: 1, to: startDate) else {
             return []
         }
-        let formatter = ISO8601DateFormatter()
-        let startISO = formatter.string(from: startDate)
-        let endISO = formatter.string(from: endDate)
+        let startISO = AppDateFormatter.formatISO(startDate)
+        let endISO = AppDateFormatter.formatISO(endDate)
 
         return try dbQueue.read { db in
             let rows = try Row.fetchAll(db, sql: """

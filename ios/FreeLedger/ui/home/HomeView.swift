@@ -41,6 +41,17 @@ struct HomeView: View {
                         .listRowInsets(EdgeInsets(top: AppSpacing.lg, leading: AppSpacing.lg, bottom: 0, trailing: AppSpacing.lg))
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
+
+                        if viewModel.overallBudget != nil {
+                            BudgetProgressCard(
+                                overallBudget: viewModel.overallBudget,
+                                spent: viewModel.summary.totalExpense,
+                                currencyCode: viewModel.currencyCode
+                            )
+                            .listRowInsets(EdgeInsets(top: AppSpacing.sm, leading: AppSpacing.lg, bottom: 0, trailing: AppSpacing.lg))
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                        }
                     }
 
                     if viewModel.isEmpty {
@@ -90,7 +101,7 @@ struct HomeView: View {
                 }
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
-                .background(AppColors.background)
+                .background(GlassPageBackground())
                 .contentMargins(.bottom, 100, for: .scrollContent)
                 .navigationDestination(for: Transaction.self) { transaction in
                     TransactionDetailView(
@@ -116,6 +127,7 @@ struct HomeView: View {
                                     try transactionRepository.delete(id: tx.id)
                                     viewModel.loadData()
                                 } catch {
+                                    AppLogger.ui.error("HomeView deleteTransaction failed: \(error.localizedDescription)")
                                     errorMessage = L("error_delete_failed")
                                 }
                             }

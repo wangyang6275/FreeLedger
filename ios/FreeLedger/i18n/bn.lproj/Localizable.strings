@@ -1,0 +1,408 @@
+/* Tabs */
+"tab_transactions" = "লেনদেন";
+"tab_reports" = "রিপোর্ট";
+"tab_tags" = "ট্যাগ";
+"tab_settings" = "সেটিংস";
+
+/* Home */
+"home_empty_state" = "এখনো কোনো এন্ট্রি নেই। শুরু করতে + ট্যাপ করুন";
+
+/* Summary Card */
+"summary_expense_label" = "এই মাস";
+"summary_income_label" = "আয়";
+"summary_balance_label" = "ব্যালেন্স";
+
+/* Date Groups */
+"date_today" = "আজ";
+"date_yesterday" = "গতকাল";
+
+/* Report */
+"report_empty_state" = "ব্যয় রিপোর্ট দেখতে কিছু লেনদেন রেকর্ড করুন";
+"report_expense_label" = "ব্যয়";
+"report_income_label" = "আয়";
+"report_balance_label" = "ব্যালেন্স";
+"report_total_expense" = "মোট ব্যয়";
+"report_trend_title" = "৬ মাসের ট্রেন্ড";
+"report_tag_chart_title" = "ট্যাগ অনুযায়ী ব্যয়";
+
+/* Tags */
+"tags_empty_state" = "এখনো কোনো ট্যাগ নেই। রেকর্ড করার সময় ট্যাগ যোগ করতে পারেন";
+
+/* Settings */
+"settings_general" = "সাধারণ";
+"settings_currency" = "মুদ্রা";
+"settings_language" = "ভাষা";
+"settings_category_management" = "ক্যাটাগরি ব্যবস্থাপনা";
+"settings_backup_section" = "ব্যাকআপ";
+"settings_export_backup" = "ব্যাকআপ রপ্তানি";
+"backup_success_title" = "ব্যাকআপ সম্পন্ন!";
+"backup_success_message %lld" = "%lld টি এন্ট্রি আপনার নির্বাচিত স্থানে সংরক্ষিত হয়েছে";
+"settings_import_restore" = "আমদানি ও পুনরুদ্ধার";
+"restore_warning_title" = "ব্যাকআপ আমদানি";
+"restore_warning_message" = "ব্যাকআপ আমদানি করলে সমস্ত বিদ্যমান ডেটা প্রতিস্থাপিত হবে। আপনি কি নিশ্চিত?";
+"restore_warning_confirm" = "আমদানি নিশ্চিত করুন";
+"restore_success_title" = "পুনরুদ্ধার সম্পন্ন!";
+"restore_success_message %lld" = "%lld টি এন্ট্রি পুনরুদ্ধার হয়েছে ✓";
+"backup_reminder_title" = "ব্যাকআপের সময়";
+"backup_reminder_first %lld" = "আপনি %lld টি লেনদেন রেকর্ড করেছেন! ব্যাকআপ নেওয়ার কথা ভাবুন";
+"backup_reminder_periodic" = "শেষ ব্যাকআপের ৩০ দিনের বেশি হয়ে গেছে। একটি নতুন ব্যাকআপ নেওয়ার কথা ভাবুন";
+"backup_reminder_go" = "এখনই ব্যাকআপ নিন";
+"backup_reminder_later" = "পরে";
+"settings_export_csv" = "CSV রপ্তানি";
+"csv_export_title" = "CSV রপ্তানি";
+"csv_select_fields" = "রপ্তানি ক্ষেত্র নির্বাচন করুন";
+"csv_export_button" = "রপ্তানি";
+"csv_field_date" = "তারিখ";
+"csv_field_amount" = "পরিমাণ";
+"csv_field_type" = "ধরন";
+"csv_field_category" = "ক্যাটাগরি";
+"csv_field_note" = "নোট";
+"csv_field_tags" = "ট্যাগ";
+"settings_export_pdf" = "PDF রিপোর্ট রপ্তানি";
+"pdf_export_title" = "PDF রপ্তানি";
+"pdf_select_range" = "সময়কাল নির্বাচন করুন";
+"pdf_range_current_month" = "এই মাস";
+"pdf_range_month" = "নির্দিষ্ট মাস";
+"pdf_range_year" = "নির্দিষ্ট বছর";
+"pdf_range_all" = "সকল এন্ট্রি";
+"pdf_year" = "বছর";
+"pdf_month" = "মাস";
+"pdf_export_button" = "PDF রপ্তানি";
+"pdf_report_title" = "আর্থিক প্রতিবেদন";
+"pdf_generated" = "তৈরির তারিখ";
+"pdf_summary" = "সারসংক্ষেপ";
+"pdf_total_income" = "মোট আয়";
+"pdf_total_expense" = "মোট ব্যয়";
+"pdf_balance" = "ব্যালেন্স";
+"pdf_transaction_count" = "লেনদেন";
+"pdf_expense_breakdown" = "ক্যাটাগরি অনুযায়ী ব্যয়";
+"pdf_income_breakdown" = "ক্যাটাগরি অনুযায়ী আয়";
+"pdf_transactions" = "লেনদেনের বিবরণ";
+"pdf_col_date" = "তারিখ";
+"pdf_col_category" = "ক্যাটাগরি";
+"pdf_col_note" = "নোট";
+"pdf_col_amount" = "পরিমাণ";
+"settings_password_section" = "নিরাপত্তা";
+"settings_password_lock" = "পাসওয়ার্ড লক";
+"password_set_title" = "পাসওয়ার্ড সেট করুন";
+"password_verify_title" = "পাসওয়ার্ড নিশ্চিত করুন";
+"password_enter_prompt" = "৪-সংখ্যার পাসওয়ার্ড দিন";
+"password_confirm_prompt" = "নিশ্চিত করতে আবার দিন";
+"password_mismatch" = "পাসওয়ার্ড মিলছে না, আবার চেষ্টা করুন";
+"password_wrong" = "ভুল পাসওয়ার্ড, আবার চেষ্টা করুন";
+"password_enter_to_disable" = "নিষ্ক্রিয় করতে বর্তমান পাসওয়ার্ড দিন";
+"password_set_success_title" = "পাসওয়ার্ড লক সক্রিয়";
+"password_set_success_message" = "আপনার আর্থিক তথ্য এখন পাসওয়ার্ড দিয়ে সুরক্ষিত";
+"lock_enter_password" = "আনলক করতে পাসওয়ার্ড দিন";
+"settings_change_password" = "পাসওয়ার্ড পরিবর্তন";
+"password_enter_current" = "বর্তমান পাসওয়ার্ড দিন";
+"onboarding_step1_title" = "৩ সেকেন্ডে রেকর্ড করুন";
+"onboarding_step1_desc" = "প্রতিটি লেনদেন দ্রুত রেকর্ড করুন\nসহজ, স্বজ্ঞাত, কোনো শেখার ঝামেলা নেই";
+"onboarding_step2_title" = "আপনার মুদ্রা বেছে নিন";
+"onboarding_step3_title" = "শুরু করতে + ট্যাপ করুন";
+"onboarding_step3_desc" = "নিচে + বোতামে ট্যাপ করুন\nআপনার প্রথম এন্ট্রি তৈরি করতে";
+"onboarding_next" = "পরবর্তী";
+"onboarding_start" = "শুরু করুন";
+"onboarding_skip" = "এড়িয়ে যান";
+"settings_data_section" = "ডেটা";
+"settings_about_section" = "সম্পর্কে";
+"settings_replay_onboarding" = "পরিচিতি আবার দেখুন";
+"settings_version" = "সংস্করণ";
+
+/* Record */
+"record_title" = "নতুন এন্ট্রি";
+"record_expense" = "ব্যয়";
+"record_income" = "আয়";
+"record_save" = "সংরক্ষণ";
+"record_add_note" = "নোট যোগ করতে ট্যাপ করুন...";
+"record_note_placeholder" = "নোট যোগ করুন";
+
+/* Detail */
+"detail_title" = "বিবরণ";
+"detail_note" = "নোট";
+"detail_date" = "তারিখ";
+"detail_type" = "ধরন";
+"detail_category" = "ক্যাটাগরি";
+"detail_no_note" = "কোনো নোট নেই";
+
+/* Edit */
+"edit_amount_placeholder" = "পরিমাণ দিন";
+"edit_select_category" = "ক্যাটাগরি নির্বাচন করুন";
+"edit_category_title" = "ক্যাটাগরি সম্পাদনা";
+"add_category_title" = "ক্যাটাগরি যোগ করুন";
+"edit_category_name" = "নাম";
+"edit_category_name_placeholder" = "ক্যাটাগরির নাম দিন";
+"edit_category_icon" = "আইকন";
+"edit_category_color" = "রঙ";
+"category_custom_label" = "কাস্টম";
+"category_builtin_label" = "বিল্ট-ইন";
+
+/* Tags */
+"tag_selector_title" = "ট্যাগ";
+"tag_selector_done" = "সম্পন্ন";
+"tag_name_placeholder" = "ট্যাগের নাম দিন";
+"tag_create_button" = "তৈরি করুন";
+"tag_add_hint" = "ট্যাগ যোগ করুন";
+"detail_tags" = "ট্যাগ";
+"tag_count %lld" = "%lld টি এন্ট্রি";
+"tag_total_expense" = "ব্যয়";
+"tag_total_income" = "আয়";
+"tags_empty_title" = "এখনো কোনো ট্যাগ নেই";
+"tags_empty_desc" = "সহজ ট্র্যাকিং ও পর্যালোচনার জন্য ট্যাগ দিয়ে লেনদেন গ্রুপ করুন";
+"tags_create_first" = "প্রথম ট্যাগ তৈরি করুন";
+"tags_create_title" = "নতুন ট্যাগ";
+"tags_edit_title" = "ট্যাগ সম্পাদনা";
+"tags_save" = "সংরক্ষণ";
+"tags_name_label" = "নাম";
+"tags_color_label" = "রঙ";
+"tags_preview" = "প্রিভিউ";
+"tags_delete_title" = "ট্যাগ মুছুন";
+"tags_delete_message %@" = "\"%@\" মুছবেন? সংযুক্ত লেনদেন প্রভাবিত হবে না।";
+"tags_guide_title" = "ট্যাগ দিয়ে সাজান";
+"tags_guide_subtitle" = "ট্যাগ একাধিক দিক থেকে ব্যয় ট্র্যাক করতে সাহায্য করে";
+"tags_guide_what_title" = "ট্যাগ বনাম ক্যাটাগরি";
+"tags_guide_what_desc" = "ক্যাটাগরি নির্দিষ্ট (যেমন খাবার, যাতায়াত), প্রতি লেনদেনে একটি। ট্যাগ নমনীয় — যেকোনো লেনদেনে একাধিক যোগ করুন";
+"tags_guide_example_title" = "উদাহরণ";
+"tags_guide_example_desc" = "ভ্রমণ, রিইম্বার্সমেন্ট, ভাগ করা খরচ, প্রজেক্ট A… প্রয়োজন অনুযায়ী মিশ্রিত করুন";
+"tags_guide_how_title" = "কিভাবে ব্যবহার করবেন?";
+"tags_guide_how_desc" = "লেনদেন রেকর্ড করার সময় ট্যাগ বোতামে ট্যাপ করুন, অথবা এখানে আগে ট্যাগ তৈরি করুন";
+"tag_tip_message" = "ট্যাগ যোগ করতে এখানে ট্যাপ করুন 🏷️";
+
+/* Reminders */
+"reminders_title" = "রিমাইন্ডার";
+"reminders_empty_title" = "এখনো কোনো রিমাইন্ডার নেই";
+"reminders_empty_desc" = "ভাড়া বা বিল ভুলে না যেতে পুনরাবৃত্তি রিমাইন্ডার সেট করুন";
+"reminders_create_first" = "প্রথম রিমাইন্ডার তৈরি করুন";
+"reminders_new_title" = "নতুন রিমাইন্ডার";
+"reminders_edit_title" = "রিমাইন্ডার সম্পাদনা";
+"reminders_create" = "রিমাইন্ডার তৈরি করুন";
+"reminders_delete_title" = "রিমাইন্ডার মুছুন";
+"reminders_delete_message %@" = "\"%@\" মুছবেন?";
+"reminders_field_title" = "রিমাইন্ডারের নাম";
+"reminders_title_placeholder" = "যেমন ভাড়া দিন";
+"reminders_field_amount" = "পরিমাণ";
+"reminders_field_category" = "ক্যাটাগরি (ঐচ্ছিক)";
+"reminders_field_frequency" = "পুনরাবৃত্তি";
+"reminders_field_time" = "রিমাইন্ডার সময়";
+"reminders_field_note" = "নোট (ঐচ্ছিক)";
+"reminders_freq_daily" = "প্রতিদিন";
+"reminders_freq_weekly" = "সাপ্তাহিক";
+"reminders_freq_monthly" = "মাসিক";
+"reminders_freq_weekly_day %@" = "প্রতি %@";
+"reminders_freq_monthly_day %lld" = "%lld তারিখ";
+"reminders_example_rent" = "ভাড়া দিন";
+"reminders_example_mortgage" = "হাউজিং লোন";
+"reminders_example_phone" = "ফোন বিল";
+"reminder_action_record" = "রেকর্ড";
+"reminder_notification_body %@" = "রেকর্ড করার সময়: %@\nদ্রুত রেকর্ডের জন্য দীর্ঘ চাপুন";
+
+/* Actions */
+"action_edit" = "সম্পাদনা";
+"action_cancel" = "বাতিল";
+"action_delete" = "মুছুন";
+"action_delete_record" = "এন্ট্রি মুছুন";
+
+/* Delete Dialog */
+"delete_confirm_title" = "এই এন্ট্রি মুছবেন?";
+"delete_confirm_message" = "এটি পূর্বাবস্থায় ফেরানো যাবে না";
+"delete_category_title" = "এই ক্যাটাগরি মুছবেন?";
+"delete_category_message" = "এটি আর রেকর্ড পেজে দেখা যাবে না, তবে বিদ্যমান এন্ট্রি প্রভাবিত হবে না";
+
+/* Categories - Expense */
+"category_food" = "খাবার";
+"category_shopping" = "কেনাকাটা";
+"category_transport" = "যাতায়াত";
+"category_housing" = "বাসস্থান";
+"category_communication" = "ফোন";
+"category_entertainment" = "বিনোদন";
+"category_clothing" = "পোশাক";
+"category_medical" = "স্বাস্থ্য";
+"category_education" = "শিক্ষা";
+"category_travel" = "ভ্রমণ";
+"category_children" = "সন্তান";
+
+/* Categories - Income */
+"category_salary" = "বেতন";
+"category_freelance" = "ফ্রিল্যান্স";
+"category_investment" = "বিনিয়োগ";
+"category_gift" = "উপহার";
+"category_other_income" = "অন্যান্য";
+
+/* Errors */
+"error_title" = "উফস";
+"error_ok" = "ঠিক আছে";
+"error_save_failed" = "সংরক্ষণ ব্যর্থ। পরে আবার চেষ্টা করুন";
+"error_load_failed" = "ডেটা লোড ব্যর্থ। পরে আবার চেষ্টা করুন";
+"error_delete_failed" = "মোছা ব্যর্থ। পরে আবার চেষ্টা করুন";
+"error_invalid_amount" = "অনুগ্রহ করে একটি বৈধ পরিমাণ দিন";
+"error_checksum_mismatch" = "এই ফাইলটি FreeLedger ব্যাকআপ বলে মনে হচ্ছে না। অন্য একটি ফাইল চেষ্টা করুন";
+"error_storage_insufficient" = "পর্যাপ্ত স্টোরেজ নেই। জায়গা খালি করে আবার চেষ্টা করুন";
+
+/* Search */
+"search_title" = "অনুসন্ধান";
+"search_placeholder" = "নোট বা ক্যাটাগরিতে খুঁজুন...";
+"search_hint" = "কীওয়ার্ড দিন বা ফিল্টার নির্বাচন করুন";
+"search_no_results" = "কোনো মিলে যাওয়া এন্ট্রি পাওয়া যায়নি";
+"search_date_label" = "তারিখ";
+"search_date_selected" = "তারিখ নির্বাচিত";
+"search_date_today" = "আজ";
+"search_date_this_week" = "এই সপ্তাহ";
+"search_date_this_month" = "এই মাস";
+"search_date_clear" = "তারিখ মুছুন";
+"search_category_label" = "ক্যাটাগরি";
+"search_category_all" = "সকল ক্যাটাগরি";
+"search_clear_all" = "ফিল্টার মুছুন";
+
+/* Accessibility */
+"a11y_add_transaction" = "লেনদেন যোগ করুন";
+"a11y_close" = "বন্ধ";
+"a11y_expense_tab" = "ব্যয়";
+"a11y_income_tab" = "আয়";
+"a11y_add_note" = "নোট যোগ করুন";
+"a11y_note_input" = "নোট ফিল্ড";
+"a11y_save_transaction" = "লেনদেন সংরক্ষণ";
+"a11y_edit_amount" = "পরিমাণ সম্পাদনা";
+"a11y_delete_record" = "এন্ট্রি মুছুন";
+"a11y_decimal_point" = "দশমিক বিন্দু";
+"a11y_backspace" = "মুছুন";
+"a11y_tag_button" = "ট্যাগ";
+"a11y_digit_0" = "০";
+"a11y_digit_1" = "১";
+"a11y_digit_2" = "২";
+"a11y_digit_3" = "৩";
+"a11y_digit_4" = "৪";
+"a11y_digit_5" = "৫";
+"a11y_digit_6" = "৬";
+"a11y_digit_7" = "৭";
+"a11y_digit_8" = "৮";
+"a11y_digit_9" = "৯";
+"a11y_category %@" = "%@ ক্যাটাগরি, বোতাম";
+"a11y_category_selected %@" = "নির্বাচিত, %@ ক্যাটাগরি";
+"a11y_summary %@ %@ %@" = "এই মাসের ব্যয় %@, আয় %@, ব্যালেন্স %@";
+
+/* Theme */
+"settings_theme" = "থিম";
+"theme_coral" = "কোরাল";
+"theme_forest" = "বন";
+"theme_ocean" = "সমুদ্র";
+"theme_lavender" = "ল্যাভেন্ডার";
+"theme_charcoal" = "চারকোল";
+"theme_kids" = "শিশু জগৎ";
+"theme_student" = "ছাত্র নীল";
+"theme_executive" = "এক্সিকিউটিভ ধূসর";
+"theme_homemaker" = "ঘরোয়া বেইজ";
+"theme_youngpro" = "এনার্জি কমলা";
+"theme_sakura" = "সাকুরা গোলাপি";
+"theme_zen" = "জেন সবুজ";
+"theme_moonlight" = "চাঁদের আলো রূপালি";
+"theme_autumn" = "শরৎ";
+"theme_bold" = "সাহসী লাল";
+"theme_liquidglass" = "তরল কাচ";
+
+/* Contact */
+"settings_contact_section" = "যোগাযোগ";
+"settings_contact_us" = "আমাদের সাথে যোগাযোগ";
+
+/* Support */
+"settings_support_section" = "আমাদের সমর্থন করুন";
+"settings_rate_app" = "FreeLedger রেট করুন";
+
+"settings_face_id" = "Face ID আনলক";
+"settings_touch_id" = "Touch ID আনলক";
+"biometric_reason" = "FreeLedger আনলক করুন";
+"biometric_enable_reason" = "বায়োমেট্রিক আনলক সক্রিয় করতে পরিচয় যাচাই করুন";
+
+/* Budget */
+"budget_title" = "বাজেট";
+"budget_overall_section" = "মাসিক বাজেট";
+"budget_category_section" = "ক্যাটাগরি বাজেট";
+"budget_set_overall" = "মাসিক বাজেট সেট করুন";
+"budget_set_overall_message" = "আপনার মাসিক ব্যয় সীমা নির্ধারণ করুন";
+"budget_monthly_limit" = "মাসিক সীমা";
+"budget_amount_placeholder" = "যেমন ৫০০০";
+"budget_amount_section" = "বাজেট পরিমাণ";
+"budget_save" = "সংরক্ষণ";
+"budget_add_category" = "ক্যাটাগরি বাজেট যোগ করুন";
+"budget_select_category" = "ক্যাটাগরি নির্বাচন করুন";
+"budget_category_empty" = "কোনো ক্যাটাগরি বাজেট নেই। আপনি প্রতিটি ক্যাটাগরির জন্য সীমা সেট করতে পারেন";
+"budget_all_categories_set" = "সকল ক্যাটাগরিতে বাজেট আছে";
+"budget_delete_title" = "বাজেট মুছুন";
+"budget_delete_overall_message" = "মাসিক বাজেট মুছবেন?";
+"budget_delete_category_message" = "এই ক্যাটাগরি বাজেট মুছবেন?";
+"budget_spent" = "ব্যয় হয়েছে";
+"budget_remaining %@" = "%@ বাকি";
+"budget_over %@" = "%@ অতিরিক্ত";
+"budget_progress_title" = "বাজেট";
+"budget_spent_of %@ %@" = "%@ / %@";
+
+/* Templates */
+"template_title" = "লেনদেন টেমপ্লেট";
+"template_empty" = "এখনো কোনো টেমপ্লেট নেই";
+"template_empty_hint" = "দ্রুত রেকর্ডের জন্য ঘন ঘন লেনদেনের টেমপ্লেট তৈরি করুন";
+"template_list_section" = "আমার টেমপ্লেট";
+"template_add" = "টেমপ্লেট যোগ করুন";
+"template_name_section" = "টেমপ্লেটের নাম";
+"template_name_placeholder" = "যেমন সকালের চা";
+"template_type_section" = "ধরন";
+"template_type" = "লেনদেনের ধরন";
+"template_amount_section" = "পরিমাণ";
+"template_note_section" = "নোট (ঐচ্ছিক)";
+"template_no_categories" = "কোনো ক্যাটাগরি নেই";
+"template_delete_title" = "টেমপ্লেট মুছুন";
+"template_delete_message" = "আপনি কি এই টেমপ্লেটটি মুছতে চান?";
+
+// MARK: - Annual Report
+"annual_title" = "বার্ষিক রিপোর্ট";
+"annual_empty" = "এই বছরের জন্য কোনো লেনদেন ডেটা নেই";
+"annual_total_expense" = "মোট ব্যয়";
+"annual_total_income" = "মোট আয়";
+"annual_net" = "নিট ব্যালেন্স";
+"annual_transactions" = "লেনদেন";
+"annual_monthly_trend" = "মাসিক ট্রেন্ড";
+"annual_category_breakdown" = "ক্যাটাগরি অনুযায়ী ব্যয়";
+"annual_insights" = "অন্তর্দৃষ্টি";
+"annual_avg_expense" = "গড় মাসিক ব্যয়";
+"annual_avg_income" = "গড় মাসিক আয়";
+"annual_highest_month" = "সর্বোচ্চ ব্যয়";
+"annual_lowest_month" = "সর্বনিম্ন ব্যয়";
+
+// MARK: - Achievements
+"achievement_title" = "অর্জন";
+"achievement_progress" = "অর্জনের অগ্রগতি";
+"achievement_congrats" = "অভিনন্দন!";
+"achievement_cat_recording" = "রেকর্ডিং";
+"achievement_cat_streak" = "ধারাবাহিকতা";
+"achievement_cat_budget" = "বাজেট";
+"achievement_cat_exploration" = "অন্বেষণ";
+"achievement_first_record" = "প্রথম পদক্ষেপ";
+"achievement_first_record_desc" = "আপনার প্রথম লেনদেন রেকর্ড করুন";
+"achievement_records_10" = "ভালো শুরু";
+"achievement_records_10_desc" = "১০টি লেনদেন রেকর্ড করুন";
+"achievement_records_50" = "হিসাবরক্ষক";
+"achievement_records_50_desc" = "৫০টি লেনদেন রেকর্ড করুন";
+"achievement_records_100" = "শতক";
+"achievement_records_100_desc" = "১০০টি লেনদেন রেকর্ড করুন";
+"achievement_records_500" = "বিশেষজ্ঞ";
+"achievement_records_500_desc" = "৫০০টি লেনদেন রেকর্ড করুন";
+"achievement_records_1000" = "মাস্টার";
+"achievement_records_1000_desc" = "১০০০টি লেনদেন রেকর্ড করুন";
+"achievement_streak_3" = "৩ দিনের ধারা";
+"achievement_streak_3_desc" = "পরপর ৩ দিন লেনদেন রেকর্ড করুন";
+"achievement_streak_7" = "সাপ্তাহিক যোদ্ধা";
+"achievement_streak_7_desc" = "পরপর ৭ দিন লেনদেন রেকর্ড করুন";
+"achievement_streak_30" = "মাসিক মাস্টার";
+"achievement_streak_30_desc" = "পরপর ৩০ দিন লেনদেন রেকর্ড করুন";
+"achievement_streak_100" = "অদম্য";
+"achievement_streak_100_desc" = "পরপর ১০০ দিন লেনদেন রেকর্ড করুন";
+"achievement_streak_365" = "কিংবদন্তি";
+"achievement_streak_365_desc" = "পরপর ৩৬৫ দিন লেনদেন রেকর্ড করুন";
+"achievement_budget_set" = "বাজেট পরিকল্পনাকারী";
+"achievement_budget_set_desc" = "আপনার প্রথম বাজেট সেট করুন";
+"achievement_budget_under_3" = "বাজেট রক্ষক";
+"achievement_budget_under_3_desc" = "৩ মাস বাজেটের মধ্যে থাকুন";
+"achievement_first_tag" = "ট্যাগ মাস্টার";
+"achievement_first_tag_desc" = "আপনার প্রথম ট্যাগ তৈরি করুন";
+"achievement_first_export" = "ডেটা রক্ষক";
+"achievement_first_export_desc" = "প্রথমবার ডেটা রপ্তানি করুন";
+"achievement_first_template" = "দক্ষতা পেশাদার";
+"achievement_first_template_desc" = "আপনার প্রথম টেমপ্লেট তৈরি করুন";

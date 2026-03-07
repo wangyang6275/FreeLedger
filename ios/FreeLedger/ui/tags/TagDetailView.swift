@@ -58,7 +58,7 @@ struct TagDetailView: View {
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .background(AppColors.background)
+        .background(GlassPageBackground())
         .navigationTitle(viewModel.tag.name)
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(for: Transaction.self) { transaction in

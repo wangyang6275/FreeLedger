@@ -10,17 +10,21 @@ final class HomeViewModel {
     var monthTitle: String = ""
     var isEmpty: Bool = true
     var errorMessage: String?
+    var overallBudget: Budget?
 
     private let transactionRepository: TransactionRepositoryProtocol
     private let categoryRepository: CategoryRepositoryProtocol
     private let settingsRepository: SettingsRepositoryProtocol
+    private let budgetRepository: BudgetRepositoryProtocol?
 
     init(transactionRepository: TransactionRepositoryProtocol,
          categoryRepository: CategoryRepositoryProtocol,
-         settingsRepository: SettingsRepositoryProtocol) {
+         settingsRepository: SettingsRepositoryProtocol,
+         budgetRepository: BudgetRepositoryProtocol? = nil) {
         self.transactionRepository = transactionRepository
         self.categoryRepository = categoryRepository
         self.settingsRepository = settingsRepository
+        self.budgetRepository = budgetRepository
     }
 
     func loadData() {
@@ -37,8 +41,10 @@ final class HomeViewModel {
             categoryDict = try categoryRepository.getAllAsDict()
             groupedTransactions = AppDateFormatter.groupTransactionsByDate(transactions)
             isEmpty = transactions.isEmpty
+            overallBudget = try budgetRepository?.getOverallBudget()
             syncWidgetData(transactions: transactions)
         } catch {
+            AppLogger.ui.error("HomeViewModel loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
             isEmpty = true
         }

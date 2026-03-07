@@ -46,6 +46,7 @@ final class RecordViewModel {
                 categories = try categoryRepository.getIncomeCategories(sortedByUsage: true)
             }
         } catch {
+            AppLogger.ui.error("RecordViewModel loadCategories failed: \(error.localizedDescription)")
             categories = []
         }
     }
@@ -56,6 +57,7 @@ final class RecordViewModel {
             let locale = Locale(identifier: Locale.identifier(fromComponents: [NSLocale.Key.currencyCode.rawValue: code]))
             currencySymbol = locale.currencySymbol ?? "¥"
         } catch {
+            AppLogger.ui.error("RecordViewModel loadCurrency failed: \(error.localizedDescription)")
             currencySymbol = "¥"
         }
     }
@@ -82,8 +84,11 @@ final class RecordViewModel {
             didSave = true
 
             // 记录交易创建，触发评分检查
-            AppReviewService.shared.recordTransactionCreated()
+            Task { @MainActor in
+                AppReviewService.shared.recordTransactionCreated()
+            }
         } catch {
+            AppLogger.ui.error("RecordViewModel saveTransaction failed: \(error.localizedDescription)")
             isSaving = false
             errorMessage = L("error_save_failed")
         }

@@ -43,7 +43,7 @@ enum WidgetDataBridge {
             try encoded.write(to: url, options: .atomic)
             WidgetCenter.shared.reloadAllTimelines()
         } catch {
-            // Silent fail
+            print("Widget data write failed: \(error.localizedDescription)")
         }
     }
 

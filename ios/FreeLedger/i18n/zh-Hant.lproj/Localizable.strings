@@ -228,6 +228,7 @@
 "search_category_label" = "分類";
 "search_category_all" = "全部分類";
 "search_clear_all" = "清除篩選";
+"search_result_count" = "共 %d 筆結果";
 
 /* Accessibility */
 "a11y_add_transaction" = "記一筆";
@@ -282,3 +283,80 @@
 /* Support */
 "settings_support_section" = "支持我們";
 "settings_rate_app" = "給 FreeLedger 評分";
+
+"settings_face_id" = "Face ID 解鎖";
+"settings_touch_id" = "Touch ID 解鎖";
+"biometric_reason" = "解鎖 FreeLedger";
+"biometric_enable_reason" = "驗證身份以啟用生物辨識解鎖";
+
+/* Templates */
+"template_title" = "記帳模板";
+"template_empty" = "還沒有模板";
+"template_empty_hint" = "建立常用交易模板，讓記帳更快速";
+"template_list_section" = "我的模板";
+"template_add" = "新增模板";
+"template_name_section" = "模板名稱";
+"template_name_placeholder" = "例如：早餐咖啡";
+"template_type_section" = "類型";
+"template_type" = "交易類型";
+"template_amount_section" = "金額";
+"template_note_section" = "備註（可選）";
+"template_no_categories" = "沒有可用分類";
+"template_delete_title" = "刪除模板";
+"template_delete_message" = "確定要刪除這個模板嗎？";
+
+// MARK: - Annual Report
+"annual_title" = "年度報告";
+"annual_empty" = "該年度暫無交易數據";
+"annual_total_expense" = "總支出";
+"annual_total_income" = "總收入";
+"annual_net" = "淨額";
+"annual_transactions" = "交易筆數";
+"annual_monthly_trend" = "月度趨勢";
+"annual_category_breakdown" = "支出分類";
+"annual_insights" = "洞察";
+"annual_avg_expense" = "月均支出";
+"annual_avg_income" = "月均收入";
+"annual_highest_month" = "最高支出月";
+"annual_lowest_month" = "最低支出月";
+
+// MARK: - Achievements
+"achievement_title" = "成就";
+"achievement_progress" = "成就進度";
+"achievement_congrats" = "恭喜！";
+"achievement_cat_recording" = "記帳";
+"achievement_cat_streak" = "連續記帳";
+"achievement_cat_budget" = "預算";
+"achievement_cat_exploration" = "探索";
+"achievement_first_record" = "第一步";
+"achievement_first_record_desc" = "記錄第一筆交易";
+"achievement_records_10" = "初入門徑";
+"achievement_records_10_desc" = "記錅10筆交易";
+"achievement_records_50" = "帳房先生";
+"achievement_records_50_desc" = "記錅50筆交易";
+"achievement_records_100" = "百筆達人";
+"achievement_records_100_desc" = "記錄100筆交易";
+"achievement_records_500" = "記帳專家";
+"achievement_records_500_desc" = "記錄500筆交易";
+"achievement_records_1000" = "記帳大師";
+"achievement_records_1000_desc" = "記錄1000筆交易";
+"achievement_streak_3" = "三天連續";
+"achievement_streak_3_desc" = "連續3天記帳";
+"achievement_streak_7" = "週連續";
+"achievement_streak_7_desc" = "連續7天記帳";
+"achievement_streak_30" = "月連續";
+"achievement_streak_30_desc" = "連續30天記帳";
+"achievement_streak_100" = "勢不可擋";
+"achievement_streak_100_desc" = "連續100天記帳";
+"achievement_streak_365" = "傳奇";
+"achievement_streak_365_desc" = "連續365天記帳";
+"achievement_budget_set" = "預算規劃師";
+"achievement_budget_set_desc" = "設定第一個預算";
+"achievement_budget_under_3" = "預算達人";
+"achievement_budget_under_3_desc" = "連續3個月未超預算";
+"achievement_first_tag" = "標籤達人";
+"achievement_first_tag_desc" = "建立第一個標籤";
+"achievement_first_export" = "數據守護者";
+"achievement_first_export_desc" = "第一次匯出數據";
+"achievement_first_template" = "效率達人";
+"achievement_first_template_desc" = "建立第一個範本";

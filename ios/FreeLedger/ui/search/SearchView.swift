@@ -32,7 +32,7 @@ struct SearchView: View {
                 filterBar
                 resultsList
             }
-            .background(AppColors.background)
+            .background(GlassPageBackground())
             .navigationTitle(L("search_title"))
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Transaction.self) { transaction in
@@ -126,9 +126,10 @@ struct SearchView: View {
             let now = Date()
             let cal = Calendar.current
             let weekday = cal.component(.weekday, from: now)
-            let startOfWeek = cal.date(byAdding: .day, value: -(weekday - cal.firstWeekday), to: cal.startOfDay(for: now))
+            let offset = (weekday - cal.firstWeekday + 7) % 7
+            let startOfWeek = cal.date(byAdding: .day, value: -offset, to: cal.startOfDay(for: now))
             viewModel.startDate = startOfWeek
-            viewModel.endDate = now
+            viewModel.endDate = cal.startOfDay(for: now)
             viewModel.performSearch()
         }
         Button(L("search_date_this_month")) {
@@ -136,7 +137,7 @@ struct SearchView: View {
             let cal = Calendar.current
             let comps = cal.dateComponents([.year, .month], from: now)
             viewModel.startDate = cal.date(from: comps)
-            viewModel.endDate = now
+            viewModel.endDate = cal.startOfDay(for: now)
             viewModel.performSearch()
         }
         Button(L("search_date_clear")) {
@@ -228,7 +229,17 @@ struct SearchView: View {
     }
 
     private var searchResultsView: some View {
-        List(viewModel.results) { transaction in
+        VStack(spacing: 0) {
+            HStack {
+                Text(String(format: L("search_result_count"), viewModel.results.count))
+                    .font(AppTypography.caption)
+                    .foregroundColor(AppColors.textTertiary)
+                Spacer()
+            }
+            .padding(.horizontal, AppSpacing.lg)
+            .padding(.vertical, AppSpacing.xs)
+
+            List(viewModel.results) { transaction in
             NavigationLink(value: transaction) {
                 TransactionCard(
                     transaction: transaction,
@@ -239,9 +250,10 @@ struct SearchView: View {
             .listRowInsets(EdgeInsets(top: 0, leading: AppSpacing.lg, bottom: 0, trailing: AppSpacing.lg))
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
+            }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
         }
-        .listStyle(.plain)
-        .scrollContentBackground(.hidden)
     }
 
     private var emptyResultView: some View {

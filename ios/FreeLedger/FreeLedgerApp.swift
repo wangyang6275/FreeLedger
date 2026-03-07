@@ -38,7 +38,7 @@ struct FreeLedgerApp: App {
             try AppDatabase.shared.seedDefaultCategories()
             try AppDatabase.shared.seedDefaultSettings()
         } catch {
-            print("Seed data error: \(error)")
+            AppLogger.data.error("Seed data error: \(error.localizedDescription)")
         }
     }
 

@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Lås upp med Face ID";
+"settings_touch_id" = "Lås upp med Touch ID";
+"biometric_reason" = "Lås upp FreeLedger";
+"biometric_enable_reason" = "Verifiera din identitet för att aktivera biometrisk upplåsning";
+
+/* Templates */
+"template_title" = "Transaktionsmallar";
+"template_empty" = "Inga mallar";
+"template_empty_hint" = "Skapa mallar för vanliga transaktioner";
+"template_list_section" = "Mina mallar";
+"template_add" = "Lägg till mall";
+"template_name_section" = "Mallnamn";
+"template_name_placeholder" = "T.ex: Morgonkaffe";
+"template_type_section" = "Typ";
+"template_type" = "Transaktionstyp";
+"template_amount_section" = "Belopp";
+"template_note_section" = "Anteckning (valfritt)";
+"template_no_categories" = "Inga kategorier tillgängliga";
+"template_delete_title" = "Ta bort mall";
+"template_delete_message" = "Är du säker på att du vill ta bort den här mallen?";
+
+// MARK: - Annual Report
+"annual_title" = "Årsrapport";
+"annual_empty" = "Inga transaktionsdata för detta år";
+"annual_total_expense" = "Totala utgifter";
+"annual_total_income" = "Total inkomst";
+"annual_net" = "Nettosaldo";
+"annual_transactions" = "Transaktioner";
+"annual_monthly_trend" = "Månatlig trend";
+"annual_category_breakdown" = "Utgifter per kategori";
+"annual_insights" = "Insikter";
+"annual_avg_expense" = "Sn. månatliga utgifter";
+"annual_avg_income" = "Sn. månatlig inkomst";
+"annual_highest_month" = "Högsta utgifter";
+"annual_lowest_month" = "Lägsta utgifter";
+
+// MARK: - Achievements
+"achievement_title" = "Prestationer";
+"achievement_progress" = "Framsteg";
+"achievement_congrats" = "Grattis!";
+"achievement_cat_recording" = "Registrering";
+"achievement_cat_streak" = "Serie";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Utforskning";
+"achievement_first_record" = "Första steget";
+"achievement_first_record_desc" = "Registrera din första transaktion";
+"achievement_records_10" = "Början";
+"achievement_records_10_desc" = "Registrera 10 transaktioner";
+"achievement_records_50" = "Bokförare";
+"achievement_records_50_desc" = "Registrera 50 transaktioner";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "Registrera 100 transaktioner";
+"achievement_records_500" = "Expert";
+"achievement_records_500_desc" = "Registrera 500 transaktioner";
+"achievement_records_1000" = "Mästare";
+"achievement_records_1000_desc" = "Registrera 1000 transaktioner";
+"achievement_streak_3" = "3 dagar i rad";
+"achievement_streak_3_desc" = "Registrera 3 dagar i rad";
+"achievement_streak_7" = "Veckokrigare";
+"achievement_streak_7_desc" = "Registrera 7 dagar i rad";
+"achievement_streak_30" = "Månadsmestare";
+"achievement_streak_30_desc" = "Registrera 30 dagar i rad";
+"achievement_streak_100" = "Ostoppbar";
+"achievement_streak_100_desc" = "Registrera 100 dagar i rad";
+"achievement_streak_365" = "Legend";
+"achievement_streak_365_desc" = "Registrera 365 dagar i rad";
+"achievement_budget_set" = "Budgetplanerare";
+"achievement_budget_set_desc" = "Ställ in din första budget";
+"achievement_budget_under_3" = "Budgetväktare";
+"achievement_budget_under_3_desc" = "3 månader under budget";
+"achievement_first_tag" = "Taggmästare";
+"achievement_first_tag_desc" = "Skapa din första tagg";
+"achievement_first_export" = "Dataväktare";
+"achievement_first_export_desc" = "Exportera data för första gången";
+"achievement_first_template" = "Effektivitetsproffs";
+"achievement_first_template_desc" = "Skapa din första mall";

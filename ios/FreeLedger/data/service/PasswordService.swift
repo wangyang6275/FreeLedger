@@ -1,11 +1,13 @@
 import Foundation
 import CryptoKit
 import Security
+import LocalAuthentication
 
 struct PasswordService {
     private static let keychainServiceName = "com.freeledger.app.password"
     private static let hashKey = "password_hash"
     private static let saltKey = "password_salt"
+    private static let biometricEnabledKey = "biometric_enabled"
 
     func isPasswordSet() -> Bool {
         return readKeychain(key: Self.hashKey) != nil
@@ -31,7 +33,41 @@ struct PasswordService {
     func removePassword() -> Bool {
         let removedHash = deleteKeychain(key: Self.hashKey)
         let removedSalt = deleteKeychain(key: Self.saltKey)
+        setBiometricEnabled(false)
         return removedHash && removedSalt
+    }
+
+    // MARK: - Biometric Authentication
+
+    func canUseBiometrics() -> Bool {
+        let context = LAContext()
+        var error: NSError?
+        return context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+    }
+
+    var biometricType: LABiometryType {
+        let context = LAContext()
+        var error: NSError?
+        context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+        return context.biometryType
+    }
+
+    func isBiometricEnabled() -> Bool {
+        UserDefaults.standard.bool(forKey: Self.biometricEnabledKey)
+    }
+
+    func setBiometricEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: Self.biometricEnabledKey)
+    }
+
+    func authenticateWithBiometrics(reason: String, completion: @escaping (Bool) -> Void) {
+        let context = LAContext()
+        context.localizedFallbackTitle = ""
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
+            DispatchQueue.main.async {
+                completion(success)
+            }
+        }
     }
 
     // MARK: - Private

@@ -245,3 +245,103 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID entsperren";
+"settings_touch_id" = "Touch ID entsperren";
+"biometric_reason" = "FreeLedger entsperren";
+"biometric_enable_reason" = "Identität bestätigen, um biometrische Entsperrung zu aktivieren";
+
+/* Budget */
+"budget_title" = "Budget";
+"budget_overall_section" = "Monatsbudget";
+"budget_category_section" = "Kategoriebudgets";
+"budget_set_overall" = "Monatsbudget festlegen";
+"budget_set_overall_message" = "Legen Sie Ihr monatliches Ausgabenlimit fest";
+"budget_monthly_limit" = "Monatliches Limit";
+"budget_amount_placeholder" = "z.B. 5000";
+"budget_amount_section" = "Budgetbetrag";
+"budget_save" = "Speichern";
+"budget_add_category" = "Kategoriebudget hinzufuegen";
+"budget_select_category" = "Kategorie waehlen";
+"budget_category_empty" = "Keine Kategoriebudgets. Sie koennen fuer jede Kategorie ein Ausgabenlimit festlegen";
+"budget_all_categories_set" = "Alle Kategorien haben Budgets";
+"budget_delete_title" = "Budget loeschen";
+"budget_delete_overall_message" = "Monatsbudget loeschen?";
+"budget_delete_category_message" = "Dieses Kategoriebudget loeschen?";
+"budget_spent" = "Ausgegeben";
+"budget_remaining %@" = "%@ uebrig";
+"budget_over %@" = "Ueber Budget um %@";
+"budget_progress_title" = "Budget";
+"budget_spent_of %@ %@" = "%@ von %@";
+
+/* Templates */
+"template_title" = "Transaktionsvorlagen";
+"template_empty" = "Keine Vorlagen";
+"template_empty_hint" = "Erstellen Sie Vorlagen für häufige Transaktionen";
+"template_list_section" = "Meine Vorlagen";
+"template_add" = "Vorlage hinzufügen";
+"template_name_section" = "Vorlagenname";
+"template_name_placeholder" = "z.B. Morgenkaffee";
+"template_type_section" = "Typ";
+"template_type" = "Transaktionstyp";
+"template_amount_section" = "Betrag";
+"template_note_section" = "Notiz (optional)";
+"template_no_categories" = "Keine Kategorien verfügbar";
+"template_delete_title" = "Vorlage löschen";
+"template_delete_message" = "Möchten Sie diese Vorlage wirklich löschen?";
+
+// MARK: - Annual Report
+"annual_title" = "Jahresbericht";
+"annual_empty" = "Keine Transaktionsdaten für dieses Jahr";
+"annual_total_expense" = "Gesamtausgaben";
+"annual_total_income" = "Gesamteinkommen";
+"annual_net" = "Nettosaldo";
+"annual_transactions" = "Transaktionen";
+"annual_monthly_trend" = "Monatlicher Trend";
+"annual_category_breakdown" = "Ausgaben nach Kategorie";
+"annual_insights" = "Einblicke";
+"annual_avg_expense" = "Durchschn. monatl. Ausgaben";
+"annual_avg_income" = "Durchschn. monatl. Einkommen";
+"annual_highest_month" = "Höchste Ausgaben";
+"annual_lowest_month" = "Niedrigste Ausgaben";
+
+// MARK: - Achievements
+"achievement_title" = "Erfolge";
+"achievement_progress" = "Fortschritt";
+"achievement_congrats" = "Herzlichen Glückwunsch!";
+"achievement_cat_recording" = "Aufzeichnung";
+"achievement_cat_streak" = "Serie";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Erkundung";
+"achievement_first_record" = "Erster Schritt";
+"achievement_first_record_desc" = "Erste Transaktion erfassen";
+"achievement_records_10" = "Einstieg";
+"achievement_records_10_desc" = "10 Transaktionen erfassen";
+"achievement_records_50" = "Buchhalter";
+"achievement_records_50_desc" = "50 Transaktionen erfassen";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "100 Transaktionen erfassen";
+"achievement_records_500" = "Experte";
+"achievement_records_500_desc" = "500 Transaktionen erfassen";
+"achievement_records_1000" = "Meister";
+"achievement_records_1000_desc" = "1000 Transaktionen erfassen";
+"achievement_streak_3" = "3-Tage-Serie";
+"achievement_streak_3_desc" = "3 Tage hintereinander erfassen";
+"achievement_streak_7" = "Wochen-Krieger";
+"achievement_streak_7_desc" = "7 Tage hintereinander erfassen";
+"achievement_streak_30" = "Monats-Champion";
+"achievement_streak_30_desc" = "30 Tage hintereinander erfassen";
+"achievement_streak_100" = "Unaufhaltsam";
+"achievement_streak_100_desc" = "100 Tage hintereinander erfassen";
+"achievement_streak_365" = "Legendär";
+"achievement_streak_365_desc" = "365 Tage hintereinander erfassen";
+"achievement_budget_set" = "Budgetplaner";
+"achievement_budget_set_desc" = "Erstes Budget erstellen";
+"achievement_budget_under_3" = "Budgetwächter";
+"achievement_budget_under_3_desc" = "3 Monate unter dem Budget bleiben";
+"achievement_first_tag" = "Tag-Meister";
+"achievement_first_tag_desc" = "Erstes Tag erstellen";
+"achievement_first_export" = "Datenwächter";
+"achievement_first_export_desc" = "Erstmals Daten exportieren";
+"achievement_first_template" = "Effizienz-Profi";
+"achievement_first_template_desc" = "Erste Vorlage erstellen";

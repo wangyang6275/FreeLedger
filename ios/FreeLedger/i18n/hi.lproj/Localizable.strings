@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID से अनलॉक";
+"settings_touch_id" = "Touch ID से अनलॉक";
+"biometric_reason" = "FreeLedger अनलॉक करें";
+"biometric_enable_reason" = "बायोमेट्रिक अनलॉक सक्षम करने के लिए पहचान सत्यापित करें";
+
+/* Templates */
+"template_title" = "लेनदेन टेम्पलेट";
+"template_empty" = "कोई टेम्पलेट नहीं";
+"template_empty_hint" = "अक्सर उपयोग होने वाले लेनदेन के लिए टेम्पलेट बनाएं";
+"template_list_section" = "मेरे टेम्पलेट";
+"template_add" = "टेम्पलेट जोड़ें";
+"template_name_section" = "टेम्पलेट नाम";
+"template_name_placeholder" = "उदा: सुबह की चाय";
+"template_type_section" = "प्रकार";
+"template_type" = "लेनदेन प्रकार";
+"template_amount_section" = "राशि";
+"template_note_section" = "नोट (वैकल्पिक)";
+"template_no_categories" = "कोई श्रेणी उपलब्ध नहीं";
+"template_delete_title" = "टेम्पलेट हटाएं";
+"template_delete_message" = "क्या आप इस टेम्पलेट को हटाना चाहते हैं?";
+
+// MARK: - Annual Report
+"annual_title" = "वार्षिक रिपोर्ट";
+"annual_empty" = "इस वर्ष के लिए कोई लेनदेन डेटा नहीं";
+"annual_total_expense" = "कुल खर्च";
+"annual_total_income" = "कुल आय";
+"annual_net" = "शुद्ध शेष";
+"annual_transactions" = "लेनदेन";
+"annual_monthly_trend" = "मासिक रुझान";
+"annual_category_breakdown" = "श्रेणी अनुसार खर्च";
+"annual_insights" = "अंतर्दृष्टि";
+"annual_avg_expense" = "औसत मासिक खर्च";
+"annual_avg_income" = "औसत मासिक आय";
+"annual_highest_month" = "सबसे अधिक खर्च";
+"annual_lowest_month" = "सबसे कम खर्च";
+
+// MARK: - Achievements
+"achievement_title" = "उपलब्धियाँ";
+"achievement_progress" = "प्रगति";
+"achievement_congrats" = "बधाई!";
+"achievement_cat_recording" = "रिकॉर्डिंग";
+"achievement_cat_streak" = "लगातार";
+"achievement_cat_budget" = "बजट";
+"achievement_cat_exploration" = "अन्वेषण";
+"achievement_first_record" = "पहला कदम";
+"achievement_first_record_desc" = "पहला लेनदेन दर्ज करें";
+"achievement_records_10" = "शुरुआत";
+"achievement_records_10_desc" = "10 लेनदेन दर्ज करें";
+"achievement_records_50" = "लेखाकार";
+"achievement_records_50_desc" = "50 लेनदेन दर्ज करें";
+"achievement_records_100" = "शतक";
+"achievement_records_100_desc" = "100 लेनदेन दर्ज करें";
+"achievement_records_500" = "विशेषज्ञ";
+"achievement_records_500_desc" = "500 लेनदेन दर्ज करें";
+"achievement_records_1000" = "मास्टर";
+"achievement_records_1000_desc" = "1000 लेनदेन दर्ज करें";
+"achievement_streak_3" = "3 दिन लगातार";
+"achievement_streak_3_desc" = "3 दिन लगातार दर्ज करें";
+"achievement_streak_7" = "साप्ताहिक योद्धा";
+"achievement_streak_7_desc" = "7 दिन लगातार दर्ज करें";
+"achievement_streak_30" = "मासिक चैंपियन";
+"achievement_streak_30_desc" = "30 दिन लगातार दर्ज करें";
+"achievement_streak_100" = "अजेय";
+"achievement_streak_100_desc" = "100 दिन लगातार दर्ज करें";
+"achievement_streak_365" = "पौराणिक";
+"achievement_streak_365_desc" = "365 दिन लगातार दर्ज करें";
+"achievement_budget_set" = "बजट योजनाकार";
+"achievement_budget_set_desc" = "पहला बजट सेट करें";
+"achievement_budget_under_3" = "बजट रक्षक";
+"achievement_budget_under_3_desc" = "3 महीने बजट में रहें";
+"achievement_first_tag" = "टैग मास्टर";
+"achievement_first_tag_desc" = "पहला टैग बनाएं";
+"achievement_first_export" = "डेटा रक्षक";
+"achievement_first_export_desc" = "पहली बार डेटा एक्सपोर्ट करें";
+"achievement_first_template" = "दक्षता प्रो";
+"achievement_first_template_desc" = "पहला टेम्पलेट बनाएं";

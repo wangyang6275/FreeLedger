@@ -89,8 +89,7 @@ struct PieChartView: View {
                 }
             }
         }
-        .background(AppColors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.md))
+        .glassCard()
     }
 
     private func legendRow(_ item: CategoryBreakdown) -> some View {

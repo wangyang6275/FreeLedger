@@ -43,7 +43,7 @@ struct CategoryEditView: View {
             .padding(.top, AppSpacing.xl)
             .padding(.bottom, 100)
         }
-        .background(AppColors.background)
+        .background(GlassPageBackground())
         .navigationTitle(isEditing
             ? L("edit_category_title")
             : L("add_category_title"))
@@ -205,6 +205,7 @@ struct CategoryEditView: View {
             onSave()
             dismiss()
         } catch {
+            AppLogger.ui.error("CategoryEditView save failed: \(error.localizedDescription)")
             errorMessage = L("error_save_failed")
         }
     }

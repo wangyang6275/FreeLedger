@@ -56,7 +56,7 @@ struct Reminder: Codable, FetchableRecord, PersistableRecord, Identifiable, Hash
         self.triggerHour = triggerHour
         self.triggerMinute = triggerMinute
         self.isEnabled = isEnabled
-        self.createdAt = createdAt ?? ISO8601DateFormatter().string(from: Date())
+        self.createdAt = createdAt ?? AppDateFormatter.isoNow()
     }
 
     var frequencyEnum: ReminderFrequency {

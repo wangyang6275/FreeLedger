@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Face ID ile Kilit Aç";
+"settings_touch_id" = "Touch ID ile Kilit Aç";
+"biometric_reason" = "FreeLedger kilidini aç";
+"biometric_enable_reason" = "Biyometrik kilidi etkinleştirmek için kimliğinizi doğrulayın";
+
+/* Templates */
+"template_title" = "İşlem Şablonları";
+"template_empty" = "Şablon yok";
+"template_empty_hint" = "Sık kullanılan işlemler için şablon oluşturun";
+"template_list_section" = "Şablonlarım";
+"template_add" = "Şablon ekle";
+"template_name_section" = "Şablon adı";
+"template_name_placeholder" = "Örn: Sabah kahvesi";
+"template_type_section" = "Tür";
+"template_type" = "İşlem türü";
+"template_amount_section" = "Tutar";
+"template_note_section" = "Not (isteğe bağlı)";
+"template_no_categories" = "Kullanılabilir kategori yok";
+"template_delete_title" = "Şablonu sil";
+"template_delete_message" = "Bu şablonu silmek istediğinizden emin misiniz?";
+
+// MARK: - Annual Report
+"annual_title" = "Yıllık Rapor";
+"annual_empty" = "Bu yıl için işlem verisi yok";
+"annual_total_expense" = "Toplam Gider";
+"annual_total_income" = "Toplam Gelir";
+"annual_net" = "Net Bakiye";
+"annual_transactions" = "İşlemler";
+"annual_monthly_trend" = "Aylık Trend";
+"annual_category_breakdown" = "Kategoriye Göre Gider";
+"annual_insights" = "İçgörüler";
+"annual_avg_expense" = "Ort. Aylık Gider";
+"annual_avg_income" = "Ort. Aylık Gelir";
+"annual_highest_month" = "En Yüksek Gider";
+"annual_lowest_month" = "En Düşük Gider";
+
+// MARK: - Achievements
+"achievement_title" = "Başarılar";
+"achievement_progress" = "İlerleme";
+"achievement_congrats" = "Tebrikler!";
+"achievement_cat_recording" = "Kayıt";
+"achievement_cat_streak" = "Seri";
+"achievement_cat_budget" = "Bütçe";
+"achievement_cat_exploration" = "Keşif";
+"achievement_first_record" = "İlk Adım";
+"achievement_first_record_desc" = "İlk işleminizi kaydedin";
+"achievement_records_10" = "Başlangıç";
+"achievement_records_10_desc" = "10 işlem kaydedin";
+"achievement_records_50" = "Muhasebeci";
+"achievement_records_50_desc" = "50 işlem kaydedin";
+"achievement_records_100" = "Yüzİşlem";
+"achievement_records_100_desc" = "100 işlem kaydedin";
+"achievement_records_500" = "Uzman";
+"achievement_records_500_desc" = "500 işlem kaydedin";
+"achievement_records_1000" = "Usta";
+"achievement_records_1000_desc" = "1000 işlem kaydedin";
+"achievement_streak_3" = "3 Gün Seri";
+"achievement_streak_3_desc" = "3 gün üst üste kaydedin";
+"achievement_streak_7" = "Haftalık Savaşçı";
+"achievement_streak_7_desc" = "7 gün üst üste kaydedin";
+"achievement_streak_30" = "Aylık Şampiyon";
+"achievement_streak_30_desc" = "30 gün üst üste kaydedin";
+"achievement_streak_100" = "Durdurulamaz";
+"achievement_streak_100_desc" = "100 gün üst üste kaydedin";
+"achievement_streak_365" = "Efsanevi";
+"achievement_streak_365_desc" = "365 gün üst üste kaydedin";
+"achievement_budget_set" = "Bütçe Plancısı";
+"achievement_budget_set_desc" = "İlk bütçenizi belirleyin";
+"achievement_budget_under_3" = "Bütçe Bekilisı";
+"achievement_budget_under_3_desc" = "3 ay bütçe içinde kalın";
+"achievement_first_tag" = "Etiket Ustası";
+"achievement_first_tag_desc" = "İlk etiketi oluşturun";
+"achievement_first_export" = "Veri Koruyucu";
+"achievement_first_export_desc" = "İlk kez veri dışa aktarın";
+"achievement_first_template" = "Verimlilik Pro";
+"achievement_first_template_desc" = "İlk şablonu oluşturun";

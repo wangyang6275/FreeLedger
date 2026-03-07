@@ -52,6 +52,7 @@ final class ReportViewModel {
         do {
             currencyCode = try settingsRepository.getCurrency()
         } catch {
+            AppLogger.ui.error("ReportViewModel loadCurrency failed: \(error.localizedDescription)")
             currencyCode = "CNY"
         }
 
@@ -67,6 +68,7 @@ final class ReportViewModel {
                 year: currentYear, month: currentMonth
             )
         } catch {
+            AppLogger.ui.error("ReportViewModel loadData failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
     }

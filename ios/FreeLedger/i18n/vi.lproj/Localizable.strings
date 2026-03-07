@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Mở khóa bằng Face ID";
+"settings_touch_id" = "Mở khóa bằng Touch ID";
+"biometric_reason" = "Mở khóa FreeLedger";
+"biometric_enable_reason" = "Xác minh danh tính để bật mở khóa sinh trắc học";
+
+/* Templates */
+"template_title" = "Mẫu giao dịch";
+"template_empty" = "Chưa có mẫu";
+"template_empty_hint" = "Tạo mẫu cho các giao dịch thường xuyên";
+"template_list_section" = "Mẫu của tôi";
+"template_add" = "Thêm mẫu";
+"template_name_section" = "Tên mẫu";
+"template_name_placeholder" = "VD: Cà phê sáng";
+"template_type_section" = "Loại";
+"template_type" = "Loại giao dịch";
+"template_amount_section" = "Số tiền";
+"template_note_section" = "Ghi chú (tuỳ chọn)";
+"template_no_categories" = "Không có danh mục";
+"template_delete_title" = "Xóa mẫu";
+"template_delete_message" = "Bạn có chắc muốn xóa mẫu này không?";
+
+// MARK: - Annual Report
+"annual_title" = "Báo cáo năm";
+"annual_empty" = "Không có dữ liệu giao dịch cho năm này";
+"annual_total_expense" = "Tổng chi";
+"annual_total_income" = "Tổng thu";
+"annual_net" = "Số dư ròng";
+"annual_transactions" = "Giao dịch";
+"annual_monthly_trend" = "Xu hướng hàng tháng";
+"annual_category_breakdown" = "Chi tiêu theo danh mục";
+"annual_insights" = "Thông tin chi tiết";
+"annual_avg_expense" = "Chi TB hàng tháng";
+"annual_avg_income" = "Thu TB hàng tháng";
+"annual_highest_month" = "Chi cao nhất";
+"annual_lowest_month" = "Chi thấp nhất";
+
+// MARK: - Achievements
+"achievement_title" = "Thành tựu";
+"achievement_progress" = "Tiến độ";
+"achievement_congrats" = "Chúc mừng!";
+"achievement_cat_recording" = "Ghi chép";
+"achievement_cat_streak" = "Chuỗi ngày";
+"achievement_cat_budget" = "Ngân sách";
+"achievement_cat_exploration" = "Khám phá";
+"achievement_first_record" = "Bước đầu tiên";
+"achievement_first_record_desc" = "Ghi lại giao dịch đầu tiên";
+"achievement_records_10" = "Khởi đầu";
+"achievement_records_10_desc" = "Ghi 10 giao dịch";
+"achievement_records_50" = "Kế toán";
+"achievement_records_50_desc" = "Ghi 50 giao dịch";
+"achievement_records_100" = "Trăm giao dịch";
+"achievement_records_100_desc" = "Ghi 100 giao dịch";
+"achievement_records_500" = "Chuyên gia";
+"achievement_records_500_desc" = "Ghi 500 giao dịch";
+"achievement_records_1000" = "Bậc thầy";
+"achievement_records_1000_desc" = "Ghi 1000 giao dịch";
+"achievement_streak_3" = "3 ngày liên tiếp";
+"achievement_streak_3_desc" = "Ghi chép 3 ngày liên tiếp";
+"achievement_streak_7" = "Chiến binh tuần";
+"achievement_streak_7_desc" = "Ghi chép 7 ngày liên tiếp";
+"achievement_streak_30" = "Nhà vô địch tháng";
+"achievement_streak_30_desc" = "Ghi chép 30 ngày liên tiếp";
+"achievement_streak_100" = "Không thể cản";
+"achievement_streak_100_desc" = "Ghi chép 100 ngày liên tiếp";
+"achievement_streak_365" = "Huyền thoại";
+"achievement_streak_365_desc" = "Ghi chép 365 ngày liên tiếp";
+"achievement_budget_set" = "Nhà lập kế hoạch";
+"achievement_budget_set_desc" = "Thiết lập ngân sách đầu tiên";
+"achievement_budget_under_3" = "Giữ ngân sách";
+"achievement_budget_under_3_desc" = "3 tháng trong ngân sách";
+"achievement_first_tag" = "Chuyên gia thẻ";
+"achievement_first_tag_desc" = "Tạo thẻ đầu tiên";
+"achievement_first_export" = "Người bảo vệ dữ liệu";
+"achievement_first_export_desc" = "Xuất dữ liệu lần đầu";
+"achievement_first_template" = "Chuyên gia hiệu quả";
+"achievement_first_template_desc" = "Tạo mẫu đầu tiên";

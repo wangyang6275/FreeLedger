@@ -13,7 +13,10 @@ protocol TransactionRepositoryProtocol {
     func setTagsForTransaction(transactionId: String, tagIds: [String]) throws
     func getCategoryBreakdown(year: Int, month: Int, type: String) throws -> [CategoryBreakdown]
     func getLast6MonthsSummary(fromYear: Int, fromMonth: Int) throws -> [MonthlyTrend]
-    func search(keyword: String?, startDate: String?, endDate: String?, categoryId: String?) throws -> [Transaction]
+    func search(keyword: String?, startDate: String?, endDate: String?, categoryId: String?, limit: Int) throws -> [Transaction]
+    func getAnnualSummary(year: Int) throws -> TransactionSummary
+    func getAnnualMonthlySummaries(year: Int) throws -> [MonthlyTrend]
+    func getAnnualCategoryBreakdown(year: Int, type: String) throws -> [CategoryBreakdown]
 }
 
 final class TransactionRepository: TransactionRepositoryProtocol {
@@ -69,17 +72,16 @@ final class TransactionRepository: TransactionRepositoryProtocol {
     }
 
     func getMonthlySummary(year: Int, month: Int) throws -> TransactionSummary {
-        let transactions = try getTransactionsForMonth(year: year, month: month)
-        var totalExpense: Int64 = 0
-        var totalIncome: Int64 = 0
-        for tx in transactions {
-            if tx.type == TransactionType.expense.rawValue {
-                totalExpense += tx.amount
-            } else {
-                totalIncome += tx.amount
-            }
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: DateComponents(year: year, month: month, day: 1)),
+              let endDate = calendar.date(byAdding: .month, value: 1, to: startDate) else {
+            return .empty
         }
-        return TransactionSummary(totalExpense: totalExpense, totalIncome: totalIncome)
+        let result = try transactionDAO.getSummary(
+            startISO: AppDateFormatter.formatISO(startDate),
+            endISO: AppDateFormatter.formatISO(endDate)
+        )
+        return TransactionSummary(totalExpense: result.expense, totalIncome: result.income)
     }
 
     func getTagsForTransaction(transactionId: String) throws -> [Tag] {
@@ -92,8 +94,8 @@ final class TransactionRepository: TransactionRepositoryProtocol {
         }
     }
 
-    func search(keyword: String?, startDate: String?, endDate: String?, categoryId: String?) throws -> [Transaction] {
-        try transactionDAO.search(keyword: keyword, startDate: startDate, endDate: endDate, categoryId: categoryId)
+    func search(keyword: String?, startDate: String?, endDate: String?, categoryId: String?, limit: Int = 200) throws -> [Transaction] {
+        try transactionDAO.search(keyword: keyword, startDate: startDate, endDate: endDate, categoryId: categoryId, limit: limit)
     }
 
     func getLast6MonthsSummary(fromYear: Int, fromMonth: Int) throws -> [MonthlyTrend] {
@@ -104,27 +106,37 @@ final class TransactionRepository: TransactionRepositoryProtocol {
             return f
         }()
 
-        var results: [MonthlyTrend] = []
-        var y = fromYear
-        var m = fromMonth
-
-        // Go back 5 months to get 6 months total (including current)
+        let calendar = Calendar.current
+        var startY = fromYear
+        var startM = fromMonth
         for _ in 0..<5 {
-            m -= 1
-            if m < 1 { m = 12; y -= 1 }
+            startM -= 1
+            if startM < 1 { startM = 12; startY -= 1 }
         }
 
+        guard let startDate = calendar.date(from: DateComponents(year: startY, month: startM, day: 1)),
+              let rawEnd = calendar.date(from: DateComponents(year: fromYear, month: fromMonth, day: 1)),
+              let endDate = calendar.date(byAdding: .month, value: 1, to: rawEnd) else {
+            return []
+        }
+
+        let dbData = try transactionDAO.getMonthlyTrends(
+            startISO: AppDateFormatter.formatISO(startDate),
+            endISO: AppDateFormatter.formatISO(endDate)
+        )
+        let lookup = Dictionary(uniqueKeysWithValues: dbData.map { ("\($0.year)-\($0.month)", $0) })
+
+        var results: [MonthlyTrend] = []
+        var y = startY
+        var m = startM
         for _ in 0..<6 {
-            let summary = try getMonthlySummary(year: y, month: m)
+            let key = "\(y)-\(m)"
+            let expense = lookup[key]?.expense ?? 0
+            let income = lookup[key]?.income ?? 0
             var comps = DateComponents()
-            comps.year = y
-            comps.month = m
-            comps.day = 1
-            let label = Calendar.current.date(from: comps).map { monthFormatter.string(from: $0) } ?? "\(m)"
-            results.append(MonthlyTrend(
-                year: y, month: m, monthLabel: label,
-                expense: summary.totalExpense, income: summary.totalIncome
-            ))
+            comps.year = y; comps.month = m; comps.day = 1
+            let label = calendar.date(from: comps).map { monthFormatter.string(from: $0) } ?? "\(m)"
+            results.append(MonthlyTrend(year: y, month: m, monthLabel: label, expense: expense, income: income))
             m += 1
             if m > 12 { m = 1; y += 1 }
         }
@@ -146,6 +158,77 @@ final class TransactionRepository: TransactionRepositoryProtocol {
                 } else {
                     name = L(c.nameKey)
                 }
+            } else {
+                name = "—"
+            }
+            return CategoryBreakdown(
+                categoryId: item.categoryId,
+                categoryName: name,
+                iconName: cat?.iconName ?? "",
+                colorHex: cat?.colorHex ?? "#E0E0E0",
+                total: item.total,
+                percentage: pct
+            )
+        }
+    }
+
+    func getAnnualSummary(year: Int) throws -> TransactionSummary {
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: DateComponents(year: year, month: 1, day: 1)),
+              let endDate = calendar.date(from: DateComponents(year: year + 1, month: 1, day: 1)) else {
+            return .empty
+        }
+        let result = try transactionDAO.getSummary(
+            startISO: AppDateFormatter.formatISO(startDate),
+            endISO: AppDateFormatter.formatISO(endDate)
+        )
+        return TransactionSummary(totalExpense: result.expense, totalIncome: result.income)
+    }
+
+    func getAnnualMonthlySummaries(year: Int) throws -> [MonthlyTrend] {
+        let monthFormatter: DateFormatter = {
+            let f = DateFormatter()
+            f.locale = LanguageManager.locale
+            f.setLocalizedDateFormatFromTemplate("MMM")
+            return f
+        }()
+
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: DateComponents(year: year, month: 1, day: 1)),
+              let endDate = calendar.date(from: DateComponents(year: year + 1, month: 1, day: 1)) else {
+            return []
+        }
+
+        let dbData = try transactionDAO.getMonthlyTrends(
+            startISO: AppDateFormatter.formatISO(startDate),
+            endISO: AppDateFormatter.formatISO(endDate)
+        )
+        let lookup = Dictionary(uniqueKeysWithValues: dbData.map { ("\($0.year)-\($0.month)", $0) })
+
+        var results: [MonthlyTrend] = []
+        for m in 1...12 {
+            let key = "\(year)-\(m)"
+            let expense = lookup[key]?.expense ?? 0
+            let income = lookup[key]?.income ?? 0
+            var comps = DateComponents()
+            comps.year = year; comps.month = m; comps.day = 1
+            let label = calendar.date(from: comps).map { monthFormatter.string(from: $0) } ?? "\(m)"
+            results.append(MonthlyTrend(year: year, month: m, monthLabel: label, expense: expense, income: income))
+        }
+        return results
+    }
+
+    func getAnnualCategoryBreakdown(year: Int, type: String) throws -> [CategoryBreakdown] {
+        let rawData = try transactionDAO.getCategoryBreakdownForYear(year: year, type: type)
+        let grandTotal = rawData.reduce(0 as Int64) { $0 + $1.total }
+        let categoryDict = try categoryDAO.getAllAsDict()
+
+        return rawData.map { item in
+            let cat = categoryDict[item.categoryId]
+            let pct = grandTotal > 0 ? Double(item.total) / Double(grandTotal) * 100.0 : 0
+            let name: String
+            if let c = cat {
+                name = c.isCustom ? c.nameKey : L(c.nameKey)
             } else {
                 name = "—"
             }

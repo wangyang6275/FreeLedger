@@ -245,3 +245,80 @@
 /* Support */
 "settings_support_section" = "Support Us";
 "settings_rate_app" = "Rate FreeLedger";
+
+"settings_face_id" = "Buka dengan Face ID";
+"settings_touch_id" = "Buka dengan Touch ID";
+"biometric_reason" = "Buka kunci FreeLedger";
+"biometric_enable_reason" = "Verifikasi identitas untuk mengaktifkan pembukaan kunci biometrik";
+
+/* Templates */
+"template_title" = "Template Transaksi";
+"template_empty" = "Belum ada template";
+"template_empty_hint" = "Buat template untuk transaksi yang sering digunakan";
+"template_list_section" = "Template Saya";
+"template_add" = "Tambah Template";
+"template_name_section" = "Nama Template";
+"template_name_placeholder" = "Cth: Kopi pagi";
+"template_type_section" = "Tipe";
+"template_type" = "Tipe Transaksi";
+"template_amount_section" = "Jumlah";
+"template_note_section" = "Catatan (opsional)";
+"template_no_categories" = "Tidak ada kategori tersedia";
+"template_delete_title" = "Hapus Template";
+"template_delete_message" = "Yakin ingin menghapus template ini?";
+
+// MARK: - Annual Report
+"annual_title" = "Laporan Tahunan";
+"annual_empty" = "Tidak ada data transaksi untuk tahun ini";
+"annual_total_expense" = "Total Pengeluaran";
+"annual_total_income" = "Total Pendapatan";
+"annual_net" = "Saldo Bersih";
+"annual_transactions" = "Transaksi";
+"annual_monthly_trend" = "Tren Bulanan";
+"annual_category_breakdown" = "Pengeluaran per Kategori";
+"annual_insights" = "Wawasan";
+"annual_avg_expense" = "Rata-rata Pengeluaran Bulanan";
+"annual_avg_income" = "Rata-rata Pendapatan Bulanan";
+"annual_highest_month" = "Pengeluaran Tertinggi";
+"annual_lowest_month" = "Pengeluaran Terendah";
+
+// MARK: - Achievements
+"achievement_title" = "Pencapaian";
+"achievement_progress" = "Kemajuan";
+"achievement_congrats" = "Selamat!";
+"achievement_cat_recording" = "Pencatatan";
+"achievement_cat_streak" = "Beruntun";
+"achievement_cat_budget" = "Anggaran";
+"achievement_cat_exploration" = "Eksplorasi";
+"achievement_first_record" = "Langkah Pertama";
+"achievement_first_record_desc" = "Catat transaksi pertama";
+"achievement_records_10" = "Memulai";
+"achievement_records_10_desc" = "Catat 10 transaksi";
+"achievement_records_50" = "Akuntan";
+"achievement_records_50_desc" = "Catat 50 transaksi";
+"achievement_records_100" = "Seratus";
+"achievement_records_100_desc" = "Catat 100 transaksi";
+"achievement_records_500" = "Ahli";
+"achievement_records_500_desc" = "Catat 500 transaksi";
+"achievement_records_1000" = "Master";
+"achievement_records_1000_desc" = "Catat 1000 transaksi";
+"achievement_streak_3" = "3 Hari Berturut";
+"achievement_streak_3_desc" = "Catat 3 hari berturut-turut";
+"achievement_streak_7" = "Pejuang Mingguan";
+"achievement_streak_7_desc" = "Catat 7 hari berturut-turut";
+"achievement_streak_30" = "Juara Bulanan";
+"achievement_streak_30_desc" = "Catat 30 hari berturut-turut";
+"achievement_streak_100" = "Tak Terhentikan";
+"achievement_streak_100_desc" = "Catat 100 hari berturut-turut";
+"achievement_streak_365" = "Legendaris";
+"achievement_streak_365_desc" = "Catat 365 hari berturut-turut";
+"achievement_budget_set" = "Perencana Anggaran";
+"achievement_budget_set_desc" = "Tetapkan anggaran pertama";
+"achievement_budget_under_3" = "Penjaga Anggaran";
+"achievement_budget_under_3_desc" = "3 bulan dalam anggaran";
+"achievement_first_tag" = "Ahli Tag";
+"achievement_first_tag_desc" = "Buat tag pertama";
+"achievement_first_export" = "Pelindung Data";
+"achievement_first_export_desc" = "Ekspor data pertama kali";
+"achievement_first_template" = "Pro Efisiensi";
+"achievement_first_template_desc" = "Buat template pertama";

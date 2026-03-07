@@ -40,7 +40,7 @@ struct RecordView: View {
                 .frame(maxHeight: .infinity)
             keypadAndSaveSection
         }
-        .background(AppColors.background)
+        .background(GlassPageBackground())
         .onAppear {
             viewModel.loadCurrency()
             viewModel.loadCategories()
