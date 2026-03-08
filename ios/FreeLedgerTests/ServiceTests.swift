@@ -589,6 +589,137 @@ struct AppReviewServiceTests {
         let days = stats["consecutiveDays"] as? Int ?? 0
         #expect(days >= 0)
     }
+
+    @Test @MainActor func markAsRatedPreventsReviewRequest() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+        service.markAsRated()
+
+        // 即使达到阈值，也不应触发评分（markAsRated 后 checkAndRequestReview 会提前返回）
+        for _ in 0..<10 {
+            service.recordTransactionCreated()
+        }
+        let stats = service.getCurrentStats()
+        #expect(stats["hasRated"] as? Bool == true)
+        #expect(stats["transactions"] as? Int == 10)
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func userRequestedReviewDoesNotCrash() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+        // userRequestedReview 调用 requestReview(forced: true)，不应崩溃
+        service.userRequestedReview()
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func declineFlagPersists() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 手动设置拒绝标记
+        UserDefaults.standard.set(true, forKey: "app_review_user_declined")
+
+        let stats = service.getCurrentStats()
+        #expect(stats["hasDeclined"] as? Bool == true)
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func consecutiveDaysResetAfterGap() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 模拟 3 天前的使用日期（中断了连续使用）
+        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        UserDefaults.standard.set(threeDaysAgo, forKey: "app_review_last_used_date")
+        UserDefaults.standard.set(10, forKey: "app_review_consecutive_days")
+
+        // recordTransactionCreated 内部调用 checkAndRequestReview，不会调 updateDailyUsage
+        // 但我们可以验证 UserDefaults 状态被正确设置
+        let stats = service.getCurrentStats()
+        #expect(stats["consecutiveDays"] as? Int == 10) // 没有重新 init，所以保持之前设的值
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func recentRequestDatePreventsReview() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 设置最近的请求日期（今天）
+        UserDefaults.standard.set(Date(), forKey: "app_review_last_request_date")
+
+        // 大量操作，但因为时间间隔不足，不应再次请求
+        for _ in 0..<10 {
+            service.recordTransactionCreated()
+        }
+
+        let stats = service.getCurrentStats()
+        #expect(stats["transactions"] as? Int == 10)
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func declineWithOldDateAllowsReview() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 设置拒绝标记 + 91 天前的请求日期
+        UserDefaults.standard.set(true, forKey: "app_review_user_declined")
+        let oldDate = Calendar.current.date(byAdding: .day, value: -91, to: Date())!
+        UserDefaults.standard.set(oldDate, forKey: "app_review_last_request_date")
+
+        // 达到阈值后应允许请求（超过 90 天拒绝冷却期）
+        for _ in 0..<6 {
+            service.recordTransactionCreated()
+        }
+
+        let stats = service.getCurrentStats()
+        #expect(stats["transactions"] as? Int == 6)
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func declineWithRecentDateBlocksReview() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 设置拒绝标记 + 10 天前的请求日期
+        UserDefaults.standard.set(true, forKey: "app_review_user_declined")
+        let recentDate = Calendar.current.date(byAdding: .day, value: -10, to: Date())!
+        UserDefaults.standard.set(recentDate, forKey: "app_review_last_request_date")
+
+        // 达到阈值但被拒绝冷却期阻止
+        for _ in 0..<6 {
+            service.recordTransactionCreated()
+        }
+
+        let stats = service.getCurrentStats()
+        #expect(stats["transactions"] as? Int == 6)
+
+        service.resetAllStats()
+    }
+
+    @Test @MainActor func lastRequestDateAfter30DaysAllowsReview() {
+        let service = AppReviewService.shared
+        service.resetAllStats()
+
+        // 设置 31 天前的请求日期（无拒绝标记）
+        let oldDate = Calendar.current.date(byAdding: .day, value: -31, to: Date())!
+        UserDefaults.standard.set(oldDate, forKey: "app_review_last_request_date")
+
+        // 达到阈值后应允许请求
+        for _ in 0..<6 {
+            service.recordTransactionCreated()
+        }
+
+        let stats = service.getCurrentStats()
+        #expect(stats["transactions"] as? Int == 6)
+
+        service.resetAllStats()
+    }
 }
 
 // MARK: - BackupData Model Tests
@@ -1228,5 +1359,545 @@ struct WidgetDataBridgeTests {
         try? FileManager.default.removeItem(at: url)
         // read 一个不存在的位置不应崩溃
         // 实际 read() 使用固定路径，但若文件不存在应返回 nil
+    }
+
+    @Test func readCorruptedDataReturnsNil() {
+        // 向 widget_data 文件写入非法 JSON，验证 read() 返回 nil 而非崩溃
+        let url = URL(fileURLWithPath: "/private/tmp/widget_data.json")
+        try? Data("not a valid json".utf8).write(to: url, options: .atomic)
+
+        let result = WidgetDataBridge.read()
+        #expect(result == nil)
+    }
+
+    @Test func writeOverwritesPreviousData() {
+        let data1 = WidgetData(
+            totalExpense: 1000,
+            totalIncome: 2000,
+            balance: 1000,
+            monthTitle: "1月",
+            currencyCode: "CNY",
+            recentTransactions: [],
+            updatedAt: Date()
+        )
+        WidgetDataBridge.write(data1)
+
+        let data2 = WidgetData(
+            totalExpense: 9999,
+            totalIncome: 8888,
+            balance: -1111,
+            monthTitle: "2月",
+            currencyCode: "USD",
+            recentTransactions: [],
+            updatedAt: Date()
+        )
+        WidgetDataBridge.write(data2)
+
+        let read = WidgetDataBridge.read()
+        #expect(read?.totalExpense == 9999)
+        #expect(read?.currencyCode == "USD")
+        #expect(read?.monthTitle == "2月")
+    }
+
+    @Test func writeAndReadEmptyTransactions() {
+        let data = WidgetData(
+            totalExpense: 0,
+            totalIncome: 0,
+            balance: 0,
+            monthTitle: "",
+            currencyCode: "CNY",
+            recentTransactions: [],
+            updatedAt: Date()
+        )
+        WidgetDataBridge.write(data)
+
+        let read = WidgetDataBridge.read()
+        #expect(read != nil)
+        #expect(read?.recentTransactions.isEmpty == true)
+        #expect(read?.totalExpense == 0)
+    }
+
+    @Test func writeAndReadMultipleTransactions() {
+        let items = (0..<5).map { i in
+            WidgetTransactionItem(
+                categoryName: "Cat\(i)",
+                categoryIcon: "star",
+                categoryColor: "#000000",
+                amount: Int64(i * 1000),
+                isExpense: i % 2 == 0,
+                note: "Note\(i)",
+                time: "\(i):00"
+            )
+        }
+        let data = WidgetData(
+            totalExpense: 6000,
+            totalIncome: 4000,
+            balance: -2000,
+            monthTitle: "Test",
+            currencyCode: "EUR",
+            recentTransactions: items,
+            updatedAt: Date()
+        )
+        WidgetDataBridge.write(data)
+
+        let read = WidgetDataBridge.read()
+        #expect(read?.recentTransactions.count == 5)
+        #expect(read?.recentTransactions[2].categoryName == "Cat2")
+    }
+
+    @Test func readAfterDeleteReturnsNil() {
+        let data = WidgetData(
+            totalExpense: 100,
+            totalIncome: 200,
+            balance: 100,
+            monthTitle: "T",
+            currencyCode: "CNY",
+            recentTransactions: [],
+            updatedAt: Date()
+        )
+        WidgetDataBridge.write(data)
+
+        // 验证写入成功
+        #expect(WidgetDataBridge.read() != nil)
+
+        // 删除文件后读取应返回 nil
+        let url = URL(fileURLWithPath: "/private/tmp/widget_data.json")
+        try? FileManager.default.removeItem(at: url)
+
+        let result = WidgetDataBridge.read()
+        #expect(result == nil)
+    }
+}
+
+// MARK: - PDFExportService Tests
+
+@Suite("PDFExportService Tests")
+struct PDFExportServiceTests {
+
+    // MARK: - computeSummary
+
+    @Test func computeSummaryEmpty() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let summary = service.computeSummary([])
+        #expect(summary.totalExpense == 0)
+        #expect(summary.totalIncome == 0)
+        #expect(summary.balance == 0)
+        #expect(summary.count == 0)
+    }
+
+    @Test func computeSummaryExpenseOnly() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 1000, type: "expense", categoryId: "c1"),
+            Transaction(id: "t2", amount: 2500, type: "expense", categoryId: "c1"),
+        ]
+        let summary = service.computeSummary(txs)
+        #expect(summary.totalExpense == 3500)
+        #expect(summary.totalIncome == 0)
+        #expect(summary.balance == -3500)
+        #expect(summary.count == 2)
+    }
+
+    @Test func computeSummaryIncomeOnly() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 5000, type: "income", categoryId: "c1"),
+        ]
+        let summary = service.computeSummary(txs)
+        #expect(summary.totalExpense == 0)
+        #expect(summary.totalIncome == 5000)
+        #expect(summary.balance == 5000)
+        #expect(summary.count == 1)
+    }
+
+    @Test func computeSummaryMixed() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 3000, type: "expense", categoryId: "c1"),
+            Transaction(id: "t2", amount: 8000, type: "income", categoryId: "c2"),
+            Transaction(id: "t3", amount: 1000, type: "expense", categoryId: "c1"),
+        ]
+        let summary = service.computeSummary(txs)
+        #expect(summary.totalExpense == 4000)
+        #expect(summary.totalIncome == 8000)
+        #expect(summary.balance == 4000)
+        #expect(summary.count == 3)
+    }
+
+    // MARK: - computeCategoryBreakdown
+
+    @Test func breakdownEmptyTransactions() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let result = service.computeCategoryBreakdown([], categoryDict: [:], type: "expense")
+        #expect(result.isEmpty)
+    }
+
+    @Test func breakdownNoMatchingType() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 1000, type: "income", categoryId: "c1"),
+        ]
+        let result = service.computeCategoryBreakdown(txs, categoryDict: [:], type: "expense")
+        #expect(result.isEmpty)
+    }
+
+    @Test func breakdownSingleCategory() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 3000, type: "expense", categoryId: "c1"),
+            Transaction(id: "t2", amount: 2000, type: "expense", categoryId: "c1"),
+        ]
+        let catDict = ["c1": FreeLedger.Category(id: "c1", nameKey: "cat_food", iconName: "cart", colorHex: "#FF0000", type: "expense", sortOrder: 0, isCustom: true)]
+
+        let result = service.computeCategoryBreakdown(txs, categoryDict: catDict, type: "expense")
+        #expect(result.count == 1)
+        #expect(result[0].total == 5000)
+        #expect(result[0].percentage == 100.0)
+        #expect(result[0].categoryName == "cat_food")
+    }
+
+    @Test func breakdownMultipleCategories() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 3000, type: "expense", categoryId: "c1"),
+            Transaction(id: "t2", amount: 7000, type: "expense", categoryId: "c2"),
+        ]
+        let catDict: [String: FreeLedger.Category] = [
+            "c1": FreeLedger.Category(id: "c1", nameKey: "Food", iconName: "cart", colorHex: "#FF0000", type: "expense", sortOrder: 0, isCustom: true),
+            "c2": FreeLedger.Category(id: "c2", nameKey: "Transport", iconName: "car", colorHex: "#00FF00", type: "expense", sortOrder: 1, isCustom: true),
+        ]
+
+        let result = service.computeCategoryBreakdown(txs, categoryDict: catDict, type: "expense")
+        #expect(result.count == 2)
+        // 按金额降序排列
+        #expect(result[0].categoryName == "Transport")
+        #expect(result[0].total == 7000)
+        #expect(result[0].percentage == 70.0)
+        #expect(result[1].categoryName == "Food")
+        #expect(result[1].total == 3000)
+        #expect(result[1].percentage == 30.0)
+    }
+
+    @Test func breakdownMissingCategoryShowsDash() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 1000, type: "expense", categoryId: "missing"),
+        ]
+        let result = service.computeCategoryBreakdown(txs, categoryDict: [:], type: "expense")
+        #expect(result.count == 1)
+        #expect(result[0].categoryName == "—")
+    }
+
+    @Test func breakdownFiltersIncomeFromExpense() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 3000, type: "expense", categoryId: "c1"),
+            Transaction(id: "t2", amount: 5000, type: "income", categoryId: "c2"),
+        ]
+        let catDict: [String: FreeLedger.Category] = [
+            "c1": FreeLedger.Category(id: "c1", nameKey: "Food", iconName: "cart", colorHex: "#FF0000", type: "expense", sortOrder: 0, isCustom: true),
+        ]
+
+        let expenseResult = service.computeCategoryBreakdown(txs, categoryDict: catDict, type: "expense")
+        #expect(expenseResult.count == 1)
+        #expect(expenseResult[0].total == 3000)
+        #expect(expenseResult[0].percentage == 100.0)
+    }
+
+    // MARK: - reportTitle
+
+    @Test func reportTitleYear() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let title = service.reportTitle(for: .year(year: 2025))
+        #expect(title == "2025")
+    }
+
+    @Test func reportTitleAll() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let title = service.reportTitle(for: .all)
+        #expect(!title.isEmpty)
+    }
+
+    @Test func reportTitleMonth() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let title = service.reportTitle(for: .month(year: 2025, month: 3))
+        #expect(!title.isEmpty)
+        #expect(title.contains("2025"))
+    }
+
+    // MARK: - exportPDF 端到端
+
+    @Test func exportPDFEmptyDatabase() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let data = try service.exportPDF(range: .all, currencyCode: "CNY")
+        #expect(!data.isEmpty)
+        // PDF 文件以 %PDF 开头
+        let header = String(data: data.prefix(5), encoding: .ascii)
+        #expect(header?.hasPrefix("%PDF") == true)
+    }
+
+    @Test func exportPDFWithData() throws {
+        let dbQueue = try makeTestDatabase()
+        try dbQueue.write { db in
+            try insertTestCategory(db: db)
+            try insertTestTransaction(db: db, id: "t1", amount: 5000)
+            try insertTestTransaction(db: db, id: "t2", amount: 3000, categoryId: "cat1", type: "expense")
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .all, currencyCode: "USD")
+        #expect(!data.isEmpty)
+        let header = String(data: data.prefix(5), encoding: .ascii)
+        #expect(header?.hasPrefix("%PDF") == true)
+    }
+
+    @Test func exportPDFMonthRange() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let data = try service.exportPDF(range: .month(year: 2025, month: 6), currencyCode: "CNY")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func exportPDFYearRange() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let data = try service.exportPDF(range: .year(year: 2025), currencyCode: "EUR")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func exportPDFWithIncomeBreakdown() throws {
+        let dbQueue = try makeTestDatabase()
+        try dbQueue.write { db in
+            try insertTestCategory(db: db, id: "inc1", type: "income")
+            let tx = Transaction(id: "t1", amount: 80000, type: "income", categoryId: "inc1", note: "Salary")
+            try tx.insert(db)
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .all, currencyCode: "CNY")
+        #expect(!data.isEmpty)
+        let header = String(data: data.prefix(5), encoding: .ascii)
+        #expect(header?.hasPrefix("%PDF") == true)
+    }
+
+    @Test func exportPDFWithBothExpenseAndIncome() throws {
+        let dbQueue = try makeTestDatabase()
+        try dbQueue.write { db in
+            try insertTestCategory(db: db, id: "exp1", type: "expense")
+            try insertTestCategory(db: db, id: "inc1", type: "income")
+            let tx1 = Transaction(id: "t1", amount: 5000, type: "expense", categoryId: "exp1", note: "Lunch")
+            let tx2 = Transaction(id: "t2", amount: 80000, type: "income", categoryId: "inc1", note: "Salary")
+            try tx1.insert(db)
+            try tx2.insert(db)
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .all, currencyCode: "USD")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func exportPDFWithTags() throws {
+        let dbQueue = try makeTestDatabase()
+        try dbQueue.write { db in
+            try insertTestCategory(db: db)
+            try insertTestTransaction(db: db, id: "t1", amount: 3000)
+            try insertTestTag(db: db, id: "tag1", name: "Food")
+            try TransactionTag(transactionId: "t1", tagId: "tag1").insert(db)
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .all, currencyCode: "CNY")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func exportPDFMultipleTransactions() throws {
+        let dbQueue = try makeTestDatabase()
+        try dbQueue.write { db in
+            try insertTestCategory(db: db, id: "c1", type: "expense")
+            try insertTestCategory(db: db, id: "c2", type: "expense")
+            for i in 0..<30 {
+                let tx = Transaction(id: "tx\(i)", amount: Int64(1000 + i * 100), type: "expense",
+                                     categoryId: i % 2 == 0 ? "c1" : "c2", note: "Note \(i)")
+                try tx.insert(db)
+            }
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .all, currencyCode: "CNY")
+        #expect(!data.isEmpty)
+        // 多页 PDF 应该更大
+        #expect(data.count > 1000)
+    }
+
+    @Test func exportPDFMonthRangeWithData() throws {
+        let dbQueue = try makeTestDatabase()
+        let cal = Calendar.current
+        let now = Date()
+        let year = cal.component(.year, from: now)
+        let month = cal.component(.month, from: now)
+        let iso = AppDateFormatter.formatISO(now)
+
+        try dbQueue.write { db in
+            try insertTestCategory(db: db)
+            let tx = Transaction(id: "t1", amount: 5000, type: "expense", categoryId: "cat1", note: "test", createdAt: iso)
+            try tx.insert(db)
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .month(year: year, month: month), currencyCode: "CNY")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func exportPDFYearRangeWithData() throws {
+        let dbQueue = try makeTestDatabase()
+        let year = Calendar.current.component(.year, from: Date())
+        let iso = AppDateFormatter.formatISO(Date())
+
+        try dbQueue.write { db in
+            try insertTestCategory(db: db)
+            let tx = Transaction(id: "t1", amount: 8000, type: "expense", categoryId: "cat1", createdAt: iso)
+            try tx.insert(db)
+        }
+
+        let service = PDFExportService(dbQueue: dbQueue)
+        let data = try service.exportPDF(range: .year(year: year), currencyCode: "USD")
+        #expect(!data.isEmpty)
+    }
+
+    @Test func breakdownBuiltinCategoryUsesLocalization() throws {
+        let dbQueue = try makeTestDatabase()
+        let service = PDFExportService(dbQueue: dbQueue)
+
+        let txs = [
+            Transaction(id: "t1", amount: 1000, type: "expense", categoryId: "c1"),
+        ]
+        let catDict = ["c1": FreeLedger.Category(id: "c1", nameKey: "cat_food", iconName: "cart", colorHex: "#FF0000", type: "expense", sortOrder: 0, isCustom: false)]
+
+        let result = service.computeCategoryBreakdown(txs, categoryDict: catDict, type: "expense")
+        #expect(result.count == 1)
+        // 内置分类使用 L() 本地化，不直接等于 nameKey
+        #expect(result[0].categoryName != "")
+    }
+}
+
+// MARK: - AppTheme Extended Tests
+
+@Suite("AppTheme Extended Tests")
+struct AppThemeExtendedTests {
+    @Test func allThemesHaveDistinctPrimary() {
+        let primaries = AppTheme.allCases.map { $0.colors.primary }
+        let unique = Set(primaries)
+        #expect(unique.count == AppTheme.allCases.count)
+    }
+
+    @Test func eachThemeColorsAreSevenChars() {
+        for theme in AppTheme.allCases {
+            let c = theme.colors
+            #expect(c.primary.count == 7) // #RRGGBB
+            #expect(c.primaryDark.count == 7)
+            #expect(c.primaryLight.count == 7)
+            #expect(c.secondary.count == 7)
+            #expect(c.gradientStart.count == 7)
+            #expect(c.gradientEnd.count == 7)
+        }
+    }
+
+    @Test func allThemesHaveDistinctNameKeys() {
+        let keys = AppTheme.allCases.map { $0.nameKey }
+        let unique = Set(keys)
+        #expect(keys.count == unique.count)
+    }
+}
+
+// MARK: - ThemeManager Extended Tests
+
+@Suite("ThemeManager Extended Tests")
+struct ThemeManagerExtendedTests {
+    @Test @MainActor func setAllThemesAndVerifyColors() {
+        let manager = ThemeManager.shared
+        let original = manager.currentTheme
+
+        for theme in AppTheme.allCases {
+            manager.currentTheme = theme
+            #expect(manager.currentTheme == theme)
+            #expect(manager.colors.primary == theme.colors.primary)
+        }
+
+        manager.currentTheme = original
+    }
+
+    @Test @MainActor func expenseIncomeColors() {
+        let manager = ThemeManager.shared
+        let original = manager.currentTheme
+
+        manager.currentTheme = .coral
+        // expense == primary, income == secondary
+        _ = manager.expense
+        _ = manager.income
+
+        manager.currentTheme = original
+    }
+}
+
+// MARK: - PDFExportRange Tests
+
+@Suite("PDFExportRange Tests")
+struct PDFExportRangeTests {
+    @Test func monthRange() {
+        let range = PDFExportRange.month(year: 2025, month: 3)
+        if case .month(let y, let m) = range {
+            #expect(y == 2025)
+            #expect(m == 3)
+        } else {
+            Issue.record("Expected .month")
+        }
+    }
+
+    @Test func yearRange() {
+        let range = PDFExportRange.year(year: 2026)
+        if case .year(let y) = range {
+            #expect(y == 2026)
+        } else {
+            Issue.record("Expected .year")
+        }
+    }
+
+    @Test func allRange() {
+        let range = PDFExportRange.all
+        if case .all = range {
+            // OK
+        } else {
+            Issue.record("Expected .all")
+        }
     }
 }

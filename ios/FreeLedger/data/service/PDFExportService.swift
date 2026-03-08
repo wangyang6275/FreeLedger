@@ -92,14 +92,14 @@ struct PDFExportService {
 
     // MARK: - Summary
 
-    private struct Summary {
+    struct Summary {
         let totalExpense: Int64
         let totalIncome: Int64
         var balance: Int64 { totalIncome - totalExpense }
         let count: Int
     }
 
-    private func computeSummary(_ transactions: [Transaction]) -> Summary {
+    func computeSummary(_ transactions: [Transaction]) -> Summary {
         var expense: Int64 = 0
         var income: Int64 = 0
         for tx in transactions {
@@ -112,13 +112,13 @@ struct PDFExportService {
         return Summary(totalExpense: expense, totalIncome: income, count: transactions.count)
     }
 
-    private struct BreakdownItem {
+    struct BreakdownItem {
         let categoryName: String
         let total: Int64
         let percentage: Double
     }
 
-    private func computeCategoryBreakdown(_ transactions: [Transaction], categoryDict: [String: Category], type: String) -> [BreakdownItem] {
+    func computeCategoryBreakdown(_ transactions: [Transaction], categoryDict: [String: Category], type: String) -> [BreakdownItem] {
         var totals: [String: Int64] = [:]
         for tx in transactions where tx.type == type {
             totals[tx.categoryId, default: 0] += tx.amount
@@ -143,7 +143,7 @@ struct PDFExportService {
 
     // MARK: - Title
 
-    private func reportTitle(for range: PDFExportRange) -> String {
+    func reportTitle(for range: PDFExportRange) -> String {
         switch range {
         case .month(let year, let month):
             let comps = DateComponents(year: year, month: month, day: 1)
