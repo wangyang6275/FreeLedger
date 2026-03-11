@@ -135,23 +135,16 @@ final class AppReviewService {
 
     /// 检查是否可以现在请求评分（时间间隔）
     private func canRequestReviewNow() -> Bool {
-        // 如果用户拒绝过
-        if userDefaults.bool(forKey: Keys.hasUserDeclined) {
-            guard let lastRequestDate = userDefaults.object(forKey: Keys.lastReviewRequestDate) as? Date else {
-                return true
-            }
-
-            let daysSinceLastRequest = Calendar.current.dateComponents([.day], from: lastRequestDate, to: Date()).day ?? 0
-            return daysSinceLastRequest >= Thresholds.daysAfterDecline
+        guard let lastRequestDate = userDefaults.object(forKey: Keys.lastReviewRequestDate) as? Date else {
+            return true
         }
 
-        // 正常情况下的间隔
-        if let lastRequestDate = userDefaults.object(forKey: Keys.lastReviewRequestDate) as? Date {
-            let daysSinceLastRequest = Calendar.current.dateComponents([.day], from: lastRequestDate, to: Date()).day ?? 0
-            return daysSinceLastRequest >= Thresholds.daysBetweenRequests
-        }
+        let requiredDays = userDefaults.bool(forKey: Keys.hasUserDeclined)
+            ? Thresholds.daysAfterDecline
+            : Thresholds.daysBetweenRequests
 
-        return true
+        let daysSinceLastRequest = Calendar.current.dateComponents([.day], from: lastRequestDate, to: Date()).day ?? 0
+        return daysSinceLastRequest >= requiredDays
     }
 
     /// 请求评分

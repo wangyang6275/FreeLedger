@@ -77,11 +77,7 @@ final class TransactionRepository: TransactionRepositoryProtocol {
               let endDate = calendar.date(byAdding: .month, value: 1, to: startDate) else {
             return .empty
         }
-        let result = try transactionDAO.getSummary(
-            startISO: AppDateFormatter.formatISO(startDate),
-            endISO: AppDateFormatter.formatISO(endDate)
-        )
-        return TransactionSummary(totalExpense: result.expense, totalIncome: result.income)
+        return try getSummary(from: startDate, to: endDate)
     }
 
     func getTagsForTransaction(transactionId: String) throws -> [Tag] {
@@ -178,6 +174,10 @@ final class TransactionRepository: TransactionRepositoryProtocol {
               let endDate = calendar.date(from: DateComponents(year: year + 1, month: 1, day: 1)) else {
             return .empty
         }
+        return try getSummary(from: startDate, to: endDate)
+    }
+
+    private func getSummary(from startDate: Date, to endDate: Date) throws -> TransactionSummary {
         let result = try transactionDAO.getSummary(
             startISO: AppDateFormatter.formatISO(startDate),
             endISO: AppDateFormatter.formatISO(endDate)

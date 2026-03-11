@@ -179,10 +179,15 @@ final class AppDatabase: Sendable {
             let count = try Category.fetchCount(db)
             guard count == 0 else { return }
 
-            let expenseCategories = Self.loadCategoriesFromBundle(filename: "categories-expense", type: "expense")
-            let incomeCategories = Self.loadCategoriesFromBundle(filename: "categories-income", type: "income")
+            let expenseCategories = Self.loadCategoriesFromBundle(filename: "categories-expense")
+            let incomeCategories = Self.loadCategoriesFromBundle(filename: "categories-income")
 
-            for category in expenseCategories + incomeCategories {
+            let allCategories = expenseCategories + incomeCategories
+            if allCategories.isEmpty {
+                AppLogger.data.error("No default categories loaded from bundle, category list will be empty")
+            }
+
+            for category in allCategories {
                 try category.insert(db)
             }
         }
@@ -198,7 +203,7 @@ final class AppDatabase: Sendable {
         }
     }
 
-    private static func loadCategoriesFromBundle(filename: String, type: String) -> [Category] {
+    private static func loadCategoriesFromBundle(filename: String) -> [Category] {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
             assertionFailure("Missing bundle resource: \(filename).json")
             AppLogger.data.error("Missing bundle resource: \(filename).json")
