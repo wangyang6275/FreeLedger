@@ -1,4 +1,4 @@
-package com.colorfuledger.app.theme
+package com.freeledger.app.theme
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight

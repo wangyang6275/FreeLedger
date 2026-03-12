@@ -22,7 +22,7 @@ struct WidgetData: Codable {
 }
 
 enum WidgetDataBridge {
-    static let appGroupId = "group.com.colorfuledger.app"
+    static let appGroupId = "group.com.freeledger.app"
     private static let fileName = "widget_data.json"
 
     private static var sharedFileURL: URL? {

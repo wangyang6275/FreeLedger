@@ -8,7 +8,7 @@
       "Bash(xcodebuild -project ColorFuLedger.xcodeproj -scheme ColorFuLedger -configuration Debug -destination 'platform=iOS Simulator,id=3C2A18EC-017D-4CD4-89E7-AF95D8883BF7' -derivedDataPath build install)",
       "Bash(xcodebuild -project ColorFuLedger.xcodeproj -scheme ColorFuLedger -configuration Debug -destination 'platform=iOS Simulator,id=3C2A18EC-017D-4CD4-89E7-AF95D8883BF7' build)",
       "Bash(xcrun simctl install 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 /Users/wangyang/Library/Developer/Xcode/DerivedData/ColorFuLedger-hgqllourgjtodkdtqxnhpixmmabv/Build/Products/Debug-iphonesimulator/ColorFuLedger.app)",
-      "Bash(xcrun simctl launch 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 com.colorfuledger.app)",
+      "Bash(xcrun simctl launch 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 com.freeledger.app)",
       "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log stream --predicate 'processImagePath contains \"\"ColorFuLedger\"\"' --level debug --style compact)",
       "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log show --predicate 'process == \"\"ColorFuLedger\"\"' --last 5m --style compact)",
       "Bash(xcrun simctl spawn 3C2A18EC-017D-4CD4-89E7-AF95D8883BF7 log show --predicate 'process == \"\"ColorFuLedger\"\"' --last 2m --style compact)",

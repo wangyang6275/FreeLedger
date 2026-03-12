@@ -44,7 +44,7 @@ So that **all subsequent development has a consistent foundation**.
   - [x] Create TabView shell with 4 tabs + center FAB placeholder
   - [x] Create placeholder views: HomeView, ReportView, TagsView, SettingsView
 - [x] Task 6: Android project setup (AC: #6)
-  - [ ] Create Android Studio project: com.colorfuledger.app, Jetpack Compose, Kotlin, minSdk 29 (requires Android Studio — source files ready)
+  - [ ] Create Android Studio project: com.freeledger.app, Jetpack Compose, Kotlin, minSdk 29 (requires Android Studio — source files ready)
   - [ ] Add Room dependency via Gradle (requires Android Studio project creation first)
   - [ ] Add Vico dependency via Gradle (requires Android Studio project creation first)
   - [x] Generate theme files from Design Tokens: AppColors.kt, AppSpacing.kt, AppRadius.kt, AppTypography.kt, ColorFuLedgerTheme.kt
@@ -161,7 +161,7 @@ ios/ColorFuLedger/
 
 **Android directory structure:**
 ```
-android/app/src/main/java/com/colorfuledger/app/
+android/app/src/main/java/com/freeledger/app/
 ├── ColorFuLedgerApp.kt
 ├── MainActivity.kt
 ├── ui/
@@ -245,16 +245,16 @@ No errors encountered during implementation.
 - ios/ColorFuLedger/ui/settings/SettingsView.swift (new)
 - ios/ColorFuLedger/i18n/Localizable.strings (new)
 - ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (new)
-- android/app/src/main/java/com/colorfuledger/app/MainActivity.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/theme/AppColors.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/theme/AppSpacing.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/theme/AppRadius.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/theme/AppTypography.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/theme/ColorFuLedgerTheme.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/ui/navigation/AppNavigation.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/ui/home/HomeScreen.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/ui/report/ReportScreen.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/ui/tags/TagsScreen.kt (new)
-- android/app/src/main/java/com/colorfuledger/app/ui/settings/SettingsScreen.kt (new)
+- android/app/src/main/java/com/freeledger/app/MainActivity.kt (new)
+- android/app/src/main/java/com/freeledger/app/theme/AppColors.kt (new)
+- android/app/src/main/java/com/freeledger/app/theme/AppSpacing.kt (new)
+- android/app/src/main/java/com/freeledger/app/theme/AppRadius.kt (new)
+- android/app/src/main/java/com/freeledger/app/theme/AppTypography.kt (new)
+- android/app/src/main/java/com/freeledger/app/theme/ColorFuLedgerTheme.kt (new)
+- android/app/src/main/java/com/freeledger/app/ui/navigation/AppNavigation.kt (new)
+- android/app/src/main/java/com/freeledger/app/ui/home/HomeScreen.kt (new)
+- android/app/src/main/java/com/freeledger/app/ui/report/ReportScreen.kt (new)
+- android/app/src/main/java/com/freeledger/app/ui/tags/TagsScreen.kt (new)
+- android/app/src/main/java/com/freeledger/app/ui/settings/SettingsScreen.kt (new)
 - android/app/src/main/res/values/strings.xml (new)
 - android/app/src/main/res/values-en/strings.xml (new)

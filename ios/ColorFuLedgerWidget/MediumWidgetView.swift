@@ -53,7 +53,7 @@ struct MediumWidgetView: View {
                 }
 
                 // Quick record button
-                Link(destination: URL(string: "colorfuledger://record")!) {
+                Link(destination: URL(string: "freeledger://record")!) {
                     HStack(spacing: 4) {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 12))

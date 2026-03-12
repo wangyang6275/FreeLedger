@@ -1,4 +1,4 @@
-package com.colorfuledger.app.ui.navigation
+package com.freeledger.app.ui.navigation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,12 +27,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.colorfuledger.app.R
-import com.colorfuledger.app.theme.AppColors
-import com.colorfuledger.app.ui.home.HomeScreen
-import com.colorfuledger.app.ui.report.ReportScreen
-import com.colorfuledger.app.ui.settings.SettingsScreen
-import com.colorfuledger.app.ui.tags.TagsScreen
+import com.freeledger.app.R
+import com.freeledger.app.theme.AppColors
+import com.freeledger.app.ui.home.HomeScreen
+import com.freeledger.app.ui.report.ReportScreen
+import com.freeledger.app.ui.settings.SettingsScreen
+import com.freeledger.app.ui.tags.TagsScreen
 
 @Composable
 fun AppNavigation() {

@@ -15,7 +15,7 @@ final class AppDatabase: Sendable {
                 appropriateFor: nil,
                 create: true
             )
-            let dbURL = appSupportURL.appendingPathComponent("colorfuledger.sqlite")
+            let dbURL = appSupportURL.appendingPathComponent("freeledger.sqlite")
             dbQueue = try DatabaseQueue(path: dbURL.path)
             try migrate()
         } catch {

@@ -1,4 +1,4 @@
-package com.colorfuledger.app.ui.settings
+package com.freeledger.app.ui.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,9 +7,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.colorfuledger.app.R
-import com.colorfuledger.app.theme.AppSpacing
-import com.colorfuledger.app.theme.AppTypography
+import com.freeledger.app.R
+import com.freeledger.app.theme.AppSpacing
+import com.freeledger.app.theme.AppTypography
 
 @Composable
 fun SettingsScreen() {

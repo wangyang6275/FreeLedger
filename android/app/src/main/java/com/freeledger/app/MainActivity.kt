@@ -1,11 +1,11 @@
-package com.colorfuledger.app
+package com.freeledger.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.colorfuledger.app.theme.ColorFuLedgerTheme
-import com.colorfuledger.app.ui.navigation.AppNavigation
+import com.freeledger.app.theme.ColorFuLedgerTheme
+import com.freeledger.app.ui.navigation.AppNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

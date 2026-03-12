@@ -1,4 +1,4 @@
-package com.colorfuledger.app.theme
+package com.freeledger.app.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme

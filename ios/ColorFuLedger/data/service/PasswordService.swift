@@ -4,7 +4,7 @@ import Security
 import LocalAuthentication
 
 struct PasswordService {
-    private static let keychainServiceName = "com.colorfuledger.app.password"
+    private static let keychainServiceName = "com.freeledger.app.password"
     private static let hashKey = "password_hash"
     private static let saltKey = "password_salt"
     private static let biometricEnabledKey = "biometric_enabled"

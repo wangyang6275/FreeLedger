@@ -124,7 +124,7 @@ struct ContentView: View {
             }
         }
         .onOpenURL { url in
-            if url.scheme == "colorfuledger" && url.host == "record" {
+            if url.scheme == "freeledger" && url.host == "record" {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     showRecord = true
                 }

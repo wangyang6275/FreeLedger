@@ -617,7 +617,7 @@ ColorFuLedger/
 │   ├── security/   (PasswordManager, LockScreenView)
 │   └── Assets.xcassets/
 │
-├── android/app/src/main/java/com/colorfuledger/app/
+├── android/app/src/main/java/com/freeledger/app/
 │   ├── ColorFuLedgerApp.kt
 │   ├── MainActivity.kt
 │   ├── data/

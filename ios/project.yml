@@ -1,6 +1,6 @@
 name: ColorFuLedger
 options:
-  bundleIdPrefix: com.colorfuledger
+  bundleIdPrefix: com.freeledger
   deploymentTarget:
     iOS: "17.0"
   xcodeVersion: "16.0"
@@ -37,7 +37,7 @@ targets:
           enabled: "1"
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.colorfuledger.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.freeledger.app
         DEVELOPMENT_TEAM: QLJ5YWNC2W
         CODE_SIGN_STYLE: Automatic
         MARKETING_VERSION: "1.0.0"
@@ -59,7 +59,7 @@ targets:
       properties:
         CFBundleURLTypes:
           - CFBundleURLSchemes:
-              - colorfuledger
+              - freeledger
     dependencies:
       - package: GRDB
         product: GRDB
@@ -84,7 +84,7 @@ targets:
       path: ColorFuLedgerWidget/ColorFuLedgerWidget.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.colorfuledger.app.widget
+        PRODUCT_BUNDLE_IDENTIFIER: com.freeledger.app.widget
         DEVELOPMENT_TEAM: QLJ5YWNC2W
         CODE_SIGN_STYLE: Automatic
         MARKETING_VERSION: "1.0.0"
@@ -112,5 +112,5 @@ targets:
       - target: ColorFuLedger
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.colorfuledger.app.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.freeledger.app.tests
         GENERATE_INFOPLIST_FILE: "YES"

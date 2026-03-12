@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -215,7 +215,7 @@
 		45AD4C4562EF3CE6BA1C40D2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4901C21B25B6C3AA590D83CE /* categories-expense.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "categories-expense.json"; sourceTree = "<group>"; };
 		4907630A657591DFE3D6B9C1 /* BackupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupData.swift; sourceTree = "<group>"; };
-		4C6F4E2E4ECF95E44FB42B56 /* ColorFuLedger.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ColorFuLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6F4E2E4ECF95E44FB42B56 /* ColorFuLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorFuLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4C90D54EA4DFE594722F62 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5062D3E76FC98F71DBA438A9 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53164E561A096D03534BF7B0 /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
@@ -784,7 +784,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					EC154722F9E47B3274E025DE = {
-						DevelopmentTeam = QLJ5YWNC2W;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -833,9 +832,8 @@
 			mainGroup = 6512158EAFAA422FAFEF6942;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1078,7 +1076,7 @@
 				CODE_SIGN_ENTITLEMENTS = ColorFuLedger/ColorFuLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1094,7 +1092,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -1118,7 +1116,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app.widget;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -1134,7 +1132,7 @@
 				CODE_SIGN_ENTITLEMENTS = ColorFuLedger/ColorFuLedger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_LANGUAGE = "zh-Hans";
 				DEVELOPMENT_TEAM = QLJ5YWNC2W;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1150,7 +1148,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -1168,7 +1166,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorFuLedger.app/ColorFuLedger";
@@ -1304,7 +1302,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorFuLedger.app/ColorFuLedger";
@@ -1327,7 +1325,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.colorfuledger.app.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freeledger.app.widget;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -1377,7 +1375,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+		1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift";
 			requirement = {
@@ -1390,7 +1388,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9E7546593AC81B62D25B56EC /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			package = 1057B6BA3ABA641DE253B939 /* XCRemoteSwiftPackageReference "GRDB" */;
 			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */
