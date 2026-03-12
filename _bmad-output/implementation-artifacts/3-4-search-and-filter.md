@@ -74,10 +74,10 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 3.4 实现 — 搜索与筛选，动态 SQL + 组合筛选 UI
 
 ### File List
-- ios/FreeLedger/ui/search/SearchView.swift (new)
-- ios/FreeLedger/ui/search/SearchViewModel.swift (new)
-- ios/FreeLedger/data/database/TransactionDAO.swift (modified — +search)
-- ios/FreeLedger/data/repository/TransactionRepository.swift (modified — +search)
-- ios/FreeLedger/ui/home/HomeView.swift (modified — +toolbar search + sheet)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 14 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 14 new strings)
+- ios/ColorFuLedger/ui/search/SearchView.swift (new)
+- ios/ColorFuLedger/ui/search/SearchViewModel.swift (new)
+- ios/ColorFuLedger/data/database/TransactionDAO.swift (modified — +search)
+- ios/ColorFuLedger/data/repository/TransactionRepository.swift (modified — +search)
+- ios/ColorFuLedger/ui/home/HomeView.swift (modified — +toolbar search + sheet)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 14 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 14 new strings)

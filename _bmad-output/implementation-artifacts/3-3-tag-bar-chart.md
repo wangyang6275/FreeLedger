@@ -75,12 +75,12 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 3.3 实现 — 标签柱状图，Swift Charts BarMark，标签颜色柱子
 
 ### File List
-- ios/FreeLedger/data/model/TagExpenseBreakdown.swift (new)
-- ios/FreeLedger/ui/report/TagBarChart.swift (new)
-- ios/FreeLedger/data/database/TagDAO.swift (modified — +getTagExpenseBreakdown)
-- ios/FreeLedger/data/repository/TagRepository.swift (modified — +getTagExpenseBreakdown)
-- ios/FreeLedger/ui/report/ReportViewModel.swift (modified — +tagBreakdown + tagRepository)
-- ios/FreeLedger/ui/report/ReportView.swift (modified — +tagBarChartSection + tagRepository param)
-- ios/FreeLedger/ContentView.swift (modified — pass tagRepository to ReportView)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 1 new string)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 1 new string)
+- ios/ColorFuLedger/data/model/TagExpenseBreakdown.swift (new)
+- ios/ColorFuLedger/ui/report/TagBarChart.swift (new)
+- ios/ColorFuLedger/data/database/TagDAO.swift (modified — +getTagExpenseBreakdown)
+- ios/ColorFuLedger/data/repository/TagRepository.swift (modified — +getTagExpenseBreakdown)
+- ios/ColorFuLedger/ui/report/ReportViewModel.swift (modified — +tagBreakdown + tagRepository)
+- ios/ColorFuLedger/ui/report/ReportView.swift (modified — +tagBarChartSection + tagRepository param)
+- ios/ColorFuLedger/ContentView.swift (modified — pass tagRepository to ReportView)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 1 new string)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 1 new string)

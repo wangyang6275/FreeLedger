@@ -57,8 +57,8 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 4.3 实现 — 备份提醒
 
 ### File List
-- ios/FreeLedger/data/service/BackupReminderService.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +settingsRepository + last_backup_date)
-- ios/FreeLedger/ContentView.swift (modified — +backupReminderService + checkBackupReminder)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 5 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 5 new strings)
+- ios/ColorFuLedger/data/service/BackupReminderService.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +settingsRepository + last_backup_date)
+- ios/ColorFuLedger/ContentView.swift (modified — +backupReminderService + checkBackupReminder)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 5 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 5 new strings)

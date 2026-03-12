@@ -15,12 +15,12 @@ So that **all subsequent development has a consistent foundation**.
 3. `shared/icons/` contains all Ant Design SVG icons for categories and navigation
 4. `shared/default-data/` contains categories-expense.json and categories-income.json
 5. iOS project: GRDB.swift + Swift Charts added via SPM; AppColors/AppSpacing/AppRadius/AppTypography generated; i18n strings for zh-Hans + en initialized; app launches with Tab navigation shell
-6. Android project: Room + Vico added via Gradle; AppColors/AppSpacing/AppRadius/AppTypography/FreeLedgerTheme generated; strings.xml for zh + en initialized; app launches with matching Tab navigation shell
+6. Android project: Room + Vico added via Gradle; AppColors/AppSpacing/AppRadius/AppTypography/ColorFuLedgerTheme generated; strings.xml for zh + en initialized; app launches with matching Tab navigation shell
 
 ## Tasks / Subtasks
 
 - [x] Task 1: Monorepo structure (AC: #1)
-  - [x] Create root FreeLedger/ with ios/, android/, shared/, docs/, .github/workflows/
+  - [x] Create root ColorFuLedger/ with ios/, android/, shared/, docs/, .github/workflows/
   - [x] Create .gitignore (Xcode + Android Studio + macOS)
   - [ ] Create README.md with project overview
 - [x] Task 2: Shared resources - Design Tokens (AC: #2)
@@ -36,7 +36,7 @@ So that **all subsequent development has a consistent foundation**.
   - [x] Create shared/default-data/categories-expense.json (11 categories with name_key, icon_name, color_hex)
   - [x] Create shared/default-data/categories-income.json (salary, freelance, investment, gift, other)
 - [x] Task 5: iOS project setup (AC: #5)
-  - [ ] Create Xcode project: FreeLedger, SwiftUI, Swift, iOS 17.0+ (requires Xcode IDE — source files ready)
+  - [ ] Create Xcode project: ColorFuLedger, SwiftUI, Swift, iOS 17.0+ (requires Xcode IDE — source files ready)
   - [ ] Add GRDB.swift via SPM (requires Xcode project creation first)
   - [x] Add no other dependencies (Swift Charts is built-in iOS 16+)
   - [x] Generate theme files from Design Tokens: AppColors.swift, AppSpacing.swift, AppRadius.swift, AppTypography.swift
@@ -44,10 +44,10 @@ So that **all subsequent development has a consistent foundation**.
   - [x] Create TabView shell with 4 tabs + center FAB placeholder
   - [x] Create placeholder views: HomeView, ReportView, TagsView, SettingsView
 - [x] Task 6: Android project setup (AC: #6)
-  - [ ] Create Android Studio project: com.freeledger.app, Jetpack Compose, Kotlin, minSdk 29 (requires Android Studio — source files ready)
+  - [ ] Create Android Studio project: com.colorfuledger.app, Jetpack Compose, Kotlin, minSdk 29 (requires Android Studio — source files ready)
   - [ ] Add Room dependency via Gradle (requires Android Studio project creation first)
   - [ ] Add Vico dependency via Gradle (requires Android Studio project creation first)
-  - [x] Generate theme files from Design Tokens: AppColors.kt, AppSpacing.kt, AppRadius.kt, AppTypography.kt, FreeLedgerTheme.kt
+  - [x] Generate theme files from Design Tokens: AppColors.kt, AppSpacing.kt, AppRadius.kt, AppTypography.kt, ColorFuLedgerTheme.kt
   - [x] Create i18n: res/values/strings.xml (zh default) + res/values-en/strings.xml
   - [x] Create NavigationBar shell with 4 tabs + center FAB placeholder
   - [x] Create placeholder screens: HomeScreen, ReportScreen, TagsScreen, SettingsScreen
@@ -138,8 +138,8 @@ FAB: 56pt circle, coral-orange (#FF6B6B) background, white PlusOutlined icon, el
 
 **iOS directory structure:**
 ```
-ios/FreeLedger/
-├── FreeLedgerApp.swift
+ios/ColorFuLedger/
+├── ColorFuLedgerApp.swift
 ├── ContentView.swift          # TabView + FAB
 ├── ui/
 │   ├── home/HomeView.swift    # placeholder
@@ -161,8 +161,8 @@ ios/FreeLedger/
 
 **Android directory structure:**
 ```
-android/app/src/main/java/com/freeledger/app/
-├── FreeLedgerApp.kt
+android/app/src/main/java/com/colorfuledger/app/
+├── ColorFuLedgerApp.kt
 ├── MainActivity.kt
 ├── ui/
 │   ├── home/HomeScreen.kt
@@ -177,7 +177,7 @@ android/app/src/main/java/com/freeledger/app/
 │   ├── AppSpacing.kt
 │   ├── AppRadius.kt
 │   ├── AppTypography.kt
-│   └── FreeLedgerTheme.kt
+│   └── ColorFuLedgerTheme.kt
 res/
 ├── drawable/                  # Vector Drawables from shared/icons
 ├── values/strings.xml         # zh
@@ -209,8 +209,8 @@ No errors encountered during implementation.
 ### Completion Notes List
 
 - All shared resources created: 5 Design Token JSON files, 2 default data JSON files, icon manifest README
-- iOS source files: 4 theme files, 5 UI views (Home/Report/Tags/Settings + FloatingAddButton), ContentView with TabView, FreeLedgerApp entry, 2 i18n string files
-- Android source files: 5 theme files (including FreeLedgerTheme), 4 screens, AppNavigation with NavigationBar + FAB, MainActivity, 2 string resource files
+- iOS source files: 4 theme files, 5 UI views (Home/Report/Tags/Settings + FloatingAddButton), ContentView with TabView, ColorFuLedgerApp entry, 2 i18n string files
+- Android source files: 5 theme files (including ColorFuLedgerTheme), 4 screens, AppNavigation with NavigationBar + FAB, MainActivity, 2 string resource files
 - **Pending manual steps:** Xcode project creation (.xcodeproj), GRDB.swift SPM addition, Android Studio project creation, Room/Vico Gradle dependencies
 - All source code files follow architecture naming conventions and Design Tokens
 - All user-visible text uses i18n keys (no hardcoded strings)
@@ -232,29 +232,29 @@ No errors encountered during implementation.
 - shared/icons/README.md (new)
 - shared/default-data/categories-expense.json (new)
 - shared/default-data/categories-income.json (new)
-- ios/FreeLedger/FreeLedgerApp.swift (new)
-- ios/FreeLedger/ContentView.swift (new)
-- ios/FreeLedger/theme/AppColors.swift (new)
-- ios/FreeLedger/theme/AppSpacing.swift (new)
-- ios/FreeLedger/theme/AppRadius.swift (new)
-- ios/FreeLedger/theme/AppTypography.swift (new)
-- ios/FreeLedger/ui/components/FloatingAddButton.swift (new)
-- ios/FreeLedger/ui/home/HomeView.swift (new)
-- ios/FreeLedger/ui/report/ReportView.swift (new)
-- ios/FreeLedger/ui/tags/TagsView.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (new)
-- ios/FreeLedger/i18n/Localizable.strings (new)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (new)
-- android/app/src/main/java/com/freeledger/app/MainActivity.kt (new)
-- android/app/src/main/java/com/freeledger/app/theme/AppColors.kt (new)
-- android/app/src/main/java/com/freeledger/app/theme/AppSpacing.kt (new)
-- android/app/src/main/java/com/freeledger/app/theme/AppRadius.kt (new)
-- android/app/src/main/java/com/freeledger/app/theme/AppTypography.kt (new)
-- android/app/src/main/java/com/freeledger/app/theme/FreeLedgerTheme.kt (new)
-- android/app/src/main/java/com/freeledger/app/ui/navigation/AppNavigation.kt (new)
-- android/app/src/main/java/com/freeledger/app/ui/home/HomeScreen.kt (new)
-- android/app/src/main/java/com/freeledger/app/ui/report/ReportScreen.kt (new)
-- android/app/src/main/java/com/freeledger/app/ui/tags/TagsScreen.kt (new)
-- android/app/src/main/java/com/freeledger/app/ui/settings/SettingsScreen.kt (new)
+- ios/ColorFuLedger/ColorFuLedgerApp.swift (new)
+- ios/ColorFuLedger/ContentView.swift (new)
+- ios/ColorFuLedger/theme/AppColors.swift (new)
+- ios/ColorFuLedger/theme/AppSpacing.swift (new)
+- ios/ColorFuLedger/theme/AppRadius.swift (new)
+- ios/ColorFuLedger/theme/AppTypography.swift (new)
+- ios/ColorFuLedger/ui/components/FloatingAddButton.swift (new)
+- ios/ColorFuLedger/ui/home/HomeView.swift (new)
+- ios/ColorFuLedger/ui/report/ReportView.swift (new)
+- ios/ColorFuLedger/ui/tags/TagsView.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (new)
+- ios/ColorFuLedger/i18n/Localizable.strings (new)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (new)
+- android/app/src/main/java/com/colorfuledger/app/MainActivity.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/theme/AppColors.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/theme/AppSpacing.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/theme/AppRadius.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/theme/AppTypography.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/theme/ColorFuLedgerTheme.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/ui/navigation/AppNavigation.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/ui/home/HomeScreen.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/ui/report/ReportScreen.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/ui/tags/TagsScreen.kt (new)
+- android/app/src/main/java/com/colorfuledger/app/ui/settings/SettingsScreen.kt (new)
 - android/app/src/main/res/values/strings.xml (new)
 - android/app/src/main/res/values-en/strings.xml (new)

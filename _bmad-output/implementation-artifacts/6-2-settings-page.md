@@ -62,8 +62,8 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 6.2 实现 — 设置页面重构
 
 ### File List
-- ios/FreeLedger/ui/settings/CurrencyPickerView.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — 重构 4 Section + 货币选择 + 关于)
-- ios/FreeLedger/ContentView.swift (modified — +onShowOnboarding)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 4 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/ui/settings/CurrencyPickerView.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — 重构 4 Section + 货币选择 + 关于)
+- ios/ColorFuLedger/ContentView.swift (modified — +onShowOnboarding)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)

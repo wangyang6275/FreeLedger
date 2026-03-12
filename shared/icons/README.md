@@ -1,4 +1,4 @@
-# FreeLedger Icons
+# ColorFuLedger Icons
 
 All icons use Ant Design outlined style, 1.5px stroke width, round line caps.
 

@@ -3,9 +3,9 @@ stepsCompleted: [1, 2, 3, 4, 5, 6, 7, 8]
 lastStep: 8
 status: 'complete'
 completedAt: '2026-02-14'
-inputDocuments: ['prd.md', 'product-brief-FreeLedger-2026-02-13.md', 'ux-design-specification.md']
+inputDocuments: ['prd.md', 'product-brief-ColorFuLedger-2026-02-13.md', 'ux-design-specification.md']
 workflowType: 'architecture'
-project_name: 'FreeLedger'
+project_name: 'ColorFuLedger'
 user_name: 'Wangyang'
 date: '2026-02-14'
 ---
@@ -317,7 +317,7 @@ app/
 
 ```json
 {
-  "app": "FreeLedger",
+  "app": "ColorFuLedger",
   "schema_version": 1,
   "exported_at": "2026-02-14T12:00:00Z",
   "currency": "CNY",
@@ -349,7 +349,7 @@ app/
 **Monorepo 结构：**
 
 ```
-FreeLedger/
+ColorFuLedger/
 ├── ios/                   # iOS Xcode 项目
 ├── android/               # Android Studio 项目
 ├── shared/                # 双端共享资源
@@ -503,7 +503,7 @@ sealed class AppError : Exception() {
 |------|---------|----------|
 | 删除确认 | "确定删除这条记录吗？删除后无法恢复哦" | "警告：此操作不可撤销" |
 | 备份成功 | "备份完成！共 2,156 条记录，一条不少" | "导出成功" |
-| 文件校验失败 | "这个文件好像不是 FreeLedger 的备份文件，请重新选择" | "错误：文件格式不正确" |
+| 文件校验失败 | "这个文件好像不是 ColorFuLedger 的备份文件，请重新选择" | "错误：文件格式不正确" |
 | 存储不足 | "存储空间不太够了，建议清理后再试" | "Error: Insufficient storage" |
 
 ### State Management Patterns
@@ -550,7 +550,7 @@ sealed class LoadingState<out T> {
 ### Complete Project Directory Structure
 
 ```
-FreeLedger/
+ColorFuLedger/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -575,8 +575,8 @@ FreeLedger/
 │       ├── categories-expense.json
 │       └── categories-income.json
 │
-├── ios/FreeLedger/
-│   ├── FreeLedgerApp.swift
+├── ios/ColorFuLedger/
+│   ├── ColorFuLedgerApp.swift
 │   ├── ContentView.swift
 │   ├── data/
 │   │   ├── database/                     # GRDB DAO + 迁移
@@ -617,8 +617,8 @@ FreeLedger/
 │   ├── security/   (PasswordManager, LockScreenView)
 │   └── Assets.xcassets/
 │
-├── android/app/src/main/java/com/freeledger/app/
-│   ├── FreeLedgerApp.kt
+├── android/app/src/main/java/com/colorfuledger/app/
+│   ├── ColorFuLedgerApp.kt
 │   ├── MainActivity.kt
 │   ├── data/
 │   │   ├── database/                     # Room DAO + 迁移
@@ -651,7 +651,7 @@ FreeLedger/
 │   │   ├── onboarding/ (OnboardingScreen + OnboardingViewModel)
 │   │   ├── components/ (同 iOS 组件对称)
 │   │   └── navigation/ (AppNavigation.kt)
-│   ├── theme/      (AppColors, AppSpacing, AppRadius, AppTypography, FreeLedgerTheme)
+│   ├── theme/      (AppColors, AppSpacing, AppRadius, AppTypography, ColorFuLedgerTheme)
 │   ├── util/       (AmountFormatter, DateFormatterExt, AppError)
 │   ├── backup/     (BackupExporter, BackupImporter, BackupValidator)
 │   └── security/   (PasswordManager, LockScreen)

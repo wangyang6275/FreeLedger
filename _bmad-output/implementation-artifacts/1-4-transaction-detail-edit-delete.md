@@ -196,11 +196,11 @@ Claude Sonnet 4 via Windsurf Cascade
   - M3: 编辑模式下图标不跟随分类变化 → 绑定 editCategory
 
 ### File List
-- ios/FreeLedger/ui/detail/TransactionDetailView.swift (new)
-- ios/FreeLedger/ui/detail/TransactionDetailViewModel.swift (new)
-- ios/FreeLedger/ui/components/FriendlyDialog.swift (new)
-- ios/FreeLedger/data/model/Transaction.swift (modified — added Hashable, currentISO())
-- ios/FreeLedger/ui/home/HomeView.swift (modified — List + NavigationLink + swipeActions + FriendlyDialog)
-- ios/FreeLedger/ContentView.swift (modified — pass repositories to HomeView)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 20+ new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 20+ new strings)
+- ios/ColorFuLedger/ui/detail/TransactionDetailView.swift (new)
+- ios/ColorFuLedger/ui/detail/TransactionDetailViewModel.swift (new)
+- ios/ColorFuLedger/ui/components/FriendlyDialog.swift (new)
+- ios/ColorFuLedger/data/model/Transaction.swift (modified — added Hashable, currentISO())
+- ios/ColorFuLedger/ui/home/HomeView.swift (modified — List + NavigationLink + swipeActions + FriendlyDialog)
+- ios/ColorFuLedger/ContentView.swift (modified — pass repositories to HomeView)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 20+ new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 20+ new strings)

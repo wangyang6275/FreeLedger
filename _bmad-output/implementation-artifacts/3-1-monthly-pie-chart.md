@@ -154,12 +154,12 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 3.1 实现 — 月度饼图报表，Swift Charts SectorMark，月份切换，扇区交互
 
 ### File List
-- ios/FreeLedger/data/model/CategoryBreakdown.swift (new)
-- ios/FreeLedger/ui/report/ReportViewModel.swift (new)
-- ios/FreeLedger/ui/report/PieChartView.swift (new)
-- ios/FreeLedger/ui/report/ReportView.swift (modified — full rewrite)
-- ios/FreeLedger/data/database/TransactionDAO.swift (modified — +getCategoryBreakdown)
-- ios/FreeLedger/data/repository/TransactionRepository.swift (modified — +getCategoryBreakdown)
-- ios/FreeLedger/ContentView.swift (modified — pass dependencies to ReportView)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 4 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/data/model/CategoryBreakdown.swift (new)
+- ios/ColorFuLedger/ui/report/ReportViewModel.swift (new)
+- ios/ColorFuLedger/ui/report/PieChartView.swift (new)
+- ios/ColorFuLedger/ui/report/ReportView.swift (modified — full rewrite)
+- ios/ColorFuLedger/data/database/TransactionDAO.swift (modified — +getCategoryBreakdown)
+- ios/ColorFuLedger/data/repository/TransactionRepository.swift (modified — +getCategoryBreakdown)
+- ios/ColorFuLedger/ContentView.swift (modified — pass dependencies to ReportView)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)

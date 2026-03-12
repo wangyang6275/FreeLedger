@@ -16,7 +16,7 @@ So that **I can recover my data on a new device**.
 4. **校验:** 验证文件 SHA-256 校验和（FR23）
 5. **恢复数据:** 校验通过后，覆盖所有数据完全恢复（FR22）
 6. **成功提示:** FriendlyDialog 显示"恢复成功！共找回 X 条记录，一条不少 ✓"
-7. **校验失败:** 校验和不匹配时显示"这个文件好像不是 FreeLedger 的备份文件，请重新选择"（FR26）
+7. **校验失败:** 校验和不匹配时显示"这个文件好像不是 ColorFuLedger 的备份文件，请重新选择"（FR26）
 
 ## Tasks / Subtasks
 
@@ -56,8 +56,8 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 4.2 实现 — 备份导入与恢复
 
 ### File List
-- ios/FreeLedger/data/service/BackupService.swift (modified — +importBackup + BackupError)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +import flow)
-- ios/FreeLedger/ContentView.swift (modified — +onDataRestored callback)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 6 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 6 new strings)
+- ios/ColorFuLedger/data/service/BackupService.swift (modified — +importBackup + BackupError)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +import flow)
+- ios/ColorFuLedger/ContentView.swift (modified — +onDataRestored callback)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 6 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 6 new strings)

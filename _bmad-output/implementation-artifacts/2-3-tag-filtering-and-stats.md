@@ -112,12 +112,12 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 2.3 实现 — 标签筛选与统计，TagsView+TagDetailView，汇总卡片，i18n
 
 ### File List
-- ios/FreeLedger/ui/tags/TagsViewModel.swift (new)
-- ios/FreeLedger/ui/tags/TagDetailView.swift (new)
-- ios/FreeLedger/ui/tags/TagDetailViewModel.swift (new)
-- ios/FreeLedger/ui/tags/TagsView.swift (modified — full rewrite)
-- ios/FreeLedger/data/database/TagDAO.swift (modified — +2 query methods)
-- ios/FreeLedger/data/repository/TagRepository.swift (modified — +2 interface methods)
-- ios/FreeLedger/ContentView.swift (modified — pass dependencies to TagsView)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 3 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 3 new strings)
+- ios/ColorFuLedger/ui/tags/TagsViewModel.swift (new)
+- ios/ColorFuLedger/ui/tags/TagDetailView.swift (new)
+- ios/ColorFuLedger/ui/tags/TagDetailViewModel.swift (new)
+- ios/ColorFuLedger/ui/tags/TagsView.swift (modified — full rewrite)
+- ios/ColorFuLedger/data/database/TagDAO.swift (modified — +2 query methods)
+- ios/ColorFuLedger/data/repository/TagRepository.swift (modified — +2 interface methods)
+- ios/ColorFuLedger/ContentView.swift (modified — pass dependencies to TagsView)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 3 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 3 new strings)

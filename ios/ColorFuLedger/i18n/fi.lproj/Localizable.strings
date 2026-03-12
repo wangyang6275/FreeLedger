@@ -1,0 +1,408 @@
+/* Tabs */
+"tab_transactions" = "Tapahtumat";
+"tab_reports" = "Raportit";
+"tab_tags" = "Tunnisteet";
+"tab_settings" = "Asetukset";
+
+/* Home */
+"home_empty_state" = "Ei merkintöjä vielä. Napauta + aloittaaksesi";
+
+/* Summary Card */
+"summary_expense_label" = "Tämä kuukausi";
+"summary_income_label" = "Tulot";
+"summary_balance_label" = "Saldo";
+
+/* Date Groups */
+"date_today" = "Tänään";
+"date_yesterday" = "Eilen";
+
+/* Report */
+"report_empty_state" = "Kirjaa muutama tapahtuma nähdäksesi menoraportit";
+"report_expense_label" = "Menot";
+"report_income_label" = "Tulot";
+"report_balance_label" = "Saldo";
+"report_total_expense" = "Menot yhteensä";
+"report_trend_title" = "6 kuukauden trendi";
+"report_tag_chart_title" = "Menot tunnisteittain";
+
+/* Tags */
+"tags_empty_state" = "Ei tunnisteita vielä. Voit lisätä tunnisteita kirjatessasi";
+
+/* Settings */
+"settings_general" = "Yleiset";
+"settings_currency" = "Valuutta";
+"settings_language" = "Kieli";
+"settings_category_management" = "Kategoriahallinta";
+"settings_backup_section" = "Varmuuskopiointi";
+"settings_export_backup" = "Vie varmuuskopio";
+"backup_success_title" = "Varmuuskopiointi valmis!";
+"backup_success_message %lld" = "%lld merkintää tallennettu valitsemaasi sijaintiin";
+"settings_import_restore" = "Tuo ja palauta";
+"restore_warning_title" = "Tuo varmuuskopio";
+"restore_warning_message" = "Varmuuskopion tuonti korvaa kaikki olemassa olevat tiedot. Oletko varma?";
+"restore_warning_confirm" = "Vahvista tuonti";
+"restore_success_title" = "Palautus valmis!";
+"restore_success_message %lld" = "%lld merkintää palautettu ✓";
+"backup_reminder_title" = "Aika varmuuskopioida";
+"backup_reminder_first %lld" = "Olet kirjannut %lld tapahtumaa! Harkitse varmuuskopion tekemistä";
+"backup_reminder_periodic" = "Edellisestä varmuuskopiosta on yli 30 päivää. Harkitse uuden tekemistä";
+"backup_reminder_go" = "Varmuuskopioi nyt";
+"backup_reminder_later" = "Myöhemmin";
+"settings_export_csv" = "Vie CSV";
+"csv_export_title" = "Vie CSV";
+"csv_select_fields" = "Valitse vientikentät";
+"csv_export_button" = "Vie";
+"csv_field_date" = "Päivämäärä";
+"csv_field_amount" = "Summa";
+"csv_field_type" = "Tyyppi";
+"csv_field_category" = "Kategoria";
+"csv_field_note" = "Muistiinpano";
+"csv_field_tags" = "Tunnisteet";
+"settings_export_pdf" = "Vie PDF-raportti";
+"pdf_export_title" = "Vie PDF";
+"pdf_select_range" = "Valitse ajanjakso";
+"pdf_range_current_month" = "Tämä kuukausi";
+"pdf_range_month" = "Tietty kuukausi";
+"pdf_range_year" = "Tietty vuosi";
+"pdf_range_all" = "Kaikki merkinnät";
+"pdf_year" = "Vuosi";
+"pdf_month" = "Kuukausi";
+"pdf_export_button" = "Vie PDF";
+"pdf_report_title" = "Talousraportti";
+"pdf_generated" = "Luotu";
+"pdf_summary" = "Yhteenveto";
+"pdf_total_income" = "Tulot yhteensä";
+"pdf_total_expense" = "Menot yhteensä";
+"pdf_balance" = "Saldo";
+"pdf_transaction_count" = "Tapahtumat";
+"pdf_expense_breakdown" = "Menot kategorioittain";
+"pdf_income_breakdown" = "Tulot kategorioittain";
+"pdf_transactions" = "Tapahtumatiedot";
+"pdf_col_date" = "Päivämäärä";
+"pdf_col_category" = "Kategoria";
+"pdf_col_note" = "Muistiinpano";
+"pdf_col_amount" = "Summa";
+"settings_password_section" = "Turvallisuus";
+"settings_password_lock" = "Salasanalukko";
+"password_set_title" = "Aseta salasana";
+"password_verify_title" = "Vahvista salasana";
+"password_enter_prompt" = "Syötä 4-numeroinen salasana";
+"password_confirm_prompt" = "Syötä uudelleen vahvistaaksesi";
+"password_mismatch" = "Salasanat eivät täsmää, yritä uudelleen";
+"password_wrong" = "Väärä salasana, yritä uudelleen";
+"password_enter_to_disable" = "Syötä nykyinen salasana poistaaksesi käytöstä";
+"password_set_success_title" = "Salasanalukko käytössä";
+"password_set_success_message" = "Taloustietosi on nyt suojattu salasanalla";
+"lock_enter_password" = "Syötä salasana avataksesi";
+"settings_change_password" = "Vaihda salasana";
+"password_enter_current" = "Syötä nykyinen salasana";
+"onboarding_step1_title" = "Kirjaa 3 sekunnissa";
+"onboarding_step1_desc" = "Kirjaa jokainen tapahtuma nopeasti\nYksinkertaista, intuitiivista, ei oppimiskäyrää";
+"onboarding_step2_title" = "Valitse valuuttasi";
+"onboarding_step3_title" = "Napauta + aloittaaksesi";
+"onboarding_step3_desc" = "Napauta + -painiketta alhaalla\ntehdäksesi ensimmäisen merkintäsi";
+"onboarding_next" = "Seuraava";
+"onboarding_start" = "Aloita";
+"onboarding_skip" = "Ohita";
+"settings_data_section" = "Tiedot";
+"settings_about_section" = "Tietoja";
+"settings_replay_onboarding" = "Toista esittely";
+"settings_version" = "Versio";
+
+/* Record */
+"record_title" = "Uusi merkintä";
+"record_expense" = "Meno";
+"record_income" = "Tulo";
+"record_save" = "Tallenna";
+"record_add_note" = "Napauta lisätäksesi muistiinpanon...";
+"record_note_placeholder" = "Lisää muistiinpano";
+
+/* Detail */
+"detail_title" = "Tiedot";
+"detail_note" = "Muistiinpano";
+"detail_date" = "Päivämäärä";
+"detail_type" = "Tyyppi";
+"detail_category" = "Kategoria";
+"detail_no_note" = "Ei muistiinpanoa";
+
+/* Edit */
+"edit_amount_placeholder" = "Syötä summa";
+"edit_select_category" = "Valitse kategoria";
+"edit_category_title" = "Muokkaa kategoriaa";
+"add_category_title" = "Lisää kategoria";
+"edit_category_name" = "Nimi";
+"edit_category_name_placeholder" = "Syötä kategorian nimi";
+"edit_category_icon" = "Kuvake";
+"edit_category_color" = "Väri";
+"category_custom_label" = "Mukautettu";
+"category_builtin_label" = "Sisäänrakennettu";
+
+/* Tags */
+"tag_selector_title" = "Tunnisteet";
+"tag_selector_done" = "Valmis";
+"tag_name_placeholder" = "Syötä tunnisteen nimi";
+"tag_create_button" = "Luo";
+"tag_add_hint" = "Lisää tunnisteita";
+"detail_tags" = "Tunnisteet";
+"tag_count %lld" = "%lld merkintää";
+"tag_total_expense" = "Menot";
+"tag_total_income" = "Tulot";
+"tags_empty_title" = "Ei tunnisteita vielä";
+"tags_empty_desc" = "Ryhmittele tapahtumat tunnisteilla helppoa seurantaa varten";
+"tags_create_first" = "Luo ensimmäinen tunniste";
+"tags_create_title" = "Uusi tunniste";
+"tags_edit_title" = "Muokkaa tunnistetta";
+"tags_save" = "Tallenna";
+"tags_name_label" = "Nimi";
+"tags_color_label" = "Väri";
+"tags_preview" = "Esikatselu";
+"tags_delete_title" = "Poista tunniste";
+"tags_delete_message %@" = "Poista \"%@\"? Liitetyt tapahtumat eivät muutu.";
+"tags_guide_title" = "Järjestä tunnisteilla";
+"tags_guide_subtitle" = "Tunnisteet auttavat seuraamaan menoja useasta näkökulmasta";
+"tags_guide_what_title" = "Tunnisteet vs kategoriat";
+"tags_guide_what_desc" = "Kategoriat ovat kiinteitä (esim. Ruoka, Liikenne), yksi per tapahtuma. Tunnisteet ovat joustavia — lisää useita mihin tahansa tapahtumaan";
+"tags_guide_example_title" = "Esimerkkejä";
+"tags_guide_example_desc" = "Matka, Korvaus, Jaetut kulut, Projekti A… yhdistele vapaasti tarpeen mukaan";
+"tags_guide_how_title" = "Miten käytän?";
+"tags_guide_how_desc" = "Napauta tunnistepainiketta kirjatessasi tapahtumaa tai luo tunnisteita tässä ensin";
+"tag_tip_message" = "Napauta tästä lisätäksesi tunnisteita 🏷️";
+
+/* Reminders */
+"reminders_title" = "Muistutukset";
+"reminders_empty_title" = "Ei muistutuksia vielä";
+"reminders_empty_desc" = "Aseta toistuvia muistutuksia, ettet unohda vuokraa tai laskuja";
+"reminders_create_first" = "Luo ensimmäinen muistutus";
+"reminders_new_title" = "Uusi muistutus";
+"reminders_edit_title" = "Muokkaa muistutusta";
+"reminders_create" = "Luo muistutus";
+"reminders_delete_title" = "Poista muistutus";
+"reminders_delete_message %@" = "Poista \"%@\"?";
+"reminders_field_title" = "Muistutuksen nimi";
+"reminders_title_placeholder" = "esim. Maksa vuokra";
+"reminders_field_amount" = "Summa";
+"reminders_field_category" = "Kategoria (valinnainen)";
+"reminders_field_frequency" = "Toisto";
+"reminders_field_time" = "Muistutusaika";
+"reminders_field_note" = "Muistiinpano (valinnainen)";
+"reminders_freq_daily" = "Päivittäin";
+"reminders_freq_weekly" = "Viikoittain";
+"reminders_freq_monthly" = "Kuukausittain";
+"reminders_freq_weekly_day %@" = "Joka %@";
+"reminders_freq_monthly_day %lld" = "Päivä %lld";
+"reminders_example_rent" = "Maksa vuokra";
+"reminders_example_mortgage" = "Asuntolaina";
+"reminders_example_phone" = "Puhelinlasku";
+"reminder_action_record" = "Kirjaa";
+"reminder_notification_body %@" = "Aika kirjata: %@\nPidä painettuna nopeaan kirjaukseen";
+
+/* Actions */
+"action_edit" = "Muokkaa";
+"action_cancel" = "Peruuta";
+"action_delete" = "Poista";
+"action_delete_record" = "Poista merkintä";
+
+/* Delete Dialog */
+"delete_confirm_title" = "Poista tämä merkintä?";
+"delete_confirm_message" = "Tätä ei voi kumota";
+"delete_category_title" = "Poista tämä kategoria?";
+"delete_category_message" = "Se ei enää näy kirjaussivulla, mutta olemassa olevat merkinnät eivät muutu";
+
+/* Categories - Expense */
+"category_food" = "Ruoka";
+"category_shopping" = "Ostokset";
+"category_transport" = "Liikenne";
+"category_housing" = "Asuminen";
+"category_communication" = "Puhelin";
+"category_entertainment" = "Viihde";
+"category_clothing" = "Vaatteet";
+"category_medical" = "Terveys";
+"category_education" = "Koulutus";
+"category_travel" = "Matka";
+"category_children" = "Lapset";
+
+/* Categories - Income */
+"category_salary" = "Palkka";
+"category_freelance" = "Freelance";
+"category_investment" = "Sijoitus";
+"category_gift" = "Lahja";
+"category_other_income" = "Muu";
+
+/* Errors */
+"error_title" = "Hups";
+"error_ok" = "OK";
+"error_save_failed" = "Tallennus epäonnistui. Yritä myöhemmin uudelleen";
+"error_load_failed" = "Tietojen lataus epäonnistui. Yritä myöhemmin uudelleen";
+"error_delete_failed" = "Poisto epäonnistui. Yritä myöhemmin uudelleen";
+"error_invalid_amount" = "Syötä kelvollinen summa";
+"error_checksum_mismatch" = "Tämä tiedosto ei vaikuta ColorFuLedger-varmuuskopiolta. Kokeile toista tiedostoa";
+"error_storage_insufficient" = "Tallennustila ei riitä. Vapauta tilaa ja yritä uudelleen";
+
+/* Search */
+"search_title" = "Haku";
+"search_placeholder" = "Hae muistiinpanoista tai kategorioista...";
+"search_hint" = "Syötä hakusanoja tai valitse suodattimia";
+"search_no_results" = "Ei vastaavia merkintöjä";
+"search_date_label" = "Päivämäärä";
+"search_date_selected" = "Päivämäärä valittu";
+"search_date_today" = "Tänään";
+"search_date_this_week" = "Tämä viikko";
+"search_date_this_month" = "Tämä kuukausi";
+"search_date_clear" = "Tyhjennä päivämäärä";
+"search_category_label" = "Kategoria";
+"search_category_all" = "Kaikki kategoriat";
+"search_clear_all" = "Tyhjennä suodattimet";
+
+/* Accessibility */
+"a11y_add_transaction" = "Lisää tapahtuma";
+"a11y_close" = "Sulje";
+"a11y_expense_tab" = "Meno";
+"a11y_income_tab" = "Tulo";
+"a11y_add_note" = "Lisää muistiinpano";
+"a11y_note_input" = "Muistiinpanokenttä";
+"a11y_save_transaction" = "Tallenna tapahtuma";
+"a11y_edit_amount" = "Muokkaa summaa";
+"a11y_delete_record" = "Poista merkintä";
+"a11y_decimal_point" = "Desimaalipiste";
+"a11y_backspace" = "Poista";
+"a11y_tag_button" = "Tunniste";
+"a11y_digit_0" = "0";
+"a11y_digit_1" = "1";
+"a11y_digit_2" = "2";
+"a11y_digit_3" = "3";
+"a11y_digit_4" = "4";
+"a11y_digit_5" = "5";
+"a11y_digit_6" = "6";
+"a11y_digit_7" = "7";
+"a11y_digit_8" = "8";
+"a11y_digit_9" = "9";
+"a11y_category %@" = "%@ kategoria, painike";
+"a11y_category_selected %@" = "Valittu, %@ kategoria";
+"a11y_summary %@ %@ %@" = "Tämän kuun menot %@, tulot %@, saldo %@";
+
+/* Theme */
+"settings_theme" = "Teema";
+"theme_coral" = "Koralli";
+"theme_forest" = "Metsä";
+"theme_ocean" = "Valtameri";
+"theme_lavender" = "Laventeli";
+"theme_charcoal" = "Hiili";
+"theme_kids" = "Lastenmaailma";
+"theme_student" = "Opiskelijasininen";
+"theme_executive" = "Johtajanharmaa";
+"theme_homemaker" = "Kodikas beige";
+"theme_youngpro" = "Energinen oranssi";
+"theme_sakura" = "Sakura-pinkki";
+"theme_zen" = "Zen-vihreä";
+"theme_moonlight" = "Kuutamohopea";
+"theme_autumn" = "Syksy";
+"theme_bold" = "Rohkea punainen";
+"theme_liquidglass" = "Nestelasi";
+
+/* Contact */
+"settings_contact_section" = "Yhteystiedot";
+"settings_contact_us" = "Ota yhteyttä";
+
+/* Support */
+"settings_support_section" = "Tue meitä";
+"settings_rate_app" = "Arvostele ColorFuLedger";
+
+"settings_face_id" = "Face ID -avaus";
+"settings_touch_id" = "Touch ID -avaus";
+"biometric_reason" = "Avaa ColorFuLedger";
+"biometric_enable_reason" = "Vahvista henkilöllisyys ottaaksesi biometrisen avauksen käyttöön";
+
+/* Budget */
+"budget_title" = "Budjetti";
+"budget_overall_section" = "Kuukausibudjetti";
+"budget_category_section" = "Kategoriabudjetit";
+"budget_set_overall" = "Aseta kuukausibudjetti";
+"budget_set_overall_message" = "Aseta kuukausittainen menorajasi";
+"budget_monthly_limit" = "Kuukausiraja";
+"budget_amount_placeholder" = "esim. 5000";
+"budget_amount_section" = "Budjettisumma";
+"budget_save" = "Tallenna";
+"budget_add_category" = "Lisää kategoriabudjetti";
+"budget_select_category" = "Valitse kategoria";
+"budget_category_empty" = "Ei kategoriabudjetteja. Voit asettaa rajan jokaiselle kategorialle";
+"budget_all_categories_set" = "Kaikilla kategorioilla on budjetti";
+"budget_delete_title" = "Poista budjetti";
+"budget_delete_overall_message" = "Poista kuukausibudjetti?";
+"budget_delete_category_message" = "Poista tämä kategoriabudjetti?";
+"budget_spent" = "Käytetty";
+"budget_remaining %@" = "%@ jäljellä";
+"budget_over %@" = "Ylitetty %@";
+"budget_progress_title" = "Budjetti";
+"budget_spent_of %@ %@" = "%@ / %@";
+
+/* Templates */
+"template_title" = "Tapahtumamallit";
+"template_empty" = "Ei malleja vielä";
+"template_empty_hint" = "Luo malleja usein käytetyille tapahtumille nopeampaa kirjausta varten";
+"template_list_section" = "Omat mallit";
+"template_add" = "Lisää malli";
+"template_name_section" = "Mallin nimi";
+"template_name_placeholder" = "esim. Aamukahvi";
+"template_type_section" = "Tyyppi";
+"template_type" = "Tapahtumatyyppi";
+"template_amount_section" = "Summa";
+"template_note_section" = "Muistiinpano (valinnainen)";
+"template_no_categories" = "Ei kategorioita saatavilla";
+"template_delete_title" = "Poista malli";
+"template_delete_message" = "Haluatko varmasti poistaa tämän mallin?";
+
+// MARK: - Annual Report
+"annual_title" = "Vuosiraportti";
+"annual_empty" = "Ei tapahtumatietoja tälle vuodelle";
+"annual_total_expense" = "Menot yhteensä";
+"annual_total_income" = "Tulot yhteensä";
+"annual_net" = "Nettosaldo";
+"annual_transactions" = "Tapahtumat";
+"annual_monthly_trend" = "Kuukausittainen trendi";
+"annual_category_breakdown" = "Menot kategorioittain";
+"annual_insights" = "Näkemykset";
+"annual_avg_expense" = "Keskim. kuukausimenot";
+"annual_avg_income" = "Keskim. kuukausitulot";
+"annual_highest_month" = "Suurimmat menot";
+"annual_lowest_month" = "Pienimmät menot";
+
+// MARK: - Achievements
+"achievement_title" = "Saavutukset";
+"achievement_progress" = "Saavutusten edistyminen";
+"achievement_congrats" = "Onnittelut!";
+"achievement_cat_recording" = "Kirjaus";
+"achievement_cat_streak" = "Putki";
+"achievement_cat_budget" = "Budjetti";
+"achievement_cat_exploration" = "Tutkimus";
+"achievement_first_record" = "Ensimmäinen askel";
+"achievement_first_record_desc" = "Kirjaa ensimmäinen tapahtumasi";
+"achievement_records_10" = "Hyvä alku";
+"achievement_records_10_desc" = "Kirjaa 10 tapahtumaa";
+"achievement_records_50" = "Kirjanpitäjä";
+"achievement_records_50_desc" = "Kirjaa 50 tapahtumaa";
+"achievement_records_100" = "Sadanpäällikkö";
+"achievement_records_100_desc" = "Kirjaa 100 tapahtumaa";
+"achievement_records_500" = "Asiantuntija";
+"achievement_records_500_desc" = "Kirjaa 500 tapahtumaa";
+"achievement_records_1000" = "Mestari";
+"achievement_records_1000_desc" = "Kirjaa 1000 tapahtumaa";
+"achievement_streak_3" = "3 päivän putki";
+"achievement_streak_3_desc" = "Kirjaa tapahtumia 3 päivää peräkkäin";
+"achievement_streak_7" = "Viikkosoturi";
+"achievement_streak_7_desc" = "Kirjaa tapahtumia 7 päivää peräkkäin";
+"achievement_streak_30" = "Kuukausimestari";
+"achievement_streak_30_desc" = "Kirjaa tapahtumia 30 päivää peräkkäin";
+"achievement_streak_100" = "Pysäyttämätön";
+"achievement_streak_100_desc" = "Kirjaa tapahtumia 100 päivää peräkkäin";
+"achievement_streak_365" = "Legendaarinen";
+"achievement_streak_365_desc" = "Kirjaa tapahtumia 365 päivää peräkkäin";
+"achievement_budget_set" = "Budjettisuunnittelija";
+"achievement_budget_set_desc" = "Aseta ensimmäinen budjettisi";
+"achievement_budget_under_3" = "Budjetin vartija";
+"achievement_budget_under_3_desc" = "Pysy budjetissa 3 kuukautta";
+"achievement_first_tag" = "Tunnistemestari";
+"achievement_first_tag_desc" = "Luo ensimmäinen tunnisteesi";
+"achievement_first_export" = "Tietojen vartija";
+"achievement_first_export_desc" = "Vie tiedot ensimmäistä kertaa";
+"achievement_first_template" = "Tehokkuusammattilainen";
+"achievement_first_template_desc" = "Luo ensimmäinen mallisi";

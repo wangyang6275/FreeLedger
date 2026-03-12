@@ -1,0 +1,409 @@
+/* Tabs */
+"tab_transactions" = "Transactions";
+"tab_reports" = "Reports";
+"tab_tags" = "Tags";
+"tab_settings" = "Settings";
+
+/* Home */
+"home_empty_state" = "No records yet. Tap + to start tracking";
+
+/* Summary Card */
+"summary_expense_label" = "This Month";
+"summary_income_label" = "Income";
+"summary_balance_label" = "Balance";
+
+/* Date Groups */
+"date_today" = "Today";
+"date_yesterday" = "Yesterday";
+
+/* Report */
+"report_empty_state" = "Record a few transactions to see your spending reports";
+"report_expense_label" = "Expense";
+"report_income_label" = "Income";
+"report_balance_label" = "Balance";
+"report_total_expense" = "Total Expense";
+"report_trend_title" = "6-Month Trend";
+"report_tag_chart_title" = "Tag Expenses";
+
+/* Tags */
+"tags_empty_state" = "No tags yet. You can add tags when recording";
+
+/* Settings */
+"settings_general" = "General";
+"settings_currency" = "Currency";
+"settings_language" = "Language";
+"settings_category_management" = "Category Management";
+"settings_backup_section" = "Backup & Restore";
+"settings_export_backup" = "Export Backup";
+"backup_success_title" = "Backup Complete!";
+"backup_success_message %lld" = "%lld records saved to your chosen location";
+"settings_import_restore" = "Import Restore";
+"restore_warning_title" = "Import Backup";
+"restore_warning_message" = "Importing a backup will overwrite all existing data. Are you sure?";
+"restore_warning_confirm" = "Confirm Import";
+"restore_success_title" = "Restore Complete!";
+"restore_success_message %lld" = "Recovered %lld records, all accounted for ✓";
+"backup_reminder_title" = "Time to Backup";
+"backup_reminder_first %lld" = "You've recorded %lld transactions! Consider backing up your data, just in case";
+"backup_reminder_periodic" = "It's been over 30 days since your last backup. Consider backing up again";
+"backup_reminder_go" = "Backup Now";
+"backup_reminder_later" = "Later";
+"settings_export_csv" = "Export CSV";
+"csv_export_title" = "Export CSV";
+"csv_select_fields" = "Select Export Fields";
+"csv_export_button" = "Export";
+"csv_field_date" = "Date";
+"csv_field_amount" = "Amount";
+"csv_field_type" = "Type";
+"csv_field_category" = "Category";
+"csv_field_note" = "Note";
+"csv_field_tags" = "Tags";
+"settings_export_pdf" = "Export PDF Report";
+"pdf_export_title" = "Export PDF";
+"pdf_select_range" = "Select Time Range";
+"pdf_range_current_month" = "Current Month";
+"pdf_range_month" = "Specific Month";
+"pdf_range_year" = "Specific Year";
+"pdf_range_all" = "All Records";
+"pdf_year" = "Year";
+"pdf_month" = "Month";
+"pdf_export_button" = "Export PDF";
+"pdf_report_title" = "Financial Report";
+"pdf_generated" = "Generated on";
+"pdf_summary" = "Summary";
+"pdf_total_income" = "Total Income";
+"pdf_total_expense" = "Total Expense";
+"pdf_balance" = "Balance";
+"pdf_transaction_count" = "Transactions";
+"pdf_expense_breakdown" = "Expense by Category";
+"pdf_income_breakdown" = "Income by Category";
+"pdf_transactions" = "Transaction Details";
+"pdf_col_date" = "Date";
+"pdf_col_category" = "Category";
+"pdf_col_note" = "Note";
+"pdf_col_amount" = "Amount";
+"settings_password_section" = "Security";
+"settings_password_lock" = "Password Lock";
+"password_set_title" = "Set Password";
+"password_verify_title" = "Verify Password";
+"password_enter_prompt" = "Enter a 4-digit password";
+"password_confirm_prompt" = "Enter again to confirm";
+"password_mismatch" = "Passwords don't match, please try again";
+"password_wrong" = "Wrong password, please try again";
+"password_enter_to_disable" = "Enter current password to disable";
+"password_set_success_title" = "Password Lock Enabled";
+"password_set_success_message" = "Your financial data is now protected by password";
+"lock_enter_password" = "Enter password to unlock";
+"settings_change_password" = "Change Password";
+"password_enter_current" = "Enter current password";
+"onboarding_step1_title" = "Record in 3 Seconds";
+"onboarding_step1_desc" = "Quickly record every transaction\nSimple, intuitive, zero learning curve";
+"onboarding_step2_title" = "Choose Your Currency";
+"onboarding_step3_title" = "Tap + to Start";
+"onboarding_step3_desc" = "Tap the + button at the bottom anytime\nto make your first record";
+"onboarding_next" = "Next";
+"onboarding_start" = "Get Started";
+"onboarding_skip" = "Skip";
+"settings_data_section" = "Data";
+"settings_about_section" = "About";
+"settings_replay_onboarding" = "Replay Onboarding";
+"settings_version" = "Version";
+
+/* Record */
+"record_title" = "New Record";
+"record_expense" = "Expense";
+"record_income" = "Income";
+"record_save" = "Save";
+"record_add_note" = "Tap to add a note...";
+"record_note_placeholder" = "Add a note";
+
+/* Detail */
+"detail_title" = "Details";
+"detail_note" = "Note";
+"detail_date" = "Date";
+"detail_type" = "Type";
+"detail_category" = "Category";
+"detail_no_note" = "No note";
+
+/* Edit */
+"edit_amount_placeholder" = "Enter amount";
+"edit_select_category" = "Select Category";
+"edit_category_title" = "Edit Category";
+"add_category_title" = "Add Category";
+"edit_category_name" = "Name";
+"edit_category_name_placeholder" = "Enter category name";
+"edit_category_icon" = "Icon";
+"edit_category_color" = "Color";
+"category_custom_label" = "Custom";
+"category_builtin_label" = "Built-in";
+
+/* Tags */
+"tag_selector_title" = "Tags";
+"tag_selector_done" = "Done";
+"tag_name_placeholder" = "Enter tag name";
+"tag_create_button" = "Create";
+"tag_add_hint" = "Add tags";
+"detail_tags" = "Tags";
+"tag_count %lld" = "%lld records";
+"tag_total_expense" = "Expense";
+"tag_total_income" = "Income";
+"tags_empty_title" = "No Tags Yet";
+"tags_empty_desc" = "Group transactions with tags for easy tracking and review";
+"tags_create_first" = "Create First Tag";
+"tags_create_title" = "New Tag";
+"tags_edit_title" = "Edit Tag";
+"tags_save" = "Save";
+"tags_name_label" = "Name";
+"tags_color_label" = "Color";
+"tags_preview" = "Preview";
+"tags_delete_title" = "Delete Tag";
+"tags_delete_message %@" = "Delete \"%@\"? Associated transactions won't be affected.";
+"tags_guide_title" = "Organize with Tags";
+"tags_guide_subtitle" = "Tags help you track spending from multiple angles";
+"tags_guide_what_title" = "Tags vs Categories";
+"tags_guide_what_desc" = "Categories are fixed (e.g. Food, Transport), one per transaction. Tags are flexible — add multiple to any transaction";
+"tags_guide_example_title" = "Use Cases";
+"tags_guide_example_desc" = "Travel, Reimbursement, Shared expenses, Project A… combine freely as you need";
+"tags_guide_how_title" = "How to Use?";
+"tags_guide_how_desc" = "Tap the tag button (top-right) when recording a transaction, or create tags here first";
+"tag_tip_message" = "Tap here to add tags 🏷️";
+
+/* Reminders */
+"reminders_title" = "Reminders";
+"reminders_empty_title" = "No Reminders Yet";
+"reminders_empty_desc" = "Set up recurring reminders so you never forget rent, mortgage, or bills";
+"reminders_create_first" = "Create First Reminder";
+"reminders_new_title" = "New Reminder";
+"reminders_edit_title" = "Edit Reminder";
+"reminders_create" = "Create Reminder";
+"reminders_delete_title" = "Delete Reminder";
+"reminders_delete_message %@" = "Delete \"%@\"?";
+"reminders_field_title" = "Reminder Name";
+"reminders_title_placeholder" = "e.g. Pay rent, Mortgage";
+"reminders_field_amount" = "Amount";
+"reminders_field_category" = "Category (optional)";
+"reminders_field_frequency" = "Repeat";
+"reminders_field_time" = "Reminder Time";
+"reminders_field_note" = "Note (optional)";
+"reminders_freq_daily" = "Daily";
+"reminders_freq_weekly" = "Weekly";
+"reminders_freq_monthly" = "Monthly";
+"reminders_freq_weekly_day %@" = "Every %@";
+"reminders_freq_monthly_day %lld" = "Day %lld";
+"reminders_example_rent" = "Pay Rent";
+"reminders_example_mortgage" = "Mortgage";
+"reminders_example_phone" = "Phone Bill";
+"reminder_action_record" = "Record";
+"reminder_notification_body %@" = "Time to record: %@\nLong press to quickly record";
+
+/* Actions */
+"action_edit" = "Edit";
+"action_cancel" = "Cancel";
+"action_delete" = "Delete";
+"action_delete_record" = "Delete Record";
+
+/* Delete Dialog */
+"delete_confirm_title" = "Delete this record?";
+"delete_confirm_message" = "This can't be undone";
+"delete_category_title" = "Delete this category?";
+"delete_category_message" = "It won't appear in recording page anymore, but existing records are not affected";
+
+/* Categories - Expense */
+"category_food" = "Food";
+"category_shopping" = "Shopping";
+"category_transport" = "Transport";
+"category_housing" = "Housing";
+"category_communication" = "Phone";
+"category_entertainment" = "Fun";
+"category_clothing" = "Clothing";
+"category_medical" = "Medical";
+"category_education" = "Education";
+"category_travel" = "Travel";
+"category_children" = "Kids";
+
+/* Categories - Income */
+"category_salary" = "Salary";
+"category_freelance" = "Freelance";
+"category_investment" = "Investment";
+"category_gift" = "Gift";
+"category_other_income" = "Other";
+
+/* Errors */
+"error_title" = "Oops";
+"error_ok" = "OK";
+"error_save_failed" = "Save failed. Please try again later";
+"error_load_failed" = "Failed to load data. Please try again later";
+"error_delete_failed" = "Delete failed. Please try again later";
+"error_invalid_amount" = "Please enter a valid amount";
+"error_checksum_mismatch" = "This file doesn't seem to be a ColorFuLedger backup. Please try another file";
+"error_storage_insufficient" = "Not enough storage space. Please free up some space and try again";
+
+/* Search */
+"search_title" = "Search";
+"search_placeholder" = "Search notes or categories...";
+"search_hint" = "Enter keywords or select filters";
+"search_no_results" = "No matching records found";
+"search_date_label" = "Date";
+"search_date_selected" = "Date selected";
+"search_date_today" = "Today";
+"search_date_this_week" = "This Week";
+"search_date_this_month" = "This Month";
+"search_date_clear" = "Clear Date";
+"search_category_label" = "Category";
+"search_category_all" = "All Categories";
+"search_clear_all" = "Clear Filters";
+"search_result_count" = "%d results";
+
+/* Accessibility */
+"a11y_add_transaction" = "Add transaction";
+"a11y_close" = "Close";
+"a11y_expense_tab" = "Expense";
+"a11y_income_tab" = "Income";
+"a11y_add_note" = "Add note";
+"a11y_note_input" = "Note input";
+"a11y_save_transaction" = "Save transaction";
+"a11y_edit_amount" = "Edit amount";
+"a11y_delete_record" = "Delete record";
+"a11y_decimal_point" = "Decimal point";
+"a11y_backspace" = "Backspace";
+"a11y_tag_button" = "Tag";
+"a11y_digit_0" = "0";
+"a11y_digit_1" = "1";
+"a11y_digit_2" = "2";
+"a11y_digit_3" = "3";
+"a11y_digit_4" = "4";
+"a11y_digit_5" = "5";
+"a11y_digit_6" = "6";
+"a11y_digit_7" = "7";
+"a11y_digit_8" = "8";
+"a11y_digit_9" = "9";
+"a11y_category %@" = "%@ category, button";
+"a11y_category_selected %@" = "Selected, %@ category";
+"a11y_summary %@ %@ %@" = "This month expense %@, income %@, balance %@";
+
+/* Theme */
+"settings_theme" = "Theme";
+"theme_coral" = "Coral";
+"theme_forest" = "Forest";
+"theme_ocean" = "Ocean";
+"theme_lavender" = "Lavender";
+"theme_charcoal" = "Charcoal";
+"theme_kids" = "Kids Wonderland";
+"theme_student" = "Student Blue";
+"theme_executive" = "Executive Gray";
+"theme_homemaker" = "Cozy Beige";
+"theme_youngpro" = "Energetic Orange";
+"theme_sakura" = "Sakura Pink";
+"theme_zen" = "Zen Green";
+"theme_moonlight" = "Moonlight Silver";
+"theme_autumn" = "Autumn";
+"theme_bold" = "Bold Red";
+"theme_liquidglass" = "Liquid Glass";
+
+/* Contact */
+"settings_contact_section" = "Contact";
+"settings_contact_us" = "Contact Us";
+
+/* Support */
+"settings_support_section" = "Support Us";
+"settings_rate_app" = "Rate ColorFuLedger";
+
+"settings_face_id" = "Face ID Unlock";
+"settings_touch_id" = "Touch ID Unlock";
+"biometric_reason" = "Unlock ColorFuLedger";
+"biometric_enable_reason" = "Verify identity to enable biometric unlock";
+
+/* Budget */
+"budget_title" = "Budget";
+"budget_overall_section" = "Monthly Budget";
+"budget_category_section" = "Category Budgets";
+"budget_set_overall" = "Set Monthly Budget";
+"budget_set_overall_message" = "Set your monthly spending limit";
+"budget_monthly_limit" = "Monthly Limit";
+"budget_amount_placeholder" = "e.g. 5000";
+"budget_amount_section" = "Budget Amount";
+"budget_save" = "Save";
+"budget_add_category" = "Add Category Budget";
+"budget_select_category" = "Select Category";
+"budget_category_empty" = "No category budgets set. You can set a spending limit for each category";
+"budget_all_categories_set" = "All categories have budgets set";
+"budget_delete_title" = "Delete Budget";
+"budget_delete_overall_message" = "Delete the monthly budget?";
+"budget_delete_category_message" = "Delete this category budget?";
+"budget_spent" = "Spent";
+"budget_remaining %@" = "%@ left";
+"budget_over %@" = "Over by %@";
+"budget_progress_title" = "Budget";
+"budget_spent_of %@ %@" = "%@ of %@";
+
+/* Templates */
+"template_title" = "Transaction Templates";
+"template_empty" = "No templates yet";
+"template_empty_hint" = "Create templates for frequently used transactions to record faster";
+"template_list_section" = "My Templates";
+"template_add" = "Add Template";
+"template_name_section" = "Template Name";
+"template_name_placeholder" = "e.g. Morning Coffee";
+"template_type_section" = "Type";
+"template_type" = "Transaction Type";
+"template_amount_section" = "Amount";
+"template_note_section" = "Note (Optional)";
+"template_no_categories" = "No categories available";
+"template_delete_title" = "Delete Template";
+"template_delete_message" = "Are you sure you want to delete this template?";
+
+// MARK: - Annual Report
+"annual_title" = "Annual Report";
+"annual_empty" = "No transaction data for this year";
+"annual_total_expense" = "Total Expense";
+"annual_total_income" = "Total Income";
+"annual_net" = "Net Balance";
+"annual_transactions" = "Transactions";
+"annual_monthly_trend" = "Monthly Trend";
+"annual_category_breakdown" = "Expense by Category";
+"annual_insights" = "Insights";
+"annual_avg_expense" = "Avg Monthly Expense";
+"annual_avg_income" = "Avg Monthly Income";
+"annual_highest_month" = "Highest Expense";
+"annual_lowest_month" = "Lowest Expense";
+
+// MARK: - Achievements
+"achievement_title" = "Achievements";
+"achievement_progress" = "Achievement Progress";
+"achievement_congrats" = "Congratulations!";
+"achievement_cat_recording" = "Recording";
+"achievement_cat_streak" = "Streak";
+"achievement_cat_budget" = "Budget";
+"achievement_cat_exploration" = "Exploration";
+"achievement_first_record" = "First Step";
+"achievement_first_record_desc" = "Record your first transaction";
+"achievement_records_10" = "Getting Started";
+"achievement_records_10_desc" = "Record 10 transactions";
+"achievement_records_50" = "Bookkeeper";
+"achievement_records_50_desc" = "Record 50 transactions";
+"achievement_records_100" = "Centurion";
+"achievement_records_100_desc" = "Record 100 transactions";
+"achievement_records_500" = "Expert";
+"achievement_records_500_desc" = "Record 500 transactions";
+"achievement_records_1000" = "Master";
+"achievement_records_1000_desc" = "Record 1000 transactions";
+"achievement_streak_3" = "3-Day Streak";
+"achievement_streak_3_desc" = "Record transactions 3 days in a row";
+"achievement_streak_7" = "Weekly Warrior";
+"achievement_streak_7_desc" = "Record transactions 7 days in a row";
+"achievement_streak_30" = "Monthly Champion";
+"achievement_streak_30_desc" = "Record transactions 30 days in a row";
+"achievement_streak_100" = "Unstoppable";
+"achievement_streak_100_desc" = "Record transactions 100 days in a row";
+"achievement_streak_365" = "Legendary";
+"achievement_streak_365_desc" = "Record transactions 365 days in a row";
+"achievement_budget_set" = "Budget Planner";
+"achievement_budget_set_desc" = "Set your first budget";
+"achievement_budget_under_3" = "Budget Keeper";
+"achievement_budget_under_3_desc" = "Stay under budget for 3 months";
+"achievement_first_tag" = "Tag Master";
+"achievement_first_tag_desc" = "Create your first tag";
+"achievement_first_export" = "Data Guardian";
+"achievement_first_export_desc" = "Export data for the first time";
+"achievement_first_template" = "Efficiency Pro";
+"achievement_first_template_desc" = "Create your first template";

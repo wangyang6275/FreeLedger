@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FreeLedger</string>
+    <string name="app_name">ColorFuLedger</string>
 
     <!-- Tabs -->
     <string name="tab_transactions">明细</string>

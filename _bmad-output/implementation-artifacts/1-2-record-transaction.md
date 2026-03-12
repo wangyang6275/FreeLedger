@@ -224,11 +224,11 @@ try migrator.migrate(dbQueue)
 - `ui/components/FloatingAddButton.swift` — FAB 组件
 - `ContentView.swift` — TabView + FAB（需修改添加导航）
 - `i18n/Localizable.strings` — 已有 tab 和空状态文本
-- `FreeLedgerApp.swift` — App 入口
+- `ColorFuLedgerApp.swift` — App 入口
 
 **已有的 Xcode 项目配置：**
 - `ios/project.yml` — xcodegen 配置，已包含 GRDB SPM 依赖
-- `ios/FreeLedger.xcodeproj` — 已生成，编译通过
+- `ios/ColorFuLedger.xcodeproj` — 已生成，编译通过
 
 **注意事项：**
 - 新增文件后需运行 `xcodegen generate` 重新生成 .xcodeproj
@@ -280,26 +280,26 @@ Claude (Cascade)
 
 ### File List
 
-- ios/FreeLedger/data/model/Transaction.swift (new)
-- ios/FreeLedger/data/model/Category.swift (new)
-- ios/FreeLedger/data/model/Setting.swift (new)
-- ios/FreeLedger/data/database/AppDatabase.swift (new)
-- ios/FreeLedger/data/database/CategoryDAO.swift (new)
-- ios/FreeLedger/data/database/TransactionDAO.swift (new)
-- ios/FreeLedger/data/database/SettingsDAO.swift (new)
-- ios/FreeLedger/data/repository/CategoryRepository.swift (new)
-- ios/FreeLedger/data/repository/TransactionRepository.swift (new)
-- ios/FreeLedger/data/repository/SettingsRepository.swift (new)
-- ios/FreeLedger/util/AmountFormatter.swift (new)
-- ios/FreeLedger/util/AppError.swift (new)
-- ios/FreeLedger/ui/components/AmountKeypad.swift (new)
-- ios/FreeLedger/ui/components/CategoryGrid.swift (new)
-- ios/FreeLedger/ui/record/RecordViewModel.swift (new)
-- ios/FreeLedger/ui/record/RecordView.swift (new)
-- ios/FreeLedger/data/categories-expense.json (copied from shared)
-- ios/FreeLedger/data/categories-income.json (copied from shared)
-- ios/FreeLedger/ContentView.swift (modified — added sheet navigation)
-- ios/FreeLedger/FreeLedgerApp.swift (modified — added seed data init)
-- ios/FreeLedger/i18n/Localizable.strings (modified — added 50+ strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — added 50+ strings)
+- ios/ColorFuLedger/data/model/Transaction.swift (new)
+- ios/ColorFuLedger/data/model/Category.swift (new)
+- ios/ColorFuLedger/data/model/Setting.swift (new)
+- ios/ColorFuLedger/data/database/AppDatabase.swift (new)
+- ios/ColorFuLedger/data/database/CategoryDAO.swift (new)
+- ios/ColorFuLedger/data/database/TransactionDAO.swift (new)
+- ios/ColorFuLedger/data/database/SettingsDAO.swift (new)
+- ios/ColorFuLedger/data/repository/CategoryRepository.swift (new)
+- ios/ColorFuLedger/data/repository/TransactionRepository.swift (new)
+- ios/ColorFuLedger/data/repository/SettingsRepository.swift (new)
+- ios/ColorFuLedger/util/AmountFormatter.swift (new)
+- ios/ColorFuLedger/util/AppError.swift (new)
+- ios/ColorFuLedger/ui/components/AmountKeypad.swift (new)
+- ios/ColorFuLedger/ui/components/CategoryGrid.swift (new)
+- ios/ColorFuLedger/ui/record/RecordViewModel.swift (new)
+- ios/ColorFuLedger/ui/record/RecordView.swift (new)
+- ios/ColorFuLedger/data/categories-expense.json (copied from shared)
+- ios/ColorFuLedger/data/categories-income.json (copied from shared)
+- ios/ColorFuLedger/ContentView.swift (modified — added sheet navigation)
+- ios/ColorFuLedger/ColorFuLedgerApp.swift (modified — added seed data init)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — added 50+ strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — added 50+ strings)
 - ios/project.yml (modified — added JSON resources)

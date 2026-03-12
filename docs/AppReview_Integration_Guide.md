@@ -1,8 +1,8 @@
-# FreeLedger 应用评分功能集成指南
+# ColorFuLedger 应用评分功能集成指南
 
 ## 🎯 功能说明
 
-已为 FreeLedger 创建智能评分引导系统，在用户完成以下正向操作后自动触发：
+已为 ColorFuLedger 创建智能评分引导系统，在用户完成以下正向操作后自动触发：
 
 1. ✅ 完成 5 笔交易记录
 2. ✅ 连续使用 7 天
@@ -12,18 +12,18 @@
 ## 📦 已创建的文件
 
 1. **AppReviewService.swift** - 核心服务类
-   - 路径: `ios/FreeLedger/data/service/AppReviewService.swift`
+   - 路径: `ios/ColorFuLedger/data/service/AppReviewService.swift`
    - 功能: 跟踪用户行为，智能触发评分请求
 
 2. **AppReviewService_Usage.md** - 使用文档
-   - 路径: `ios/FreeLedger/data/service/AppReviewService_Usage.md`
+   - 路径: `ios/ColorFuLedger/data/service/AppReviewService_Usage.md`
    - 内容: 详细的使用说明和最佳实践
 
 ## 🔧 需要集成的位置
 
 ### 1. RecordViewModel.swift - 记录交易创建
 
-**文件**: `ios/FreeLedger/ui/record/RecordViewModel.swift`
+**文件**: `ios/ColorFuLedger/ui/record/RecordViewModel.swift`
 
 **修改位置**: 第 68-87 行的 `saveTransaction` 方法
 
@@ -82,7 +82,7 @@ func saveTransaction(categoryId: String, tagIds: [String] = []) {
 
 ### 2. CSVExportView.swift - 记录 CSV 导出
 
-**文件**: `ios/FreeLedger/ui/settings/CSVExportView.swift`
+**文件**: `ios/ColorFuLedger/ui/settings/CSVExportView.swift`
 
 需要在 CSV 导出成功后添加记录。请找到导出成功的位置（通常在 `exportCSV()` 或类似方法中），添加：
 
@@ -95,7 +95,7 @@ AppReviewService.shared.recordCSVExported()
 
 ### 3. RemindersView.swift - 记录提醒创建
 
-**文件**: `ios/FreeLedger/ui/reminders/RemindersView.swift`
+**文件**: `ios/ColorFuLedger/ui/reminders/RemindersView.swift`
 
 需要在提醒创建成功后添加记录。请找到保存提醒的位置，添加：
 
@@ -108,14 +108,14 @@ AppReviewService.shared.recordReminderCreated()
 
 ### 4. SettingsView.swift - 添加"给我们评分"选项
 
-**文件**: `ios/FreeLedger/ui/settings/SettingsView.swift`
+**文件**: `ios/ColorFuLedger/ui/settings/SettingsView.swift`
 
 **修改位置**: 第 136-147 行的"联系我们"部分之后
 
 **添加新的 Section**:
 ```swift
 Section(L("settings_contact_section")) {
-    Link(destination: URL(string: "mailto:tomaswell163@gmail.com?sFreeLedger%20Feedback")!) {
+    Link(destination: URL(string: "mailto:tomaswell163@gmail.com?sColorFuLedger%20Feedback")!) {
         HStack {
             Label(L("settings_contact_us"), systemImage: "envelope")
                 .foregroundColor(AppColors.textPrimary)
@@ -153,13 +153,13 @@ Section(L("settings_support_section")) {
 **英文** (`en.lproj/Localizable.strings`):
 ```
 "settings_support_section" = "Support Us";
-"settings_rate_app" = "Rate FreeLedger";
+"settings_rate_app" = "Rate ColorFuLedger";
 ```
 
 **中文** (`zh-Hans.lproj/Localizable.strings`):
 ```
 "settings_support_section" = "支持我们";
-"settings_rate_app" = "给 FreeLedger 评分";
+"settings_rate_app" = "给 ColorFuLedger 评分";
 ```
 
 其他语言类似添加。
@@ -171,11 +171,11 @@ Section(L("settings_support_section")) {
 ### 步骤 1: 添加文件到 Xcode 项目
 
 1. 打开 Xcode 项目
-2. 在项目导航器中找到 `FreeLedger/data/service/` 文件夹
-3. 右键点击 → Add Files to "FreeLedger"
+2. 在项目导航器中找到 `ColorFuLedger/data/service/` 文件夹
+3. 右键点击 → Add Files to "ColorFuLedger"
 4. 选择 `AppReviewService.swift`
 5. 确保 "Copy items if needed" 被勾选
-6. Target 选择 "FreeLedger"（主应用）
+6. Target 选择 "ColorFuLedger"（主应用）
 
 ### 步骤 2: 修改代码
 

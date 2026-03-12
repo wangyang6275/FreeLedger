@@ -2,7 +2,7 @@
 
 ## Summary
 
-Epic 6 包含 2 个 Story，全部在单次开发会话中完成。涵盖新手引导流程（3 步 Onboarding）和设置页面重构（4 Section 分组 + 货币选择 + 关于页）。这是项目的最后一个 Epic，标志着 FreeLedger v1.0 全部功能开发完成。
+Epic 6 包含 2 个 Story，全部在单次开发会话中完成。涵盖新手引导流程（3 步 Onboarding）和设置页面重构（4 Section 分组 + 货币选择 + 关于页）。这是项目的最后一个 Epic，标志着 ColorFuLedger v1.0 全部功能开发完成。
 
 | Story | 描述 | Code Review |
 |-------|------|-------------|

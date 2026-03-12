@@ -64,10 +64,10 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 5.1 实现 — 设置 App 密码
 
 ### File List
-- ios/FreeLedger/data/service/PasswordService.swift (new)
-- ios/FreeLedger/ui/settings/SetPasswordView.swift (new)
-- ios/FreeLedger/ui/settings/VerifyPasswordView.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +passwordService + 安全 Section)
-- ios/FreeLedger/ContentView.swift (modified — +passwordService)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 11 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 11 new strings)
+- ios/ColorFuLedger/data/service/PasswordService.swift (new)
+- ios/ColorFuLedger/ui/settings/SetPasswordView.swift (new)
+- ios/ColorFuLedger/ui/settings/VerifyPasswordView.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +passwordService + 安全 Section)
+- ios/ColorFuLedger/ContentView.swift (modified — +passwordService)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 11 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 11 new strings)

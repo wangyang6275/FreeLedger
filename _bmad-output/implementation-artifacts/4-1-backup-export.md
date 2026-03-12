@@ -59,9 +59,9 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 4.1 实现 — 备份导出，JSON + SHA-256 + FileDocument + fileExporter
 
 ### File List
-- ios/FreeLedger/data/model/BackupData.swift (new)
-- ios/FreeLedger/data/service/BackupService.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +backup section + fileExporter + FriendlyDialog)
-- ios/FreeLedger/ContentView.swift (modified — +backupService)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 4 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/data/model/BackupData.swift (new)
+- ios/ColorFuLedger/data/service/BackupService.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +backup section + fileExporter + FriendlyDialog)
+- ios/ColorFuLedger/ContentView.swift (modified — +backupService)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 4 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 4 new strings)

@@ -4,8 +4,8 @@
 *~
 
 # Xcode
-ios/FreeLedger.xcodeproj/xcuserdata/
-ios/FreeLedger.xcodeproj/project.xcworkspace/xcuserdata/
+ios/ColorFuLedger.xcodeproj/xcuserdata/
+ios/ColorFuLedger.xcodeproj/project.xcworkspace/xcuserdata/
 ios/*.xcworkspace/xcuserdata/
 ios/DerivedData/
 ios/build/

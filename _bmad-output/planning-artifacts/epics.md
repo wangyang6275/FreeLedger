@@ -4,11 +4,11 @@ status: 'complete'
 inputDocuments: ['prd.md', 'architecture.md', 'ux-design-specification.md']
 ---
 
-# FreeLedger - Epic Breakdown
+# ColorFuLedger - Epic Breakdown
 
 ## Overview
 
-This document provides the complete epic and story breakdown for FreeLedger, decomposing the requirements from the PRD, UX Design, and Architecture into implementable stories.
+This document provides the complete epic and story breakdown for ColorFuLedger, decomposing the requirements from the PRD, UX Design, and Architecture into implementable stories.
 
 ## Requirements Inventory
 
@@ -211,7 +211,7 @@ So that **all subsequent development has a consistent foundation**.
 **Given** the Android project is created
 **When** dependencies are configured
 **Then** Room, Vico are added via Gradle
-**And** AppColors, AppSpacing, AppRadius, AppTypography, FreeLedgerTheme are generated from Design Tokens
+**And** AppColors, AppSpacing, AppRadius, AppTypography, ColorFuLedgerTheme are generated from Design Tokens
 **And** strings.xml for zh and en are initialized
 **And** the app launches with matching Tab navigation shell
 
@@ -533,7 +533,7 @@ So that **I can recover my data on a new device**.
 
 **Given** the checksum fails or file is invalid
 **When** validation completes
-**Then** a FriendlyDialog shows: "这个文件好像不是 FreeLedger 的备份文件，请重新选择" (FR26)
+**Then** a FriendlyDialog shows: "这个文件好像不是 ColorFuLedger 的备份文件，请重新选择" (FR26)
 
 ### Story 4.3: 备份提醒
 

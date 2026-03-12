@@ -59,7 +59,7 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 6.1 实现 — 新手引导流程
 
 ### File List
-- ios/FreeLedger/ui/onboarding/OnboardingView.swift (new)
-- ios/FreeLedger/ContentView.swift (modified — +showOnboarding + fullScreenCover)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 8 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 8 new strings)
+- ios/ColorFuLedger/ui/onboarding/OnboardingView.swift (new)
+- ios/ColorFuLedger/ContentView.swift (modified — +showOnboarding + fullScreenCover)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 8 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 8 new strings)

@@ -54,8 +54,8 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 5.2 实现 — 密码锁定与解锁
 
 ### File List
-- ios/FreeLedger/ui/lock/LockScreenView.swift (new)
-- ios/FreeLedger/ContentView.swift (modified — +scenePhase + isLocked + LockScreenView overlay)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +修改密码按钮 + 2 sheets)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 3 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 3 new strings)
+- ios/ColorFuLedger/ui/lock/LockScreenView.swift (new)
+- ios/ColorFuLedger/ContentView.swift (modified — +scenePhase + isLocked + LockScreenView overlay)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +修改密码按钮 + 2 sheets)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 3 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 3 new strings)

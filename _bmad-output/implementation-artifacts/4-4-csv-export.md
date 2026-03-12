@@ -55,9 +55,9 @@ Claude Sonnet 4 via Windsurf Cascade
 - 2026-02-14: Story 4.4 实现 — CSV 导出
 
 ### File List
-- ios/FreeLedger/data/service/CSVExportService.swift (new)
-- ios/FreeLedger/ui/settings/CSVExportView.swift (new)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — +csvExportService + CSV 按钮 + sheet)
-- ios/FreeLedger/ContentView.swift (modified — +csvExportService)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 10 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 10 new strings)
+- ios/ColorFuLedger/data/service/CSVExportService.swift (new)
+- ios/ColorFuLedger/ui/settings/CSVExportView.swift (new)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — +csvExportService + CSV 按钮 + sheet)
+- ios/ColorFuLedger/ContentView.swift (modified — +csvExportService)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 10 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 10 new strings)

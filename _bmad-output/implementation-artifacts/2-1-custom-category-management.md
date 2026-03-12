@@ -174,13 +174,13 @@ Claude Sonnet 4 via Windsurf Cascade
   - M2: navigationDestination(for: String.self) 过于通用 → 使用专用 NewCategoryDestination enum
 
 ### File List
-- ios/FreeLedger/ui/settings/CategoryManagementView.swift (new)
-- ios/FreeLedger/ui/settings/CategoryManagementViewModel.swift (new)
-- ios/FreeLedger/ui/settings/CategoryEditView.swift (new)
-- ios/FreeLedger/data/database/CategoryDAO.swift (modified — added update/deactivate/getNextSortOrder)
-- ios/FreeLedger/data/repository/CategoryRepository.swift (modified — added create/update/deactivate/getNextSortOrder)
-- ios/FreeLedger/data/model/Category.swift (modified — added Hashable)
-- ios/FreeLedger/ui/settings/SettingsView.swift (modified — added categoryRepository + NavigationLink)
-- ios/FreeLedger/ContentView.swift (modified — pass categoryRepository to SettingsView)
-- ios/FreeLedger/i18n/Localizable.strings (modified — 12 new strings)
-- ios/FreeLedger/i18n/en.lproj/Localizable.strings (modified — 12 new strings)
+- ios/ColorFuLedger/ui/settings/CategoryManagementView.swift (new)
+- ios/ColorFuLedger/ui/settings/CategoryManagementViewModel.swift (new)
+- ios/ColorFuLedger/ui/settings/CategoryEditView.swift (new)
+- ios/ColorFuLedger/data/database/CategoryDAO.swift (modified — added update/deactivate/getNextSortOrder)
+- ios/ColorFuLedger/data/repository/CategoryRepository.swift (modified — added create/update/deactivate/getNextSortOrder)
+- ios/ColorFuLedger/data/model/Category.swift (modified — added Hashable)
+- ios/ColorFuLedger/ui/settings/SettingsView.swift (modified — added categoryRepository + NavigationLink)
+- ios/ColorFuLedger/ContentView.swift (modified — pass categoryRepository to SettingsView)
+- ios/ColorFuLedger/i18n/Localizable.strings (modified — 12 new strings)
+- ios/ColorFuLedger/i18n/en.lproj/Localizable.strings (modified — 12 new strings)
