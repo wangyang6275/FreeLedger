@@ -14,7 +14,7 @@ struct CategoryIconView: View {
 
             iconImage
                 .font(.system(size: iconSize))
-                .foregroundColor(AppColors.textPrimary)
+                .foregroundColor(Color(hex: "#2D3436").opacity(0.75))
         }
     }
 

@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "ייצא נתונים לראשונה";
 "achievement_first_template" = "מקצוען יעילות";
 "achievement_first_template_desc" = "צור תבנית ראשונה";
+
+/* Calendar */
+"calendar_title" = "לוח שנה";
+"calendar_no_records" = "אין רשומות ביום זה";
+
+/* Appearance */
+"settings_appearance" = "מראה";
+"appearance_system" = "מערכת";
+"appearance_light" = "בהיר";
+"appearance_dark" = "כהה";
+
+/* Biometric */
+"biometric_failed" = "האימות נכשל. אנא הזן את הסיסמה.";

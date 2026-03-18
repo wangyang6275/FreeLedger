@@ -10,13 +10,25 @@ enum AppColors {
     @MainActor static var income: Color { ThemeManager.shared.income }
     @MainActor static var primaryGradient: LinearGradient { ThemeManager.shared.primaryGradient }
     
-    // MARK: - 固定颜色（不随主题变化）
-    static let background = Color(hex: "#FAFAFA")
-    static let surface = Color(hex: "#FFFFFF")
-    static let textPrimary = Color(hex: "#2D3436")
-    static let textSecondary = Color(hex: "#636E72")
-    static let textTertiary = Color(hex: "#B2BEC3")
-    static let divider = Color(hex: "#F0F0F0")
+    // MARK: - 动态颜色（随外观模式变化）
+    @MainActor static var background: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#1C1C1E") : Color(hex: "#FAFAFA")
+    }
+    @MainActor static var surface: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#2C2C2E") : Color(hex: "#FFFFFF")
+    }
+    @MainActor static var textPrimary: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#F5F5F7") : Color(hex: "#2D3436")
+    }
+    @MainActor static var textSecondary: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#ABABAB") : Color(hex: "#636E72")
+    }
+    @MainActor static var textTertiary: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#8E8E93") : Color(hex: "#B2BEC3")
+    }
+    @MainActor static var divider: Color {
+        ThemeManager.shared.isDarkMode ? Color(hex: "#3A3A3C") : Color(hex: "#F0F0F0")
+    }
     static let success = Color(hex: "#00B894")
     static let warning = Color(hex: "#FDCB6E")
     static let error = Color(hex: "#E17055")

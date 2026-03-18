@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Exporteer data voor het eerst";
 "achievement_first_template" = "Efficiëntie pro";
 "achievement_first_template_desc" = "Maak je eerste sjabloon";
+
+/* Calendar */
+"calendar_title" = "Kalender";
+"calendar_no_records" = "Geen records op deze dag";
+
+/* Appearance */
+"settings_appearance" = "Weergave";
+"appearance_system" = "Systeem";
+"appearance_light" = "Licht";
+"appearance_dark" = "Donker";
+
+/* Biometric */
+"biometric_failed" = "Verificatie mislukt. Voer uw wachtwoord in.";

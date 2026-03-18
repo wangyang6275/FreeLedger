@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Xuất dữ liệu lần đầu";
 "achievement_first_template" = "Chuyên gia hiệu quả";
 "achievement_first_template_desc" = "Tạo mẫu đầu tiên";
+
+/* Calendar */
+"calendar_title" = "Lịch";
+"calendar_no_records" = "Không có bản ghi trong ngày này";
+
+/* Appearance */
+"settings_appearance" = "Giao diện";
+"appearance_system" = "Hệ thống";
+"appearance_light" = "Sáng";
+"appearance_dark" = "Tối";
+
+/* Biometric */
+"biometric_failed" = "Xác thực thất bại. Vui lòng nhập mật khẩu.";

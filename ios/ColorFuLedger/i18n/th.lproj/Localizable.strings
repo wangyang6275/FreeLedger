@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "ส่งออกข้อมูลครั้งแรก";
 "achievement_first_template" = "โปรประสิทธิภาพ";
 "achievement_first_template_desc" = "สร้างเทมเพลตแรก";
+
+/* Calendar */
+"calendar_title" = "ปฏิทิน";
+"calendar_no_records" = "ไม่มีรายการในวันนี้";
+
+/* Appearance */
+"settings_appearance" = "ธีม";
+"appearance_system" = "ตามระบบ";
+"appearance_light" = "สว่าง";
+"appearance_dark" = "มืด";
+
+/* Biometric */
+"biometric_failed" = "การยืนยันตัวตนล้มเหลว กรุณาใส่รหัสผ่าน";

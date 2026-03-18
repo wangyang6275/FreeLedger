@@ -406,3 +406,16 @@
 "achievement_first_export_desc" = "প্রথমবার ডেটা রপ্তানি করুন";
 "achievement_first_template" = "দক্ষতা পেশাদার";
 "achievement_first_template_desc" = "আপনার প্রথম টেমপ্লেট তৈরি করুন";
+
+/* Calendar */
+"calendar_title" = "ক্যালেন্ডার";
+"calendar_no_records" = "এই দিনে কোনো রেকর্ড নেই";
+
+/* Appearance */
+"settings_appearance" = "চেহারা";
+"appearance_system" = "সিস্টেম";
+"appearance_light" = "হালকা";
+"appearance_dark" = "গাঢ়";
+
+/* Biometric */
+"biometric_failed" = "প্রমাণীকরণ ব্যর্থ। আপনার পাসওয়ার্ড দিন।";

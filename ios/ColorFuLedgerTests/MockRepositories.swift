@@ -92,6 +92,16 @@ final class MockTransactionRepository: TransactionRepositoryProtocol {
         if shouldThrow { throw AppError.databaseError("mock") }
         return categoryBreakdown
     }
+
+    func getDailySummaries(year: Int, month: Int) throws -> [DailySummary] {
+        if shouldThrow { throw AppError.databaseError("mock") }
+        return []
+    }
+
+    func getTransactionsForDay(year: Int, month: Int, day: Int) throws -> [Transaction] {
+        if shouldThrow { throw AppError.databaseError("mock") }
+        return transactions
+    }
 }
 
 final class MockCategoryRepository: CategoryRepositoryProtocol {

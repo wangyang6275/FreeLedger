@@ -406,3 +406,16 @@
 "achievement_first_export_desc" = "Vie tiedot ensimmäistä kertaa";
 "achievement_first_template" = "Tehokkuusammattilainen";
 "achievement_first_template_desc" = "Luo ensimmäinen mallisi";
+
+/* Calendar */
+"calendar_title" = "Kalenteri";
+"calendar_no_records" = "Ei merkintöjä tänä päivänä";
+
+/* Appearance */
+"settings_appearance" = "Ulkoasu";
+"appearance_system" = "Järjestelmä";
+"appearance_light" = "Vaalea";
+"appearance_dark" = "Tumma";
+
+/* Biometric */
+"biometric_failed" = "Todennus epäonnistui. Anna salasanasi.";

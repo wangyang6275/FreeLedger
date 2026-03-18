@@ -356,3 +356,16 @@
 "achievement_first_export_desc" = "Export data for the first time";
 "achievement_first_template" = "Efficiency Pro";
 "achievement_first_template_desc" = "Create your first template";
+
+/* Calendar */
+"calendar_title" = "Calendar";
+"calendar_no_records" = "No records on this day";
+
+/* Appearance */
+"settings_appearance" = "Appearance";
+"appearance_system" = "Follow System";
+"appearance_light" = "Light";
+"appearance_dark" = "Dark";
+
+/* Biometric */
+"biometric_failed" = "Authentication failed. Please use your password.";

@@ -157,6 +157,10 @@ struct LockScreenView: View {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     onUnlocked()
                 }
+            } else {
+                withAnimation(.default) {
+                    errorMessage = L("biometric_failed")
+                }
             }
         }
     }

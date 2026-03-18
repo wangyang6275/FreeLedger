@@ -383,3 +383,16 @@
 "achievement_first_export_desc" = "처음으로 데이터 내보내기";
 "achievement_first_template" = "효율 프로";
 "achievement_first_template_desc" = "첫 템플릿 생성";
+
+/* Calendar */
+"calendar_title" = "캘린더";
+"calendar_no_records" = "이 날의 기록이 없습니다";
+
+/* Appearance */
+"settings_appearance" = "외관";
+"appearance_system" = "시스템 설정";
+"appearance_light" = "라이트";
+"appearance_dark" = "다크";
+
+/* Biometric */
+"biometric_failed" = "인증에 실패했습니다. 비밀번호를 입력해주세요.";

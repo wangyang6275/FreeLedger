@@ -5,6 +5,7 @@ struct HomeView: View {
     @State private var deleteTarget: Transaction?
     @State private var showDeleteDialog: Bool = false
     @State private var showSearch: Bool = false
+    @State private var showCalendar: Bool = false
     @State private var showReminders: Bool = false
     @State private var errorMessage: String?
 
@@ -157,17 +158,35 @@ struct HomeView: View {
                     .accessibilityLabel(L("reminders_title"))
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showSearch = true
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(AppColors.textPrimary)
+                    HStack(spacing: 4) {
+                        Button {
+                            showCalendar = true
+                        } label: {
+                            Image(systemName: "calendar")
+                                .foregroundColor(AppColors.textPrimary)
+                        }
+                        .accessibilityLabel(L("calendar_title"))
+
+                        Button {
+                            showSearch = true
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(AppColors.textPrimary)
+                        }
+                        .accessibilityLabel(L("search_title"))
                     }
-                    .accessibilityLabel(L("search_title"))
                 }
             }
             .sheet(isPresented: $showSearch) {
                 SearchView(
+                    transactionRepository: transactionRepository,
+                    categoryRepository: categoryRepository,
+                    settingsRepository: settingsRepository,
+                    tagRepository: tagRepository
+                )
+            }
+            .sheet(isPresented: $showCalendar) {
+                CalendarView(
                     transactionRepository: transactionRepository,
                     categoryRepository: categoryRepository,
                     settingsRepository: settingsRepository,

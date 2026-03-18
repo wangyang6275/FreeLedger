@@ -360,3 +360,16 @@
 "achievement_first_export_desc" = "第一次匯出數據";
 "achievement_first_template" = "效率達人";
 "achievement_first_template_desc" = "建立第一個範本";
+
+/* Calendar */
+"calendar_title" = "日曆";
+"calendar_no_records" = "當天沒有記錄";
+
+/* Appearance */
+"settings_appearance" = "外觀";
+"appearance_system" = "跟隨系統";
+"appearance_light" = "淺色";
+"appearance_dark" = "深色";
+
+/* Biometric */
+"biometric_failed" = "辨識失敗，請輸入密碼";

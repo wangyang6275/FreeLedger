@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Eksportuj dane po raz pierwszy";
 "achievement_first_template" = "Pro wydajności";
 "achievement_first_template_desc" = "Utwórz pierwszy szablon";
+
+/* Calendar */
+"calendar_title" = "Kalendarz";
+"calendar_no_records" = "Brak wpisów w tym dniu";
+
+/* Appearance */
+"settings_appearance" = "Wygląd";
+"appearance_system" = "Systemowy";
+"appearance_light" = "Jasny";
+"appearance_dark" = "Ciemny";
+
+/* Biometric */
+"biometric_failed" = "Uwierzytelnianie nie powiodło się. Wprowadź hasło.";

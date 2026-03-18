@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Експортуйте дані вперше";
 "achievement_first_template" = "Про ефективності";
 "achievement_first_template_desc" = "Створіть перший шаблон";
+
+/* Calendar */
+"calendar_title" = "Календар";
+"calendar_no_records" = "Немає записів за цей день";
+
+/* Appearance */
+"settings_appearance" = "Зовнішній вигляд";
+"appearance_system" = "Системна";
+"appearance_light" = "Світла";
+"appearance_dark" = "Темна";
+
+/* Biometric */
+"biometric_failed" = "Помилка автентифікації. Введіть пароль.";

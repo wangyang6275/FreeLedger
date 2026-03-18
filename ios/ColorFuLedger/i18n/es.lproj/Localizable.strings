@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Exporta datos por primera vez";
 "achievement_first_template" = "Pro de la eficiencia";
 "achievement_first_template_desc" = "Crea tu primera plantilla";
+
+/* Calendar */
+"calendar_title" = "Calendario";
+"calendar_no_records" = "Sin registros en este día";
+
+/* Appearance */
+"settings_appearance" = "Apariencia";
+"appearance_system" = "Sistema";
+"appearance_light" = "Claro";
+"appearance_dark" = "Oscuro";
+
+/* Biometric */
+"biometric_failed" = "Autenticación fallida. Ingrese su contraseña.";

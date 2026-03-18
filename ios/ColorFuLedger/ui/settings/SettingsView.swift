@@ -77,6 +77,17 @@ struct SettingsView: View {
                                 .frame(width: 20, height: 20)
                         }
                     }
+
+                    NavigationLink {
+                        AppearancePickerView()
+                    } label: {
+                        HStack {
+                            Label(L("settings_appearance"), systemImage: "circle.lefthalf.filled")
+                            Spacer()
+                            Text(L(ThemeManager.shared.appearanceMode.nameKey))
+                                .foregroundColor(AppColors.textSecondary)
+                        }
+                    }
                 }
 
                 Section(L("settings_password_section")) {

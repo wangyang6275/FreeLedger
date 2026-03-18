@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "İlk kez veri dışa aktarın";
 "achievement_first_template" = "Verimlilik Pro";
 "achievement_first_template_desc" = "İlk şablonu oluşturun";
+
+/* Calendar */
+"calendar_title" = "Takvim";
+"calendar_no_records" = "Bu günde kayıt yok";
+
+/* Appearance */
+"settings_appearance" = "Görünüm";
+"appearance_system" = "Sistem";
+"appearance_light" = "Açık";
+"appearance_dark" = "Koyu";
+
+/* Biometric */
+"biometric_failed" = "Kimlik doğrulama başarısız. Lütfen şifrenizi girin.";

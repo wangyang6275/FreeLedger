@@ -345,3 +345,16 @@
 "achievement_first_export_desc" = "Exportez les données pour la première fois";
 "achievement_first_template" = "Pro de l'efficacité";
 "achievement_first_template_desc" = "Créez votre premier modèle";
+
+/* Calendar */
+"calendar_title" = "Calendrier";
+"calendar_no_records" = "Aucun enregistrement ce jour";
+
+/* Appearance */
+"settings_appearance" = "Apparence";
+"appearance_system" = "Système";
+"appearance_light" = "Clair";
+"appearance_dark" = "Sombre";
+
+/* Biometric */
+"biometric_failed" = "Échec de l'authentification. Veuillez saisir votre mot de passe.";

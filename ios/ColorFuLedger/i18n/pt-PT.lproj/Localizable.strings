@@ -406,3 +406,16 @@
 "achievement_first_export_desc" = "Exporte dados pela primeira vez";
 "achievement_first_template" = "Pró da Eficiência";
 "achievement_first_template_desc" = "Crie o seu primeiro modelo";
+
+/* Calendar */
+"calendar_title" = "Calendário";
+"calendar_no_records" = "Sem registos neste dia";
+
+/* Appearance */
+"settings_appearance" = "Aparência";
+"appearance_system" = "Sistema";
+"appearance_light" = "Claro";
+"appearance_dark" = "Escuro";
+
+/* Biometric */
+"biometric_failed" = "Autenticação falhou. Introduza a sua palavra-passe.";

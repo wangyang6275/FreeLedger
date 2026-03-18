@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Exportera data för första gången";
 "achievement_first_template" = "Effektivitetsproffs";
 "achievement_first_template_desc" = "Skapa din första mall";
+
+/* Calendar */
+"calendar_title" = "Kalender";
+"calendar_no_records" = "Inga poster denna dag";
+
+/* Appearance */
+"settings_appearance" = "Utseende";
+"appearance_system" = "System";
+"appearance_light" = "Ljust";
+"appearance_dark" = "Mörkt";
+
+/* Biometric */
+"biometric_failed" = "Autentisering misslyckades. Ange ditt lösenord.";

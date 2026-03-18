@@ -96,11 +96,11 @@
 "lock_enter_password" = "Enter password to unlock";
 "settings_change_password" = "Change Password";
 "password_enter_current" = "Enter current password";
-"onboarding_step1_title" = "Record in 3 Seconds";
-"onboarding_step1_desc" = "Quickly record every transaction\nSimple, intuitive, zero learning curve";
+"onboarding_welcome_title" = "Welcome to ColorFuLedger";
+
 "onboarding_step2_title" = "Choose Your Currency";
-"onboarding_step3_title" = "Tap + to Start";
-"onboarding_step3_desc" = "Tap the + button at the bottom anytime\nto make your first record";
+"onboarding_step3_title" = "Quick Tour";
+"onboarding_step3_subtitle" = "Tracking money is easier than you think";
 "onboarding_next" = "Next";
 "onboarding_start" = "Get Started";
 "onboarding_skip" = "Skip";
@@ -407,3 +407,45 @@
 "achievement_first_export_desc" = "Export data for the first time";
 "achievement_first_template" = "Efficiency Pro";
 "achievement_first_template_desc" = "Create your first template";
+
+/* Calendar */
+"calendar_title" = "Calendar";
+"calendar_no_records" = "No records on this day";
+
+/* Appearance */
+"settings_appearance" = "Appearance";
+"appearance_system" = "Follow System";
+"appearance_light" = "Light";
+"appearance_dark" = "Dark";
+
+/* Biometric */
+"biometric_failed" = "Authentication failed. Please use your password.";
+
+/* Onboarding - Step 1 Features */
+"onboarding_welcome_subtitle" = "The simplest way to track your money";
+"onboarding_feat_fast_title" = "3-Second Entry";
+"onboarding_feat_fast_desc" = "Minimal taps, record instantly";
+"onboarding_feat_offline_title" = "100% Offline";
+"onboarding_feat_offline_desc" = "No internet needed, ever";
+"onboarding_feat_privacy_title" = "Private & Safe";
+"onboarding_feat_privacy_desc" = "Data stays on your device only";
+"onboarding_feat_free_title" = "Forever Free";
+"onboarding_feat_free_desc" = "No ads, no subscriptions";
+
+/* Onboarding - Step 2 */
+"onboarding_step2_subtitle" = "Auto-detected from your region. You can change it later in Settings.";
+
+/* Onboarding - Step 3 Tour */
+"onboarding_tour1_title" = "Tap \"+\" to Record";
+"onboarding_tour1_desc" = "The center button at the bottom — done in 3 seconds";
+"onboarding_tour2_title" = "Check Reports";
+"onboarding_tour2_desc" = "Pie charts and trends show where your money goes";
+"onboarding_tour3_title" = "Back Up Your Data";
+"onboarding_tour3_desc" = "Export a JSON backup in Settings — your data, always safe";
+
+/* Onboarding - Step 4 Ready */
+"onboarding_ready_title" = "You're All Set!";
+"onboarding_ready_desc" = "Start tracking every transaction.\nYour money, your data, your freedom.";
+"onboarding_ready_tip1" = "Tap + to record";
+"onboarding_ready_tip2" = "No network needed";
+"onboarding_ready_tip3" = "Completely free";

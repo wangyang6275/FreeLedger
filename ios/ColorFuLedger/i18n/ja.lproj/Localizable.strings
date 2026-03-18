@@ -360,3 +360,16 @@
 "achievement_first_export_desc" = "初めてデータをエクスポート";
 "achievement_first_template" = "効率プロ";
 "achievement_first_template_desc" = "最初のテンプレートを作成";
+
+/* Calendar */
+"calendar_title" = "カレンダー";
+"calendar_no_records" = "この日の記録はありません";
+
+/* Appearance */
+"settings_appearance" = "外観";
+"appearance_system" = "システムに従う";
+"appearance_light" = "ライト";
+"appearance_dark" = "ダーク";
+
+/* Biometric */
+"biometric_failed" = "認証に失敗しました。パスワードを入力してください。";

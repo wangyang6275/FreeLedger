@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "صدّر البيانات لأول مرة";
 "achievement_first_template" = "محترف الكفاءة";
 "achievement_first_template_desc" = "أنشئ أول قالب";
+
+/* Calendar */
+"calendar_title" = "التقويم";
+"calendar_no_records" = "لا توجد سجلات في هذا اليوم";
+
+/* Appearance */
+"settings_appearance" = "المظهر";
+"appearance_system" = "النظام";
+"appearance_light" = "فاتح";
+"appearance_dark" = "داكن";
+
+/* Biometric */
+"biometric_failed" = "فشل المصادقة. يرجى إدخال كلمة المرور.";

@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 
+@MainActor
 @Observable
 final class SearchViewModel {
     var searchText: String = ""
@@ -12,11 +13,13 @@ final class SearchViewModel {
     var categories: [Category] = []
     var currencyCode: String = "CNY"
     var hasSearched: Bool = false
+    var isSearching: Bool = false
     var errorMessage: String?
 
     private let transactionRepository: TransactionRepositoryProtocol
     private let categoryRepository: CategoryRepositoryProtocol
     private let settingsRepository: SettingsRepositoryProtocol
+    private var debounceTask: Task<Void, Never>?
 
     var isEmpty: Bool {
         hasSearched && results.isEmpty
@@ -47,7 +50,23 @@ final class SearchViewModel {
         }
     }
 
+    func debounceSearch() {
+        debounceTask?.cancel()
+        guard !searchText.isEmpty || hasActiveFilters else {
+            results = []
+            hasSearched = false
+            return
+        }
+        debounceTask = Task {
+            try? await Task.sleep(nanoseconds: 300_000_000)
+            guard !Task.isCancelled else { return }
+            await MainActor.run { self.performSearch() }
+        }
+    }
+
     func performSearch() {
+        debounceTask?.cancel()
+        isSearching = true
         let startISO = startDate.map { AppDateFormatter.formatISO($0) }
         let endISO = endDate.map { AppDateFormatter.formatISO(Calendar.current.date(byAdding: .day, value: 1, to: $0) ?? $0) }
         let keyword = searchText.isEmpty ? nil : searchText
@@ -65,6 +84,7 @@ final class SearchViewModel {
             AppLogger.ui.error("SearchViewModel performSearch failed: \(error.localizedDescription)")
             errorMessage = L("error_load_failed")
         }
+        isSearching = false
     }
 
     func clearFilters() {

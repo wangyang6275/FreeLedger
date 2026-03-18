@@ -406,3 +406,16 @@
 "achievement_first_export_desc" = "Mag-export ng data sa unang pagkakataon";
 "achievement_first_template" = "Efficiency Pro";
 "achievement_first_template_desc" = "Gumawa ng iyong unang template";
+
+/* Calendar */
+"calendar_title" = "Kalendaryo";
+"calendar_no_records" = "Walang talaan sa araw na ito";
+
+/* Appearance */
+"settings_appearance" = "Hitsura";
+"appearance_system" = "Sistema";
+"appearance_light" = "Maliwanag";
+"appearance_dark" = "Madilim";
+
+/* Biometric */
+"biometric_failed" = "Nabigo ang pagpapatunay. Ilagay ang iyong password.";

@@ -71,6 +71,9 @@ struct SearchView: View {
                     .focused($isSearchFocused)
                     .submitLabel(.search)
                     .onSubmit { viewModel.performSearch() }
+                    .onChange(of: viewModel.searchText) { _, _ in
+                        viewModel.debounceSearch()
+                    }
                 if !viewModel.searchText.isEmpty {
                     Button { viewModel.searchText = "" } label: {
                         Image(systemName: "xmark.circle.fill")

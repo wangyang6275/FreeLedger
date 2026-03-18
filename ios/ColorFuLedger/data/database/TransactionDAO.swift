@@ -160,6 +160,54 @@ struct TransactionDAO {
         }
     }
 
+    func getDailySummaries(year: Int, month: Int) throws -> [(day: Int, expense: Int64, income: Int64, count: Int)] {
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: DateComponents(year: year, month: month, day: 1)),
+              let endDate = calendar.date(byAdding: .month, value: 1, to: startDate) else {
+            return []
+        }
+        let startISO = AppDateFormatter.formatISO(startDate)
+        let endISO = AppDateFormatter.formatISO(endDate)
+
+        return try dbQueue.read { db in
+            let rows = try Row.fetchAll(db, sql: """
+                SELECT
+                    CAST(substr(created_at, 9, 2) AS INTEGER) as day,
+                    SUM(CASE WHEN type = 'expense' THEN amount ELSE 0 END) as expense,
+                    SUM(CASE WHEN type = 'income' THEN amount ELSE 0 END) as income,
+                    COUNT(*) as count
+                FROM transactions
+                WHERE created_at >= ? AND created_at < ?
+                GROUP BY day
+                ORDER BY day
+                """, arguments: [startISO, endISO])
+            return rows.map { row in
+                (day: row["day"] as Int,
+                 expense: row["expense"] as Int64,
+                 income: row["income"] as Int64,
+                 count: row["count"] as Int)
+            }
+        }
+    }
+
+    func getByDay(year: Int, month: Int, day: Int) throws -> [Transaction] {
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: DateComponents(year: year, month: month, day: day)),
+              let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) else {
+            return []
+        }
+        let startISO = AppDateFormatter.formatISO(startDate)
+        let endISO = AppDateFormatter.formatISO(endDate)
+
+        return try dbQueue.read { db in
+            try Transaction
+                .filter(Transaction.Columns.createdAt >= startISO)
+                .filter(Transaction.Columns.createdAt < endISO)
+                .order(Transaction.Columns.createdAt.desc)
+                .fetchAll(db)
+        }
+    }
+
     // MARK: - SQL Aggregation
 
     func getSummary(startISO: String, endISO: String) throws -> (expense: Int64, income: Int64) {

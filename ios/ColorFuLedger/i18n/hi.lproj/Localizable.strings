@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "पहली बार डेटा एक्सपोर्ट करें";
 "achievement_first_template" = "दक्षता प्रो";
 "achievement_first_template_desc" = "पहला टेम्पलेट बनाएं";
+
+/* Calendar */
+"calendar_title" = "कैलेंडर";
+"calendar_no_records" = "इस दिन कोई रिकॉर्ड नहीं";
+
+/* Appearance */
+"settings_appearance" = "दिखावट";
+"appearance_system" = "सिस्टम";
+"appearance_light" = "लाइट";
+"appearance_dark" = "डार्क";
+
+/* Biometric */
+"biometric_failed" = "प्रमाणीकरण विफल। कृपया अपना पासवर्ड दर्ज करें।";

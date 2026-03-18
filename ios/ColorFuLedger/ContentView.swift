@@ -89,6 +89,7 @@ struct ContentView: View {
             .offset(y: -20)
         }
         .id(languageManager.refreshId)
+        .preferredColorScheme(ThemeManager.shared.colorScheme)
         .sheet(isPresented: $showRecord) {
             RecordView(
                 transactionRepository: container.transactionRepository,

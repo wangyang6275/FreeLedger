@@ -1,4 +1,24 @@
 import SwiftUI
+import UIKit
+
+/// 外观模式
+enum AppearanceMode: String, CaseIterable, Identifiable {
+    case system = "system"
+    case light = "light"
+    case dark = "dark"
+
+    var id: String { rawValue }
+
+    var nameKey: String { "appearance_\(rawValue)" }
+
+    var iconName: String {
+        switch self {
+        case .system: return "circle.lefthalf.filled"
+        case .light: return "sun.max"
+        case .dark: return "moon"
+        }
+    }
+}
 
 /// 预设主题类型
 enum AppTheme: String, CaseIterable, Identifiable {
@@ -209,25 +229,56 @@ struct ThemeColors {
 @Observable
 final class ThemeManager {
     static let shared = ThemeManager()
-    
+
     private static let themeKey = "app_theme"
-    
+    private static let appearanceKey = "app_appearance_mode"
+
     var currentTheme: AppTheme {
         didSet {
             UserDefaults.standard.set(currentTheme.rawValue, forKey: Self.themeKey)
             refreshId = UUID()
         }
     }
-    
+
+    var appearanceMode: AppearanceMode {
+        didSet {
+            UserDefaults.standard.set(appearanceMode.rawValue, forKey: Self.appearanceKey)
+            refreshId = UUID()
+        }
+    }
+
+    var isDarkMode: Bool {
+        switch appearanceMode {
+        case .dark: return true
+        case .light: return false
+        case .system:
+            return UITraitCollection.current.userInterfaceStyle == .dark
+        }
+    }
+
+    var colorScheme: ColorScheme? {
+        switch appearanceMode {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+
     /// 用于强制刷新 UI
     var refreshId = UUID()
-    
+
     private init() {
         if let saved = UserDefaults.standard.string(forKey: Self.themeKey),
            let theme = AppTheme(rawValue: saved) {
             self.currentTheme = theme
         } else {
             self.currentTheme = .coral
+        }
+        if let savedAppearance = UserDefaults.standard.string(forKey: Self.appearanceKey),
+           let mode = AppearanceMode(rawValue: savedAppearance) {
+            self.appearanceMode = mode
+        } else {
+            self.appearanceMode = .system
         }
     }
     
@@ -251,13 +302,13 @@ final class ThemeManager {
         )
     }
     
-    // 固定颜色（不随主题变化）
-    static let background = Color(hex: "#FAFAFA")
-    static let surface = Color(hex: "#FFFFFF")
-    static let textPrimary = Color(hex: "#2D3436")
-    static let textSecondary = Color(hex: "#636E72")
-    static let textTertiary = Color(hex: "#B2BEC3")
-    static let divider = Color(hex: "#F0F0F0")
+    // 固定颜色（委托给 AppColors，支持深色模式）
+    static var background: Color { AppColors.background }
+    static var surface: Color { AppColors.surface }
+    static var textPrimary: Color { AppColors.textPrimary }
+    static var textSecondary: Color { AppColors.textSecondary }
+    static var textTertiary: Color { AppColors.textTertiary }
+    static var divider: Color { AppColors.divider }
     static let success = Color(hex: "#00B894")
     static let warning = Color(hex: "#FDCB6E")
     static let error = Color(hex: "#E17055")

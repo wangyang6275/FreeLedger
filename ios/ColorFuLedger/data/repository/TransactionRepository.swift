@@ -17,6 +17,16 @@ protocol TransactionRepositoryProtocol {
     func getAnnualSummary(year: Int) throws -> TransactionSummary
     func getAnnualMonthlySummaries(year: Int) throws -> [MonthlyTrend]
     func getAnnualCategoryBreakdown(year: Int, type: String) throws -> [CategoryBreakdown]
+    func getDailySummaries(year: Int, month: Int) throws -> [DailySummary]
+    func getTransactionsForDay(year: Int, month: Int, day: Int) throws -> [Transaction]
+}
+
+struct DailySummary: Identifiable {
+    let day: Int
+    let expense: Int64
+    let income: Int64
+    let count: Int
+    var id: Int { day }
 }
 
 final class TransactionRepository: TransactionRepositoryProtocol {
@@ -241,5 +251,14 @@ final class TransactionRepository: TransactionRepositoryProtocol {
                 percentage: pct
             )
         }
+    }
+
+    func getDailySummaries(year: Int, month: Int) throws -> [DailySummary] {
+        let rawData = try transactionDAO.getDailySummaries(year: year, month: month)
+        return rawData.map { DailySummary(day: $0.day, expense: $0.expense, income: $0.income, count: $0.count) }
+    }
+
+    func getTransactionsForDay(year: Int, month: Int, day: Int) throws -> [Transaction] {
+        try transactionDAO.getByDay(year: year, month: month, day: day)
     }
 }

@@ -345,3 +345,16 @@
 "achievement_first_export_desc" = "Erstmals Daten exportieren";
 "achievement_first_template" = "Effizienz-Profi";
 "achievement_first_template_desc" = "Erste Vorlage erstellen";
+
+/* Calendar */
+"calendar_title" = "Kalender";
+"calendar_no_records" = "Keine Einträge an diesem Tag";
+
+/* Appearance */
+"settings_appearance" = "Erscheinungsbild";
+"appearance_system" = "System";
+"appearance_light" = "Hell";
+"appearance_dark" = "Dunkel";
+
+/* Biometric */
+"biometric_failed" = "Authentifizierung fehlgeschlagen. Bitte Passwort eingeben.";

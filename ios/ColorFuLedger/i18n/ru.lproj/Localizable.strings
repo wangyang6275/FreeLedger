@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Экспортируйте данные впервые";
 "achievement_first_template" = "Про эффективности";
 "achievement_first_template_desc" = "Создайте первый шаблон";
+
+/* Calendar */
+"calendar_title" = "Календарь";
+"calendar_no_records" = "Нет записей за этот день";
+
+/* Appearance */
+"settings_appearance" = "Оформление";
+"appearance_system" = "Как в системе";
+"appearance_light" = "Светлая";
+"appearance_dark" = "Тёмная";
+
+/* Biometric */
+"biometric_failed" = "Ошибка аутентификации. Введите пароль.";

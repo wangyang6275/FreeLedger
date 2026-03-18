@@ -406,3 +406,16 @@
 "achievement_first_export_desc" = "Eksporter data for første gang";
 "achievement_first_template" = "Effektivitetspro";
 "achievement_first_template_desc" = "Opprett din første mal";
+
+/* Calendar */
+"calendar_title" = "Kalender";
+"calendar_no_records" = "Ingen oppføringer denne dagen";
+
+/* Appearance */
+"settings_appearance" = "Utseende";
+"appearance_system" = "System";
+"appearance_light" = "Lys";
+"appearance_dark" = "Mørk";
+
+/* Biometric */
+"biometric_failed" = "Autentisering mislyktes. Skriv inn passordet ditt.";

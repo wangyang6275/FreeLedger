@@ -322,3 +322,16 @@
 "achievement_first_export_desc" = "Eksport data kali pertama";
 "achievement_first_template" = "Pro Kecekapan";
 "achievement_first_template_desc" = "Cipta templat pertama";
+
+/* Calendar */
+"calendar_title" = "Kalendar";
+"calendar_no_records" = "Tiada rekod pada hari ini";
+
+/* Appearance */
+"settings_appearance" = "Penampilan";
+"appearance_system" = "Sistem";
+"appearance_light" = "Cerah";
+"appearance_dark" = "Gelap";
+
+/* Biometric */
+"biometric_failed" = "Pengesahan gagal. Sila masukkan kata laluan anda.";

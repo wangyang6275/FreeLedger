@@ -96,11 +96,11 @@
 "lock_enter_password" = "请输入密码解锁";
 "settings_change_password" = "修改密码";
 "password_enter_current" = "请输入当前密码";
-"onboarding_step1_title" = "3 秒记一笔";
-"onboarding_step1_desc" = "快速记录每一笔收支\n简单、直觉、零门槛";
+"onboarding_welcome_title" = "你好，ColorFuLedger";
+
 "onboarding_step2_title" = "选择你的货币";
-"onboarding_step3_title" = "点击 + 开始记账";
-"onboarding_step3_desc" = "随时点击底部的 + 按钮\n开始你的第一笔记录";
+"onboarding_step3_title" = "三步上手";
+"onboarding_step3_subtitle" = "记账没有你想的那么复杂";
 "onboarding_next" = "下一步";
 "onboarding_start" = "开始使用";
 "onboarding_skip" = "跳过引导";
@@ -406,3 +406,45 @@
 "achievement_first_export_desc" = "第一次导出数据";
 "achievement_first_template" = "效率达人";
 "achievement_first_template_desc" = "创建第一个模板";
+
+/* Calendar */
+"calendar_title" = "日历";
+"calendar_no_records" = "当天没有记录";
+
+/* Appearance */
+"settings_appearance" = "外观";
+"appearance_system" = "跟随系统";
+"appearance_light" = "浅色";
+"appearance_dark" = "深色";
+
+/* Biometric */
+"biometric_failed" = "识别失败，请输入密码";
+
+/* Onboarding - Step 1 Features */
+"onboarding_welcome_subtitle" = "记账从未这么简单";
+"onboarding_feat_fast_title" = "3秒记一笔";
+"onboarding_feat_fast_desc" = "极简操作，随手就记";
+"onboarding_feat_offline_title" = "完全离线";
+"onboarding_feat_offline_desc" = "无需网络，随时可用";
+"onboarding_feat_privacy_title" = "隐私安全";
+"onboarding_feat_privacy_desc" = "数据只存本地，不上传";
+"onboarding_feat_free_title" = "永久免费";
+"onboarding_feat_free_desc" = "无广告，无付费项";
+
+/* Onboarding - Step 2 */
+"onboarding_step2_subtitle" = "根据你的地区自动检测，也可手动更改";
+
+/* Onboarding - Step 3 Tour */
+"onboarding_tour1_title" = "点击「+」记账";
+"onboarding_tour1_desc" = "底部中间按钮，3秒完成一笔记录";
+"onboarding_tour2_title" = "查看「报表」";
+"onboarding_tour2_desc" = "饼图、趋势图，直观了解每月消费";
+"onboarding_tour3_title" = "定期备份数据";
+"onboarding_tour3_desc" = "设置中导出 JSON，数据永不丢失";
+
+/* Onboarding - Step 4 Ready */
+"onboarding_ready_title" = "一切就绪！";
+"onboarding_ready_desc" = "开始记录你的每一笔收支\n你的钱，你的数据，你的自由。";
+"onboarding_ready_tip1" = "点 + 记账";
+"onboarding_ready_tip2" = "数据不联网";
+"onboarding_ready_tip3" = "完全免费";
