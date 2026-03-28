@@ -1,0 +1,11 @@
+# App Store Connect 配置
+.env
+
+# 依赖
+node_modules/
+
+# 生成的文件
+metadata.csv
+
+# 日志
+*.log

@@ -1,0 +1,15 @@
+{
+  "name": "appstore-metadata-updater",
+  "version": "1.0.0",
+  "description": "App Store Connect 多语言元数据批量更新工具",
+  "type": "module",
+  "scripts": {
+    "update": "node update-metadata.js",
+    "list-apps": "node list-apps.js",
+    "generate-csv": "node generate-csv.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
